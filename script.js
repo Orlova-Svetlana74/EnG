@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
-  const aboutLink = document.getElementById("about-link");
+  const aboutLink = document.getElementById("menu__link-left");
   const closeBtn = document.getElementsByClassName("close")[0];
   const form = document.getElementById("feedback-form");
   const inputs = document.querySelectorAll("#feedback-form input");

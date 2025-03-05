@@ -10,7 +10,7 @@
   <body>
     <!-- Фиксированное меню -->
     <div class="menu">
-      <a href="#zeropopup" class="menu__link menu__link-left">EnterGen</a>
+      <a href="#zeropopup" id="menu__link-left" class="menu__link menu__link-left">EnterGen</a>
       <a href="#contact" class="menu__link menu__link-right">Start a project</a>
     </div>
 
@@ -20,14 +20,14 @@
     </section>
     <!-- Меню навигации -->
     <nav class="navigation">
-      <a class="navigation__link" href="#Заглушка">EnterGen
-      <a class="navigation__link" href="#Заглушка">Наши работы</a>
-      <a class="navigation__link" id="about-link" href="">О нас</a>
-      <a class="navigation__link" href="#Заглушка">Контакты</a>
+      <a class="navigation__link" href="#description__text">EnterGen
+      <a class="navigation__link" href="#projects__item">Наши работы</a>
+      <a class="navigation__link" id="about-link" href="/about_us_page.html">О нас</a>
+      <a class="navigation__link" href="#footer__contact">Контакты</a>
     </nav>
     <!-- Описание -->
     <section class="description">
-      <p class="description__text">
+      <p id="description__text" class="description__text">
         Entrergen — команда, создающая современные, масштабируемые и эффективные приложения для бизнеса.
       </p>
     </section>
@@ -54,7 +54,7 @@
         />
         </a>
       </div>
-      <div class="projects__item">
+      <div id="projects__item" class="projects__item">
         <a href="https://risolut.ru">
           <img
           src="./img/kyxni.png"
@@ -75,10 +75,11 @@
       </div>
     </section>
     <!-- Кнопка ссылка на проекты -->
-    <button class="button">All projects</button>
+    <button class="button" id="button">All projects</button>
     <!-- Футер -->
     <footer class="footer">
-      <section class="footer__contact">
+      <section class="footer__contact"
+      id="footer__contact">
         <a href="mailto:dmdesign.pro@ya.ru">EnteGen@mail.ru</a>
         <a href="#Заглушка">EnterGen</a>
       </section>
