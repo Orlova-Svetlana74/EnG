@@ -70,7 +70,7 @@ body {
   text-decoration: none;
   animation: fadeInUp 2s ease-in-out;
 }
-.navigation__link:hover{
+.navigation__link:hover {
   color: #8419a2;
 }
 /* Описание */
@@ -259,7 +259,6 @@ footer p {
   }
   footer p {
     font-size: 20px;
-    
   }
   .social__link {
     text-decoration: none;
@@ -287,6 +286,17 @@ footer p {
     font-size: 15px;
   }
 }
+/* Модалка обратной связи */
+.modal__title {
+  text-align: center;
+  color: #f4eeee;
+}
+.modal__contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
 
 .modal {
   display: none; /* Скрыто по умолчанию */
@@ -301,13 +311,17 @@ footer p {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #28487e;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 500px;
+  max-width: 400px;
   border-radius: 10px;
+  box-shadow: 0px 1px 2px 0px rgba(214, 216, 216, 0.7),
+    1px 2px 4px 0px rgba(212, 216, 216, 0.7),
+    2px 4px 8px 0px rgba(228, 231, 231, 0.7),
+    2px 4px 16px 0px rgba(197, 202, 202, 0.7);
 }
 
 .close {
@@ -337,18 +351,27 @@ input {
   margin-top: 5px;
   padding: 10px;
   font-size: 16px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #000;
+  background-color: transparent;
+  color: #ebe5e5;
 }
 
 button {
-  margin-top: 20px;
+  margin: 0 auto;
   padding: 10px;
   font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
+  background-color: transparent;
+  border-color: aliceblue;
+  color: rgb(239, 230, 230);
   cursor: pointer;
+  width: 30%;
+  width: 40%;
+  margin-top: 20%;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #55c1e9;
 }
