@@ -10,7 +10,12 @@
   <body>
     <!-- Фиксированное меню -->
     <div class="menu">
-      <a href="#zeropopup" id="menu__link-left" class="menu__link menu__link-left">EnterGen</a>
+      <a
+        href="#zeropopup"
+        id="menu__link-left"
+        class="menu__link menu__link-left"
+        >EnterGen</a
+      >
       <a href="#contact" class="menu__link menu__link-right">Start a project</a>
     </div>
 
@@ -29,10 +34,23 @@
           </div>
           <a href="#title__text" class="logo" id="logo">EnterGen</a>
           <ul class="menu" id="menu">
-            <li><a class="navigation__link" href="#description__text">EnterGen</a></li>
-            <li><a class="navigation__link" href="#projects__item">Наши работы</a></li>
-            <li><a class="navigation__link" id="about-link" href="/about_us_page.html">О нас</a></li>
-            <li><a class="navigation__link" href="#footer__contact">Контакты</a></li>
+            <li>
+              <a class="navigation__link" href="#description__text">EnterGen</a>
+            </li>
+            <li>
+              <a class="navigation__link" href="#projects__item">Наши работы</a>
+            </li>
+            <li>
+              <a
+                class="navigation__link"
+                id="about-link"
+                href="/about_us_page.html"
+                >О нас</a
+              >
+            </li>
+            <li>
+              <a class="navigation__link" href="#footer__contact">Контакты</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -48,7 +66,8 @@
     <!-- Описание -->
     <section class="description">
       <p id="description__text" class="description__text">
-        Entrergen — команда, создающая современные, масштабируемые и эффективные приложения для бизнеса.
+        Entrergen — команда, создающая современные, масштабируемые и эффективные
+        приложения для бизнеса.
       </p>
     </section>
 
@@ -57,56 +76,55 @@
       <div class="projects__item-big">
         <a href="https://mandarin-phi.vercel.app">
           <img
-          src="./img/mandarina.png"
-          alt="Project 1"
-          class="projects__image"
-        />
+            src="./img/mandarina.png"
+            alt="Project 1"
+            class="projects__image"
+          />
         </a>
-
       </div>
 
       <div class="projects__item">
         <a href="https://runkaline.ru">
           <img
-          src="./img/runkaline.png"
-          alt="Project 2"
-          class="projects__image"
-        />
+            src="./img/runkaline.png"
+            alt="Project 2"
+            class="projects__image"
+          />
         </a>
       </div>
       <div id="projects__item" class="projects__item">
         <a href="https://risolut.ru">
-          <img
-          src="./img/kyxni.png"
-          alt="Project 3"
-          class="projects__image"
-        />
+          <img src="./img/kyxni.png" alt="Project 3" class="projects__image" />
         </a>
       </div>
       <div class="projects__item-big">
         <a href="https://yrs.priem.menu">
           <img
-          src="./img/lanshBox.png"
-          alt="Project 4"
-          class="projects__image"
-        />
+            src="./img/lanshBox.png"
+            alt="Project 4"
+            class="projects__image"
+          />
         </a>
-
       </div>
     </section>
     <!-- Кнопка ссылка на проекты -->
     <button class="button" id="button">All projects</button>
     <!-- Футер -->
     <footer class="footer">
-      <section class="footer__contact"
-      id="footer__contact">
+      <section class="footer__contact" id="footer__contact">
         <a href="mailto:dmdesign.pro@ya.ru">EnteGen@mail.ru</a>
         <a href="#Заглушка">EnterGen</a>
       </section>
       <section class="social">
-        <a class="social__link" href="#Заглушка">Lenkidin</a>
-        <a class="social__link" href="#Заглушка">Telegram</a>
-        <a class="social__link" href="#Заглушка">WhatsApp</a>
+        <a class="social__link" href="#Заглушка"
+          ><img src="./icon/icons8-linkedin.svg" alt="Lenkidin"
+        /></a>
+        <a class="social__link" href="#Заглушка"
+        ><img src="./icon/icons8-telegram.svg" alt="Telegram"
+      /></a>
+      <a class="social__link" href="#Заглушка"
+      ><img src="./icon/icons8-whatsapp.svg" alt="WhatsApp"
+    /></a>
       </section>
       <section class="runingLine">
         <span class="runingLine__text">LET'S START A NEW PROJECT </span>
@@ -120,11 +138,34 @@
         <h2 class="modal__title">Свяжитесь с нами</h2>
         <form id="feedback-form">
           <section class="modal__contact">
-            
-              <input placeholder="Имя" type="text" id="firstName" name="name" required />
-            <input placeholder="Фамилия" type="text" id="lastName" name="name" required />
-              <input placeholder="Email" type="email" id="email" name="email" required />
-              <input placeholder="Телефон" type="tel" id="phone" name="phone" required />
+            <input
+              placeholder="Имя"
+              type="text"
+              id="firstName"
+              name="name"
+              required
+            />
+            <input
+              placeholder="Фамилия"
+              type="text"
+              id="lastName"
+              name="name"
+              required
+            />
+            <input
+              placeholder="Email"
+              type="email"
+              id="email"
+              name="email"
+              required
+            />
+            <input
+              placeholder="Телефон"
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+            />
           </section>
           <button type="submit">Отправить</button>
         </form>

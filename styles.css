@@ -16,16 +16,17 @@ body {
   list-style-type: none;
 }
 .menu__link {
-  color: #e6ff00;
+  color: #ebe9f0;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   padding: 8px 16px;
   border-radius: 30px;
-  background-color: #1d1f2b;
+  background-color: #384894;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   margin-left: 30px;
   margin-right: 30px;
+  transition: background-color 0.8s ease-in-out;
 }
 .menu__link-left {
   position: fixed;
@@ -40,8 +41,8 @@ body {
   transform: translateY(-50%);
 }
 .menu__link:hover {
-  background-color: #e6ff00;
-  color: #1d1f2b;
+  background-color: #1596e2;
+  color: #dadce3;
 }
 
 /* название */
@@ -54,15 +55,20 @@ body {
   background-color: #eaeaea;
 }
 .title__text {
-  font-size: 120px;
   font-weight: 400;
-  text-transform: uppercase;
   letter-spacing: -2px;
-  color: #000;
   text-align: center;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   animation: fadeInUp 2s ease-in-out;
+  font-family: "Rubik One", sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #4c80d3 33%, #4c477f 66%, #3eccdf);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0b2349;
+  display: table;
+  margin: 20px auto;
 }
 /* Меню навигации */
 .navigation {
@@ -118,6 +124,10 @@ body {
 }
 .projects__image {
   width: 100%;
+  transition: 0.5s; /* Время эффекта */
+}
+.projects__image:hover {
+  transform: scale(1.02); /* Увеличиваем масштаб */
 }
 
 /* Кнопка ссылка на проекты  */
@@ -150,12 +160,16 @@ body {
 
 .social {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 2%;
+}
+.social__link {
+  transition: 0.5s; /* Время эффекта */
 }
 .social__link:hover {
-  color: #11a93c;
+  transform: scale(1.2); /* Увеличиваем масштаб */
 }
+
 @media (max-width: 959px) {
   .button {
     font-size: 14px;
