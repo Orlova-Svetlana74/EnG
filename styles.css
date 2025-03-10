@@ -79,6 +79,7 @@ body {
   justify-content: space-evenly;
   font-size: 20px;
 }
+
 .navigation__link {
   color: rgb(89, 83, 97);
   text-decoration: none;
@@ -178,9 +179,8 @@ body {
   display: flex;
   margin-right: 20px;
 }
-.social__figure-activ:hover{
+.social__figure-activ:hover {
   cursor: pointer;
-  
 }
 .rounded-square {
   width: 300px;
@@ -190,7 +190,6 @@ body {
   border-radius: 20px; /* Закругленные углы */
   position: relative; /* Для позиционирования круга */
 }
-
 
 .circle {
   width: 300px; /* Чуть меньше квадрата */
@@ -206,7 +205,6 @@ body {
   justify-content: center;
   align-items: center; /* Центрирует текст */
 }
-
 
 .text {
   color: #333; /* Темно-серый текст */
@@ -267,6 +265,142 @@ footer p {
   display: inline-block;
   padding-left: 100%;
   animation: marquee 10s linear infinite;
+}
+/* Модалка обратной связи */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__title {
+  text-align: center;
+  color: #f4eeee;
+}
+.modal-content {
+  background-color: #28487e;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px 0px rgba(214, 216, 216, 0.7),
+    1px 2px 4px 0px rgba(212, 216, 216, 0.7),
+    2px 4px 8px 0px rgba(228, 231, 231, 0.7),
+    2px 4px 16px 0px rgba(197, 202, 202, 0.7);
+}
+.modal__contact {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  gap: 10px;
+  margin-top: 10%;
+}
+.modal__contact-conteiner {
+  display: flex;
+}
+.modal__contact-error {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#firstName {
+  margin-right: 20px;
+}
+#email {
+  margin-right: 20px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-color: #000;
+  background-color: transparent;
+  color: #ebe5e5;
+  width: 80%;
+  outline: none;
+}
+::placeholder {
+  color: rgb(196, 196, 207);
+}
+:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+button {
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 16px;
+  background-color: transparent;
+  border-color: aliceblue;
+  color: rgb(239, 230, 230);
+  cursor: pointer;
+  width: 30%;
+  width: 40%;
+  margin-top: 20%;
+}
+
+button:hover {
+  background-color: #55c1e9;
+}
+/* About us page */
+.header__conteiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+.header__conteiner-title {
+  font-size: 90px;
+  margin-left: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.header__conteiner-btn {
+  color: #4f4f4f;
+  border-radius: 50px;
+  font-size: 20px;
+  padding: 20px;
+  background: rgb(148, 146, 145);
+  margin-right: 20px;
+}
+.about__conteiner-text {
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 @keyframes marquee {
   from {
@@ -340,6 +474,16 @@ footer p {
   }
 }
 @media (max-width: 639px) {
+  .modal__contact-conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+  }
+  .modal__contact-error {
+    width: 80%;
+  }
+
   .title__text {
     font-size: 50px;
   }
@@ -352,7 +496,7 @@ footer p {
   footer p {
     font-size: 20px;
   }
-  .footer__contact{
+  .footer__contact {
     margin-top: 10%;
     margin-bottom: 5%;
   }
@@ -377,10 +521,13 @@ footer p {
   }
 }
 @media (max-width: 479px) {
+  .menu__link{
+    display: none;
+  }
   .title__text {
     font-size: 60px;
   }
-  .social__figure{
+  .social__figure {
     display: none;
   }
   /* Навигация в гамбургере */
@@ -478,7 +625,7 @@ footer p {
   }
 
   .hamb__field {
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     cursor: pointer;
   }
 
@@ -576,122 +723,4 @@ footer p {
   .social__link:hover {
     transform: scale(1.2); /* Увеличиваем масштаб */
   }
-}
-/* Модалка обратной связи */
-.modal__title {
-  text-align: center;
-  color: #f4eeee;
-}
-.modal__contact {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-around;
-}
-
-.modal {
-  display: none; /* Скрыто по умолчанию */
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #28487e;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0px 1px 2px 0px rgba(214, 216, 216, 0.7),
-    1px 2px 4px 0px rgba(212, 216, 216, 0.7),
-    2px 4px 8px 0px rgba(228, 231, 231, 0.7),
-    2px 4px 16px 0px rgba(197, 202, 202, 0.7);
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin-top: 10px;
-}
-
-input {
-  margin-top: 5px;
-  padding: 10px;
-  font-size: 16px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom-color: #000;
-  background-color: transparent;
-  color: #ebe5e5;
-}
-::placeholder {
-  color: rgb(196, 196, 207);
-}
-button {
-  margin: 0 auto;
-  padding: 10px;
-  font-size: 16px;
-  background-color: transparent;
-  border-color: aliceblue;
-  color: rgb(239, 230, 230);
-  cursor: pointer;
-  width: 30%;
-  width: 40%;
-  margin-top: 20%;
-}
-
-button:hover {
-  background-color: #55c1e9;
-}
-/* About us page */
-.header__conteiner {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-.header__conteiner-title {
-  font-size: 90px;
-  margin-left: 50px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.header__conteiner-btn {
-  color: #4f4f4f;
-  border-radius: 50px;
-  font-size: 20px;
-  padding: 20px;
-  background: rgb(148, 146, 145);
-  margin-right: 20px;
-}
-.about__conteiner-text {
-  display: block;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }

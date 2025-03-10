@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const aboutLink = document.getElementById("menu__link-left");
+  const logo = document.getElementById("logo");
   const closeBtn = document.getElementsByClassName("close")[0];
   const form = document.getElementById("feedback-form");
   const inputs = document.querySelectorAll("#feedback-form input");
@@ -80,11 +81,9 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     modal.style.display = "block";
   };
-
   closeBtn.onclick = function () {
     modal.style.display = "none";
   };
-
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -117,7 +116,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Код для закрытия меню при нажатии на ссылку
   const links = Array.from(menu.children);
-
+  logo.onclick = function () {
+    popup.classList.remove("open");
+    hamb.classList.remove("active");
+    body.classList.remove("noscroll");
+    modal.style.display = "block";
+  };
   // Для каждого элемента меню при клике вызываем ф-ию
   links.forEach((link) => {
     link.addEventListener("click", closeOnClick);
