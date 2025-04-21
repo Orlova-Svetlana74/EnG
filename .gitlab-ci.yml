@@ -3,8 +3,6 @@ stages:
 
 trigger_general_pipeline:
   stage: trigger_general_pipeline
-  script:
-    - echo "Triggering the pipeline in the general repository"
   trigger:
     project: "entergen/media/representation/general"  # Путь к репозиторию general
     branch: "test"  # Ветка, в которой должен запуститься пайплайн (можно использовать другую, если нужно)
