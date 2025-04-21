@@ -6,5 +6,4 @@ trigger_general_pipeline:
   trigger:
     project: "entergen/media/representation/general"  # Путь к проекту 'general'
     branch: "test"  # Ветка, для которой будет запускаться пайплайн
-    token: "$GENERAL_CI_TRIGGER_TOKEN"  # Токен, который ты получил в репозитории 'general'
     strategy: depend
