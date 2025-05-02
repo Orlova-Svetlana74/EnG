@@ -95,7 +95,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
   });
-
+  
+  //  Вывести всех пользователей в консоль которые запостились
+  fetch("https://entergen.ru/api/profile")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Все пользователи", data);
+    })
+    .catch((error) => {
+      console.error("Ошибка:", error);
+    });
   // Существующая функциональность модального окна
   aboutLink.onclick = function (event) {
     event.preventDefault();
