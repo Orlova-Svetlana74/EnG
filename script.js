@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Проверка при отправке формы
   form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
     let hasErrors = false;
     inputs.forEach((input) => {
       const errorSpan = input.nextElementSibling;
@@ -68,14 +70,41 @@ document.addEventListener("DOMContentLoaded", function () {
         hasErrors = true;
       }
     });
-    if (hasErrors) {
-      event.preventDefault();
-    } else {
-      console.log("Форма отправлена");
-      modal.style.display = "none";
+
+    if (!hasErrors) {
+      fetch("https://entergen.ru/api/profile", {
+        method: "POST",
+        body: JSON.stringify({
+          name: form.firstName.value,
+          lastName: form.lastName.value,
+          phone: form.phone.value,
+          email: form.email.value,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Форма отправлена", data);
+          modal.style.display = "none"; // Закрываем модалку после успешной отправки
+          form.reset(); // Очищаем форму
+        })
+        .catch((error) => {
+          console.error("Ошибка:", error);
+        });
     }
   });
-
+  
+  //  Вывести всех пользователей в консоль которые запостились
+  fetch("https://entergen.ru/api/profile")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Все пользователи", data);
+    })
+    .catch((error) => {
+      console.error("Ошибка:", error);
+    });
   // Существующая функциональность модального окна
   aboutLink.onclick = function (event) {
     event.preventDefault();
