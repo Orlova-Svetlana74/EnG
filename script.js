@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Проверка при отправке формы
   form.addEventListener("submit", (event) => {
-    event.preventDefault(); 
+    event.preventDefault();
 
     let hasErrors = false;
     inputs.forEach((input) => {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       fetch("https://entergen.ru/api/profile", {
         method: "POST",
         body: JSON.stringify({
-          firstName: form.firstName.value,
+          name: form.firstName.value,
           lastName: form.lastName.value,
           phone: form.phone.value,
           email: form.email.value,
