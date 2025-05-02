@@ -5,5 +5,5 @@ trigger_general_pipeline:
   stage: trigger_general
   trigger:
     project: "entergen/media/representation/general" # Путь к проекту 'general'
-    branch: "test" # Ветка, для которой будет запускаться пайплайн
+    branch: "main" # Ветка, для которой будет запускаться пайплайн
     strategy: depend
