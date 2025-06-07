@@ -1,0 +1,9 @@
+stages:
+  - trigger_general
+
+trigger_general_pipeline:
+  stage: trigger_general
+  trigger:
+    project: "entergen/media/representation/general" # Путь к проекту 'general'
+    branch: "main" # Ветка, для которой будет запускаться пайплайн
+    strategy: depend

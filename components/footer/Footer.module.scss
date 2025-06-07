@@ -1,0 +1,31 @@
+.footer {
+  max-width: 1750px;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      margin-top: 40px;
+    }
+    &__svg {
+      width: 280px;
+      height: 130px;
+    }
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    & > p {
+      margin-left: auto;
+      margin-bottom: 50px;
+      font-size: 48px;
+    }
+    ul {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
