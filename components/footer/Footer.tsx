@@ -6,6 +6,8 @@ import { WhatsupSVG } from "@/svg/WhatsupSVG";
 import { InSVG } from "@/svg/InSVG";
 import { MailSVG } from "@/svg/MailSVG";
 import { TgSVG } from "@/svg/TgSVG";
+import { footerShape } from "@/img";
+import Image from "next/image";
 
 export const Footer = () => {
   return (
@@ -14,6 +16,7 @@ export const Footer = () => {
         <LogoSVG className={styles.footer__left__svg} />
         <Button>Напишите нам</Button>
       </div>
+      <Image src={footerShape} alt="f" className={styles.footer__shape} />
       <div className={styles.footer__right}>
         <p>Связаться с нами:</p>
         <ul>

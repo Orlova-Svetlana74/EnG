@@ -3,11 +3,12 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import { LogoSVG } from "@/svg/LogoSVG";
 import { Button } from "@/components/ui/Button/Button";
-import { project1Img } from "@/img";
+import { mainShape, project1Img } from "@/img";
 import { MenuSVG } from "@/svg/MenuSVG";
 import { useState } from "react";
 import clsx from "clsx";
 import { Footer } from "@/components/footer/Footer";
+import Modal from "@/components/ui/modal/Modal";
 
 export default function Home() {
   const [isMenu, setIsMenu] = useState(true);
@@ -16,6 +17,8 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      <Image className={styles.page__mainShape} src={mainShape} alt="" />
+      <Modal isOpen={isMenu} onClose={() => setIsMenu(false)} />
       <div className={styles.container}>
         <header
           className={clsx(
@@ -44,12 +47,13 @@ export default function Home() {
           <div className={styles.container__description__text}>
             <div className={styles.container__description__actions}>
               <p>
-                Мы возьмем ваш проект под ключ, чтобы задача целиком решалась
-                одной командой, а вам не пришлось искать много специалистов.
+                Мы возьмем ваш проект <b>под ключ</b>, чтобы задача целиком
+                решалась одной командой, а вам не пришлось искать много
+                специалистов.
               </p>
               <p>
                 Все задачи решаются одной командой! Хочешь заказать проект -
-                тебе к нам!
+                <b> тебе к нам</b>!
               </p>
             </div>
             <Button>Мне понравилось! Тоже хочу проект! </Button>

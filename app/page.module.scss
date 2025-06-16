@@ -1,3 +1,12 @@
+.page {
+  &__mainShape {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+}
+
 .container {
   max-width: 1730px;
   margin: 130px auto;
@@ -74,6 +83,7 @@
 
   &__skills {
     margin-top: 150px;
+    margin-bottom: 400px;
     display: flex;
     gap: 20px;
 

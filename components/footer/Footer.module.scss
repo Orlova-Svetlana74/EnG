@@ -28,4 +28,13 @@
       gap: 20px;
     }
   }
+  &__shape {
+    width: 60vw;
+    aspect-ratio: 1;
+    height: auto;
+    left: 40%;
+    transform: translateX(-40%);
+    position: absolute;
+    bottom: 0;
+  }
 }
