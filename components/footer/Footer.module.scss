@@ -1,6 +1,7 @@
 .footer {
-  max-width: 1750px;
+  // max-width: 1750px;
   margin: 80px auto;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   &__left {
@@ -37,4 +38,28 @@
     position: absolute;
     bottom: 0;
   }
+}
+.icon {
+  padding-top: 15px;
+}
+.footerstile {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+}
+.footerstilephone {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  padding-left: 40px;
+}
+.footerbox {
+display: flex;
+}
+.navlink_blog {
+  font-size: 36px;
+  padding-bottom: 10px;
+}
+.phon {
+  font-size: 28px;
 }
