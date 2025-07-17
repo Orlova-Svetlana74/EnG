@@ -19,7 +19,7 @@ export function Header() {
 
       <div className={styles.menu}>
         <nav className={styles.nav}>
-          <Link className={styles.navlink_blog} href="/post-page">
+          <Link className={styles.navlink} href="/post-page">
             Entergen
           </Link>
           <Link className={styles.navlink} href="#">

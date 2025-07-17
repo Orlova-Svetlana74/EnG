@@ -1,0 +1,81 @@
+.sliderContainer {
+  position: relative;
+  // max-width: 1200px;
+  margin: 0 auto;
+  padding: 75px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.slidesWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  min-height: 600px;
+}
+
+.slide {
+  flex: 0 1 50%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.personinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.teamicon {  
+  object-fit: cover;
+  width: 465px;
+  height: 471px;
+}
+
+.person {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.arrowButton {
+  background: none;
+  border: none;
+  font-size: 52px;
+  cursor: pointer;
+  color: #004577;
+  transition: color 0.3s;
+  padding: 0 20px;
+}
+
+.arrowButton:hover {
+  color: #0070f3;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+// .dot {
+//   width: 12px;
+//   height: 12px;
+//   border-radius: 50%;
+//   background-color: #ccc;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+// }
+
+.activeDot {
+  background-color: #0070f3;
+}

@@ -1,73 +1,76 @@
-// .page {
-//   &__mainShape {
-//     position: absolute;
-//     right: 0;
-//     top: 0;
-//     z-index: -1;
-//   }
-// }
-.content {
-  width: 1160px;
-  height: 331px;
-}
 .toptext {
   font-size: 48px;
 }
+
 .advantages {
+  gap: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Отступ между блоками */
-  max-width: 1200px; /* Максимальная ширина контейнера */
-  margin: 0 auto; /* Центрирование контейнера */
   padding: 20px;
+  width: 1170px;
+  box-sizing: border-box;
 }
-.advantages h3 {
-  margin-bottom: 30px;
-  font-size: 28px;
-}
+
 .advant {
-  flex: 1 1 calc(50% - 20px); /* Каждый блок занимает 50% ширины минус отступ */
-  min-width: 300px; /* Минимальная ширина блока */
-  width: 540px;
-  height: 400px;
+  width: calc(50% - 10px);
   padding: 25px;
   border-radius: 20px;
   border: 2px solid #004577;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
+
 .text {
   font-size: 28px;
 }
-.advant h4 {
-  margin-top: 0;
-  // font-size: 20px;
+
+.teamblock {
+  display: flex;
+  justify-content: center;
 }
-.advant p {
-  margin: 0;
-  line-height: 1.6;
+.team {
+  max-width: 1170px;
+
 }
 
-.toptextblock {
+.Shape_right_down {
+  position: relative;
+  right: 200px;
+}
+.shape_right_hi {
+  position: relative;
+  top: 150px;
+  right: 200px;
+}
+.Shape_right_down_hidden {
+  visibility: hidden;
+}
+.shape_left_hi_hidden {
+  visibility: hidden;
+}
+
+.shape_left_down {
+  position: relative;
+  top: 500px;
+  left: 200px;
+}
+
+.shape_left_hi {
+  position: relative;
+  top: 100px;
+  left: 350px;
+}
+
+.blockcontent {
+  display: flex;
+  justify-content: center;
+}
+.topblock {
+  max-width: 1170px;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
 }
 
-.toptitle {
-  display: flex;
-  align-items: flex-end;
-}
-.blockcontent {
-  margin: 0 auto;
-  max-width: 1200px;
-  // display: flex;
-  // justify-content: center;
-  // flex-wrap: wrap;
-}
-.blockcontent h3 {
-  // text-align: left;
-  font-size: 48px;
-}
 .subtitle {
   font-size: 36px;
   line-height: 1.4;
@@ -79,14 +82,11 @@
 .textteam {
   font-size: 28px;
 }
+
 .person {
   font-size: 18px;
 }
-.team {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+
 .titleteam {
   text-align: left;
   font-size: 28px;
@@ -98,13 +98,6 @@
   font-size: 18px;
   margin-bottom: 40px;
 }
-// .team > div {
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-//   gap: 60px;
-//   margin-top: 30px;
-// }
 
 .teamicon {
   object-fit: cover;
@@ -137,106 +130,22 @@
 }
 
 .container {
-  max-width: 1730px;
-  margin: 130px auto;
-  font-size: 28px;
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
+  justify-content: center;
 
   .textblock {
     display: flex;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .toptextblock {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
   .container__logo {
     width: 295px;
   }
-
-  // &__header {
-  //   display: grid;
-  //   grid-template-columns: 2fr 3fr;
-  //   gap: 40px;
-  //   &__title {
-  //     margin-top: 120px;
-  //     font-size: 64px;
-  //   }
-  //   &__menu {
-  //     display: flex;
-  //     margin: auto 0;
-  //     padding: 28px 48px;
-  //     height: 90px;
-  //   }
-  //   &__list {
-  //     display: none;
-  //     align-items: center;
-  //   }
-  // }
-  // &__header_open {
-  //   .container__header {
-  //     &__menu {
-  //       background-color: #badafe;
-  //       width: calc(100% + 130px);
-
-  //       margin: auto;
-  //     }
-  //     &__list {
-  //       display: flex;
-  //       margin-left: 20px;
-  //       align-items: center;
-  //       font-size: 34px;
-  //       gap: 28px;
-  //       & > li {
-  //       }
-  //     }
-  //   }
-  // }
-
-  //   &__description {
-  //     font-size: 36px;
-  //     margin: 200px 0 180px 0;
-
-  //     &__text {
-  //       display: grid;
-
-  //       grid-template-columns: 1fr 1fr;
-  //       & > button {
-  //         margin-top: auto;
-  //         font-size: 36px;
-  //       }
-  //     }
-  //     &__adding {
-  //       margin-top: 180px;
-  //     }
-  //   }
-  //   &__projects {
-  //     margin: 60px 20px;
-  //     display: grid;
-  //     grid-template-columns: 1fr 1fr;
-  //     row-gap: 10px;
-  //     column-gap: 15px;
-  //   }
-  //   &__we {
-  //     font-size: 42px;
-  //   }
-
-  //   &__skills {
-  //     margin-top: 150px;
-  //     margin-bottom: 400px;
-  //     display: flex;
-  //     gap: 20px;
-
-  //     &__item {
-  //       & > h4 {
-  //         font-weight: bold;
-  //         font-size: 37px;
-  //         text-decoration: underline;
-  //         margin-bottom: 100px;
-  //       }
-  //       & > p {
-  //         font-size: 32px;
-  //       }
-  //     }
-  //   }
-  // }
 
   @media (max-width: 1920px) {
     .container {

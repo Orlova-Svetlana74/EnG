@@ -1,6 +1,18 @@
 :root {
   --background: rgba(216, 234, 255, 1);
 }
+@font-face {
+  font-family: 'Noah';
+  src: url('/fonts/Noah-Regular.woff2') format('woff2'),
+    url('/fonts/Noah-Regular.woff') format('woff'),
+    url('/fonts/Noah-Bold.woff') format('woff'),
+    url('/fonts/Noah-Bold.woff2') format('woff'),
+    url('/fonts/Noah-RegularItalic.woff2') format('woff2'),
+    url('/fonts/Noah-RegularItalic.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -16,7 +28,7 @@ body {
 
 body {
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noah',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #004577;
