@@ -1,0 +1,21 @@
+.navlink {
+  font-size: 28px;
+  text-decoration: underline;
+  color: #004577;
+}
+.navlink:active {
+  color: #0040e1;
+}
+.navlink :hover {
+  color: #006ab7;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 100px;
+  max-width: 1730px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+}

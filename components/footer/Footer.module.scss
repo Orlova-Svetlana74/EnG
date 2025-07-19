@@ -1,8 +1,20 @@
 .footer {
-  max-width: 1750px;
-  margin: 80px auto;
-  display: flex;
+  // max-width: 1920px;
+  // margin: 80px auto;
+  // padding: 20px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+
+    display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
+  padding-bottom: 200px;
+  max-width: 1730px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+
+
   &__left {
     display: flex;
     flex-direction: column;
@@ -37,4 +49,34 @@
     position: absolute;
     bottom: 0;
   }
+}
+.icon {
+  padding-top: 15px;
+}
+.footerstile {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+}
+.footerstilephone {
+  display: flex;
+  flex-direction: column;
+  padding-right: 30px;
+  padding-left: 40px;
+}
+.footerbox {
+  display: flex;
+}
+.navlink_blog {
+  font-size: 36px;
+  padding-bottom: 10px;
+}
+.navlink_blog:active {
+color:#0040E1;
+}
+.navlink_blog :hover {
+  color: #006AB7
+}
+.phon {
+  font-size: 28px;
 }

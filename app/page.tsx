@@ -3,121 +3,273 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import { LogoSVG } from "@/svg/LogoSVG";
 import { Button } from "@/components/ui/Button/Button";
-import { mainShape, project1Img } from "@/img";
+import {
+  descriptionBigShape,
+  descriptionSmallShape,
+  mainShape,
+  offerShape,
+  projectFoodImg,
+  projectKitchenImg,
+  projectMandarinaImg,
+  projectRukalineImg,
+  projectsShape,
+} from "@/img";
 import { MenuSVG } from "@/svg/MenuSVG";
 import { useState } from "react";
 import clsx from "clsx";
 import { Footer } from "@/components/footer/Footer";
 import Modal from "@/components/ui/modal/Modal";
+import { Header } from "@/components/header/Header";
+import { StarSVG } from "@/svg/StarSVG";
+import { ArrowSVG } from "@/svg/ArrowSVG";
+import { DesktopSVG } from "@/svg/DesktopSVG";
+import { PaletteSVG } from "@/svg/PaletteSVG";
+import { PhoneSVG } from "@/svg/PhoneSVG";
+import { Star2SVG } from "@/svg/Star2SVG";
+import { SuitcaseSVG } from "@/svg/SuitcaseSVG";
+import { PipelineSVG } from "@/svg/PipelineSVG";
+import { GearSVG } from "@/svg/GearSVG";
+import { OverlapSVG } from "@/svg/OverlapSVG";
 
 export default function Home() {
-  const [isMenu, setIsMenu] = useState(true);
-
-  console.log(isMenu);
+  const [isMenu, setIsMenu] = useState(false);
 
   return (
     <div className={styles.page}>
       <Image className={styles.page__mainShape} src={mainShape} alt="" />
       <Modal isOpen={isMenu} onClose={() => setIsMenu(false)} />
       <div className={styles.container}>
-        <header
-          className={clsx(
-            styles.container__header,
-            isMenu && styles.container__header_open
-          )}
-        >
-          <LogoSVG className={styles.container__logo} />
-          <div className={styles.container__header__menu}>
-            <MenuSVG onClick={() => setIsMenu(!isMenu)} />
-            <ul className={styles.container__header__list}>
-              <li className={styles.container__header__item}>Entergen</li>
-              <li className={styles.container__header__item}>Наши работы</li>
-              <li className={styles.container__header__item}>О нас</li>
-              <li className={styles.container__header__item}>Контакты</li>
-            </ul>
-          </div>
-        </header>
+        <Header />
+        <div className={styles.container__actionUs}>
+          <p>
+            Здесь ваши идеи превращаются
+            <br />в цифровую реальность и обретают код.
+          </p>
+          <Button onClick={() => setIsMenu(true)}>Напишите нам</Button>
+        </div>
         <p className={styles.container__header__title}>
-          <b>Entergen</b> — команда, создающая <br /> современные,
-          масштабируемые
-          <br /> и эффективные приложения
-          <br /> для бизнеса.
+          <b>Entergen</b> — команда профессионалов,
+          <br /> которая занимается разработкой качественных
+          <br /> и функциональных сайтов, программного
+          <br /> обеспечения и приложений.
         </p>
         <div className={styles.container__description}>
-          <div className={styles.container__description__text}>
-            <div className={styles.container__description__actions}>
-              <p>
-                Мы возьмем ваш проект <b>под ключ</b>, чтобы задача целиком
-                решалась одной командой, а вам не пришлось искать много
-                специалистов.
-              </p>
-              <p>
-                Все задачи решаются одной командой! Хочешь заказать проект -
-                <b> тебе к нам</b>!
-              </p>
-            </div>
-            <Button>Мне понравилось! Тоже хочу проект! </Button>
+          <h4>Как мы работаем?</h4>
+          Мы берём ваш проект под ключ, чтобы все задачи целиком
+          <br /> решались одной командой, в одной системе координат.
+          <br /> Мы за то, чтобы все механизмы в проекте работали слаженно
+          <br /> и правильно. EnterGen – внедрит часть нашего кода навсегда
+          <br /> в ваш проект.
+        </div>
+        <div className={styles.container__reality}>
+          <div className={styles.container__reality__text}>
+            <b>
+              Не упустите возможность реализовать идею,
+              <br /> которая будет работать на ваш успех.
+              <br />
+            </b>
+            Свяжитесь с нами сегодня, чтобы узнать больше
+            <br /> о наших услугах и начать сотрудничество.
           </div>
-          <div className={styles.container__description__adding}>
-            <p>
-              <b>Мы собрались вместе чтобы сделать вам крутой сайт</b>. Крутым
-              будет не только сайт, но и работа с нами. Мы поможем вам
-              сформировать идею, задизайним, сверстаем, запрограммируем и
-              протестируем Давай посмотрим что мы уже сделали:
-            </p>
+          <Image
+            className={styles.container__reality__bigImg}
+            src={descriptionBigShape}
+            alt=""
+          />
+          <Image
+            className={styles.container__reality__smallImg}
+            src={descriptionSmallShape}
+            alt=""
+          />
+          <Button onClick={() => setIsMenu(true)}>Хочу проект!</Button>
+        </div>
+        <div className={styles.container__takeUs}>
+          <h3>Почему выбирают нас?</h3>
+          <div className={styles.container__takeUs__container}>
+            <div className={styles.container__takeUs__block1}>
+              <div className={styles.container__takeUs__item}>
+                <div className={styles.container__takeUs__header}>
+                  <h5>
+                    Опыт
+                    <br /> и профессионализм
+                  </h5>
+                  <StarSVG />
+                </div>
+                <p>
+                  Наша команда состоит из опытных разработчиков, дизайнеров,
+                  менеджеров и программистов. Мы знаем, как создать сайт,
+                  который будет соответствовать вашим потребностям и целям.
+                </p>
+              </div>
+              <div className={styles.container__takeUs__item}>
+                <div className={styles.container__takeUs__header}>
+                  <h5>
+                    Индивидуальный
+                    <br />
+                    подход
+                  </h5>
+                  <StarSVG />
+                </div>
+                <p>
+                  Мы не предлагаем готовые решения — мы разрабатываем уникальные
+                  сайты и приложения, которые учитывают особенности вашего
+                  бизнеса и целевую аудиторию.
+                </p>
+              </div>
+            </div>
+            <div className={styles.container__takeUs__block2}>
+              <div className={styles.container__takeUs__item}>
+                <div className={styles.container__takeUs__header}>
+                  <h5>
+                    Современные
+                    <br /> технологии
+                  </h5>
+                  <StarSVG />
+                </div>
+                <p>
+                  Мы используем современные технологии и инструменты для
+                  создания сайтов и приложений, которые соответствуют последним
+                  тенденциям в веб-разработке.
+                </p>
+              </div>
+              <div className={styles.container__takeUs__item}>
+                <div className={styles.container__takeUs__header}>
+                  <h5>
+                    Комплексный
+                    <br /> подход
+                  </h5>
+                  <StarSVG />
+                </div>
+                <p>
+                  Помимо разработки, мы предлагаем услуги по интеграции с
+                  популярными сервисами, пишем боты для Telegram, VK, WhatsApp,
+                  Mini App, пишем системы автоматизации для бизнеса и многое
+                  другое.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+        <div className={styles.container__services}>
+          <p>
+            С полным списком наших скиллов вы можете
+            <br /> ознакомиться на странице услуги
+          </p>
+          <Button>
+            <p>Показать все услуги</p>
+            <ArrowSVG />
+          </Button>
+        </div>
+
+        <div className={styles.container__offers}>
+          <h3>Что мы предлагаем:</h3>
+          <ul>
+            <li>
+              <DesktopSVG />
+              <p>Разработка сайтов любой сложности</p>
+            </li>
+            <li>
+              <PaletteSVG />
+              <p>Адаптивный дизайн</p>
+            </li>
+            <li>
+              <Star2SVG />
+              <p>Интеграция с популярными сервисами</p>
+            </li>
+            <li>
+              <PhoneSVG />
+              <p>Разработка мобильных приложений</p>
+            </li>
+            <li>
+              <SuitcaseSVG />
+              <p>Аутстаффинг IT-специалистов</p>
+            </li>
+            <Image
+              className={styles.container__offers__img}
+              src={offerShape}
+              alt=""
+            />
+          </ul>
+          <Button>
+            <p>Показать все услуги</p>
+            <ArrowSVG />
+          </Button>
+        </div>
+
+        <div className={styles.container__projects__header}>
+          <h3>Проекты, реализованные нами</h3>
+          <Button>
+            <p>Все проекты</p>
+          </Button>
+        </div>
+
         <div className={styles.container__projects}>
           <div className={styles.container__projects__item}>
-            <Image src={project1Img} alt="f" />
+            <div className={styles.container__projects__shareImg}>
+              <Image src={projectKitchenImg} alt="f" />
+            </div>
             <p>текст текст текст текст текст текст текст текст</p>
           </div>
           <div className={styles.container__projects__item}>
-            <Image src={project1Img} alt="f" />
+            <div className={styles.container__projects__shareImg}>
+              <Image src={projectRukalineImg} alt="f" />
+            </div>
             <p>текст текст текст текст текст текст текст текст</p>
           </div>
           <div className={styles.container__projects__item}>
-            <Image src={project1Img} alt="f" />
+            <div className={styles.container__projects__shareImg}>
+              {" "}
+              <Image src={projectFoodImg} alt="f" />
+            </div>
             <p>текст текст текст текст текст текст текст текст</p>
           </div>
           <div className={styles.container__projects__item}>
-            <Image src={project1Img} alt="f" />
+            <div className={styles.container__projects__shareImg}>
+              <Image src={projectMandarinaImg} alt="f" />
+            </div>
             <p>текст текст текст текст текст текст текст текст</p>
           </div>
+
+          <Image
+            className={styles.container__projects__img}
+            src={projectsShape}
+            alt=""
+          />
         </div>
-        <div className={styles.container__we}>
-          <p>
-            <b>Что мы умеем? </b>
-          </p>
-          <p>
-            Мы — создаем цифровые продукты, которые упрощают
-            <br /> бизнес-процессы и повышают их эффективность. <br />А еще с
-            нами легко работать — мы ценим прозрачность,
-            <br /> удобство взаимодействия и нацелены на результат.
-          </p>
-        </div>
+
         <div className={styles.container__skills}>
-          <div className={styles.container__skills__item}>
-            <h4>Адаптивность</h4>
-            <p>
-              У нас уже есть готовые решения, но мы также открыты к новым
-              задачам и готовы адаптироваться под потребности вашего бизнеса.
-            </p>
-          </div>
-          <div className={styles.container__skills__item}>
-            <h4>Приложения</h4>
-            <p>
-              Мы берем на себя разработку и поддержку веб-приложений, интеграцию
-              автоматизированных систем.
-            </p>
-          </div>
-          <div className={styles.container__skills__item}>
-            <h4>Детали</h4>
-            <p>
-              Мы внимательны к деталям, соблюдаем сроки и подходим к каждому
-              проекту с глубоким пониманием задач.
-            </p>
-          </div>
+          <h3>Наши 3 кита в работе с клиентами</h3>
+          <ul>
+            <li>
+              <PipelineSVG />
+              <h5>Адаптивность </h5>
+              <p>
+                У нас уже есть готовые
+                <br /> решения, но мы также
+                <br /> открыты к новым задачам <br />и готовы адаптироваться
+                <br /> под ваши потребности.
+              </p>
+            </li>
+            <li>
+              <GearSVG />
+              <h5>Внедрение</h5>
+              <p>
+                Мы берем на себя
+                <br /> полное погружение
+                <br /> и обслуживание вашего
+                <br /> проекта от разработки <br />
+                до дизайна и тестировки.
+              </p>
+            </li>
+            <li>
+              <OverlapSVG />
+              <h5>Детализация</h5>
+              <p>
+                Мы внимательны <br /> к деталям, соблюдаем <br /> сроки и
+                подходим <br /> к каждому проекту <br /> с глубоким пониманием.
+              </p>
+            </li>
+          </ul>
         </div>
         <Footer />
       </div>

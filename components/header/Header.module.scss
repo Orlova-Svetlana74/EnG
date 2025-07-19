@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1730px; /* Максимальная ширина контейнера */
+  margin: 0 auto; /* Центрирование контейнера */
+  &__logo {
+    width: clamp(100px, 20vw, 280px);
+    flex: none;
+  }
+}
+
+.menu {
+  .nav {
+    display: flex;
+    gap: clamp(10px, 2vw, 30px);
+    align-items: center;
+  }
+}
+.navlink {
+  color: #004577;
+  font-size: clamp(12px, 2vw, 36px);
+  line-height: 1.5;
+  font-weight: 600;
+}
+.navlink:hover {
+  color: #0040e1;
+}
+
+.logo {
+  .logo {
+    margin-right: 40px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.navlink_blog {
+  color: #004577;
+  font-size: 40px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+.navlink_blog:hover {
+  color: #0040e1;
+}
+.button_project {
+  width: 300px;
+  height: 70px;
+  color: #004577;
+  border: 2px solid #004577;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 18px;
+  font-weight: bold;
+}
