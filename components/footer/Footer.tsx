@@ -14,7 +14,7 @@ import { Footercart } from "../footercart/Footercart";
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer id="contacts">
       <div className={styles.footer}>
         <div className={styles.footer__left}>
           <LogoSVG className={styles.footer__left__svg} />

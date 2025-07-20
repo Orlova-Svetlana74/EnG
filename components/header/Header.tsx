@@ -4,6 +4,13 @@ import Image from "next/image";
 import { LogoSVG } from "@/svg/LogoSVG";
 
 export function Header() {
+  const clickScroll = () => {
+    const el = document.getElementById("contacts");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.container}>
       <LogoSVG className={styles.container__logo} />
@@ -19,9 +26,9 @@ export function Header() {
           <Link className={styles.navlink} href="#">
             О нас
           </Link>
-          <Link className={styles.navlink} href="#">
+          <span onClick={clickScroll} className={styles.navlink}>
             Контакты
-          </Link>
+          </span>
           <Link className={styles.navlink} href="#">
             Блог
           </Link>

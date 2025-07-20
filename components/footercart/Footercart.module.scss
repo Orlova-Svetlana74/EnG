@@ -2,11 +2,12 @@
   font-size: 28px;
   text-decoration: underline;
   color: #004577;
+  font-weight: bold;
 }
 .navlink:active {
   color: #0040e1;
 }
-.navlink :hover {
+.navlink:hover {
   color: #006ab7;
 }
 
