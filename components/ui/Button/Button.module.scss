@@ -7,7 +7,10 @@
   cursor: pointer;
   z-index: 100;
   transition: background-color 0.3s ease;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   &:hover {
     background-color: #006ab7;
     color: white;
@@ -15,5 +18,40 @@
   &:active {
     background-color: #0040e1;
     color: white;
+  }
+  &:disabled {
+    cursor: not-allowed;
+    background-color: rgb(255, 255, 255, 0.5);
+  }
+  &:disabled:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+    color: inherit;
+  }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 2px solid #006ab7;
+  border-top-color: transparent;
+  border-radius: 50%;
+
+  animation: spin 0.6s linear infinite;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.loading .spinner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
   }
 }
