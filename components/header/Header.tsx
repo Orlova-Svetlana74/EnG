@@ -2,8 +2,29 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import { LogoSVG } from "@/svg/LogoSVG";
+import { PhoneSVG } from "@/svg/PhoneSVG";
+import { useState } from "react";
+import { PhoneMiniSVG } from "@/svg/PhoneMiniSVG";
+import { Button } from "../ui/Button/Button";
+import { usePathname } from "next/navigation";
 
-export function Header() {
+interface IHeader {
+  isMenuHeader: boolean;
+  setIsMenuHeader: (isMenuHeader: boolean) => void;
+  handlerButtonClick?: () => void;
+}
+export function Header({
+  isMenuHeader,
+  setIsMenuHeader,
+  handlerButtonClick,
+}: IHeader) {
+  const [isMenu, setIsMenu] = useState(false);
+
+  const handleMenuClick = () => {
+    setIsMenu(!isMenu);
+    document.documentElement.style.overflow = !isMenu ? "hidden" : "auto";
+  };
+
   const clickScroll = () => {
     const el = document.getElementById("contacts");
     if (el) {
@@ -12,36 +33,71 @@ export function Header() {
   };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={[styles.container, isMenu ? styles.container_active : ""].join(
+        " "
+      )}
+    >
       <LogoSVG className={styles.container__logo} />
 
-      <div className={styles.menu}>
-        <nav className={styles.nav}>
-          <Link className={styles.navlink} href="/post-page">
-            Entergen
-          </Link>
-          <Link className={styles.navlink} href="#">
-            Проекты
-          </Link>
-          <Link className={styles.navlink} href="#">
-            О нас
-          </Link>
-          <span onClick={clickScroll} className={styles.navlink}>
-            Контакты
-          </span>
-          <Link className={styles.navlink} href="#">
-            Блог
-          </Link>
-          <Link className={styles.navlink} href="#">
-            Услуги
-          </Link>
-        </nav>
-      </div>
-      <div className={styles.navlink}>
+      <Navigation clickScroll={clickScroll} />
+      <div className={styles.container__navlink}>
         <a href="tel:+79000000000" itemProp="telephone">
           +7 (900) 000-00-00
         </a>
       </div>
+
+      <div className={styles.container__phone__menu}>
+        <PhoneMiniSVG />
+        <span onClick={handleMenuClick} />
+      </div>
+      <div className={styles.container__phone__show}>
+        <Navigation />
+        <Button
+          className={styles.container__phone__button}
+          onClick={handlerButtonClick}
+        >
+          Напишите нам
+        </Button>
+      </div>
     </div>
   );
 }
+
+interface INavigation {
+  clickScroll?: () => void;
+}
+const Navigation = ({ clickScroll }: INavigation) => {
+  const path = usePathname();
+
+  return (
+    <div className={styles.container__menu}>
+      <nav className={styles.container__nav}>
+        <Link
+          className={[
+            styles.container__navlink,
+            path === "/" && styles.container__navlink_active,
+          ].join(" ")}
+          href="/"
+        >
+          Entergen
+        </Link>
+        <Link className={styles.container__navlink} href="#">
+          Проекты
+        </Link>
+        <Link className={styles.container__navlink} href="#">
+          О нас
+        </Link>
+        <span onClick={clickScroll} className={styles.container__navlink}>
+          Контакты
+        </span>
+        <Link className={styles.container__navlink} href="#">
+          Блог
+        </Link>
+        <Link className={styles.container__navlink} href="#">
+          Услуги
+        </Link>
+      </nav>
+    </div>
+  );
+};

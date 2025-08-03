@@ -30,16 +30,31 @@ import { SuitcaseSVG } from "@/svg/SuitcaseSVG";
 import { PipelineSVG } from "@/svg/PipelineSVG";
 import { GearSVG } from "@/svg/GearSVG";
 import { OverlapSVG } from "@/svg/OverlapSVG";
+import { TgSVG } from "@/svg/TgSVG";
+import { CookieBanner } from "@/components/ui/CookieBanner/CookieBanner";
 
 export default function Home() {
   const [isMenu, setIsMenu] = useState(false);
+  const [isMenuHeader, setIsMenuHeader] = useState(false);
+  const handlerButtonClick = () => {
+    setIsMenuHeader(true);
+    setIsMenu(true);
+  };
 
   return (
     <div className={styles.page}>
-      <Image className={styles.page__mainShape} src={mainShape} alt="" />
       <Modal isOpen={isMenu} onClose={() => setIsMenu(false)} />
       <div className={styles.container}>
-        <Header />
+        <CookieBanner />
+        <div className={styles.container__tgFixed}>
+          <TgSVG />
+        </div>
+        <Image className={styles.page__mainShape} src={mainShape} alt="" />
+        <Header
+          isMenuHeader={isMenuHeader}
+          setIsMenuHeader={setIsMenuHeader}
+          handlerButtonClick={handlerButtonClick}
+        />
         <div className={styles.container__actionUs}>
           <p>
             Здесь ваши идеи превращаются
@@ -271,6 +286,7 @@ export default function Home() {
             </li>
           </ul>
         </div>
+
         <Footer />
       </div>
     </div>

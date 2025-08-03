@@ -3,8 +3,7 @@ import { SVGProps } from "react";
 export const WhatsupSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={83}
-    height={84}
+    viewBox="0 0 83 84"
     fill="none"
     {...props}
   >
