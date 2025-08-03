@@ -1,43 +1,73 @@
-.footer {
-  // max-width: 1920px;
-  // margin: 80px auto;
-  // padding: 20px;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
+@use "@/styles/functions" as *;
 
-    display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+.footer {
+  display: flex;
   justify-content: space-between;
-  padding-bottom: 200px;
   max-width: 1730px; /* Максимальная ширина контейнера */
   margin: 0 auto; /* Центрирование контейнера */
-
-
+  position: relative;
+  margin-bottom: responsive-font(85px, 20px);
   &__left {
     display: flex;
     flex-direction: column;
+    order: 0;
 
-    button {
-      margin-top: 40px;
-    }
     &__svg {
-      width: 280px;
-      height: 130px;
+      width: responsive-font(150px, 20px);
+      height: auto;
+    }
+  }
+
+  &__footerstile {
+    font-size: responsive-font(27px, 10px);
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: responsive-font(40px, 10px);
+    row-gap: responsive-font(22px, 10px);
+    order: 1;
+  }
+  &__navlink_active {
+    color: #0040e1;
+  }
+  &__stylephone {
+    font-weight: bold;
+    order: 2;
+    & > h6 {
+      font-size: responsive-font(21px, 10px);
+      margin-bottom: responsive-font(8px, 10px);
+    }
+    & > a {
+      font-size: responsive-font(27px, 10px);
     }
   }
   &__right {
+    font-size: responsive-font(27px, 10px);
     display: flex;
     flex-direction: column;
-    & > p {
-      margin-left: auto;
-      margin-bottom: 50px;
-      font-size: 48px;
+    justify-content: space-between;
+    order: 3;
+    & > h6 {
+      text-align: right;
     }
-    ul {
+    & > ul {
       display: flex;
-      gap: 20px;
+      gap: 10px;
+      & li:first-child svg {
+        width: responsive-font(44px, 10px);
+      }
+      & li:nth-child(2) > svg {
+        width: responsive-font(57px, 10px);
+      }
+      & li:nth-child(3) svg {
+        width: responsive-font(35px, 10px);
+      }
+      & li:nth-child(4) {
+        width: responsive-font(37px, 10px);
+      }
+      & li:nth-child(5) {
+        width: responsive-font(35px, 10px);
+      }
     }
   }
   &__shape {
@@ -49,34 +79,23 @@
     position: absolute;
     bottom: 0;
   }
+  &__contents {
+    display: contents;
+  }
 }
-.icon {
-  padding-top: 15px;
-}
-.footerstile {
-  display: flex;
-  flex-direction: column;
-  padding-right: 30px;
-}
-.footerstilephone {
-  display: flex;
-  flex-direction: column;
-  padding-right: 30px;
-  padding-left: 40px;
-}
-.footerbox {
-  display: flex;
-}
-.navlink_blog {
-  font-size: 36px;
-  padding-bottom: 10px;
-}
-.navlink_blog:active {
-color:#0040E1;
-}
-.navlink_blog :hover {
-  color: #006AB7
-}
-.phon {
-  font-size: 28px;
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    &__contents {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__left {
+      & > svg {
+        width: responsive-font(150px, 80px, 768px);
+      }
+    }
+  }
 }

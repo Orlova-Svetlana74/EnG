@@ -1,17 +1,27 @@
 import styles from "./Button.module.scss";
-interface IButton {
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
   loading?: boolean;
 }
 
-export const Button = ({ children, onClick, disabled, loading }: IButton) => {
+export const Button = ({
+  children,
+  onClick,
+  disabled,
+  loading,
+  className,
+  ...rest
+}: IButton) => {
   return (
     <button
-      className={`${styles.button} ${loading ? styles.loading : ""}`}
+      className={`${styles.button} ${className} ${
+        loading ? styles.loading : ""
+      }`}
       disabled={disabled}
       onClick={onClick}
+      {...rest}
     >
       {loading && <span className={styles.spinner} />}
       {children}

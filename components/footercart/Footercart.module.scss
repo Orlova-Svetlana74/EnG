@@ -1,22 +1,28 @@
-.navlink {
-  font-size: 28px;
-  text-decoration: underline;
-  color: #004577;
-  font-weight: bold;
-}
-.navlink:active {
-  color: #0040e1;
-}
-.navlink:hover {
-  color: #006ab7;
-}
+@use "@/styles/variables" as *;
+@use "@/styles/functions" as *;
 
 .footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 100px;
-  max-width: 1730px; /* Максимальная ширина контейнера */
-  margin: 0 auto; /* Центрирование контейнера */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  &__navlink {
+    font-size: responsive-font(21px, 10px);
+    text-decoration: underline;
+    color: $primary-color;
+    font-weight: bold;
+    &:last-child {
+      text-align: right;
+    }
+    &:nth-child(2) {
+      text-align: center;
+    }
+    & > br {
+      display: none;
+    }
+    &:active {
+      color: $active-color;
+    }
+    &:hover {
+      color: $text-blue;
+    }
+  }
 }

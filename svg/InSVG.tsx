@@ -2,9 +2,8 @@ import { SVGProps } from "react";
 export const InSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={86}
-    height={85}
-    fill="none"
+    viewBox="0 0 86 85"
+    fill="currentColor"
     {...props}
   >
     <path
