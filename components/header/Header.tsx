@@ -38,27 +38,29 @@ export function Header({
         " "
       )}
     >
-      <LogoSVG className={styles.container__logo} />
+      <div className={styles.container__wrapper}>
+        <LogoSVG className={styles.container__logo} />
 
-      <Navigation clickScroll={clickScroll} />
-      <div className={styles.container__navlink}>
-        <a href="tel:+79000000000" itemProp="telephone">
-          +7 (900) 000-00-00
-        </a>
-      </div>
+        <Navigation clickScroll={clickScroll} />
+        <div className={styles.container__navlink}>
+          <a href="tel:+79000000000" itemProp="telephone">
+            +7 (900) 000-00-00
+          </a>
+        </div>
 
-      <div className={styles.container__phone__menu}>
-        <PhoneMiniSVG />
-        <span onClick={handleMenuClick} />
-      </div>
-      <div className={styles.container__phone__show}>
-        <Navigation />
-        <Button
-          className={styles.container__phone__button}
-          onClick={handlerButtonClick}
-        >
-          Напишите нам
-        </Button>
+        <div className={styles.container__phone__menu}>
+          <PhoneMiniSVG />
+          <span onClick={handleMenuClick} />
+        </div>
+        <div className={styles.container__phone__show}>
+          <Navigation />
+          <Button
+            className={styles.container__phone__button}
+            onClick={handlerButtonClick}
+          >
+            Напишите нам
+          </Button>
+        </div>
       </div>
     </div>
   );

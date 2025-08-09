@@ -49,6 +49,14 @@
     order: 3;
     & > h6 {
       text-align: right;
+      font-size: responsive-font(27px, 16px);
+    }
+    & svg {
+      cursor: pointer;
+      transition: color 0.3s ease;
+      &:hover {
+        color: #006ab7;
+      }
     }
     & > ul {
       display: flex;
@@ -87,7 +95,7 @@
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
-    gap: 20px;
+    gap: responsive-font(70px, 30px, 768px);
     &__contents {
       display: flex;
       justify-content: space-between;
@@ -95,6 +103,49 @@
     &__left {
       & > svg {
         width: responsive-font(150px, 80px, 768px);
+      }
+    }
+    &__stylephone {
+      & > h6 {
+        font-size: responsive-font(20px, 10px, 768px);
+      }
+      & > a {
+        display: block;
+        font-size: responsive-font(20px, 10px, 768px);
+      }
+      & > * {
+        &:nth-child(3) {
+          margin-top: responsive-font(32px, 10px, 768px);
+        }
+      }
+    }
+    &__footerstile {
+      font-size: responsive-font(20px, 10px, 768px);
+    }
+    &__right {
+      font-size: responsive-font(27px, 10px, 768px);
+      & > h6 {
+        font-size: responsive-font(20px, 10px, 768px);
+      }
+      & > ul {
+        display: flex;
+        gap: responsive-font(10px, 4px, 768px);
+
+        & li:first-child svg {
+          width: responsive-font(33px, 14px, 768px);
+        }
+        & li:nth-child(2) > svg {
+          width: responsive-font(43px, 19px, 768px);
+        }
+        & li:nth-child(3) svg {
+          width: responsive-font(27px, 12px, 768px);
+        }
+        & li:nth-child(4) {
+          width: responsive-font(27px, 12px, 768px);
+        }
+        & li:nth-child(5) {
+          width: responsive-font(27px, 12px, 768px);
+        }
       }
     }
   }

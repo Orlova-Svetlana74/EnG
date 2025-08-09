@@ -19,7 +19,7 @@
   &__tgFixed {
     position: fixed;
     left: auto;
-    bottom: 100px;
+    bottom: responsive-font(200px, 75px);
     z-index: 1001;
     width: responsive-font(70px, 35px);
     height: responsive-font(62px, 35px);
@@ -277,6 +277,10 @@
 }
 @media (max-width: 768px) {
   .container {
+    &__tgFixed {
+      bottom: responsive-font(280px, 190px, 768px);
+    }
+
     &__skills {
       & > ul {
         flex-direction: column;
