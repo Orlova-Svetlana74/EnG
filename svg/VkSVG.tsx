@@ -3,8 +3,7 @@ import { SVGProps } from "react";
 export const VkSVG = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={133}
-    height={77}
+    viewBox="0 0 133 77"
     fill="none"
     {...props}
   >

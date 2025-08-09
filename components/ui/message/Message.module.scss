@@ -1,0 +1,48 @@
+// components/Message/Message.module.scss
+
+.container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 10px 16px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease;
+}
+
+.info {
+  background-color: #1890ff;
+}
+.success {
+  background-color: #52c41a;
+}
+.error {
+  background-color: #ff4d4f;
+}
+.warning {
+  background-color: #faad14;
+}
+.loading {
+  background-color: #595959;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
