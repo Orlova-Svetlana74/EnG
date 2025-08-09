@@ -1,11 +1,19 @@
 @use "@/styles/functions" as *;
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1730px; /* Максимальная ширина контейнера */
-  margin: 0 auto; /* Центрирование контейнера */
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #d8eaff;
+  z-index: 999;
+  &__wrapper {
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: responsive-font(20px, 10px) 0;
+  }
   &__logo {
     width: responsive-font(220px, 50px);
     flex: none;
@@ -98,6 +106,7 @@
       .container {
         &__phone__menu {
           & > span {
+            transform: translateX(10px);
             &::before {
               transform: rotate(45deg) translateX(-7px);
               top: 50%;
@@ -144,5 +153,19 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1920px) {
+  .container {
+    padding-left: responsive-font(240px, 30px);
+    padding-right: responsive-font(240px, 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: responsive-font(110px, 60px, 768px);
+    padding-right: responsive-font(110px, 60px, 768px);
   }
 }
