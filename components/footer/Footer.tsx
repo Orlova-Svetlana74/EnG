@@ -8,7 +8,7 @@ import { WhatsupSVG } from "@/svg/WhatsupSVG";
 import { InSVG } from "@/svg/InSVG";
 import { MailSVG } from "@/svg/MailSVG";
 import { TgSVG } from "@/svg/TgSVG";
-import { Footercart } from "../Footercart/Footercart";
+import { Footercart } from "../footercart/Footercart";
 import { usePathname } from "next/navigation";
 
 export const Footer = () => {
@@ -84,7 +84,7 @@ export const Footer = () => {
               </li>
               <li>
                 <MailSVG />
-              </li>
+              </li>git add components/footer/Footer.tsx
             </ul>
           </div>
         </div>
