@@ -1,20 +1,5 @@
 import { SVGProps } from 'react'
 export const TgSVG = (props: SVGProps<SVGSVGElement>) => (
-<<<<<<< HEAD
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 93 78"
-    fill="currentColor"
-    {...props}
-  >
-    <path
-      fill="currentColor"
-      d="M86.115 1.006 4.787 32.368c-5.55 2.23-5.518 5.325-1.018 6.706l20.88 6.514 48.31-30.481c2.285-1.39 4.372-.642 2.656.88l-39.14 35.325h-.01l.01.005-1.441 21.522c2.11 0 3.041-.968 4.225-2.11L49.4 60.867 70.496 76.45c3.89 2.142 6.684 1.041 7.651-3.6L91.996 7.583c1.417-5.683-2.17-8.257-5.88-6.578Z"
-    />
-  </svg>
-);
-
-=======
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 93 78"
@@ -27,4 +12,4 @@ export const TgSVG = (props: SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
->>>>>>> 2de8b6ddce0bbc43885d417555e5a70f53c09300
+
