@@ -1,336 +1,341 @@
-@use "@/styles/functions" as *;
+@use '@/styles/functions' as *;
 
 .page {
-  &__mainShape {
-    position: absolute;
-    right: -100px;
-    width: responsive-font(930px, 250px);
-    height: auto;
-    top: -50px;
-    z-index: -1;
-  }
+    &__mainShape {
+        position: absolute;
+        right: -100px;
+        width: responsive-font(930px, 250px);
+        height: auto;
+        top: -50px;
+        z-index: -1;
+    }
 }
 
 .container {
-  max-width: 1440px;
-  margin: responsive-font(75px, 20px) auto;
-  position: relative;
-
-  &__tgFixed {
-    position: fixed;
-    left: auto;
-    bottom: 100px;
-    z-index: 1001;
-    width: responsive-font(70px, 35px);
-    height: responsive-font(62px, 35px);
-    padding: responsive-font(10px, 5px) auto;
-    border-radius: responsive-font(12px, 6px);
-    background-color: #004577;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    & > svg {
-      color: white;
-      width: responsive-font(50px, 25px);
-    }
-  }
-
-  &__actionUs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: responsive-font(60px, 20px) 0 responsive-font(80px, 20px) 0;
-    & > p {
-      font-size: responsive-font(36px, 14px);
-      font-weight: bold;
-    }
-    // & > button {
-    //   text-wrap-mode: nowrap;
-    // }
-  }
-
-  &__header {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 40px;
-    &__title {
-      margin-top: clamp(30px, 7vw, 120px);
-      font-size: responsive-font(80px, 16px);
-    }
-  }
-
-  &__description {
-    font-size: responsive-font(42px, 16px);
-    margin: responsive-font(170px, 40px) 0 responsive-font(90px, 40px) 0;
-  }
-  &__reality {
-    font-size: responsive-font(42px, 12px);
-    margin: responsive-font(120px, 12px) 0 responsive-font(260px, 12px) 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1440px;
+    margin: responsive-font(75px, 20px) auto;
     position: relative;
-    // & > button {
-    // }
-    &__bigImg {
-      position: absolute;
-      right: 0;
-      bottom: clamp(-500px, -2vw, -352px);
-      width: responsive-font(902px, 160px);
-      height: auto;
-    }
-    &__smallImg {
-      position: absolute;
-      left: 0;
-      bottom: calc(0);
-      transform: translateY(100%);
-      width: clamp(50px, 12vw, 189px);
-      height: auto;
-    }
-  }
-  &__takeUs {
-    & > h3 {
-      font-size: responsive-font(54px, 15px);
-      margin-bottom: responsive-font(50px, 30px);
-    }
-    &__block1,
-    &__block2 {
-      display: flex;
-      gap: responsive-font(60px, 10px);
-    }
-    &__block2 {
-      margin-top: clamp(20px, 3.19vw, 60px);
-    }
 
-    &__item {
-      border: 1px solid #004577;
-      padding: clamp(20px, 3.19vw, 60px);
-      border-radius: clamp(20px, 3.19vw, 50px);
-
-      &:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1;
-      }
-      &:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1;
-      }
-      &:nth-child(3) {
-        grid-column: 2;
-        grid-row: 2;
-      }
-      &:nth-child(4) {
-        grid-column: 1;
-        grid-row: 2;
-      }
-
-      & > p {
-        font-size: responsive-font(27px, 10px);
-      }
-    }
-    &__header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: clamp(20px, 3.9vw, 50px);
-      & > h5 {
-        font-size: responsive-font(52px, 10px);
-      }
-
-      & > svg {
-        width: responsive-font(75px, 10px);
-      }
-    }
-  }
-  &__services {
-    margin-top: responsive-font(70px, 40px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    & > p {
-      font-size: responsive-font(36px, 12px);
-    }
-    & > button {
-      display: flex;
-    }
-  }
-  &__offers {
-    & > h3 {
-      margin-top: responsive-font(140px, 30px);
-      font-size: responsive-font(54px, 15px);
-    }
-    & > ul {
-      position: relative;
-      margin: responsive-font(60px, 30px) 0;
-      display: flex;
-      flex-direction: column;
-      gap: responsive-font(30px, 10px);
-      & > li {
+    &__tgFixed {
+        position: fixed;
+        left: auto;
+        bottom: responsive-font(200px, 75px);
+        z-index: 1001;
+        width: responsive-font(70px, 35px);
+        height: responsive-font(62px, 35px);
+        padding: responsive-font(10px, 5px) auto;
+        border-radius: responsive-font(12px, 6px);
+        background-color: #004577;
         display: flex;
         align-items: center;
-        gap: responsive-font(45px, 10px);
-        & > p {
-          font-size: responsive-font(42px, 14px);
-        }
-        & > svg {
-          width: responsive-font(40px, 17px);
-          flex: none;
-        }
-      }
-    }
-    &__img {
-      position: absolute;
-      right: -80px;
-      top: 0;
-      width: responsive-font(530px, 10px);
-      height: auto;
-      transform: translateY(-33%);
-    }
-    & > button {
-      display: flex;
-    }
-  }
-  &__projects__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: responsive-font(54px, 15px);
-    margin: responsive-font(125px, 30px) 0 responsive-font(48px, 30px);
-    & > button {
-      font-size: clamp(12px, 2.9vw, 56px);
-    }
-  }
-  &__projects {
-    margin: responsive-font(60px, 30px) 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
-    column-gap: 15px;
-    position: relative;
-
-    &__item {
-      display: flex;
-      flex-direction: column;
-      // overflow: hidden;
-    }
-    &__shareImg {
-      overflow: hidden;
-      & > img {
-        width: 100%;
-        height: 100%;
-        transition: transform 0.5s ease;
+        justify-content: center;
         cursor: pointer;
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
-    &__img {
-      position: absolute;
-      left: 25%;
-      z-index: -1;
-      bottom: 0;
-      width: clamp(100px, 21vw, 406px);
-      height: auto;
-      transform: translateY(60%);
-    }
-  }
-
-  &__skills {
-    margin-bottom: responsive-font(140px, 40px);
-    & > h3 {
-      font-size: responsive-font(54px, 15px);
-      margin: responsive-font(140px, 20px) 0 responsive-font(66px, 20px) 0;
-    }
-    & > ul {
-      display: flex;
-      justify-content: space-between;
-      gap: responsive-font(80px, 20px);
-      & > li {
-        display: flex;
-        flex-direction: column;
-        gap: responsive-font(30px, 15px);
-        border: 1px solid #004577;
-        padding: responsive-font(70px, 10px) responsive-font(50px, 10px);
-        border-radius: responsive-font(50px, 10px);
-        align-items: center;
-        text-align: center;
         & > svg {
-          width: responsive-font(65px, 30px);
+            color: white;
+            width: responsive-font(50px, 25px);
         }
-        & > h5 {
-          font-size: responsive-font(42px, 16px);
-        }
-        & > p {
-          font-size: responsive-font(27px, 12px);
-        }
-      }
     }
-  }
+
+    &__actionUs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: responsive-font(60px, 20px) 0 responsive-font(80px, 20px) 0;
+        & > p {
+            font-size: responsive-font(36px, 14px);
+            font-weight: bold;
+        }
+        // & > button {
+        //   text-wrap-mode: nowrap;
+        // }
+    }
+
+    &__header {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 40px;
+        &__title {
+            margin-top: clamp(30px, 7vw, 120px);
+            font-size: responsive-font(80px, 16px);
+        }
+    }
+
+    &__description {
+        font-size: responsive-font(42px, 16px);
+        margin: responsive-font(170px, 40px) 0 responsive-font(90px, 40px) 0;
+    }
+    &__reality {
+        font-size: responsive-font(42px, 12px);
+        margin: responsive-font(120px, 12px) 0 responsive-font(260px, 12px) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        // & > button {
+        // }
+        &__bigImg {
+            position: absolute;
+            right: 0;
+            bottom: clamp(-500px, -2vw, -352px);
+            width: responsive-font(902px, 160px);
+            height: auto;
+        }
+        &__smallImg {
+            position: absolute;
+            left: 0;
+            bottom: calc(0);
+            transform: translateY(100%);
+            width: clamp(50px, 12vw, 189px);
+            height: auto;
+        }
+    }
+    &__takeUs {
+        & > h3 {
+            font-size: responsive-font(54px, 15px);
+            margin-bottom: responsive-font(50px, 30px);
+        }
+        &__block1,
+        &__block2 {
+            display: flex;
+            gap: responsive-font(60px, 10px);
+        }
+        &__block2 {
+            margin-top: clamp(20px, 3.19vw, 60px);
+        }
+
+        &__item {
+            border: 1px solid #004577;
+            padding: clamp(20px, 3.19vw, 60px);
+            border-radius: clamp(20px, 3.19vw, 50px);
+
+            &:nth-child(1) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            &:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            &:nth-child(3) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+            &:nth-child(4) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            & > p {
+                font-size: responsive-font(27px, 10px);
+            }
+        }
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: clamp(20px, 3.9vw, 50px);
+            & > h5 {
+                font-size: responsive-font(52px, 10px);
+            }
+
+            & > svg {
+                width: responsive-font(75px, 10px);
+            }
+        }
+    }
+    &__services {
+        margin-top: responsive-font(70px, 40px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > p {
+            font-size: responsive-font(36px, 12px);
+        }
+        & > button {
+            display: flex;
+        }
+    }
+    &__offers {
+        & > h3 {
+            margin-top: responsive-font(140px, 30px);
+            font-size: responsive-font(54px, 15px);
+        }
+        & > ul {
+            position: relative;
+            margin: responsive-font(60px, 30px) 0;
+            display: flex;
+            flex-direction: column;
+            gap: responsive-font(30px, 10px);
+            & > li {
+                display: flex;
+                align-items: center;
+                gap: responsive-font(45px, 10px);
+                & > p {
+                    font-size: responsive-font(42px, 14px);
+                }
+                & > svg {
+                    width: responsive-font(40px, 17px);
+                    flex: none;
+                }
+            }
+        }
+        &__img {
+            position: absolute;
+            right: -80px;
+            top: 0;
+            width: responsive-font(530px, 10px);
+            height: auto;
+            transform: translateY(-33%);
+        }
+        & > button {
+            display: flex;
+        }
+    }
+    &__projects__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: responsive-font(54px, 15px);
+        margin: responsive-font(125px, 30px) 0 responsive-font(48px, 30px);
+        & > button {
+            font-size: clamp(12px, 2.9vw, 56px);
+        }
+    }
+    &__projects {
+        margin: responsive-font(60px, 30px) 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 15px;
+        position: relative;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            // overflow: hidden;
+        }
+        &__shareImg {
+            overflow: hidden;
+            & > img {
+                width: 100%;
+                height: 100%;
+                transition: transform 0.5s ease;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        &__img {
+            position: absolute;
+            left: 25%;
+            z-index: -1;
+            bottom: 0;
+            width: clamp(100px, 21vw, 406px);
+            height: auto;
+            transform: translateY(60%);
+        }
+    }
+
+    &__skills {
+        margin-bottom: responsive-font(140px, 40px);
+        & > h3 {
+            font-size: responsive-font(54px, 15px);
+            margin: responsive-font(140px, 20px) 0 responsive-font(66px, 20px) 0;
+        }
+        & > ul {
+            display: flex;
+            justify-content: space-between;
+            gap: responsive-font(80px, 20px);
+            & > li {
+                display: flex;
+                flex-direction: column;
+                gap: responsive-font(30px, 15px);
+                border: 1px solid #004577;
+                padding: responsive-font(70px, 10px) responsive-font(50px, 10px);
+                border-radius: responsive-font(50px, 10px);
+                align-items: center;
+                text-align: center;
+                & > svg {
+                    width: responsive-font(65px, 30px);
+                }
+                & > h5 {
+                    font-size: responsive-font(42px, 16px);
+                }
+                & > p {
+                    font-size: responsive-font(27px, 12px);
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1920px) {
-  .container {
-    margin-left: responsive-font(240px, 60px);
-    margin-right: responsive-font(240px, 60px);
-  }
+    .container {
+        margin-left: responsive-font(240px, 60px);
+        margin-right: responsive-font(240px, 60px);
+    }
 }
 @media (max-width: 768px) {
-  .container {
-    &__skills {
-      & > ul {
-        flex-direction: column;
-        align-items: center;
-      }
+    .container {
+        &__tgFixed {
+            bottom: responsive-font(280px, 190px, 768px);
+        }
+
+        &__skills {
+            & > ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        &__services {
+            flex-direction: column;
+            gap: 20px;
+            align-items: start;
+            & > p > br {
+                display: none;
+            }
+            & > button {
+                width: 100%;
+            }
+        }
+        &__offers {
+            & > button {
+                width: 100%;
+            }
+        }
     }
-    &__services {
-      flex-direction: column;
-      gap: 20px;
-      align-items: start;
-      & > p > br {
-        display: none;
-      }
-      & > button {
-        width: 100%;
-      }
-    }
-    &__offers {
-      & > button {
-        width: 100%;
-      }
-    }
-  }
 }
 
 @media (max-width: 480px) {
-  .container {
-    &__reality {
-      flex-direction: column;
-      align-items: normal;
-      gap: responsive-font(80px, 20px);
-      & > button {
-        width: 100%;
-      }
+    .container {
+        &__reality {
+            flex-direction: column;
+            align-items: normal;
+            gap: responsive-font(80px, 20px);
+            & > button {
+                width: 100%;
+            }
+        }
+        &__takeUs {
+            &__block1,
+            &__block2 {
+                flex-direction: column;
+            }
+        }
+        &__offers {
+            & > button {
+                width: 100%;
+            }
+        }
+        &__projects {
+            grid-template-columns: 1fr;
+        }
+        &__skills {
+            & > ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
     }
-    &__takeUs {
-      &__block1,
-      &__block2 {
-        flex-direction: column;
-      }
-    }
-    &__offers {
-      & > button {
-        width: 100%;
-      }
-    }
-    &__projects {
-      grid-template-columns: 1fr;
-    }
-    &__skills {
-      & > ul {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  }
 }
+

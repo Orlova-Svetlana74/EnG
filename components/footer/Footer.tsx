@@ -27,14 +27,16 @@ export const Footer = () => {
             <Link
               className={styles.footer__navlink}
               href="tel:+79000000000"
-              itemProp="telephone">
+              itemProp="telephone"
+            >
               +7 (900) 000-00-00"
             </Link>
 
             <h6>Почта</h6>
             <Link
               className={styles.footer__navlink}
-              href="mailto:info@example.com">
+              href="mailto:info@example.com"
+            >
               info@example.com
             </Link>
           </div>
@@ -47,7 +49,8 @@ export const Footer = () => {
                 styles.footer__navlink,
                 path === "/" && styles.footer__navlink_active,
               ].join(" ")}
-              href="/">
+              href="/"
+            >
               Entergen
             </Link>
             <Link className={styles.footer__navlink} href="#">
@@ -84,7 +87,7 @@ export const Footer = () => {
               </li>
               <li>
                 <MailSVG />
-              </li>git add components/footer/Footer.tsx
+              </li>
             </ul>
           </div>
         </div>
@@ -93,3 +96,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

@@ -1,5 +1,5 @@
-import axios from "axios";
+import axios from 'axios'
 
 export const $host = axios.create({
-  baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}/api/`,
-});
+    baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}/api/`,
+})

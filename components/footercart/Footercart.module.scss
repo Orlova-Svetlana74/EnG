@@ -1,28 +1,28 @@
-@use "@/styles/variables" as *;
-@use "@/styles/functions" as *;
+@use '@/styles/variables' as *;
+@use '@/styles/functions' as *;
 
 .footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  &__navlink {
-    font-size: responsive-font(21px, 10px);
-    text-decoration: underline;
-    color: $primary-color;
-    font-weight: bold;
-    &:last-child {
-      text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    &__navlink {
+        font-size: responsive-font(21px, 10px);
+        text-decoration: underline;
+        color: $primary-color;
+        font-weight: bold;
+        &:last-child {
+            text-align: right;
+        }
+        &:nth-child(2) {
+            text-align: center;
+        }
+        & > br {
+            display: none;
+        }
+        &:active {
+            color: $active-color;
+        }
+        &:hover {
+            color: $text-blue;
+        }
     }
-    &:nth-child(2) {
-      text-align: center;
-    }
-    & > br {
-      display: none;
-    }
-    &:active {
-      color: $active-color;
-    }
-    &:hover {
-      color: $text-blue;
-    }
-  }
 }
