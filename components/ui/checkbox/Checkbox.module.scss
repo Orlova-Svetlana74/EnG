@@ -1,25 +1,25 @@
 .checkbox {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  cursor: pointer;
-  &__hidden {
-    display: none;
-  }
-  &__square {
-    background-color: #d8eaff;
-    border: 1px solid #004577;
-    color: #004577;
-    border-radius: 7px;
-    width: 35px;
-    height: 35px;
     display: flex;
+    gap: 10px;
     align-items: center;
-    justify-content: center;
-    &_active {
-      & > svg {
-        fill: #004577;
-      }
+    cursor: pointer;
+    &__hidden {
+        display: none;
     }
-  }
+    &__square {
+        background-color: #d8eaff;
+        border: 1px solid #004577;
+        color: #004577;
+        border-radius: 7px;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &_active {
+            & > svg {
+                fill: #004577;
+            }
+        }
+    }
 }
