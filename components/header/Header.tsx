@@ -88,7 +88,7 @@ const Navigation = ({ clickScroll }: INavigation) => {
                 <Link className={styles.container__navlink} href="#">
                     Проекты
                 </Link>
-                <Link className={styles.container__navlink} href="#">
+                <Link className={styles.container__navlink} href="/about">
                     О нас
                 </Link>
                 <span
@@ -100,7 +100,7 @@ const Navigation = ({ clickScroll }: INavigation) => {
                 <Link className={styles.container__navlink} href="#">
                     Блог
                 </Link>
-                <Link className={styles.container__navlink} href="#">
+                <Link className={styles.container__navlink} href="/services">
                     Услуги
                 </Link>
             </nav>

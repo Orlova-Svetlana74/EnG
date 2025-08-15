@@ -1,0 +1,101 @@
+.services {
+    max-width: 1440px;
+    margin: responsive-font(75px, 20px) auto;
+    position: relative;
+    margin: auto;
+
+    &__header {
+        display: flex;
+        padding-top: 85px;
+    }
+    &__content {
+        width: 1440px;
+        margin: auto;
+    }
+    &__offer {
+        display: flex;
+    }
+    &__offer-content {
+        width: 1440px;
+        margin: auto;
+    }
+    &__discussion {
+        width: 1440px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        padding-top: 45px;
+        padding-bottom: 214px;
+    }
+    &__title {
+        font-size: 42px;
+        font-weight: bold;
+        padding-bottom: 30px;
+    }
+    &__text {
+        font-size: 36px;
+        padding-bottom: 60px;
+
+        &--large {
+            font-size: 28px;
+            padding-left: 30px;
+        }
+    }
+    &__subtitle {
+        font-size: 36px;
+        font-weight: bold;
+    }
+    &__subtitleblock {
+        display: flex;
+    }
+    &__list {
+        &-item {
+            padding-top: 45px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__shape {
+        &--projectsShape {
+            position: absolute;
+            right: 100px;
+            width: responsive-font(930px, 250px);
+            height: auto;
+            bottom: 300px;
+            z-index: -1;
+        }
+
+        &--skillsShape {
+            position: absolute;
+            right: 800px;
+            width: responsive-font(930px, 250px);
+            height: auto;
+            top: 150px;
+            z-index: -1;
+        }
+
+        &--offerShape {
+            position: absolute;
+            right: 240px;
+            width: responsive-font(930px, 250px);
+            height: auto;
+            top: 480px;
+            z-index: -1;
+        }
+
+        &--bigshape {
+            position: absolute;
+            right: 500px;
+            width: responsive-font(930px, 250px);
+            height: auto;
+            top: 1200px;
+            z-index: -1;
+        }
+    }
+}
+
+.iconContainer {
+    display: flex;
+}

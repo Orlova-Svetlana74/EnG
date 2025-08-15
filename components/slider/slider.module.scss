@@ -1,0 +1,73 @@
+.slider {
+    position: relative;
+    margin: 0 auto;
+    // padding: 75px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        min-height: 600px;
+    }
+
+    &__slide {
+        flex: 0 1 50%;
+        max-width: 500px;
+        text-align: center;
+    }
+    &__personal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    &__image {
+        object-fit: cover;
+        width: 580px;
+        height: 600px;
+    }
+    &__person-desc {
+        font-size: 27px;
+        line-height: 1.5;
+    }
+    &__person-name {
+        font-size: 36px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+    &__navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+    &__arrow {
+        background: none;
+        border: none;
+        font-size: 52px;
+        cursor: pointer;
+        color: #004577;
+        transition: color 0.3s;
+        padding: 0 20px;
+
+        &:hover {
+            color: #0070f3;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    &__dot {
+        &--active {
+            background-color: #0070f3;
+        }
+    }
+}
