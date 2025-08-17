@@ -1,6 +1,7 @@
 @use '@/styles/functions' as *;
 
 .page {
+    overflow: hidden;
     &__mainShape {
         position: absolute;
         right: -100px;
@@ -271,12 +272,14 @@
 
 @media (max-width: 1920px) {
     .container {
-        margin-left: responsive-font(240px, 60px);
-        margin-right: responsive-font(240px, 60px);
+        margin-left: responsive-font(240px, 30px);
+        margin-right: responsive-font(240px, 30px);
     }
 }
 @media (max-width: 768px) {
     .container {
+        margin-left: responsive-font(60px, 26px, 768px);
+        margin-right: responsive-font(60px, 26px, 768px);
         &__tgFixed {
             bottom: responsive-font(280px, 190px, 768px);
         }
