@@ -324,6 +324,11 @@
             &__block2 {
                 flex-direction: column;
             }
+            &__header {
+                & > svg {
+                    width: responsive-font(40px, 20px, 480px);
+                }
+            }
         }
         &__offers {
             & > button {
