@@ -26,18 +26,18 @@ export const Footer = () => {
                         <h6 className={styles.footer__phone}>Телефон</h6>
                         <Link
                             className={styles.footer__navlink}
-                            href="tel:+79000000000"
+                            href="tel:+79871077733"
                             itemProp="telephone"
                         >
-                            +7 (900) 000-00-00"
+                            + 7 (987) 107-77-33
                         </Link>
 
                         <h6>Почта</h6>
                         <Link
                             className={styles.footer__navlink}
-                            href="mailto:info@example.com"
+                            href="mailto:generals22@mail.ru"
                         >
-                            info@example.com
+                            generals22@mail.ru
                         </Link>
                     </div>
                 </div>
@@ -59,7 +59,10 @@ export const Footer = () => {
                         <Link className={styles.footer__navlink} href="/about">
                             О нас
                         </Link>
-                        <Link className={styles.footer__navlink} href="/services">
+                        <Link
+                            className={styles.footer__navlink}
+                            href="/services"
+                        >
                             Услуги
                         </Link>
                         <Link className={styles.footer__navlink} href="#">
