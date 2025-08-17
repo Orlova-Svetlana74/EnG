@@ -1,282 +1,137 @@
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &__svg {
-    width: 325px;
-  }
-  .logoText {
-    display: flex;
-  }
-  .logoList {
-    display: flex;
-    gap: 40px;
+.container {
+    max-width: 1440px;
+    margin: responsive-font(75px, 20px) auto;
+    position: relative;
+    margin: auto;
+    box-sizing: border-box;
 
-    & > span {
-      cursor: pointer;
-      font-size: 36px;
-    }
-  }
-}
-
-.header {
-  max-width: 1750px;
-  margin: 80px auto;
-}
-.content {
-  max-width: 1250px;
-  margin: auto;
-  &__title {
-    font-size: 54px;
-  }
-  &__skills {
-    margin-top: 170px;
-    font-size: 54px;
-    & > h3 {
-      margin-bottom: 30px;
-      font-weight: bold;
-    }
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-  }
-  &__details {
-    margin: 160px 0 45px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    & > li {
-      border: 3px solid;
-      padding: 30px 45px;
-      border-radius: 30px;
-      font-size: 48px;
-    }
-  }
-}
-
-.footer {
-  max-width: 1750px;
-  margin: 80px auto;
-  display: flex;
-  justify-content: space-between;
-  &__left {
-    display: flex;
-    flex-direction: column;
-
-    button {
-      margin-top: 40px;
-    }
-    &__svg {
-      width: 280px;
-      height: 130px;
-    }
-  }
-  &__right {
-    display: flex;
-    flex-direction: column;
-    & > p {
-      margin-left: auto;
-      margin-bottom: 50px;
-      font-size: 48px;
-    }
-    ul {
-      display: flex;
-      gap: 20px;
-    }
-  }
-}
-
-@media (max-width: 1920px) {
-  .logo {
-    &__svg {
-      width: 217px;
-    }
-
-    .logoList {
-      gap: 28px;
-
-      & > span {
-        font-size: 24px;
-      }
-    }
-  }
-
-  .header {
-    margin: 0 50px;
-  }
-  .content {
-    margin: 0 220px;
-
-    &__title {
-      font-size: 36px;
-    }
-
-    &__skills {
-      margin-top: 110px;
-      font-size: 36px;
-      & > h3 {
-        margin-bottom: 30px;
-      }
-      ul {
-        gap: 20px;
-      }
-    }
-
-    &__details {
-      margin: 160px 0 45px 0;
-      gap: 35px;
-      & > li {
-        padding: 20px 30px;
-        font-size: 32px;
-      }
-    }
-  }
-
-  .footer {
-    margin: 0 50px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .logo {
-    &__svg {
-      width: 130px;
-    }
-
-    .logoList {
-      gap: 28px;
-
-      & > span {
-        font-size: 14px;
-      }
-    }
-  }
-
-  .header {
-    margin: 35px 50px 55px 50px;
-  }
-  .content {
-    margin: 0 130px;
-
-    &__title {
-      font-size: 22px;
-    }
-
-    &__skills {
-      margin-top: 55px;
-      font-size: 22px;
-      & > h3 {
-        margin-bottom: 30px;
-      }
-      ul {
-        gap: 20px;
-      }
-    }
-
-    &__details {
-      margin: 63px 0 22px 0;
-      gap: 35px;
-      & > li {
-        border-radius: 12px;
-        padding: 12px 18px;
-        font-size: 19px;
-      }
-    }
-  }
-
-  .footer {
-    margin: 0 32px;
-    &__left {
-      button {
-        margin-top: 15px;
-      }
-      &__svg {
-        width: 113px;
-      }
-    }
-    &__right {
-      & > p {
-        margin-bottom: 50px;
-        font-size: 17px;
-      }
-      ul {
+    &__block {
         display: flex;
-        gap: 20px;
-      }
+        flex-wrap: wrap;
+        align-items: end;
+
+        justify-content: space-between;
+        padding-right: 100px;
     }
-  }
-}
+    &__mission {
+        justify-content: center;
+        align-items: end;
 
-@media (max-width: 768px) {
-  .logo {
-    &__svg {
-      width: 64px;
-    }
-
-    .logoList {
-      gap: 8px;
-
-      & > span {
-        font-size: 7px;
-      }
-    }
-  }
-
-  .header {
-    margin: 17px 15px 25px 15px;
-  }
-  .content {
-    margin: 0 65px;
-
-    &__title {
-      font-size: 11px;
-    }
-
-    &__skills {
-      margin-top: 35px;
-      font-size: 11px;
-      & > h3 {
-        margin-bottom: 10px;
-      }
-      ul {
-        gap: 6px;
-      }
-    }
-
-    &__details {
-      margin: 33px 0 22px 0;
-      gap: 16px;
-
-      & > li {
-        border-radius: 6px;
-        border-width: 1px;
-        padding: 5px 8px;
-        font-size: 10px;
-      }
-    }
-  }
-
-  .footer {
-    margin: 0 12px;
-    &__left {
-      button {
-        margin-top: 15px;
-      }
-      &__svg {
-        width: 113px;
-      }
-    }
-    &__right {
-      & > p {
-        margin-bottom: 50px;
-        font-size: 17px;
-      }
-      ul {
         display: flex;
-        gap: 20px;
-      }
+        padding-top: 89px;
     }
-  }
+    &__title {
+        font-size: 54px;
+        padding-bottom: 20px;
+        font-weight: bold;
+
+        &--team {
+            padding-top: 100px;
+        }
+    }
+    &__titlemis {
+        font-size: 60px;
+        font-weight: bold;
+    }
+    &__blocktitle {
+        justify-content: left;
+        align-items: end;
+
+        display: flex;
+    }
+    &__toptext {
+        font-size: 42px;
+        text-align: left;
+    }
+    &__text {
+        font-size: 27px;
+
+        &--team {
+            text-align: left;
+            font-size: 42px;
+            padding-bottom: 60px;
+        }
+    }
+    &__advantages {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__advantages-block {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 130px;
+    }
+    &__advantages-list1 {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: clamp(10px, 3.125vw, 60px);
+    }
+    &__advantages-list2 {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: clamp(10px, 3.125vw, 60px);
+        padding-top: 50px;
+    }
+
+    &__advantage {
+        padding-right: 80px;
+        padding-left: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        border: 1.13px solid rgb(0, 69, 119);
+        border-radius: 22.5px;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    &__advantage-header {
+        display: flex;
+        align-items: center;
+    }
+
+    &__subtitle {
+        font-size: 42px;
+        line-height: 1.4;
+        padding-left: 40px;
+    }
+
+    &__team {
+        justify-content: center;
+        max-width: 1300px;
+    }
+
+    &__shape {
+        &--smallshap {
+            z-index: -1;
+            width: 200px;
+            height: auto;
+            position: absolute;
+            top: 20px;
+            right: 800px;
+        }
+
+        &--bigshape {
+            z-index: -1;
+            width: 330px;
+            height: auto;
+            position: absolute;
+            left: 660px;
+            top: 450px;
+        }
+    }
+
+    &__image {
+        &--frame {
+            width: 600px;
+            height: 432px;
+        }
+    }
+
+    &__icon {
+        width: 71px;
+        height: 62px;
+    }
 }

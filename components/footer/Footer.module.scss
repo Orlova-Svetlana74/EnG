@@ -1,152 +1,152 @@
-@use "@/styles/functions" as *;
+@use '@/styles/functions' as *;
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1730px; /* Максимальная ширина контейнера */
-  margin: 0 auto; /* Центрирование контейнера */
-  position: relative;
-  margin-bottom: responsive-font(85px, 20px);
-  &__left {
     display: flex;
-    flex-direction: column;
-    order: 0;
-
-    &__svg {
-      width: responsive-font(150px, 20px);
-      height: auto;
-    }
-  }
-
-  &__footerstile {
-    font-size: responsive-font(27px, 10px);
-    font-weight: bold;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: responsive-font(40px, 10px);
-    row-gap: responsive-font(22px, 10px);
-    order: 1;
-  }
-  &__navlink_active {
-    color: #0040e1;
-  }
-  &__stylephone {
-    font-weight: bold;
-    order: 2;
-    & > h6 {
-      font-size: responsive-font(21px, 10px);
-      margin-bottom: responsive-font(8px, 10px);
-    }
-    & > a {
-      font-size: responsive-font(27px, 10px);
-    }
-  }
-  &__right {
-    font-size: responsive-font(27px, 10px);
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    order: 3;
-    & > h6 {
-      text-align: right;
-      font-size: responsive-font(27px, 16px);
+    max-width: 1730px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    position: relative;
+    margin-bottom: responsive-font(85px, 20px);
+    &__left {
+        display: flex;
+        flex-direction: column;
+        order: 0;
+
+        &__svg {
+            width: responsive-font(150px, 20px);
+            height: auto;
+        }
     }
-    & svg {
-      cursor: pointer;
-      transition: color 0.3s ease;
-      &:hover {
-        color: #006ab7;
-      }
+
+    &__footerstile {
+        font-size: responsive-font(27px, 10px);
+        font-weight: bold;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: responsive-font(40px, 10px);
+        row-gap: responsive-font(22px, 10px);
+        order: 1;
     }
-    & > ul {
-      display: flex;
-      gap: 10px;
-      & li:first-child svg {
-        width: responsive-font(44px, 10px);
-      }
-      & li:nth-child(2) > svg {
-        width: responsive-font(57px, 10px);
-      }
-      & li:nth-child(3) svg {
-        width: responsive-font(35px, 10px);
-      }
-      & li:nth-child(4) {
-        width: responsive-font(37px, 10px);
-      }
-      & li:nth-child(5) {
-        width: responsive-font(35px, 10px);
-      }
+    &__navlink_active {
+        color: #0040e1;
     }
-  }
-  &__shape {
-    width: 60vw;
-    aspect-ratio: 1;
-    height: auto;
-    left: 40%;
-    transform: translateX(-40%);
-    position: absolute;
-    bottom: 0;
-  }
-  &__contents {
-    display: contents;
-  }
+    &__stylephone {
+        font-weight: bold;
+        order: 2;
+        & > h6 {
+            font-size: responsive-font(21px, 10px);
+            margin-bottom: responsive-font(8px, 10px);
+        }
+        & > a {
+            font-size: responsive-font(27px, 10px);
+        }
+    }
+    &__right {
+        font-size: responsive-font(27px, 10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        order: 3;
+        & > h6 {
+            text-align: right;
+            font-size: responsive-font(27px, 16px);
+        }
+        & svg {
+            cursor: pointer;
+            transition: color 0.3s ease;
+            &:hover {
+                color: #006ab7;
+            }
+        }
+        & > ul {
+            display: flex;
+            gap: 10px;
+            & li:first-child svg {
+                width: responsive-font(44px, 10px);
+            }
+            & li:nth-child(2) > svg {
+                width: responsive-font(57px, 10px);
+            }
+            & li:nth-child(3) svg {
+                width: responsive-font(35px, 10px);
+            }
+            & li:nth-child(4) {
+                width: responsive-font(37px, 10px);
+            }
+            & li:nth-child(5) {
+                width: responsive-font(35px, 10px);
+            }
+        }
+    }
+    &__shape {
+        width: 60vw;
+        aspect-ratio: 1;
+        height: auto;
+        left: 40%;
+        transform: translateX(-40%);
+        position: absolute;
+        bottom: 0;
+    }
+    &__contents {
+        display: contents;
+    }
 }
 
 @media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    gap: responsive-font(70px, 30px, 768px);
-    &__contents {
-      display: flex;
-      justify-content: space-between;
-    }
-    &__left {
-      & > svg {
-        width: responsive-font(150px, 80px, 768px);
-      }
-    }
-    &__stylephone {
-      & > h6 {
-        font-size: responsive-font(20px, 10px, 768px);
-      }
-      & > a {
-        display: block;
-        font-size: responsive-font(20px, 10px, 768px);
-      }
-      & > * {
-        &:nth-child(3) {
-          margin-top: responsive-font(32px, 10px, 768px);
+    .footer {
+        flex-direction: column;
+        gap: responsive-font(70px, 30px, 768px);
+        &__contents {
+            display: flex;
+            justify-content: space-between;
         }
-      }
-    }
-    &__footerstile {
-      font-size: responsive-font(20px, 10px, 768px);
-    }
-    &__right {
-      font-size: responsive-font(27px, 10px, 768px);
-      & > h6 {
-        font-size: responsive-font(20px, 10px, 768px);
-      }
-      & > ul {
-        display: flex;
-        gap: responsive-font(10px, 4px, 768px);
+        &__left {
+            & > svg {
+                width: responsive-font(150px, 80px, 768px);
+            }
+        }
+        &__stylephone {
+            & > h6 {
+                font-size: responsive-font(20px, 10px, 768px);
+            }
+            & > a {
+                display: block;
+                font-size: responsive-font(20px, 10px, 768px);
+            }
+            & > * {
+                &:nth-child(3) {
+                    margin-top: responsive-font(32px, 10px, 768px);
+                }
+            }
+        }
+        &__footerstile {
+            font-size: responsive-font(20px, 10px, 768px);
+        }
+        &__right {
+            font-size: responsive-font(27px, 10px, 768px);
+            & > h6 {
+                font-size: responsive-font(20px, 10px, 768px);
+            }
+            & > ul {
+                display: flex;
+                gap: responsive-font(10px, 4px, 768px);
 
-        & li:first-child svg {
-          width: responsive-font(33px, 14px, 768px);
+                & li:first-child svg {
+                    width: responsive-font(33px, 14px, 768px);
+                }
+                & li:nth-child(2) > svg {
+                    width: responsive-font(43px, 19px, 768px);
+                }
+                & li:nth-child(3) svg {
+                    width: responsive-font(27px, 12px, 768px);
+                }
+                & li:nth-child(4) {
+                    width: responsive-font(27px, 12px, 768px);
+                }
+                & li:nth-child(5) {
+                    width: responsive-font(27px, 12px, 768px);
+                }
+            }
         }
-        & li:nth-child(2) > svg {
-          width: responsive-font(43px, 19px, 768px);
-        }
-        & li:nth-child(3) svg {
-          width: responsive-font(27px, 12px, 768px);
-        }
-        & li:nth-child(4) {
-          width: responsive-font(27px, 12px, 768px);
-        }
-        & li:nth-child(5) {
-          width: responsive-font(27px, 12px, 768px);
-        }
-      }
     }
-  }
 }
