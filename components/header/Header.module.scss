@@ -63,8 +63,8 @@
         &__nav {
             display: none;
         }
-        &__navlink {
-            display: none;
+        &__navlink__phone {
+            display: none !important;
         }
 
         &__phone__menu {
@@ -74,16 +74,16 @@
             display: flex;
             gap: 30px;
             & > svg {
-                width: 40px;
+                width: responsive-font(40px, 16px);
             }
             & > span {
-                width: 45px;
-                height: 40px;
+                width: responsive-font(45px, 18px);
+                width: responsive-font(40px, 16px);
                 position: relative;
                 &::before {
                     content: '';
                     width: 100%;
-                    height: 10px;
+                    height: responsive-font(10px, 2px);
                     position: absolute;
                     top: 0;
                     background-color: #004577;
@@ -93,7 +93,7 @@
                 &::after {
                     content: '';
                     width: 100%;
-                    height: 10px;
+                    height: responsive-font(10px, 2px);
                     position: absolute;
                     bottom: 0;
                     background-color: #004577;
@@ -108,11 +108,12 @@
                     & > span {
                         transform: translateX(10px);
                         &::before {
-                            transform: rotate(45deg) translateX(-7px);
+                            transform: rotate(45deg) translateX(-12%);
                             top: 50%;
                         }
                         &::after {
-                            transform: rotate(-45deg) translateX(-7px);
+                            transform: rotate(-45deg) translateX(-12%);
+                            //translateX(responsive-font(-1px, -1.5px, 768px));
                             bottom: 50%;
                         }
                     }
@@ -139,7 +140,7 @@
                 &__menu {
                     position: absolute;
                     right: responsive-font(240px, 60px);
-                    top: 120px;
+                    top: responsive-font(120px, 80px, 768px);
                 }
                 &__nav {
                     display: flex;

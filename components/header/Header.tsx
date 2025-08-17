@@ -44,7 +44,11 @@ export function Header({
 
                 <Navigation clickScroll={clickScroll} />
                 <div className={styles.container__navlink}>
-                    <a href="tel:+79000000000" itemProp="telephone">
+                    <a
+                        href="tel:+79000000000"
+                        className={styles.container__navlink__phone}
+                        itemProp="telephone"
+                    >
                         +7 (900) 000-00-00
                     </a>
                 </div>
