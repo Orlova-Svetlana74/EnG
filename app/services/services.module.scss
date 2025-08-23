@@ -127,6 +127,23 @@
     height: auto;
 }
 
+.expandButton {
+    background: none;
+    border: none;
+    color: #1e3a8a;
+    font-size: responsive-font(16px, 14px);
+    cursor: pointer;
+    padding: responsive-font(10px, 8px) 0;
+    margin-top: responsive-font(10px, 8px);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #1e40af;
+    }
+}
+
 @media (max-width: 1920px) {
     .services {
         padding-left: responsive-font(240px, 30px);

@@ -4,7 +4,7 @@ import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
 import { Button } from '@/components/ui/Button/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import {
@@ -25,10 +25,30 @@ interface ServiceItem {
 export default function Services() {
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+    const [isListExpanded, setIsListExpanded] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    // Хук для отслеживания размера экрана
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth <= 744)
+        }
+
+        checkScreenSize()
+        window.addEventListener('resize', checkScreenSize)
+
+        return () => window.removeEventListener('resize', checkScreenSize)
+    }, [])
+
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
+
+    const toggleListExpansion = () => {
+        setIsListExpanded(!isListExpanded)
+    }
+
     const services: ServiceItem[] = [
         {
             id: 1,
@@ -61,6 +81,12 @@ export default function Services() {
         { id: 9, text: 'Тестирование приложений', href: '#' },
         { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
+
+    // Определяем количество элементов для показа
+    // На мобильных устройствах показываем только первые 4, если список не раскрыт
+    const visibleServices = isMobile && !isListExpanded ? services.slice(0, 4) : services
+    const hasHiddenServices = isMobile && services.length > 4 && !isListExpanded
+
     return (
         <div className={styles.services}>
             <Header
@@ -113,7 +139,7 @@ export default function Services() {
 
                         <section className={styles.servicesContainer}>
                             <ul className={styles.list}>
-                                {services.map((service) => (
+                                {visibleServices.map((service) => (
                                     <li
                                         key={service.id}
                                         className={
@@ -134,7 +160,7 @@ export default function Services() {
                                                 href={service.href}
                                                 className={
                                                     styles[
-                                                        'services__text--large'
+                                                    'services__text--large'
                                                     ]
                                                 }
                                             >
@@ -144,6 +170,22 @@ export default function Services() {
                                     </li>
                                 ))}
                             </ul>
+                            {hasHiddenServices && (
+                                <button
+                                    className={styles.expandButton}
+                                    onClick={toggleListExpansion}
+                                >
+                                    Развернуть список
+                                </button>
+                            )}
+                            {isMobile && isListExpanded && (
+                                <button
+                                    className={styles.expandButton}
+                                    onClick={toggleListExpansion}
+                                >
+                                    Свернуть список
+                                </button>
+                            )}
                         </section>
                         {/* <Image
                             className={styles['services__shape--bigshape']}
