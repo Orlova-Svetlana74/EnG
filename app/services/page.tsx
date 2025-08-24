@@ -206,7 +206,7 @@ export default function Services() {
                             <br />
                             ваш проект и начать работу над его реализацией!
                         </p>
-                        <Button>Обсудить проект</Button>
+                        <Button className={styles.services__button}>Обсудить проект</Button>
                     </div>
                     {/* <Image
                         className={styles['services__image--discussion']}

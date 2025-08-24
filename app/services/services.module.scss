@@ -158,7 +158,7 @@
 
         &__discussion {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             gap: responsive-font(40px, 20px, 768px);
         }
 
@@ -166,6 +166,10 @@
             & br {
                 display: none;
             }
+        }
+
+        &__button {
+            width: 100%;
         }
     }
 }
