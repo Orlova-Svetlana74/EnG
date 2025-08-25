@@ -162,9 +162,14 @@
             gap: responsive-font(40px, 20px, 768px);
         }
 
-        &__text {
-            & br {
-                display: none;
+        &__image--discussion {
+            width: 100%;
+            height: auto;
+
+            &__text {
+                & br {
+                    display: none;
+                }
             }
         }
 
