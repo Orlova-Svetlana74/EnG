@@ -84,7 +84,8 @@ export default function Services() {
 
     // Определяем количество элементов для показа
     // На мобильных устройствах показываем только первые 4, если список не раскрыт
-    const visibleServices = isMobile && !isListExpanded ? services.slice(0, 4) : services
+    const visibleServices =
+        isMobile && !isListExpanded ? services.slice(0, 4) : services
     const hasHiddenServices = isMobile && services.length > 4 && !isListExpanded
 
     return (
@@ -160,7 +161,7 @@ export default function Services() {
                                                 href={service.href}
                                                 className={
                                                     styles[
-                                                    'services__text--large'
+                                                        'services__text--large'
                                                     ]
                                                 }
                                             >
@@ -206,7 +207,9 @@ export default function Services() {
                             <br />
                             ваш проект и начать работу над его реализацией!
                         </p>
-                        <Button className={styles.services__button}>Обсудить проект</Button>
+                        <Button className={styles.services__button}>
+                            Обсудить проект
+                        </Button>
                     </div>
                     {/* <Image
                         className={styles['services__image--discussion']}
