@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import styles from './slider.module.scss'
+import { StrelkaLeftSVG } from '@/svg/StrelkaLeftSVG'
+import { StrelkaRightSVG } from '@/svg/StrelkaRightSVG'
 import {
     seniorBack,
     seniorFrontend,
@@ -11,7 +13,7 @@ import {
     middleDisign,
     projectManager,
 } from '@/img'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function Slider() {
     const teamMembers = [
@@ -80,43 +82,95 @@ export default function Slider() {
             image: projectManager,
         },
     ]
-
+    const [slidesToShow, setSlidesToShow] = useState(2)
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [touchStart, setTouchStart] = useState(0)
+    const [touchEnd, setTouchEnd] = useState(0)
+    const sliderRef = useRef<HTMLDivElement>(null)
+    const [isMobile, setIsMobile] = useState(false)
 
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth <= 744
+            setIsMobile(mobile)
+            setSlidesToShow(mobile ? 1 : 2)
+        }
+
+        handleResize()
+
+        window.addEventListener('resize', handleResize)
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex + 2 >= teamMembers.length ? 0 : prevIndex + 2
+            prevIndex + slidesToShow >= teamMembers.length
+                ? 0
+                : prevIndex + slidesToShow
         )
     }
 
     const prevSlide = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex - 2 < 0
-                ? teamMembers.length - (teamMembers.length % 2 || 2)
-                : prevIndex - 2
+            prevIndex - slidesToShow < 0
+                ? teamMembers.length -
+                  (teamMembers.length % slidesToShow || slidesToShow)
+                : prevIndex - slidesToShow
         )
     }
+    const handleTouchStart = (e: React.TouchEvent) => {
+        if (!isMobile) return
+        setTouchStart(e.targetTouches[0].clientX)
+    }
 
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isMobile) return
+        setTouchEnd(e.targetTouches[0].clientX)
+    }
+
+    const handleTouchEnd = () => {
+        if (!isMobile) return
+
+        if (touchStart - touchEnd > 50) {
+            nextSlide()
+        }
+
+        if (touchStart - touchEnd < -50) {
+            prevSlide()
+        }
+    }
     const visibleMembers = []
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < slidesToShow; i++) {
         const index = (currentIndex + i) % teamMembers.length
         visibleMembers.push(teamMembers[index])
     }
 
     return (
-        <div className={styles.slider}>
-            <div className={styles.slider__wrapper}>
+        <div className={styles.slider} ref={sliderRef}>
+            <div
+                className={styles.slider__wrapper}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
                 {visibleMembers.map((member) => (
                     <div key={member.id} className={styles.slider__slide}>
                         <div className={styles['slider__person-info']}>
-                            <Image
-                                className={styles.slider__image}
-                                src={member.image}
-                                alt=""
-                                width={580}
-                                height={600}
-                                priority={true}
-                            />
+                            <div className={styles['slider__image-container']}>
+                                <Image
+                                    className={styles.slider__image}
+                                    src={member.image}
+                                    alt=""
+                                    width={580}
+                                    height={600}
+                                    priority={true}
+                                    style={{
+                                        width: '100%',
+                                        height: 'auto',
+                                    }}
+                                />
+                            </div>
+
                             <p className={styles['slider__person-name']}>
                                 <b>{member.name}</b>
                             </p>
@@ -131,35 +185,41 @@ export default function Slider() {
             </div>
 
             <div className={styles.slider__navigation}>
-                <button
-                    className={`${styles.slider__arrow} ${styles['slider__arrow--prev']}`}
-                    onClick={prevSlide}
-                >
-                    &lt;
-                </button>
+                {!isMobile && (
+                    <>
+                        <button
+                            className={`${styles.slider__arrow} ${styles['slider__arrow--prev']}`}
+                            onClick={prevSlide}
+                            aria-label="Previous slide"
+                        >
+                            <StrelkaLeftSVG />
+                        </button>
+                        <button
+                            className={`${styles.slider__arrow} ${styles['slider__arrow--next']}`}
+                            onClick={nextSlide}
+                            aria-label="Next slide"
+                        >
+                            <StrelkaRightSVG className="styles.strelka" />
+                        </button>
+                    </>
+                )}
 
-                <div className={styles.slider__dots}>
-                    {Array.from({
-                        length: Math.ceil(teamMembers.length / 2),
-                    }).map((_, index) => (
-                        <span
-                            key={index}
-                            className={`${styles.slider__dot} ${
-                                currentIndex === index * 2
-                                    ? styles['slider__dot--active']
-                                    : ''
-                            }`}
-                            onClick={() => setCurrentIndex(index * 2)}
-                        />
-                    ))}
-                </div>
-
-                <button
-                    className={`${styles.slider__arrow} ${styles['slider__arrow--next']}`}
-                    onClick={nextSlide}
-                >
-                    &gt;
-                </button>
+                {isMobile && (
+                    <div className={styles.slider__dots}>
+                        {teamMembers.map((_, index) => (
+                            <span
+                                key={index}
+                                className={`${styles.slider__dot} ${
+                                    currentIndex === index
+                                        ? styles['slider__dot--active']
+                                        : ''
+                                }`}
+                                onClick={() => setCurrentIndex(index)}
+                                aria-label={`Go to slide ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

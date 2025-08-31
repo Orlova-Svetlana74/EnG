@@ -13,7 +13,7 @@ export const Footercart = () => {
             <Link className={styles.footer__navlink} href="#">
                 Карта сайта
             </Link>
-            <Link className={styles.footer__navlink} href="#">
+            <Link className={styles.footer__navlink} href="/cookie">
                 Политика защиты и<br /> обработки
                 <br /> персональных данных
             </Link>
