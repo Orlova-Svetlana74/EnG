@@ -36,10 +36,8 @@ export const Footer = () => {
                         <Link
                             className={styles.footer__navlink}
                             href="mailto:generals22@mail.ru"
-                            href="mailto:generals22@mail.ru"
                         >
-                            generals22@mail.ru
-                            generals22@mail.ru
+                            generals22@mail.ru generals22@mail.ru
                         </Link>
                     </div>
                 </div>
