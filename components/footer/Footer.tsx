@@ -59,10 +59,7 @@ export const Footer = () => {
                         <Link className={styles.footer__navlink} href="/about">
                             О нас
                         </Link>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="/services"
-                        >
+                        <Link className={styles.footer__navlink} href="/services">
                             Услуги
                         </Link>
                         <Link className={styles.footer__navlink} href="#">
