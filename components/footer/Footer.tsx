@@ -26,10 +26,10 @@ export const Footer = () => {
                         <h6 className={styles.footer__phone}>Телефон</h6>
                         <Link
                             className={styles.footer__navlink}
-                            href="tel:+79871077733"
+                            href="tel:+79266661028"
                             itemProp="telephone"
                         >
-                            + 7 (987) 107-77-33
+                            + 7 (926) 666-10-28
                         </Link>
 
                         <h6>Почта</h6>
