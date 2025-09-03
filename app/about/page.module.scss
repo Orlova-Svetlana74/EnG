@@ -1,282 +1,379 @@
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    &__svg {
-        width: 325px;
-    }
-    .logoText {
-        display: flex;
-    }
-    .logoList {
-        display: flex;
-        gap: 40px;
-
-        & > span {
-            cursor: pointer;
-            font-size: 36px;
-        }
+@use '@/styles/functions' as *;
+.home {
+    overflow: hidden;
+    &__mainShape {
+        position: absolute;
+        // right: -100px;
+        width: responsive-font(930px, 250px);
+        height: auto;
+        // top: -50px;
+        z-index: -1;
     }
 }
 
-.header {
-    max-width: 1750px;
-    margin: 80px auto;
-}
-.content {
-    max-width: 1250px;
-    margin: auto;
+.container {
+    max-width: 1440px;
+    margin: responsive-font(75px, 20px) auto;
+    position: relative;
+    // box-sizing: border-box;
+
+    &__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__mission {
+        justify-content: center;
+        align-items: end;
+        align-items: center;
+        display: flex;
+        padding-bottom: responsive-font(130px, 20px);
+    }
     &__title {
-        font-size: 54px;
-    }
-    &__skills {
-        margin-top: 170px;
-        font-size: 54px;
-        & > h3 {
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-        ul {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-    }
-    &__details {
-        margin: 160px 0 45px 0;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        & > li {
-            border: 3px solid;
-            padding: 30px 45px;
-            border-radius: 30px;
-            font-size: 48px;
-        }
-    }
-}
+        font-size: responsive-font(54px, 15px);
+        padding-bottom: responsive-font(20px, 12px);
+        font-weight: bold;
 
-.footer {
-    max-width: 1750px;
-    margin: 80px auto;
-    display: flex;
-    justify-content: space-between;
-    &__left {
+        &--team {
+            padding-top: 100px;
+            padding-top: responsive-font(100px, 18px);
+        }
+    }
+    &__titlemis {
+        font-size: responsive-font(60px, 16px);
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    &__blocktitle {
+        justify-content: left;
+        align-items: end;
+        display: flex;
+    }
+    &__toptext {
+        font-size: responsive-font(42px, 12px);
+        text-align: left;
+    }
+    &__text {
+        font-size: responsive-font(27px, 19px);
+
+        &--team {
+            text-align: left;
+            font-size: responsive-font(42px, 14px);
+            padding-bottom: responsive-font(60px, 12px);
+        }
+    }
+    &__advantages {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    &__adteamvantages-block {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: responsive-font(130px, 18px);
+        width: 100%;
+        max-width: 1440px;
+    }
+    &__advantages-list1 {
+        display: grid;
+        grid-template-columns: 3fr 2.5fr;
+        gap: clamp(10px, 3.125vw, 50px);
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    &__advantages-list2 {
+        display: grid;
+        grid-template-columns: 2.5fr 3fr;
+        gap: clamp(10px, 3.125vw, 50px);
+        padding-top: responsive-font(50px, 0px);
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    &__advantage {
+        padding-right: responsive-font(80px, 20px);
+        padding-left: responsive-font(40px, 20px);
+        padding-top: responsive-font(40px, 20px);
+        padding-bottom: responsive-font(40px, 20px);
+        min-width: 0;
         display: flex;
         flex-direction: column;
 
-        button {
-            margin-top: 40px;
+        &:nth-child(1) {
+            height: 100%;
         }
-        &__svg {
-            width: 280px;
-            height: 130px;
+        &:nth-child(2) {
+            height: 100%;
+        }
+        gap: clamp(10px, 3.125vw, 60px);
+        border: 1.13px solid rgb(0, 69, 119);
+        border-radius: responsive-font(1px, 24px, 1920px, 320px);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    &__advantage-header {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__subtitle {
+        font-size: responsive-font(42px, 10px);
+        line-height: 1.4;
+        padding-left: 40px;
+    }
+
+    &__shape {
+        position: absolute;
+        pointer-events: none;
+        &--smallshap {
+            left: responsive-font(300px, 100px);
+            width: responsive-font(200px, 139px);
+            height: auto;
+            position: absolute;
+        }
+
+        &--bigshape {
+            // right: 0;
+            left: responsive-font(550px, 170px);
+            top: responsive-font(450px, 200px);
+            width: responsive-font(330px, 72px);
+            height: auto;
+            position: absolute;
+        }
+        &--offer {
+            left: clamp(900px, 2vw, 900px);
+            bottom: clamp(1000px, 2vw, 800px);
+            width: responsive-font(330px, 72px);
+            height: auto;
+            position: absolute;
+        }
+        &--projects {
+            left: responsive-font(100px, 100px);
+            bottom: responsive-font(1370px, 50px);
+            width: responsive-font(97px, 84px);
+            height: auto;
+            position: absolute;
+        }
+        &--description {
+            left: responsive-font(1300px, 100px);
+            bottom: clamp(150px, 2vw, 100px);
+            width: responsive-font(211px, 183px);
+            height: auto;
+            position: absolute;
         }
     }
-    &__right {
-        display: flex;
-        flex-direction: column;
-        & > p {
-            margin-left: auto;
-            margin-bottom: 50px;
-            font-size: 48px;
+
+    &__image {
+        &--frame {
+            width: responsive-font(600px, 600px);
+            height: auto;
         }
-        ul {
-            display: flex;
-            gap: 20px;
-        }
+    }
+
+    &__icon {
+        width: 71px;
+        height: 62px;
     }
 }
 
 @media (max-width: 1920px) {
-    .logo {
-        &__svg {
-            width: 217px;
+    .container {
+        margin-left: responsive-font(240px, 30px);
+        margin-right: responsive-font(240px, 30px);
+
+        &__advantages,
+        &__advantages-block,
+        &__advantages-list1 {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
         }
 
-        .logoList {
-            gap: 28px;
-
-            & > span {
-                font-size: 24px;
-            }
+        &__subtitle {
+            padding-left: 0px;
         }
-    }
-
-    .header {
-        margin: 0 50px;
-    }
-    .content {
-        margin: 0 220px;
-
-        &__title {
-            font-size: 36px;
-        }
-
-        &__skills {
-            margin-top: 110px;
-            font-size: 36px;
-            & > h3 {
-                margin-bottom: 30px;
-            }
-            ul {
-                gap: 20px;
-            }
-        }
-
-        &__details {
-            margin: 160px 0 45px 0;
-            gap: 35px;
-            & > li {
-                padding: 20px 30px;
-                font-size: 32px;
-            }
-        }
-    }
-
-    .footer {
-        margin: 0 50px;
     }
 }
 
+@media (max-width: 1440px) {
+    .container {
+        &__shape {
+            &--offer {
+                visibility: visible;
+            }
+        }
+    }
+}
 @media (max-width: 1280px) {
-    .logo {
-        &__svg {
-            width: 130px;
-        }
-
-        .logoList {
-            gap: 28px;
-
-            & > span {
-                font-size: 14px;
+    .container {
+        &__image {
+            &--frame {
+                width: 300px;
+                height: auto;
             }
         }
-    }
-
-    .header {
-        margin: 35px 50px 55px 50px;
-    }
-    .content {
-        margin: 0 130px;
-
-        &__title {
-            font-size: 22px;
+        &__advantage-header {
+            gap: 10px;
         }
-
-        &__skills {
-            margin-top: 55px;
-            font-size: 22px;
-            & > h3 {
-                margin-bottom: 30px;
-            }
-            ul {
-                gap: 20px;
-            }
-        }
-
-        &__details {
-            margin: 63px 0 22px 0;
-            gap: 35px;
-            & > li {
-                border-radius: 12px;
-                padding: 12px 18px;
-                font-size: 19px;
-            }
-        }
-    }
-
-    .footer {
-        margin: 0 32px;
-        &__left {
-            button {
-                margin-top: 15px;
-            }
-            &__svg {
-                width: 113px;
-            }
-        }
-        &__right {
-            & > p {
-                margin-bottom: 50px;
-                font-size: 17px;
-            }
-            ul {
-                display: flex;
-                gap: 20px;
-            }
+        &__icon {
+            width: 65px;
+            height: 55px;
         }
     }
 }
 
-@media (max-width: 768px) {
-    .logo {
-        &__svg {
-            width: 64px;
+@media (max-width: 744px) {
+    .container {
+        margin-left: responsive-font(60px, 26px, 768px);
+        margin-right: responsive-font(60px, 26px, 768px);        
+        box-sizing: border-box;
+
+        &__block {
+            width: 100%;
+            flex-direction: column;
         }
 
-        .logoList {
-            gap: 8px;
+        &__mission {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-items: flex-end;
+        }
+        &__advantage {
+            border-radius: 56px;
+        }
 
-            & > span {
-                font-size: 7px;
+        &__advantage-header {
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        &__advantages-block {
+            flex-wrap: wrap;
+            padding-top: responsive-font(130px, 18px);
+            position: relative;
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+        &__image {
+            &--frame {
+                width: 625px;
+                height: auto;
+                align-self: center;
             }
         }
-    }
 
-    .header {
-        margin: 17px 15px 25px 15px;
-    }
-    .content {
-        margin: 0 65px;
+        &__advantages-list1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            flex-direction: column;
+            justify-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+        &__advantages-list2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            width: 100%;
+            gap: 10px;
+            padding-top: 10px;
+        }
+
+        &__advantage {
+            width: 100%;
+            position: relative;
+            overflow: visible;
+        }
+
+        &__blocktitle {
+            position: relative;
+        }
 
         &__title {
-            font-size: 11px;
-        }
-
-        &__skills {
-            margin-top: 35px;
-            font-size: 11px;
-            & > h3 {
-                margin-bottom: 10px;
-            }
-            ul {
-                gap: 6px;
+            &--team {
+                margin: 0 auto;
             }
         }
-
-        &__details {
-            margin: 33px 0 22px 0;
-            gap: 16px;
-
-            & > li {
-                border-radius: 6px;
-                border-width: 1px;
-                padding: 5px 8px;
-                font-size: 10px;
+        &__subtitletext {
+            // width: responsive-font(450px, 200px);
+            // width: 450px;
+            height: auto;
+        }
+    }
+    @media (max-width: 430px) {
+        .container {
+            margin-left: 35px;
+            margin-right: 35px;
+            box-sizing: border-box;
+            &__title {
+                &--team {
+                    margin: 0 auto;
+                    max-width: 400px;
+                }
             }
+            &__advantage {
+                border-radius: 32px;
+            }
+            &__image {
+                &--frame {
+                    width: 360px;
+                    height: auto;
+                    align-self: center;
+                }
+            }
+            // &__subtitletext {
+            //     width: 255px;
+            //     height: auto;
+            // }
         }
     }
 
-    .footer {
-        margin: 0 12px;
-        &__left {
-            button {
-                margin-top: 15px;
+    @media (max-width: 320px) {
+        .container {
+            margin-left: 25px;
+            margin-right: 25px;
+            box-sizing: border-box;
+            &__title {
+                &--team {
+                    margin: 0 auto;
+                    max-width: 267px;
+                }
             }
-            &__svg {
-                width: 113px;
+            &__advantage {
+                border-radius: 24px;
             }
-        }
-        &__right {
-            & > p {
-                margin-bottom: 50px;
-                font-size: 17px;
+            &__image {
+                &--frame {
+                    width: 269px;
+                    height: auto;
+                    align-self: center;
+                }
             }
-            ul {
-                display: flex;
-                gap: 20px;
-            }
+            // &__subtitletext {
+
+            //     // width: 310px;
+            //     // height: auto;
+            // }
         }
     }
 }

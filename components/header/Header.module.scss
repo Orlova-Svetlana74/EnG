@@ -63,8 +63,8 @@
         &__nav {
             display: none;
         }
-        &__navlink {
-            display: none;
+        &__navlink__phone {
+            display: none !important;
         }
 
         &__phone__menu {
@@ -74,16 +74,16 @@
             display: flex;
             gap: 30px;
             & > svg {
-                width: 40px;
+                width: responsive-font(40px, 16px);
             }
             & > span {
-                width: 45px;
-                height: 40px;
+                width: responsive-font(45px, 18px);
+                width: responsive-font(40px, 16px);
                 position: relative;
                 &::before {
                     content: '';
                     width: 100%;
-                    height: 10px;
+                    height: responsive-font(10px, 2px);
                     position: absolute;
                     top: 0;
                     background-color: #004577;
@@ -93,7 +93,7 @@
                 &::after {
                     content: '';
                     width: 100%;
-                    height: 10px;
+                    height: responsive-font(10px, 2px);
                     position: absolute;
                     bottom: 0;
                     background-color: #004577;
@@ -106,13 +106,16 @@
             .container {
                 &__phone__menu {
                     & > span {
-                        transform: translateX(10px);
+                        transform: translateX(
+                            responsive-font(10px, 4px, 768px)
+                        );
                         &::before {
-                            transform: rotate(45deg) translateX(-7px);
+                            transform: rotate(45deg) translateX(-12%);
                             top: 50%;
                         }
                         &::after {
-                            transform: rotate(-45deg) translateX(-7px);
+                            transform: rotate(-45deg) translateX(-12%);
+                            //translateX(responsive-font(-1px, -1.5px, 768px));
                             bottom: 50%;
                         }
                     }
@@ -122,11 +125,15 @@
                     width: 100%;
                     height: 100%;
                     position: fixed;
-                    padding: 0 responsive-font(240px, 60px) 0;
+                    padding: 0 responsive-font(60px, 26px, 768px) 0;
                     top: 0;
                     left: 0;
                     background-color: #d8eaff;
                     z-index: 1000;
+                    & > button {
+                        padding: responsive-font(7px, 3px, 768px)
+                            responsive-font(20px, 10px);
+                    }
                 }
                 &__phone__button {
                     position: fixed;
@@ -138,8 +145,8 @@
                 }
                 &__menu {
                     position: absolute;
-                    right: responsive-font(240px, 60px);
-                    top: 120px;
+                    right: responsive-font(60px, 26px, 768px);
+                    top: responsive-font(120px, 80px, 768px);
                 }
                 &__nav {
                     display: flex;
@@ -165,7 +172,7 @@
 
 @media (max-width: 768px) {
     .container {
-        padding-left: responsive-font(110px, 60px, 768px);
-        padding-right: responsive-font(110px, 60px, 768px);
+        padding-left: responsive-font(60px, 26px, 768px);
+        padding-right: responsive-font(60px, 26px, 768px);
     }
 }
