@@ -64,7 +64,7 @@ export default function Home() {
                                 src={frame}
                                 alt=""
                                 width={600}
-                                height={432}
+                                height={431}
                                 priority={true}
                             />
                         </div>
@@ -113,7 +113,8 @@ export default function Home() {
                                                 styles.container__subtitle
                                             }
                                         >
-                                            Опыт <br /> и профессионализм
+                                            Опыт
+                                            <br /> и профессионализм
                                         </h4>
                                     </div>
                                     <div
@@ -270,6 +271,16 @@ export default function Home() {
                     <div className={styles.container__team}>
                         <div className={styles['container__team-block']}>
                             <div className={styles['container__title--team']}>
+                                <Image
+                                    className={
+                                        styles['container__shape--offerShape']
+                                    }
+                                    src={offerShape}
+                                    alt=""
+                                    width={200}
+                                    height={200}
+                                    priority={true}
+                                />
                                 <h2 className={styles.container__title}>
                                     Наша команда
                                 </h2>

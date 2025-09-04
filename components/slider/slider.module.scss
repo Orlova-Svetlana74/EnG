@@ -22,13 +22,6 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-
-        // @media (max-width: 744px) {
-        //     height: 400px;
-        // }
-        // @media (max-width: 430px) {
-        //     height: 300px;
-        // }
     }
 
     &__slide {
@@ -84,12 +77,51 @@
         font-size: responsive-font(27px, 10px);
         line-height: 1.5;
         margin: 0;
+
+        @media (max-width: 1920px) {
+            font-size: 27px;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 20px;
+        }
+        @media (max-width: 744px) {
+            font-size: 26px;
+        }
+        @media (max-width: 430px) {
+            font-size: 14px;
+        }
+        @media (max-width: 320px) {
+            font-size: 10.5px;
+        }
     }
     &__person-name {
         font-size: responsive-font(36px, 14px);
         line-height: 1.5;
         font-weight: bold;
         padding-top: responsive-font(60px, 51px);
+
+        @media (max-width: 1920px) {
+            font-size: 36px;
+        }
+
+        @media (max-width: 1440px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: 1280px) {
+            font-size: 28px;
+        }
+
+        @media (max-width: 744px) {
+            font-size: 34px;
+        }
+        @media (max-width: 430px) {
+            font-size: 18px;
+        }
+        @media (max-width: 320px) {
+            font-size: 14.05px;
+        }
     }
     &__navigation {
         display: flex;
@@ -129,7 +161,17 @@
     &__dots {
         display: flex;
         justify-content: center;
-        gap: 10px;
+        gap: 44px;
+
+        @media (max-width: 744px) {
+            gap: 19px;
+        }
+        @media (max-width: 430px) {
+            gap: 18px;
+        }
+        @media (max-width: 320px) {
+            gap: 17px;
+        }
     }
     &__dot {
         width: 20px;
