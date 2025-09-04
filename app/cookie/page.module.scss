@@ -1,27 +1,22 @@
 @use '@/styles/functions' as *;
+
 .cookie {
+    max-width: 1440px;
+    margin: responsive-font(167px, 43px) auto;
     position: relative;
-    box-sizing: border-box;
-    &__container {
-        display: flex;
-        margin-left: responsive-font(245px, 26px, 1920px, 320px);
-        margin-right: responsive-font(245px, 26px, 1920px, 320px);
-        max-width: 1440px;
-    }
+
     &__content {
-        // max-width: 1345px;
         margin: 0 auto;
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: responsive-font(219px, 29px);
     }
     &__title {
-        font-size: 72px;
+        font-size: responsive-font(72px, 16px);
         font-weight: bold;
-        padding-bottom: 50px;
+        padding-bottom: responsive-font(30px, 14px);
     }
 
     &__text {
-        font-size: 48px;
+        font-size: responsive-font(48px, 12px);
         padding-bottom: 15px;
 
         &__link {
@@ -32,7 +27,7 @@
     &__shapes {
         &--left,
         &--right {
-            position: absolute;
+            // position: absolute;
 
             // position: relative;
             // width: 100%;
@@ -41,16 +36,15 @@
         }
         &--left {
             .cookie__shape {
-                // position: relative;
-
                 &--hi {
-                    left: responsive-font(2000px, 42px);
+                    position: relative;
+                    left: responsive-font(100px, 500px);
+                    bottom: responsive-font(300px, 100px);
                     width: responsive-font(185px, 42px);
                     height: auto;
 
-                    // position: relative;
-                    // top: 200px;
-                    // left: 250px;
+                    top: 200px;
+                    // left: 800px;
                     // z-index: 1;
                 }
 
@@ -59,6 +53,10 @@
                     left: 100px;
                     top: 1000px;
                     z-index: 1;
+                    width: responsive-font(185px, 42px);
+                    height: auto;
+                    width: responsive-font(185px, 42px);
+                    height: auto;
                 }
             }
         }
@@ -71,6 +69,8 @@
                     right: 100px;
                     top: 100px;
                     z-index: 1;
+                    width: responsive-font(185px, 42px);
+                    height: auto;
                 }
 
                 &--down {
@@ -78,15 +78,32 @@
                     right: 250px;
                     top: 700px;
                     z-index: 1;
+                    width: responsive-font(185px, 42px);
+                    height: auto;
 
                     &-dop {
                         position: relative;
                         top: 750px;
                         right: 400px;
                         z-index: 1;
+                        width: responsive-font(185px, 42px);
+                        height: auto;
                     }
                 }
             }
         }
+    }
+}
+@media (max-width: 1920px) {
+    .cookie {
+        margin-left: responsive-font(240px, 30px);
+        margin-right: responsive-font(240px, 30px);
+    }
+}
+
+@media (max-width: 744px) {
+    .cookie {
+        margin-left: responsive-font(60px, 26px, 768px);
+        margin-right: responsive-font(60px, 26px, 768px);
     }
 }
