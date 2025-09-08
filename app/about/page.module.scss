@@ -3,10 +3,8 @@
     overflow: hidden;
     &__mainShape {
         position: absolute;
-        // right: -100px;
         width: responsive-font(930px, 250px);
         height: auto;
-        // top: -50px;
         z-index: -1;
     }
 }
@@ -15,7 +13,6 @@
     max-width: 1440px;
     margin: responsive-font(75px, 20px) auto;
     position: relative;
-    // box-sizing: border-box;
 
     &__block {
         display: flex;
@@ -30,7 +27,7 @@
         padding-bottom: responsive-font(130px, 20px);
     }
     &__title {
-        font-size: responsive-font(54px, 15px);
+        font-size: 54px;
         padding-bottom: responsive-font(20px, 12px);
         font-weight: bold;
 
@@ -130,7 +127,8 @@
     }
 
     &__subtitle {
-        font-size: responsive-font(42px, 10px);
+        font-size: 41px;
+        font-weight: bold;
         line-height: 1.4;
         padding-left: 40px;
     }
@@ -139,16 +137,19 @@
         position: absolute;
         pointer-events: none;
         &--smallshap {
-            left: responsive-font(300px, 100px);
+            left: 47%;
+            transform: translateX(-50%);
+            bottom: 96%;
             width: responsive-font(200px, 139px);
             height: auto;
             position: absolute;
+            z-index: -1;
         }
 
         &--bigshape {
-            // right: 0;
-            left: responsive-font(550px, 170px);
-            top: responsive-font(450px, 200px);
+            left: 55%;
+            transform: translateX(-50%);
+            top: 10%;
             width: responsive-font(330px, 72px);
             height: auto;
             position: absolute;
@@ -161,16 +162,23 @@
             position: absolute;
         }
         &--projects {
-            left: responsive-font(100px, 100px);
-            bottom: responsive-font(1370px, 50px);
+            left: 1%;
+            bottom: 45%;
             width: responsive-font(97px, 84px);
             height: auto;
             position: absolute;
         }
         &--description {
-            left: responsive-font(1300px, 100px);
-            bottom: clamp(150px, 2vw, 100px);
+            left: 75%;
+            bottom: 7%;
             width: responsive-font(211px, 183px);
+            height: auto;
+            position: absolute;
+        }
+        &--offerShape {
+            left: 78%;
+            bottom: 40%;
+            width: responsive-font(283px, 245px);
             height: auto;
             position: absolute;
         }
@@ -205,18 +213,102 @@
         &__subtitle {
             padding-left: 0px;
         }
+        &__icon {
+            width: 92px;
+            height: 80px;
+        }
+        &__shape {
+            &--smallshap {
+                left: 47%;
+                transform: translateX(-50%);
+                bottom: 96%;
+                width: responsive-font(200px, 139px);
+                height: auto;
+                position: absolute;
+                z-index: -1;
+            }
+
+            &--bigshape {
+                left: 55%;
+                transform: translateX(-50%);
+                top: 10%;
+                width: responsive-font(330px, 72px);
+                height: auto;
+                position: absolute;
+            }
+            &--projects {
+                visibility: hidden;
+            }
+            &--description {
+                visibility: hidden;
+            }
+            &--offerShape {
+                visibility: hidden;
+            }
+        }
     }
 }
 
 @media (max-width: 1440px) {
     .container {
         &__shape {
+            position: absolute;
+            pointer-events: none;
+
             &--offer {
                 visibility: visible;
             }
+            &--bigshape {
+                visibility: hidden;
+            }
+            &--projects {
+                visibility: visible;
+                left: 1%;
+                bottom: 49%;
+                width: responsive-font(97px, 84px);
+                height: auto;
+                position: absolute;
+            }
+            &--description {
+                visibility: visible;
+            }
+            &--offerShape {
+                visibility: visible;
+            }
+        }
+        &__text {
+            font-size: 20px;
+        }
+        &__subtitle {
+            font-size: 30px;
+        }
+        &__title {
+            font-size: 39px;
+        }
+        &__icon {
+            width: 69px;
+            height: 62px;
         }
     }
 }
+@media (max-width: 1366px) {
+    .container {
+        &__text {
+            font-size: 19px;
+        }
+        &__subtitle {
+            font-size: 27.78px;
+        }
+        &__title {
+            font-size: 36.11px;
+        }
+        &__icon {
+            width: 64px;
+            height: 56px;
+        }
+    }
+}
+
 @media (max-width: 1280px) {
     .container {
         &__image {
@@ -229,8 +321,32 @@
             gap: 10px;
         }
         &__icon {
-            width: 65px;
-            height: 55px;
+            width: 60px;
+            height: 52px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+        &__subtitle {
+            font-size: 27px;
+        }
+        &__title {
+            font-size: 34px;
+        }
+    }
+}
+
+@media (max-width: 745px) {
+    .container {
+        &__subtitle {
+            font-size: 20px;
+        }
+    }
+}
+@media (max-width: 950px) {
+    .container {
+        &__subtitle {
+            font-size: 20px;
         }
     }
 }
@@ -238,7 +354,7 @@
 @media (max-width: 744px) {
     .container {
         margin-left: responsive-font(60px, 26px, 768px);
-        margin-right: responsive-font(60px, 26px, 768px);        
+        margin-right: responsive-font(60px, 26px, 768px);
         box-sizing: border-box;
 
         &__block {
@@ -255,14 +371,12 @@
         &__advantage {
             border-radius: 56px;
         }
-
         &__advantage-header {
             flex-direction: row-reverse;
             align-items: center;
             gap: 15px;
             justify-content: space-between;
         }
-
         &__advantages-block {
             flex-wrap: wrap;
             padding-top: responsive-font(130px, 18px);
@@ -279,7 +393,6 @@
                 align-self: center;
             }
         }
-
         &__advantages-list1 {
             display: grid;
             grid-template-columns: 1fr;
@@ -310,70 +423,211 @@
         }
 
         &__title {
+            font-size: 34px;
             &--team {
                 margin: 0 auto;
             }
         }
         &__subtitletext {
-            // width: responsive-font(450px, 200px);
-            // width: 450px;
             height: auto;
         }
-    }
-    @media (max-width: 430px) {
-        .container {
-            margin-left: 35px;
-            margin-right: 35px;
-            box-sizing: border-box;
-            &__title {
-                &--team {
-                    margin: 0 auto;
-                    max-width: 400px;
-                }
+        &__text {
+            font-size: 26px;
+        }
+        &__subtitle {
+            font-size: 26px;
+        }
+        &__icon {
+            width: 83px;
+            height: 73px;
+        }
+        &__shape {
+            &--smallshap {
+                visibility: hidden;
             }
-            &__advantage {
-                border-radius: 32px;
+            &--bigshape {
+                visibility: visible;
+                left: 65%;
+                transform: translateX(-65%);
+                top: -40%;
+                transform: translateY(-40%);
+                width: 168px;
+                height: auto;
+                position: absolute;
             }
-            &__image {
-                &--frame {
-                    width: 360px;
-                    height: auto;
-                    align-self: center;
-                }
+            &--offerShape {
+                visibility: hidden;
             }
-            // &__subtitletext {
-            //     width: 255px;
-            //     height: auto;
-            // }
+            &--projects {
+                left: 1%;
+                transform: translateX(-1%);
+                top: 70%;
+                transform: translateY(70%);
+                width: responsive-font(97px, 84px);
+                height: auto;
+                position: absolute;
+            }
+            &--description {
+                left: 48%;
+                transform: translateX(-48%);
+                bottom: 6%;
+
+                width: 222px;
+                height: auto;
+                position: absolute;
+            }
+        }
+        &__text {
+            font-size: 27px;
+
+            &--team {
+                text-align: left;
+                font-size: 26px;
+                padding-bottom: responsive-font(60px, 12px);
+            }
+        }
+        &__toptext {
+            font-size: 26px;
+            text-align: left;
         }
     }
+}
+@media (max-width: 430px) {
+    .container {
+        margin-left: 35px;
+        margin-right: 35px;
+        box-sizing: border-box;
 
-    @media (max-width: 320px) {
-        .container {
-            margin-left: 25px;
-            margin-right: 25px;
-            box-sizing: border-box;
-            &__title {
-                &--team {
-                    margin: 0 auto;
-                    max-width: 267px;
-                }
-            }
-            &__advantage {
-                border-radius: 24px;
-            }
-            &__image {
-                &--frame {
-                    width: 269px;
-                    height: auto;
-                    align-self: center;
-                }
-            }
-            // &__subtitletext {
+        &__title {
+            font-size: 20px;
+            font-weight: bold;
 
-            //     // width: 310px;
-            //     // height: auto;
-            // }
+            &--team {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+        }
+        &__advantage {
+            border-radius: 32px;
+        }
+        &__image {
+            &--frame {
+                width: 360px;
+                height: auto;
+                align-self: center;
+            }
+        }
+        &__toptext {
+            font-size: 16px;
+            text-align: left;
+        }
+        &__titlemis {
+            font-size: 22px;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        &__subtitle {
+            font-size: 17px;
+            font-weight: bold;
+        }
+        &__text {
+            font-size: 14px;
+        }
+        &__icon {
+            width: 48px;
+            height: 42px;
+        }
+        &__text {
+            font-size: 14px;
+
+            &--team {
+                text-align: left;
+                font-size: 18px;
+                padding-bottom: responsive-font(60px, 12px);
+            }
+        }
+        &__shape {
+            &--description {
+                left: 45%;
+                bottom: 7%;
+                width: 128px;
+                height: auto;
+                position: absolute;
+            }
+            &--bigshape {
+                width: 97px;
+                height: auto;
+                position: absolute;
+            }
+            &--projects {
+                width: 64px;
+                height: auto;
+                position: absolute;
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        margin-left: 25px;
+        margin-right: 25px;
+        box-sizing: border-box;
+        &__title {
+            font-size: 15px;
+            font-weight: bold;
+
+            &--team {
+                margin: 0 auto;
+                max-width: 267px;
+            }
+        }
+        &__advantage {
+            border-radius: 24px;
+        }
+        &__image {
+            &--frame {
+                width: 268px;
+                height: auto;
+                align-self: center;
+            }
+        }
+        &__text {
+            font-size: 10px;
+        }
+        &__subtitle {
+            font-size: 14px;
+        }
+        &__icon {
+            width: 36px;
+            height: 36px;
+        }
+        &__shape {
+            &--bigshape {
+                left: 62%;
+                transform: translateX(-62%);
+                top: -40%;
+                transform: translateY(-40%);
+                width: 72px;
+                height: auto;
+                position: absolute;
+            }
+            &--projects {
+                top: 65%;
+                transform: translateY(65%);
+                width: 47px;
+                height: auto;
+                position: absolute;
+            }
+            &--description {
+                left: 24%;
+                transform: translateX(24%);
+                bottom: 8%;
+                transform: translateY(8%);
+                width: 95px;
+                height: auto;
+                position: absolute;
+            }
         }
     }
 }
