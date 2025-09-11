@@ -5,12 +5,13 @@ import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
+import Link from 'next/link'
 
 import {
     offerShape,
     projectsShape,
     skillsShape,
-    descriptionBigShape,    
+    descriptionBigShape,
     icongear,
     Frametwo,
 } from '@/img'
@@ -90,7 +91,9 @@ export default function Services() {
                                 Что мы предлагаем
                             </h4>
                             <Image
-                                className={styles['services__shape--offerShape']}
+                                className={
+                                    styles['services__shape--offerShape']
+                                }
                                 src={offerShape}
                                 alt=""
                                 width={500}
@@ -118,7 +121,8 @@ export default function Services() {
                                                     styles.services__icon
                                                 }
                                             />
-                                            <span
+                                            <Link
+                                                href={`/services/${service.id}`} // или другой путь, соответствующий вашей структуре
                                                 className={
                                                     styles[
                                                         'services__text--large'
@@ -126,7 +130,7 @@ export default function Services() {
                                                 }
                                             >
                                                 {service.text}
-                                            </span>
+                                            </Link>
                                         </div>
                                     </li>
                                 ))}
@@ -145,8 +149,10 @@ export default function Services() {
                 <div className={styles.services__discussion}>
                     <div className={styles.disc}>
                         <p className={styles.services__text}>
-                            Готовы сделать первый шаг к успешному <br />цифровому
-                            будущему? <br />Свяжитесь с нами сегодня, чтобы обсудить<br />
+                            Готовы сделать первый шаг к успешному <br />
+                            цифровому будущему? <br />
+                            Свяжитесь с нами сегодня, чтобы обсудить
+                            <br />
                             ваш проект и начать работу над его реализацией!
                         </p>
                         <Button>Обсудить проект</Button>
