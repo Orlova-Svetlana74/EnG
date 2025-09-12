@@ -8,6 +8,7 @@ import { InSVG } from '@/svg/InSVG'
 import { TgSVG } from '@/svg/TgSVG'
 import { Footercart } from '../footercart/Footercart'
 import { usePathname } from 'next/navigation'
+import { WebsiteLogo } from '@/svg/Website_logo'
 import TGreverse from '@/svg/TGreverseSVG'
 
 export const Footer = () => {

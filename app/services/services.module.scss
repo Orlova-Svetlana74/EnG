@@ -36,6 +36,9 @@
         padding-top: responsive-font(45px, 20px);
         padding-bottom: responsive-font(214px, 60px);
     }
+    &__buttonInvisible {
+        display: none;
+    }
 
     &__title {
         font-size: responsive-font(54px, 18px);
@@ -174,6 +177,10 @@
         }
 
         &__button {
+            display: none;
+        }
+        &__buttonInvisible {
+            display: block;
             width: 100%;
         }
     }

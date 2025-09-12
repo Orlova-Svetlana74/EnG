@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styles from './Header.module.scss'
 import Image from 'next/image'
-import LogoSVG from '@/svg/LogoSVG'
 import { PhoneSVG } from '@/svg/PhoneSVG'
 import { useState } from 'react'
 import { PhoneMiniSVG } from '@/svg/PhoneMiniSVG'
 import { Button } from '../ui/Button/Button'
 import { usePathname } from 'next/navigation'
+import { WebsiteLogo } from '@/svg/Website_logo'
 
 interface IHeader {
     isMenuHeader: boolean
@@ -41,7 +41,7 @@ export function Header({
         >
             <div className={styles.container__wrapper}>
                 <Link href="/">
-                    <LogoSVG className={styles.container__logo} />
+                    <WebsiteLogo className={styles.container__logo} />
                 </Link>
 
                 <Navigation clickScroll={clickScroll} />
