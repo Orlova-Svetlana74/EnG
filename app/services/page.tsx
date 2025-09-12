@@ -122,7 +122,7 @@ export default function Services() {
                                                 }
                                             />
                                             <Link
-                                                href={`/services/${service.id}`} // или другой путь, соответствующий вашей структуре
+                                                href="/developmen"
                                                 className={
                                                     styles[
                                                         'services__text--large'
