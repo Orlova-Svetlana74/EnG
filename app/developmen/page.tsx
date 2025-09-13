@@ -15,14 +15,65 @@ import { Input } from '@/components/ui/input/Input'
 import { Checkbox } from '@/components/ui/checkbox/Checkbox'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
+import Minus from '@/svg/MinusSVG'
+// import Modal from '@/components/ui/modal/Modal'
+import Blockmodal from '@/components/ui/blockModal/blockmodal'
+
+interface FAQItem {
+    id: number
+    question: string
+    answer: string
+}
 
 export default function Developmen() {
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+    const [openQuestionId, setOpenQuestionId] = useState<number | null>(null) // Для отслеживания открытого вопроса
+
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
+
+    // Функция для переключения состояния вопроса
+    const toggleQuestion = (id: number) => {
+        setOpenQuestionId(openQuestionId === id ? null : id)
+    }
+
+    // Данные для вопросов и ответов
+    const faqData: FAQItem[] = [
+        {
+            id: 1,
+            question: 'Почему важно создавать качественный сайт?',
+            answer: 'Качественный веб-сайт, обладающий интуитивно понятным интерфейсом и оптимизированный для быстрой загрузки, является ключевым элементом маркетинговой стратегии компании. Он не только способствует увеличению конверсии и росту продаж, но и формирует положительное восприятие бренда, повышая его конкурентоспособность на рынке.',
+        },
+        {
+            id: 2,
+            question: 'Для чего нужно профессиональное сопровождение?',
+            answer: 'Профессиональное сопровождение обеспечивает бесперебойную работу сайта и его постоянное развитие.',
+        },
+        {
+            id: 3,
+            question:
+                'Почему за созданием сайта стоит обратиться именно к нам?',
+            answer: 'Мы имеем многолетний опыт и предлагаем комплексные решения под ключ.',
+        },
+        {
+            id: 4,
+            question: 'Что представляет собой разработка сайта?',
+            answer: 'Это комплексный процесс, включающий проектирование, дизайн, программирование и тестирование.',
+        },
+        {
+            id: 5,
+            question: 'Как можно заказать создание сайта?',
+            answer: 'Свяжитесь с нами через форму на сайте или по телефону для консультации.',
+        },
+        {
+            id: 6,
+            question: 'Какова стоимость и сроки создания сайта?',
+            answer: 'Стоимость и сроки зависят от сложности проекта и обсуждаются индивидуально.',
+        },
+    ]
 
     return (
         <>
@@ -194,59 +245,35 @@ export default function Developmen() {
                 </div>
                 <div>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Почему важно создавать качественный сайт?
-                        </p>
-                        <Plus />
-                    </div>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Для чего нужно профессиональное сопровождение?
-                        </p>
-                        <Plus />
-                    </div>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Почему за созданием сайта стоит обратиться именно к
-                            нам?
-                        </p>
-                        <Plus />
-                    </div>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Что представляет собой разработка сайта?
-                        </p>
-                        <Plus />
-                    </div>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Как можно заказать создание сайта?
-                        </p>
-                        <Plus />
-                    </div>
-                    <div className={styles.page__questions}>
-                        <p className={styles.page__titletext}>
-                            Какова стоимость и сроки создания сайта ?
-                        </p>
-                        <Plus />
+                    <div className={styles.page__faqContainer}>
+                        {faqData.map((item) => (
+                            <div key={item.id} className={styles.page__faqItem}>
+                                <div
+                                    className={styles.page__faqQuestion}
+                                    onClick={() => toggleQuestion(item.id)}
+                                >
+                                    <p className={styles.page__titletext}>
+                                        {item.question}
+                                    </p>
+                                    <div className={styles.page__faqIcon}>
+                                        {openQuestionId === item.id ? (
+                                            <Minus />
+                                        ) : (
+                                            <Plus />
+                                        )}
+                                    </div>
+                                </div>
+                                {openQuestionId === item.id && (
+                                    <div className={styles.page__faqAnswer}>
+                                        <p>{item.answer}</p>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <p>
-                            Свяжитесь с нами, чтобы узнать больше о наших
-                            услугах и начать работу над вашим проектом.
-                        </p>
-                        <div>
-                            <p>Обсудить проект</p>
-                            <Input></Input>
-                            <Input />
-                            <Input />
-                            <Checkbox />
-                            <Button>Обсудить проект</Button>
-                        </div>
-                    </div>
+                <div className={styles.page__blockmodal}>
+                    <Blockmodal />                    
                 </div>
                 <Footer />
             </div>

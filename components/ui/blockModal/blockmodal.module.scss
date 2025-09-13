@@ -1,0 +1,48 @@
+.modal {
+    background: #badafe;
+    border-radius: 21px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-top: 45px;
+    padding-bottom: 62px;
+    
+    
+
+    &__container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 49px;
+    }
+    &__subtitle {
+        font-size: 27px;
+        font-weight: bold;
+    }
+    &__input {
+        margin-bottom: 45px;
+    }
+    &__buttonsend {
+        margin-top: 45px;
+        width: 100%;
+        font-size: 27px;
+    }
+    
+
+    // Убираем стили для оверлея и закрытия
+    &__overlay {
+        display: none;
+    }
+
+    &__header {
+        display: none;
+    }
+
+    &__close {
+        display: none;
+    }
+}
