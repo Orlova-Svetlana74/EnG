@@ -50,28 +50,28 @@ export default function Developmen() {
         {
             id: 2,
             question: 'Для чего нужно профессиональное сопровождение?',
-            answer: 'Профессиональное сопровождение обеспечивает бесперебойную работу сайта и его постоянное развитие.',
+            answer: 'Доверив разработку веб-ресурса опытным специалистам, вы получаете гарантию того, что итоговый продукт будет полностью соответствовать потребностям вашего бизнеса, учитывая все современные тенденции и требования индустрии. Профессиональные разработчики учитывают все детали, что позволяет создать удобный сайт высокого качества и способствует достижению стратегических целей компании',
         },
         {
             id: 3,
             question:
                 'Почему за созданием сайта стоит обратиться именно к нам?',
-            answer: 'Мы имеем многолетний опыт и предлагаем комплексные решения под ключ.',
+            answer: 'Мы предлагаем высокий уровень качества работ по разработке и продвижению сайтов. Наша команда состоит из опытных разработчиков, дизайнеров, менеджеров и программистов. Мы знаем, как создать сайт, который будет соответствовать вашим потребностям и целям.',
         },
         {
             id: 4,
             question: 'Что представляет собой разработка сайта?',
-            answer: 'Это комплексный процесс, включающий проектирование, дизайн, программирование и тестирование.',
+            answer: 'Разработка сайта - это комплексный подход, который подразумевает его изготовление «под ключ» . Это услуга, которая позволит осуществить развитие бизнеса, создать и расширить целевую аудиторию, сделать более удобным и быстрым взаимодействие с пользователями (клиентами, соискателями вакансий, партнёрами). Разработка сайта упростит вам процесс продвижения вашего бизнеса.',
         },
         {
             id: 5,
             question: 'Как можно заказать создание сайта?',
-            answer: 'Свяжитесь с нами через форму на сайте или по телефону для консультации.',
+            answer: 'Вы можете написать нам через форму обратной связи и в свободной форме описать ваши требования и пожелания. Мы свяжемся с вами, уточним детали и предложим решение.',
         },
         {
             id: 6,
             question: 'Какова стоимость и сроки создания сайта?',
-            answer: 'Стоимость и сроки зависят от сложности проекта и обсуждаются индивидуально.',
+            answer: 'Базовая стоимость разработки сайта начинается от 50 000 рублей. Минимальные сроки разработки составляют 2 недели. Для получения точного расчёта стоимости и сроков свяжитесь с нами.',
         },
     ]
 
@@ -99,14 +99,14 @@ export default function Developmen() {
                             функциональность, эргономичность и эстетическую
                             привлекательность. 
                         </p>
-                        <Button className={styles.page__button}>
-                            Заказать разработку
-                        </Button>
                     </div>
-                    <div className={styles.page__icon}>
+                    <div className={styles.page__proektstile}>
                         <Developtitle />
                     </div>
                 </section>
+                <Button className={styles.page__button}>
+                    Заказать разработку
+                </Button>
 
                 <h4 className={styles.page__subtitle}>
                     Этапы разработки сайта с нуля
@@ -131,12 +131,12 @@ export default function Developmen() {
                                 ожидания целевой аудитории.
                             </p>
                         </div>
-                        <div>
+                        <div className={styles.page__proektstile}>
                             <Analitics />
                         </div>
                     </section>
-                    <section className={styles.page__developsection}>
-                        <div>
+                    <section className={styles.page__developsectionback}>
+                        <div className={styles.page__proektstile}>
                             <Proektir />
                         </div>
 
@@ -169,12 +169,12 @@ export default function Developmen() {
                                 взаимодействие с пользователем. 
                             </p>
                         </div>
-                        <div>
+                        <div className={styles.page__proektstile}>
                             <Desine />
                         </div>
                     </section>
-                    <section className={styles.page__developsection}>
-                        <div>
+                    <section className={styles.page__developsectionback}>
+                        <div className={styles.page__proektstile}>
                             <Develop />
                         </div>
                         <div className={styles.page__developtitle}>
@@ -207,9 +207,10 @@ export default function Developmen() {
                             </h5>
                             <p className={styles.page__titletext}>
                                 При отсутствии предыдущего сайта - многократное
-                                увеличение объема продаж. При наличии старого
-                                сайта - существенное повышение конверсии
-                                посетителей в покупателей.
+                                увеличение объема <br />
+                                продаж. При наличии старого сайта - существенное
+                                повышение
+                                <br /> конверсии посетителей в покупателей.
                             </p>
                         </div>
                     </div>
@@ -221,9 +222,10 @@ export default function Developmen() {
                             </h5>
                             <p className={styles.page__titletext}>
                                 Повысится узнаваемость бренда. Профессиональный
-                                сайт создает впечатление надежности и
-                                серьезности бизнеса, что повышает лояльность
-                                клиентов.
+                                сайт создает
+                                <br /> впечатление надежности и серьезности
+                                бизнеса,
+                                <br /> что повышает лояльность клиентов.
                             </p>
                         </div>
                     </div>
@@ -236,14 +238,18 @@ export default function Developmen() {
                             </h5>
                             <p className={styles.page__titletext}>
                                 Новый сайт позволит укрепить позиций на рынке за
-                                счет качественного онлайн-присутствия и более
-                                эффективного взаимодействия с клиентами.
+                                счет <br />
+                                качественного онлайн-присутствия и более
+                                эффективного <br />
+                                взаимодействия с клиентами.
                             </p>
                         </div>
                     </div>
-                    <Button>Обсудить проект</Button>
+                    <Button className={styles.page__button}>
+                        Обсудить проект
+                    </Button>
                 </div>
-                <div>
+                <div className={styles.page__faqblock}>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
                     <div className={styles.page__faqContainer}>
                         {faqData.map((item) => (
@@ -265,7 +271,9 @@ export default function Developmen() {
                                 </div>
                                 {openQuestionId === item.id && (
                                     <div className={styles.page__faqAnswer}>
-                                        <p>{item.answer}</p>
+                                        <p className={styles.page__titletext}>
+                                            {item.answer}
+                                        </p>
                                     </div>
                                 )}
                             </div>
@@ -273,7 +281,7 @@ export default function Developmen() {
                     </div>
                 </div>
                 <div className={styles.page__blockmodal}>
-                    <Blockmodal />                    
+                    <Blockmodal />
                 </div>
                 <Footer />
             </div>

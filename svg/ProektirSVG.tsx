@@ -2,8 +2,9 @@ import { SVGProps } from 'react'
 const Proektir = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={345}
-        height={259}
+        viewBox="0 0 345 259"
+        // width={345}
+        // height={259}
         fill="none"
         {...props}
     >

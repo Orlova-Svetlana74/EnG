@@ -7,45 +7,76 @@
     margin: 0 auto; /* Центрирование контейнера */
     position: relative;
     margin-bottom: responsive-font(85px, 20px);
-    &__left {
+
+    &__logotg {
         display: flex;
         flex-direction: column;
-        order: 0;
-
-        &__svg {
-            width: responsive-font(150px, 20px);
-            height: auto;
-        }
+        justify-content: space-between;
     }
+
+    // &__left {
+    // display: flex;
+    // flex-direction: column;
+    // order: 0;
+
+    &__leftsvg {
+        width: responsive-font(74px, 29px);
+        height: auto;
+        width: 100%;
+    }
+    &__tgrev {
+        width: responsive-font(74px, 28px);
+        height: auto;
+        width: 100%;
+    }
+    // }
 
     &__footerstile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        // gap: 10px;
+        gap: responsive-font(16px, 10px);
         font-size: responsive-font(27px, 10px);
         font-weight: bold;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: responsive-font(40px, 10px);
-        row-gap: responsive-font(22px, 10px);
+        // display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // column-gap: responsive-font(40px, 10px);
+        // row-gap: responsive-font(22px, 10px);
         order: 1;
     }
+    // &__navlink {
+    // font-size: responsive-font(27px, 10px);
+    // }
     &__navlink_active {
         color: #0040e1;
     }
     &__stylephone {
         font-weight: bold;
         order: 2;
+        display: flex;        
+        // flex-wrap: nowrap;
+        flex-direction: column;
+        order: 3;
+        gap: responsive-font(10px, 6px);
+        // justify-content: space-between;
         & > h6 {
             font-size: responsive-font(21px, 10px);
-            margin-bottom: responsive-font(8px, 10px);
+            font-weight: bold;
+            // margin-bottom: responsive-font(8px, 10px);
         }
         & > a {
             font-size: responsive-font(27px, 10px);
+            font-weight: bold;
         }
     }
     &__right {
         font-size: responsive-font(27px, 10px);
+        font-weight: bold;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        // justify-content: space-between;
         order: 3;
         & > h6 {
             text-align: right;
@@ -61,6 +92,7 @@
         & > ul {
             display: flex;
             gap: 10px;
+            // padding-top: 67px;
             & li:first-child svg {
                 width: responsive-font(44px, 10px);
             }
@@ -100,11 +132,19 @@
             display: flex;
             justify-content: space-between;
         }
-        &__left {
-            & > svg {
-                width: responsive-font(150px, 80px, 768px);
-            }
+        &__leftsvg {
+            // width: responsive-font(50px, 10px, 768px);
+            height: auto;
+            // width: 100%;
         }
+        // &__left {
+        //     & > svg {
+        //         width: responsive-font(70px, 80px, 768px);
+        //     }
+        // }
+        // &__logotg {
+        //     // display: flex;
+        // }
         &__stylephone {
             & > h6 {
                 font-size: responsive-font(20px, 10px, 768px);
@@ -115,7 +155,7 @@
             }
             & > * {
                 &:nth-child(3) {
-                    margin-top: responsive-font(32px, 10px, 768px);
+                    // margin-top: responsive-font(32px, 10px, 768px);
                 }
             }
         }
@@ -147,6 +187,13 @@
                     width: responsive-font(27px, 12px, 768px);
                 }
             }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+        &__stylephone {           
+            align-items: self-end;
         }
     }
 }

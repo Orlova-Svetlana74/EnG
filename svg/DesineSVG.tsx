@@ -2,8 +2,9 @@ import { SVGProps } from 'react'
 const Desine = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={322}
-        height={233}
+        viewBox="0 0 322 233"
+        // width={322}
+        // height={233}
         fill="none"
         {...props}
     >

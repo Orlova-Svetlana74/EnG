@@ -1,3 +1,4 @@
+@use '@/styles/functions' as *;
 .modal {
     background: #badafe;
     border-radius: 21px;
@@ -15,12 +16,12 @@
     }
 
     &__title {
-        font-size: 36px;
+        font-size: responsive-font(36px, 14px);        
         font-weight: bold;
         margin-bottom: 49px;
     }
     &__subtitle {
-        font-size: 27px;
+        font-size: responsive-font(27px, 14px);        
         font-weight: bold;
     }
     &__input {

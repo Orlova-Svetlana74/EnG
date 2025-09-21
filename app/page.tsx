@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import { LogoSVG } from '@/svg/LogoSVG'
+import  LogoSVG  from '@/svg/LogoSVG'
 import { Button } from '@/components/ui/Button/Button'
 import {
     descriptionBigShape,
