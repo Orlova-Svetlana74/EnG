@@ -50,7 +50,7 @@ export default function Developmen() {
         {
             id: 2,
             question: 'Для чего нужно профессиональное сопровождение?',
-            answer: 'Доверив разработку веб-ресурса опытным специалистам, вы получаете гарантию того, что итоговый продукт будет полностью соответствовать потребностям вашего бизнеса, учитывая все современные тенденции и требования индустрии. Профессиональные разработчики учитывают все детали, что позволяет создать удобный сайт высокого качества и способствует достижению стратегических целей компании',
+            answer: 'Доверив разработку веб-ресурса опытным специалистам, вы получаете гарантию того, что итоговый продукт будет полностью соответствовать потребностям вашего бизнеса, учитывая все современные тенденции и требования индустрии. Профессиональные разработчики учитывают все детали, что позволяет создать удобный сайт высокого качества и способствует достижению стратегических целей компании.',
         },
         {
             id: 3,
@@ -121,14 +121,17 @@ export default function Developmen() {
                             <h5 className={styles.page__developsuptitle}>
                                 01. Аналитика
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 На этом этапе изучается целевая аудитория,
-                                конкуренты, цели и задачи проекта. Формулируются
-                                конкретные цели, которых нужно достичь с помощью
-                                сайта. Изучаются сайты конкурентов, чтобы
-                                выявить их сильные и слабые стороны.
-                                Определяются потребности, предпочтения и
-                                ожидания целевой аудитории.
+                                конкуренты, цели
+                                <br /> и задачи проекта. <br /> Формулируются
+                                конкретные цели, которых нужно достичь
+                                <br /> с помощью сайта. Изучаются сайты
+                                конкурентов, чтобы выявить <br />
+                                их сильные и слабые стороны. Определяются
+                                потребности,
+                                <br /> предпочтения и ожидания целевой
+                                аудитории.
                             </p>
                         </div>
                         <div className={styles.page__proektstile}>
@@ -144,14 +147,15 @@ export default function Developmen() {
                             <h5 className={styles.page__developsuptitle}>
                                 02. Проектирование
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 На этапе проектирования создается структура
-                                сайта, разрабатывается прототип, создается
-                                черновой вариант сайта, отображающий
-                                расположение элементов и
-                                функциональность. Формулируются требования к
-                                функциональности, дизайну и другим аспектам
-                                сайта.
+                                сайта,
+                                <br /> разрабатывается прототип, создается
+                                черновой вариант <br />
+                                сайта, отображающий расположение элементов
+                                <br /> и функциональность. Формулируются
+                                требования <br /> к функциональности, дизайну и
+                                другим аспектам сайта.
                             </p>
                         </div>
                     </section>
@@ -160,13 +164,17 @@ export default function Developmen() {
                             <h5 className={styles.page__developsuptitle}>
                                 03. Дизайн
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 Создаются визуальные макеты всех страниц сайта,
+                                <br />
                                 определяющие цветовую схему, типографику,
-                                расположение элементов.  Идет проработка
-                                пользовательского интерфейса (UI), определяется
-                                удобство использования сайта, его навигация и
-                                взаимодействие с пользователем. 
+                                расположение
+                                <br /> элементов. 
+                                <br /> Идет проработка пользовательского
+                                интерфейса (UI),
+                                <br /> определяется удобство использования
+                                сайта, его навигация и взаимодействие с
+                                пользователем. 
                             </p>
                         </div>
                         <div className={styles.page__proektstile}>
@@ -181,13 +189,15 @@ export default function Developmen() {
                             <h5 className={styles.page__developsuptitle}>
                                 04. Разработка
                             </h5>
-                            <p className={styles.page__titletext}>
-                                На этапе разработки делается адаптивная
+                            <p className={styles.page__textcontent}>
+                                На этапе разработки делается адаптивная <br />
                                 вёрстка. Адаптивный сайт будет автоматически
-                                корректно отображаться на всех типах устройств и
-                                с ним удобно будет взаимодействовать. Готовый
-                                сайт должен работать быстро и без сбоев. Для
-                                этого на этапе разработки постоянно производятся
+                                корректно
+                                <br /> отображаться на всех типах устройств и с
+                                ним удобно будет взаимодействовать. <br />{' '}
+                                Готовый сайт должен работать быстро и без сбоев.{' '}
+                                <br /> Для этого на этапе разработки постоянно
+                                производятся <br />
                                 различные тестирования и ведутся работы по
                                 оптимизации.
                             </p>
@@ -200,12 +210,12 @@ export default function Developmen() {
                         Заказывая разработку сайта в EnterGen вы получите:
                     </p>
                     <div className={styles.page__advantages}>
-                        <Checkmark />
+                        <Checkmark className={styles.page__checkmark} />
                         <div className={styles.page__result}>
                             <h5 className={styles.page__developsuptitle}>
                                 Коммерческие результаты
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 При отсутствии предыдущего сайта - многократное
                                 увеличение объема <br />
                                 продаж. При наличии старого сайта - существенное
@@ -215,12 +225,12 @@ export default function Developmen() {
                         </div>
                     </div>
                     <div className={styles.page__advantages}>
-                        <Checkmark />
+                        <Checkmark className={styles.page__checkmark} />
                         <div className={styles.page__result}>
                             <h5 className={styles.page__developsuptitle}>
                                 Брендовые преимущества 
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 Повысится узнаваемость бренда. Профессиональный
                                 сайт создает
                                 <br /> впечатление надежности и серьезности
@@ -231,12 +241,12 @@ export default function Developmen() {
                     </div>
 
                     <div className={styles.page__advantages}>
-                        <Checkmark />
+                        <Checkmark className={styles.page__checkmark} />
                         <div className={styles.page__result}>
                             <h5 className={styles.page__developsuptitle}>
                                 Конкурентные преимущества
                             </h5>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__textcontent}>
                                 Новый сайт позволит укрепить позиций на рынке за
                                 счет <br />
                                 качественного онлайн-присутствия и более
@@ -258,20 +268,20 @@ export default function Developmen() {
                                     className={styles.page__faqQuestion}
                                     onClick={() => toggleQuestion(item.id)}
                                 >
-                                    <p className={styles.page__titletext}>
+                                    <p className={styles.page__faqtext}>
                                         {item.question}
                                     </p>
                                     <div className={styles.page__faqIcon}>
                                         {openQuestionId === item.id ? (
-                                            <Minus />
+                                            <Minus className={styles.page__minus} />
                                         ) : (
-                                            <Plus />
+                                            <Plus className={styles.page__plus} />
                                         )}
                                     </div>
                                 </div>
                                 {openQuestionId === item.id && (
                                     <div className={styles.page__faqAnswer}>
-                                        <p className={styles.page__titletext}>
+                                        <p className={styles.page__faqtext}>
                                             {item.answer}
                                         </p>
                                     </div>
@@ -281,6 +291,10 @@ export default function Developmen() {
                     </div>
                 </div>
                 <div className={styles.page__blockmodal}>
+                    <p className={styles.page__blockmodaltext}>
+                        Свяжитесь с нами, чтобы узнать больше о наших услугах и
+                        начать работу<br /> над вашим проектом.
+                    </p>
                     <Blockmodal />
                 </div>
                 <Footer />

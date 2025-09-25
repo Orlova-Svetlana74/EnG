@@ -59,14 +59,14 @@ export default function Services() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
-            <Image
+            {/* <Image
                 className={styles['services__shape--skillsShape']}
                 src={skillsShape}
                 alt=""
                 width={150}
                 height={150}
                 priority={true}
-            />
+            /> */}
             <div>
                 <div className={styles.services__header}>
                     <div className={styles.services__content}>
@@ -90,7 +90,7 @@ export default function Services() {
                             <h4 className={styles.services__subtitle}>
                                 Что мы предлагаем
                             </h4>
-                            <Image
+                            {/* <Image
                                 className={
                                     styles['services__shape--offerShape']
                                 }
@@ -99,7 +99,7 @@ export default function Services() {
                                 width={500}
                                 height={500}
                                 priority={true}
-                            />
+                            /> */}
                         </div>
 
                         <section className={styles.servicesContainer}>
@@ -136,14 +136,14 @@ export default function Services() {
                                 ))}
                             </ul>
                         </section>
-                        <Image
+                        {/* <Image
                             className={styles['services__shape--bigshape']}
                             src={descriptionBigShape}
                             alt=""
                             width={300}
                             height={150}
                             priority={true}
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className={styles.services__discussion}>
@@ -157,24 +157,24 @@ export default function Services() {
                         </p>
                         <Button>Обсудить проект</Button>
                     </div>
-                    <Image
+                    {/* <Image
                         className={styles['services__image--discussion']}
                         src={Frametwo}
                         alt=""
                         width={388}
                         height={294}
                         priority={true}
-                    />
+                    /> */}
                 </div>
             </div>
-            <Image
+            {/* <Image
                 className={styles['services__shape--projectsShape']}
                 src={projectsShape}
                 alt=""
                 width={185}
                 height={185}
                 priority={true}
-            />
+            /> */}
             <Footer />
         </div>
     )

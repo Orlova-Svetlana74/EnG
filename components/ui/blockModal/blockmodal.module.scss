@@ -1,38 +1,57 @@
 @use '@/styles/functions' as *;
 .modal {
     background: #badafe;
-    border-radius: 21px;
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-top: 45px;
-    padding-bottom: 62px;
-    
-    
+    border-radius: responsive-font(21px, 18px);
+    padding-left: responsive-font(45px, 18px);
+    padding-right: responsive-font(45px, 18px);
+    padding-top: responsive-font(45px, 18px);
+    padding-bottom: responsive-font(45px, 18px);
+    position: relative;
 
     &__container {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        position: relative;
     }
+    &__blockcontent {
+        display: flex;
+        align-content: flex-end;
+        align-items: flex-end;
+    }
+    // &__imagefr {
+    //     display: flex;
+    //     width: responsive-font(553px, 414px);
+    //     height: auto;
+    // }
 
     &__title {
-        font-size: responsive-font(36px, 14px);        
+        font-size: responsive-font(36px, 12px);
         font-weight: bold;
-        margin-bottom: 49px;
+        margin-bottom: responsive-font(12px, 10px);
     }
     &__subtitle {
-        font-size: responsive-font(27px, 14px);        
-        font-weight: bold;
+        font-size: responsive-font(27px, 8px);
+        margin-bottom: responsive-font(49px, 10px);
     }
-    &__input {
-        margin-bottom: 45px;
+    &__inputform {
+        margin-bottom: responsive-font(45px, 8px);
+        font-size: responsive-font(27px, 8px);
+    }
+    &__blockmodal {
+        width: 100%;
     }
     &__buttonsend {
-        margin-top: 45px;
+        margin-top: responsive-font(45px, 23px);
         width: 100%;
-        font-size: 27px;
+        font-size: responsive-font(27px, 14px);
     }
-    
+    &__frametwo {
+        padding-left: 48px;
+        display: flex;
+        width: responsive-font(553px, 300px);
+        height: auto;
+    }
 
     // Убираем стили для оверлея и закрытия
     &__overlay {
@@ -45,5 +64,87 @@
 
     &__close {
         display: none;
+    }
+}
+.formSection {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.thankYouOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-color: rgba(186, 218, 254, 0.9);
+    z-index: 2;
+    border-radius: 21px;
+}
+
+.thankYouContent {
+    padding: responsive-font(60px, 20px);
+    background: #badafe;
+    border-radius: 21.48px;
+    text-align: left;
+    position: relative;
+    // max-width: 80%;
+    border: 1.07px solid #004577;
+}
+
+.thankYouText {
+    font-size: responsive-font(27px, 14px);
+    margin: 0;
+    color: #004577;
+}
+
+.thankYouClose {
+    position: absolute;
+    top: 3px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #004577;
+    padding: 5px;
+
+    svg {
+        width: responsive-font(30px, 9px);
+        height: responsive-font(30px, 9px);
+    }
+}
+@media (max-width: 1920px) {
+    .modal {
+        &__imagefr {
+            display: flex;
+            // width: responsive-font(553px, 414px);
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 744px) {
+    .modal {
+        &__frametwo,
+        &__imagefr {
+            display: none;
+        }
+        &__inputform {
+            // margin-bottom: responsive-font(45px, 8px);
+            font-size: 8px;
+        }
+    }
+}
+@media (max-width: 1020px) {
+    .modal {
+        
+        &__inputform {
+            // margin-bottom: responsive-font(45px, 8px);
+            font-size: 10px;
+        }
     }
 }

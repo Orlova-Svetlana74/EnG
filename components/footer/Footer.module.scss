@@ -12,22 +12,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: flex-start; /* Добавьте это */
+        min-height: 120px; /* Или подходящая высота */
+    }
+    &__logoLink {
+        display: inline-block; /* Чтобы ссылка правильно оборачивала SVG */
     }
 
-    // &__left {
-    // display: flex;
-    // flex-direction: column;
-    // order: 0;
-
-    &__leftsvg {
+    &__leftsvg svg {
         width: responsive-font(74px, 29px);
         height: auto;
-        width: 100%;
+        // width: 100%;
+        min-width: 29px; /* Минимальный размер */
     }
     &__tgrev {
-        width: responsive-font(74px, 28px);
+        width: responsive-font(74px, 29px);
         height: auto;
-        width: 100%;
+        // width: 100%;
+        min-width: 29px; /* Минимальный размер */
     }
     // }
 
@@ -54,7 +56,7 @@
     &__stylephone {
         font-weight: bold;
         order: 2;
-        display: flex;        
+        display: flex;
         // flex-wrap: nowrap;
         flex-direction: column;
         order: 3;
@@ -121,6 +123,8 @@
     }
     &__contents {
         display: contents;
+
+        
     }
 }
 
@@ -129,13 +133,14 @@
         flex-direction: column;
         gap: responsive-font(70px, 30px, 768px);
         &__contents {
+            
+
+
             display: flex;
             justify-content: space-between;
         }
         &__leftsvg {
-            // width: responsive-font(50px, 10px, 768px);
-            height: auto;
-            // width: 100%;
+            width: responsive-font(30px, 29px, 768px);
         }
         // &__left {
         //     & > svg {
@@ -192,7 +197,7 @@
 }
 @media (max-width: 768px) {
     .footer {
-        &__stylephone {           
+        &__stylephone {
             align-items: self-end;
         }
     }

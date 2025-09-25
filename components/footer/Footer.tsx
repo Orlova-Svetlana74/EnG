@@ -21,13 +21,13 @@ export const Footer = () => {
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__logotg}>
                         {/* <div className={styles.footer__left}> */}
-                            <Link href="/">
-                                <LogoSVG className={styles.footer__leftsvg} />
-                            </Link>
+                        <Link className={styles.footer__logoLink} href="/">
+                            <LogoSVG className={styles.footer__leftsvg} />
+                        </Link>
                         {/* </div> */}
-                        <div>
-                            <TGreverse className={styles.footer__tgrev} />
-                        </div>
+                        {/* <div> */}
+                        <TGreverse className={styles.footer__tgrev} />
+                        {/* </div> */}
                     </div>
 
                     <div className={styles.footer__stylephone}>
