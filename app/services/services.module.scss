@@ -36,6 +36,7 @@
         padding-top: responsive-font(45px, 20px);
         padding-bottom: responsive-font(214px, 60px);
     }
+
     &__buttonInvisible {
         display: none;
     }
@@ -71,6 +72,13 @@
             display: flex;
             align-items: center;
             gap: responsive-font(16px, 8px);
+            height: 50px;
+            overflow: hidden;
+            transition: height 0.5s ease;
+
+            &--expanded {
+                height: 55px;
+            }
         }
     }
 
@@ -179,6 +187,7 @@
         &__button {
             display: none;
         }
+
         &__buttonInvisible {
             display: block;
             width: 100%;
