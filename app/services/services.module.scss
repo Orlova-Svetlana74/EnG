@@ -72,13 +72,7 @@
             display: flex;
             align-items: center;
             gap: responsive-font(16px, 8px);
-            height: 50px;
-            overflow: hidden;
-            transition: height 0.5s ease;
-
-            &--expanded {
-                height: 55px;
-            }
+            height: auto;
         }
     }
 
@@ -86,7 +80,7 @@
         &--projectsShape {
             position: absolute;
             right: responsive-font(100px, 20px);
-            width: responsive-font(930px, 250px);
+            width: clamp(170px, 30vw, 930px);
             height: auto;
             bottom: responsive-font(300px, 80px);
             z-index: -1;
@@ -95,7 +89,7 @@
         &--skillsShape {
             position: absolute;
             right: responsive-font(800px, 80px);
-            width: responsive-font(930px, 250px);
+            width: clamp(170px, 30vw, 930px);
             height: auto;
             top: responsive-font(150px, 40px);
             z-index: -1;
@@ -104,7 +98,7 @@
         &--offerShape {
             position: absolute;
             right: responsive-font(240px, 40px);
-            width: responsive-font(930px, 250px);
+            width: clamp(170px, 30vw, 930px);
             height: auto;
             top: responsive-font(480px, 120px);
             z-index: -1;
@@ -113,7 +107,7 @@
         &--bigshape {
             position: absolute;
             right: responsive-font(500px, 60px);
-            width: responsive-font(930px, 250px);
+            width: clamp(170px, 30vw, 930px);
             height: auto;
             top: responsive-font(1200px, 300px);
             z-index: -1;
@@ -127,7 +121,6 @@
     gap: responsive-font(16px, 8px);
 }
 
-// Optional classes referenced in JSX
 .services__icon {
     width: responsive-font(38px, 18px);
     height: auto;
@@ -166,6 +159,63 @@
     .services {
         padding-left: responsive-font(60px, 26px, 768px);
         padding-right: responsive-font(60px, 26px, 768px);
+
+        &__shape {
+            &--projectsShape {
+                position: absolute;
+                right: responsive-font(100px, 20px);
+                width: clamp(170px, 30vw, 930px);
+                height: auto;
+                bottom: responsive-font(300px, 80px);
+                z-index: -1;
+                right: 200px;
+                bottom: 200px;
+            }
+    
+            &--skillsShape {
+                position: absolute;
+                right: responsive-font(800px, 80px);
+                width: clamp(170px, 30vw, 930px);
+                height: auto;
+                top: responsive-font(150px, 40px);
+                z-index: -1;
+                right: 162px;
+                top: 178px;
+            }
+    
+            &--offerShape {
+                position: absolute;
+                right: responsive-font(240px, 40px);
+                width: clamp(170px, 30vw, 930px);
+                height: auto;
+                top: responsive-font(480px, 120px);
+                z-index: -1;
+                top: 434px;
+                right: 41px;
+            }
+    
+           
+            &--bigshape {
+                display: none;
+            }
+        }
+
+
+        &__list {
+            &-item {
+                padding-top: responsive-font(45px, 15px);
+                display: flex;
+                align-items: center;
+                gap: responsive-font(16px, 8px);
+                height: 50px;
+                overflow: hidden;
+                transition: height 0.5s ease;
+
+                &--expanded {
+                    height: 55px;
+                }
+            }
+        }
 
         &__discussion {
             flex-direction: column;
