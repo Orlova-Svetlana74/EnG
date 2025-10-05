@@ -7,6 +7,7 @@
     padding-top: responsive-font(45px, 18px);
     padding-bottom: responsive-font(45px, 18px);
     position: relative;
+    width: 100%;
 
     &__container {
         width: 100%;
@@ -15,19 +16,16 @@
         position: relative;
     }
     &__blockcontent {
-        display: flex;
-        align-content: flex-end;
-        align-items: flex-end;
+        width: 100%;
     }
-    // &__imagefr {
-    //     display: flex;
-    //     width: responsive-font(553px, 414px);
-    //     height: auto;
-    // }
+    &__imagefr {
+        display: flex;
+        height: auto;
+    }
 
     &__title {
         font-size: responsive-font(36px, 12px);
-        font-weight: bold;
+        // font-weight: bold;
         margin-bottom: responsive-font(12px, 10px);
     }
     &__subtitle {
@@ -40,6 +38,9 @@
     }
     &__blockmodal {
         width: 100%;
+        display: flex;
+        // background: #badafe;
+        // border-radius: clamp(18px, 0.1875vw + 17.4px, 21px);
     }
     &__buttonsend {
         margin-top: responsive-font(45px, 23px);
@@ -49,7 +50,7 @@
     &__frametwo {
         padding-left: 48px;
         display: flex;
-        width: responsive-font(553px, 300px);
+        width: responsive-font(553px, 414px);
         height: auto;
     }
 
@@ -65,11 +66,34 @@
     &__close {
         display: none;
     }
+    &__submitButton {        
+        margin-top: responsive-font(45px, 23px);
+        width: 100%;
+        font-size: responsive-font(27px, 14px);
+    }
 }
 .formSection {
     width: 100%;
     position: relative;
     z-index: 1;
+}
+.modal__closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.modal__header {
+    position: relative;
 }
 
 .thankYouOverlay {
@@ -117,6 +141,42 @@
         height: responsive-font(30px, 9px);
     }
 }
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
 @media (max-width: 1920px) {
     .modal {
         &__imagefr {
@@ -129,8 +189,7 @@
 
 @media (max-width: 744px) {
     .modal {
-        &__frametwo,
-        &__imagefr {
+        &__frametwo {
             display: none;
         }
         &__inputform {
@@ -141,7 +200,6 @@
 }
 @media (max-width: 1020px) {
     .modal {
-        
         &__inputform {
             // margin-bottom: responsive-font(45px, 8px);
             font-size: 10px;

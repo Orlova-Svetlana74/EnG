@@ -2,9 +2,7 @@ import { SVGProps } from 'react'
 const Developtitle = (props: SVGProps<SVGSVGElement>) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 370 270"
-        // width={322}
-        // height={218}
+        viewBox="0 0 403 340"        
         fill="none"
         {...props}
     >

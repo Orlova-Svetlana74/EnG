@@ -18,6 +18,7 @@ import Plus from '@/svg/PlusSVG'
 import Minus from '@/svg/MinusSVG'
 // import Modal from '@/components/ui/modal/Modal'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
+import { Frametwo } from '@/img'
 
 interface FAQItem {
     id: number
@@ -26,6 +27,7 @@ interface FAQItem {
 }
 
 export default function Developmen() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
     const [openQuestionId, setOpenQuestionId] = useState<number | null>(null) // Для отслеживания открытого вопроса
@@ -85,7 +87,7 @@ export default function Developmen() {
             <div className={styles.page}>
                 <section className={styles.page__developsection}>
                     <div className={styles.page__developtitle}>
-                        <h3 className={styles.page_title}>
+                        <h3 className={styles.page__title}>
                             Веб-разбработка: <br />
                             создание сайта под ключ
                         </h3>
@@ -263,7 +265,10 @@ export default function Developmen() {
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
                     <div className={styles.page__faqContainer}>
                         {faqData.map((item) => (
-                            <div key={item.id} className={styles.page__faqItem}>
+                            <div
+                                key={item.id}
+                                className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
+                            >
                                 <div
                                     className={styles.page__faqQuestion}
                                     onClick={() => toggleQuestion(item.id)}
@@ -272,30 +277,58 @@ export default function Developmen() {
                                         {item.question}
                                     </p>
                                     <div className={styles.page__faqIcon}>
-                                        {openQuestionId === item.id ? (
-                                            <Minus className={styles.page__minus} />
-                                        ) : (
-                                            <Plus className={styles.page__plus} />
-                                        )}
+                                        {/* {openQuestionId === item.id ? (
+                                            <Minus
+                                                className={styles.page__minus}
+                                            />
+                                        ) : ( */}
+                                        <Plus className={styles.page__plus} />
+                                        {/* )} */}
                                     </div>
                                 </div>
-                                {openQuestionId === item.id && (
-                                    <div className={styles.page__faqAnswer}>
+                                <div
+                                    className={`${styles.page__faqAnswer} ${
+                                        openQuestionId === item.id
+                                            ? styles.page__faqAnswerOpen
+                                            : styles.page__faqAnswerClosed
+                                    }`}
+                                >
+                                    <p className={styles.page__faqtext}>
+                                        {item.answer}
+                                    </p>
+                                </div>
+                                {/* {openQuestionId === item.id && ( */}
+                                {/* <div className={styles.page__faqAnswer}>
                                         <p className={styles.page__faqtext}>
                                             {item.answer}
                                         </p>
-                                    </div>
-                                )}
+                                    </div> */}
+                                {/* )} */}
                             </div>
                         ))}
                     </div>
                 </div>
+
                 <div className={styles.page__blockmodal}>
                     <p className={styles.page__blockmodaltext}>
-                        Свяжитесь с нами, чтобы узнать больше о наших услугах и
-                        начать работу<br /> над вашим проектом.
+                        Обсудить проект
                     </p>
-                    <Blockmodal />
+                    <div className={styles.page__blockmodalform}>
+                        <Blockmodal
+                            mode="inline"
+                            // title="Оставьте контакты, чтобы обсудить проект и условия сотрудничества"
+                            // subtitle="Мы перезвоним в течение 15 минут"
+                            showImage={false}
+                            className={styles.customFormStyle}
+                        />
+                        <div className={styles.page__imageSection}>
+                            <Image
+                                className={styles.page__formImage}
+                                src={Frametwo}
+                                alt=""
+                            />
+                        </div>
+                    </div>
                 </div>
                 <Footer />
             </div>
