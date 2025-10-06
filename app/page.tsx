@@ -54,7 +54,7 @@ export default function Home() {
             <Blockmodal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                mode="modal"                
+                mode="modal"
             />
             <div className={styles.page}>
                 <div className={styles.container}>
@@ -73,7 +73,7 @@ export default function Home() {
                             Здесь ваши идеи превращаются
                             <br />в цифровую реальность и обретают код.
                         </p>
-                        <Button onClick={() => setIsMenu(true)}>
+                        <Button onClick={() => setIsModalOpen(true)}>
                             Напишите нам
                         </Button>
                     </div>

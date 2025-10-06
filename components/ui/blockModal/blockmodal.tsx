@@ -77,7 +77,9 @@ const Blockmodal: React.FC<ModalProps> = ({
         setForm((prev) => ({ ...prev, [key]: value }))
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault() // Добавлено предотвращение перезагрузки страницы
+        
         setLoad(true)
         try {
             const res = await $host.post('profile', { name: form.phone })
@@ -115,10 +117,10 @@ const Blockmodal: React.FC<ModalProps> = ({
                             Оставьте контакты, чтобы обсудить проект и условия
                             сотрудничества.
                         </p>
-                        <p
+                        {/* <p
                             className={styles.formSubtitle}
                             // dangerouslySetInnerHTML={{ __html: subtitle.replace('<br />', '<br/>') }}
-                        />
+                        /> */}
                     </div>
                     <div>
                         <form
@@ -182,14 +184,14 @@ const Blockmodal: React.FC<ModalProps> = ({
             </div>
 
             {showThankYou && (
-                <div className={styles.thankYouOverlay}>
-                    <div className={styles.thankYouContent}>
-                        <p className={styles.thankYouText}>
+                <div className={styles.modal__thankYouOverlay}>
+                    <div className={styles.modal__thankYouContent}>
+                        <p className={styles.modal__thankYouText}>
                             Спасибо за обращение к нам! С вами свяжутся в
                             течении часа для обсуждения вашего проекта.
                         </p>
                         <button
-                            className={styles.thankYouClose}
+                            className={styles.modal__thankYouClose}
                             onClick={() => setShowThankYou(false)}
                         >
                             <CloseSVG />

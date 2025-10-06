@@ -35,6 +35,18 @@
     &__inputform {
         margin-bottom: responsive-font(45px, 8px);
         font-size: responsive-font(27px, 8px);
+        width: 100%;
+        background-color: #d8eaff;
+        border: 1px solid #004577;
+        color: #004577;
+        padding: 8px 35px;
+        border-radius: 7px;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+        color: #004577;
+    }
     }
     &__blockmodal {
         width: 100%;
@@ -66,10 +78,55 @@
     &__close {
         display: none;
     }
-    &__submitButton {        
+    &__submitButton {
         margin-top: responsive-font(45px, 23px);
         width: 100%;
         font-size: responsive-font(27px, 14px);
+    }
+    &__thankYouOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // background-color: rgba(186, 218, 254, 0.9);
+        z-index: 2;
+        border-radius: 21px;
+    }
+
+    &__thankYouContent {
+        padding: responsive-font(60px, 20px);
+        background: #badafe;
+        border-radius: 21.48px;
+        text-align: left;
+        position: relative;
+        // max-width: 80%;
+        border: 1.07px solid #004577;
+    }
+
+    &__thankYouText {
+        font-size: responsive-font(27px, 14px);
+        margin: 0;
+        color: #004577;
+    }
+
+    &__thankYouClose {
+        position: absolute;
+        top: 3px;
+        right: 15px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #004577;
+        padding: 5px;
+
+        svg {
+            width: responsive-font(30px, 9px);
+            height: responsive-font(30px, 9px);
+        }
     }
 }
 .formSection {
@@ -96,51 +153,6 @@
     position: relative;
 }
 
-.thankYouOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // background-color: rgba(186, 218, 254, 0.9);
-    z-index: 2;
-    border-radius: 21px;
-}
-
-.thankYouContent {
-    padding: responsive-font(60px, 20px);
-    background: #badafe;
-    border-radius: 21.48px;
-    text-align: left;
-    position: relative;
-    // max-width: 80%;
-    border: 1.07px solid #004577;
-}
-
-.thankYouText {
-    font-size: responsive-font(27px, 14px);
-    margin: 0;
-    color: #004577;
-}
-
-.thankYouClose {
-    position: absolute;
-    top: 3px;
-    right: 15px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #004577;
-    padding: 5px;
-
-    svg {
-        width: responsive-font(30px, 9px);
-        height: responsive-font(30px, 9px);
-    }
-}
 .modalOverlay {
     position: fixed;
     top: 0;
