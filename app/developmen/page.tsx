@@ -21,6 +21,17 @@ import { FAQItem } from '@/types/faq'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/img'
 
+import {
+    // frame,
+    descriptionSmallShape,
+    descriptionBigShape,
+    // icon1,
+    // icon2,
+    // icon3,
+    // icon4,
+    offerShape,
+    projectsShape,
+} from '@/img'
 
 export default function Developmen() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -33,12 +44,9 @@ export default function Developmen() {
         setIsMenu(true)
     }
 
-    
     const toggleQuestion = (id: number) => {
         setOpenQuestionId(openQuestionId === id ? null : id)
     }
-
-       
 
     return (
         <>
@@ -47,6 +55,7 @@ export default function Developmen() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+
             <div className={styles.page}>
                 <section className={styles.page__developsection}>
                     <div className={styles.page__developtitle}>
@@ -54,6 +63,12 @@ export default function Developmen() {
                             Веб-разбработка: <br />
                             создание сайта под ключ
                         </h3>
+                        <Image
+                            className={styles.page__offerShape}
+                            src={offerShape}
+                            alt=""
+                            priority={true}
+                        />
                         <p className={styles.page__titletext}>
                             Веб-разработка представляет собой многогранный
                             процесс создания интерактивного веб-сайта, который
@@ -72,7 +87,12 @@ export default function Developmen() {
                 <Button className={styles.page__button}>
                     Заказать разработку
                 </Button>
-
+                <Image
+                    className={styles.page__descriptionSmallShape}
+                    src={descriptionSmallShape}
+                    alt=""
+                    priority={true}
+                />
                 <h4 className={styles.page__subtitle}>
                     Этапы разработки сайта с нуля
                 </h4>
@@ -171,6 +191,12 @@ export default function Developmen() {
                 </div>
                 <div>
                     <h4 className={styles.page__subtitle}>Результаты</h4>
+                    <Image
+                        className={styles.page__descriptionBigShape}
+                        src={descriptionBigShape}
+                        alt=""
+                        priority={true}
+                    />
                     <p className={styles['page__subtitle--text']}>
                         Заказывая разработку сайта в EnterGen вы получите:
                     </p>
@@ -224,8 +250,15 @@ export default function Developmen() {
                         Обсудить проект
                     </Button>
                 </div>
+                <Image
+                    className={styles.page__projectsShape}
+                    src={projectsShape}
+                    alt=""
+                    priority={true}
+                />
                 <div className={styles.page__faqblock}>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
+
                     <div className={styles.page__faqContainer}>
                         {faqData.map((item) => (
                             <div
@@ -252,8 +285,8 @@ export default function Developmen() {
                                 <div
                                     className={`${styles.page__faqAnswer} ${
                                         openQuestionId === item.id
-                                            ? styles.page__faqAnswerOpen
-                                            : styles.page__faqAnswerClosed
+                                        // ? styles.page__faqAnswerOpen
+                                        // : styles.page__faqAnswerClosed
                                     }`}
                                 >
                                     <p className={styles.page__faqtext}>
