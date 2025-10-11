@@ -13,12 +13,12 @@ import {
     projectMandarinaImg,
     projectRukalineImg,
     projectsShape,
-} from '@/img'
+} from '@/public/img'
 import { MenuSVG } from '@/svg/MenuSVG'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { Footer } from '@/components/footer/Footer'
-import { Frametwo } from '@/img'
+import { Frametwo } from '@/public/img'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Header } from '@/components/header/Header'
 import { StarSVG } from '@/svg/StarSVG'

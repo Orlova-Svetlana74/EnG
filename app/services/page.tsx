@@ -14,7 +14,7 @@ import {
     descriptionBigShape,
     icongear,
     Frametwo,
-} from '@/img'
+} from '@/public/img'
 
 interface ServiceItem {
     id: number

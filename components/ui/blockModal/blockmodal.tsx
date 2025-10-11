@@ -7,7 +7,7 @@ import { Button } from '../Button/Button'
 import { $host } from '@/api/axios'
 import { message } from '../message/messageApi'
 import Image from 'next/image'
-import { Frametwo } from '@/img'
+import { Frametwo } from '@/public/img'
 
 interface ModalProps {
     title?: string
@@ -79,7 +79,7 @@ const Blockmodal: React.FC<ModalProps> = ({
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault() // Добавлено предотвращение перезагрузки страницы
-        
+
         setLoad(true)
         try {
             const res = await $host.post('profile', { name: form.phone })
@@ -168,7 +168,6 @@ const Blockmodal: React.FC<ModalProps> = ({
                                         )
                                     }
                                 />
-                               
                             </div>
                             <Button
                                 className={styles.modal__submitButton}

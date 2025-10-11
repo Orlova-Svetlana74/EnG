@@ -91,7 +91,7 @@ const Navigation = ({ clickScroll }: INavigation) => {
                 >
                     Entergen
                 </Link>
-                <Link className={styles.container__navlink} href="#">
+                <Link className={styles.container__navlink} href="/projects">
                     Проекты
                 </Link>
                 <Link className={styles.container__navlink} href="/about">
