@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './Header.module.scss'
 import Image from 'next/image'
-import { LogoSVG } from '@/svg/LogoSVG'
+import LogoSVG from '@/svg/LogoSVG'
 import { PhoneSVG } from '@/svg/PhoneSVG'
 import { useState } from 'react'
 import { PhoneMiniSVG } from '@/svg/PhoneMiniSVG'
@@ -40,7 +40,9 @@ export function Header({
             ].join(' ')}
         >
             <div className={styles.container__wrapper}>
-                <LogoSVG className={styles.container__logo} />
+                <Link href="/">
+                    <LogoSVG className={styles.container__logo} />
+                </Link>
 
                 <Navigation clickScroll={clickScroll} />
                 <div className={styles.container__navlink}>

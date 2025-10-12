@@ -22,7 +22,7 @@ import icon1 from './icon1.svg'
 import icon2 from './icon2.svg'
 import icon3 from './icon3.svg'
 import icon4 from './icon4.svg'
-import frame from './frame.svg'
+import frame from './framefr.svg'
 import Frametwo from './Frametwo.svg'
 import icongear from './icongear.svg'
 

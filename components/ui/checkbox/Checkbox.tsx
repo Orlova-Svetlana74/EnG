@@ -25,7 +25,7 @@ export const Checkbox = ({ ...rest }: ICheckbox) => {
             >
                 <CheckSVG />
             </div>
-            <p>Согласен с политикой конфиденциальности</p>
+            <p className={styles.checkbox__soglasie}>Согласен с политикой конфиденциальности</p>
         </label>
     )
 }
