@@ -12,3 +12,4 @@ export const TgSVG = (props: SVGProps<SVGSVGElement>) => (
         />
     </svg>
 )
+

@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import { LogoSVG } from '@/svg/LogoSVG'
+import LogoSVG from '@/svg/LogoSVG'
 import { Button } from '@/components/ui/Button/Button'
 import {
     descriptionBigShape,
@@ -18,7 +18,8 @@ import { MenuSVG } from '@/svg/MenuSVG'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { Footer } from '@/components/footer/Footer'
-import Modal from '@/components/ui/modal/Modal'
+import { Frametwo } from '@/img'
+import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Header } from '@/components/header/Header'
 import { StarSVG } from '@/svg/StarSVG'
 import { ArrowSVG } from '@/svg/ArrowSVG'
@@ -34,8 +35,10 @@ import { TgSVG } from '@/svg/TgSVG'
 import { CookieBanner } from '@/components/ui/CookieBanner/CookieBanner'
 
 export default function Home() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
@@ -48,8 +51,12 @@ export default function Home() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
+            />
             <div className={styles.page}>
-                <Modal isOpen={isMenu} onClose={() => setIsMenu(false)} />
                 <div className={styles.container}>
                     <CookieBanner />
                     <div className={styles.container__tgFixed}>
@@ -66,7 +73,7 @@ export default function Home() {
                             Здесь ваши идеи превращаются
                             <br />в цифровую реальность и обретают код.
                         </p>
-                        <Button onClick={() => setIsMenu(true)}>
+                        <Button onClick={() => setIsModalOpen(true)}>
                             Напишите нам
                         </Button>
                     </div>
@@ -107,7 +114,7 @@ export default function Home() {
                             src={descriptionSmallShape}
                             alt=""
                         />
-                        <Button onClick={() => setIsMenu(true)}>
+                        <Button onClick={() => setIsModalOpen(true)}>
                             Хочу проект!
                         </Button>
                     </div>

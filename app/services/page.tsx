@@ -5,12 +5,13 @@ import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
+import Link from 'next/link'
 
 import {
     offerShape,
     projectsShape,
     skillsShape,
-    descriptionBigShape,    
+    descriptionBigShape,
     icongear,
     Frametwo,
 } from '@/img'
@@ -58,14 +59,14 @@ export default function Services() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
-            <Image
+            {/* <Image
                 className={styles['services__shape--skillsShape']}
                 src={skillsShape}
                 alt=""
                 width={150}
                 height={150}
                 priority={true}
-            />
+            /> */}
             <div>
                 <div className={styles.services__header}>
                     <div className={styles.services__content}>
@@ -89,14 +90,16 @@ export default function Services() {
                             <h4 className={styles.services__subtitle}>
                                 Что мы предлагаем
                             </h4>
-                            <Image
-                                className={styles['services__shape--offerShape']}
+                            {/* <Image
+                                className={
+                                    styles['services__shape--offerShape']
+                                }
                                 src={offerShape}
                                 alt=""
                                 width={500}
                                 height={500}
                                 priority={true}
-                            />
+                            /> */}
                         </div>
 
                         <section className={styles.servicesContainer}>
@@ -118,7 +121,8 @@ export default function Services() {
                                                     styles.services__icon
                                                 }
                                             />
-                                            <span
+                                            <Link
+                                                href="/developmen"
                                                 className={
                                                     styles[
                                                         'services__text--large'
@@ -126,49 +130,51 @@ export default function Services() {
                                                 }
                                             >
                                                 {service.text}
-                                            </span>
+                                            </Link>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
                         </section>
-                        <Image
+                        {/* <Image
                             className={styles['services__shape--bigshape']}
                             src={descriptionBigShape}
                             alt=""
                             width={300}
                             height={150}
                             priority={true}
-                        />
+                        /> */}
                     </div>
                 </div>
                 <div className={styles.services__discussion}>
                     <div className={styles.disc}>
                         <p className={styles.services__text}>
-                            Готовы сделать первый шаг к успешному <br />цифровому
-                            будущему? <br />Свяжитесь с нами сегодня, чтобы обсудить<br />
+                            Готовы сделать первый шаг к успешному <br />
+                            цифровому будущему? <br />
+                            Свяжитесь с нами сегодня, чтобы обсудить
+                            <br />
                             ваш проект и начать работу над его реализацией!
                         </p>
                         <Button>Обсудить проект</Button>
                     </div>
-                    <Image
+                    {/* <Image
                         className={styles['services__image--discussion']}
                         src={Frametwo}
                         alt=""
                         width={388}
                         height={294}
                         priority={true}
-                    />
+                    /> */}
                 </div>
             </div>
-            <Image
+            {/* <Image
                 className={styles['services__shape--projectsShape']}
                 src={projectsShape}
                 alt=""
                 width={185}
                 height={185}
                 priority={true}
-            />
+            /> */}
             <Footer />
         </div>
     )

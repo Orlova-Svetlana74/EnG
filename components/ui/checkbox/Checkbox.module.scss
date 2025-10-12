@@ -1,3 +1,4 @@
+@use '@/styles/functions' as *;
 .checkbox {
     display: flex;
     gap: 10px;
@@ -21,5 +22,8 @@
                 fill: #004577;
             }
         }
+    }
+    &__soglasie {
+        font-size: responsive-font(27px, 8px);
     }
 }

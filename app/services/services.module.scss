@@ -1,3 +1,4 @@
+@use '@/styles/functions' as *;
 .services {
     max-width: 1440px;
     margin: responsive-font(75px, 20px) auto;
