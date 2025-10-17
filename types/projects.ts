@@ -1,8 +1,11 @@
 export interface Project {
-    id: number
-    title: string
-    description: string
-    category: string
-    image: string
-    section?: string
+    id: number;
+    title: string;
+    description: string;
+    category: string;
+    image: string;
+    section?: string;
+    tasks?: string[];
+    solutions?: string[];
+    results?: string[]; 
 }
