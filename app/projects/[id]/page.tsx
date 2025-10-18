@@ -6,6 +6,7 @@ import { projects } from '@/data/dataprojects'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import Image from 'next/image'
+import styles from './page.module.scss'
 import { notFound, useRouter } from 'next/navigation'
 
 // Тип для параметров
@@ -37,7 +38,7 @@ export default function ProjectDetailPage() {
 
         if (foundProject) {
             setProject(foundProject)
-        } 
+        }
 
         setIsLoading(false)
     }, [projectId])
@@ -74,34 +75,29 @@ export default function ProjectDetailPage() {
                 handlerButtonClick={handlerButtonClick}
             />
 
-            <div className="project-detail">
-                <div className="project-detail__container">
-                    {/* Кнопка назад */}
-                    <button
-                        onClick={() => window.history.back()}
-                        className="project-detail__back-button"
-                    >
-                        ← Назад к проектам
-                    </button>
-
+            <div className={styles.project}>
+                <div className={styles.project__container}>
                     {/* Заголовок */}
-                    <h1 className="project-detail__title">{project.title}</h1>
+                    <h1 className={styles.project__title}>
+                        {project.toptitle}
+                    </h1>
 
                     {/* Изображение */}
                     {project.image && (
-                        <div className="project-detail__image">
+                        <div className={styles.project__image}>
                             <Image
                                 src={project.image}
                                 alt={project.title}
                                 width={1200}
                                 height={600}
-                                className="project-detail__image-img"
+                                className={styles.project__image}
                             />
                         </div>
                     )}
+                    <p className={styles.project__toptext}>{project.toptext}</p>
 
                     {/* Описание */}
-                    <div className="project-detail__description">
+                    {/* <div className="project-detail__description">
                         {project.description.includes('**') ? (
                             <>
                                 <strong>
@@ -112,8 +108,14 @@ export default function ProjectDetailPage() {
                         ) : (
                             project.description
                         )}
-                    </div>
-                    <div style={{ display: 'grid', gap: '2rem', marginBottom: '2rem' }}>
+                    </div> */}
+                    <div
+                        style={{
+                            display: 'grid',
+                            gap: '2rem',
+                            marginBottom: '2rem',
+                        }}
+                    >
                         {/* Задачи */}
                         {project.tasks && project.tasks.length > 0 && (
                             <Section title="Задачи" items={project.tasks} />
@@ -121,21 +123,27 @@ export default function ProjectDetailPage() {
 
                         {/* Решения */}
                         {project.solutions && project.solutions.length > 0 && (
-                            <Section title="Решения" items={project.solutions} />
+                            <Section
+                                title="Решения"
+                                items={project.solutions}
+                            />
                         )}
 
                         {/* Результаты */}
                         {project.results && project.results.length > 0 && (
-                            <Section title="Результаты" items={project.results} />
+                            <Section
+                                title="Результаты"
+                                items={project.results}
+                            />
                         )}
                     </div>
 
                     {/* Дополнительная информация */}
                     <div className="project-detail__meta">
-                        <div className="project-detail__category">
+                        {/* <div className="project-detail__category">
                             <strong>Категория:</strong>{' '}
                             {getCategoryLabel(project.category)}
-                        </div>
+                        </div> */}
                         {project.technologies && (
                             <div className="project-detail__technologies">
                                 <strong>Технологии:</strong>{' '}
@@ -156,9 +164,8 @@ export default function ProjectDetailPage() {
                         )}
                     </div>
                 </div>
+                <Footer />
             </div>
-
-            <Footer />
         </>
     )
 }
@@ -166,49 +173,51 @@ export default function ProjectDetailPage() {
 // Компонент для отображения секций
 function Section({ title, items }: { title: string; items: string[] }) {
     return (
-        <div style={{
-            background: 'white',
-            padding: '1.5rem',
-            borderRadius: '8px',
-            border: '1px solid #e0e0e0'
-        }}>
-            <h2 style={{ 
-                fontSize: '1.5rem', 
-                marginBottom: '1rem',
-                color: '#333',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.5rem'
-            }}>
-                <span style={{
-                    display: 'inline-block',
-                    width: '4px',
-                    height: '1.5rem',
-                    background: '#0070f3',
-                    borderRadius: '2px'
-                }}></span>
+        <div className={styles.project__section}>
+            <h2 className={styles.project__subtitle}>
+                <span
+                    // style={{
+                    //     display: 'inline-block',
+                    //     width: '4px',
+                    //     height: '1.5rem',
+                    //     background: '#0070f3',
+                    //     borderRadius: '2px',
+                    // }}
+                ></span>
                 {title}
             </h2>
-            <ul style={{ 
-                listStyle: 'none',
-                padding: 0,
-                margin: 0
-            }}>
+            <ul className={styles.project__toptext}
+                style={{
+                    // listStyle: 'none',
+                    // padding: 0,
+                    // margin: 0,
+                }}
+            >
                 {items.map((item, index) => (
-                    <li key={index} style={{
-                        padding: '0.75rem 0',
-                        borderBottom: index < items.length - 1 ? '1px solid #f0f0f0' : 'none',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '0.5rem',
-                        lineHeight: '1.5'
-                    }}>
-                        <span style={{
-                            color: '#0070f3',
-                            fontWeight: 'bold',
-                            flexShrink: 0,
-                            marginTop: '0.125rem'
-                        }}>•</span>
+                    <li
+                        key={index}
+                        style={{
+                            padding: '0.75rem 0',
+                            borderBottom:
+                                index < items.length - 1
+                                    ? '1px solid #f0f0f0'
+                                    : 'none',
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            gap: '0.5rem',
+                            lineHeight: '1.5',
+                        }}
+                    >
+                        <span
+                            style={{
+                                color: '#0070f3',
+                                fontWeight: 'bold',
+                                flexShrink: 0,
+                                marginTop: '0.125rem',
+                            }}
+                        >
+                            •
+                        </span>
                         <span>{item}</span>
                     </li>
                 ))}
@@ -229,5 +238,3 @@ function getCategoryLabel(categoryKey: string): string {
     }
     return categoryMap[categoryKey] || categoryKey
 }
-
-
