@@ -31,11 +31,11 @@
         height: auto;
     }
     &__descriptionBigShape {
-      position: absolute;
+        position: absolute;
         right: 10%;
         bottom: 10%;
         width: responsive-font(380px, 55px);
-        height: auto;  
+        height: auto;
     }
 
     &__project {
@@ -70,6 +70,7 @@
         display: flex;
         // white-space: nowrap;
         flex-wrap: wrap;
+        align-items: flex-start;
 
         &:hover {
             cursor: pointer;
@@ -83,6 +84,9 @@
         padding-right: 32px;
         font-size: responsive-font(36px, 20px);
         flex-shrink: 0;
+        background: #d8eaff;
+        border: 0;
+        color: #004577;
 
         &:hover {
             cursor: pointer;
@@ -175,13 +179,6 @@
         // color: white;
     }
 
-    /* Разделитель */
-    // &__divider {
-    // height: 2px;
-    // background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-    // margin: 2rem 0;
-    // }
-
     &__projectsGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -222,36 +219,7 @@
         overflow: hidden;
     }
 
-    &__projectCard:hover {
-        //     transform: translateY(-4px);
-        //     box-shadow:
-        //         0 8px 15px rgba(0, 0, 0, 0.1),
-        //         0 3px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Секция проекта */
-    // &__projectSection {
-    //     background: #f7fafc;
-    //     padding: 1rem 1.5rem;
-    //     border-bottom: 1px solid #e2e8f0;
-
-    &__projectSection span {
-        // font-size: 0.8rem;
-        // color: #718096;
-        // text-transform: uppercase;
-        // letter-spacing: 0.05em;
-    }
-
-    &__projectSection p {
-        // margin: 0.25rem 0 0 0;
-        // font-weight: 500;
-        // color: #2d3748;
-    }
-
     /* Контент карточки */
-    &__cardContent {
-        // padding: 1.5rem;
-    }
 
     &__imagePlaceholder {
         width: 100%;
@@ -265,20 +233,6 @@
         color: white;
     }
 
-    /* Информация о проекте */
-    &__projectInfo {
-        // display: flex;
-        // flex-direction: column;
-        // gap: 0.75rem;
-    }
-
-    &__projectHeader {
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: flex-start;
-        // gap: 1rem;
-    }
-
     &__projectTitle {
         font-size: responsive-font(27px, 16px);
         font-weight: bold;
@@ -287,94 +241,55 @@
         // flex: 1;
     }
 
-    &__projectYear {
-        // background: #edf2f7;
-        // padding: 0.25rem 0.75rem;
-        // border-radius: 20px;
-        // font-size: 0.8rem;
-        // color: #4a5568;
-        // font-weight: 500;
-        // white-space: nowrap;
-    }
-
     &__projectDescription {
         font-size: responsive-font(27px, 16px);
-        // color: #718096;
-        // line-height: 1.5;
-        // font-size: 0.95rem;
-    }
-
-    &__projectDescription strong {
-        // color: #2d3748;
-        // font-weight: 600;
     }
 
     /* Сообщение об отсутствии проектов */
-    &__noProjects {
-        // text-align: center;
-        // padding: 4rem 2rem;
-        // color: #a0aec0;
-        // font-size: 1.1rem;
-    }
-    &__placeholder {
-        // width: 100%;
-        // height: 200px;
-        // border-radius: 8px;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        // color: white;
-        // font-weight: bold;
-    }
-
-    &__initials {
-        // font-size: 2.5rem;
-        // opacity: 0.8;
-    }
 }
 
-@media (max-width: 768px) {
-    .container {
-        padding: 1rem;
-    }
+// @media (max-width: 768px) {
+//     .container {
+//         padding: 1rem;
+//     }
 
-    .pageTitle {
-        font-size: 2rem;
-    }
+//     .pageTitle {
+//         font-size: 2rem;
+//     }
 
-    .filterNav {
-        gap: 0.25rem;
-        justify-content: center;
-    }
+//     .filterNav {
+//         gap: 0.25rem;
+//         justify-content: center;
+//     }
 
-    .filterButton {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
+//     .filterButton {
+//         padding: 0.5rem 1rem;
+//         font-size: 0.8rem;
+//     }
 
-    .projectsGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+//     .projectsGrid {
+//         grid-template-columns: 1fr;
+//         gap: 1.5rem;
+//     }
 
-    .projectHeader {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-}
+//     .projectHeader {
+//         flex-direction: column;
+//         align-items: flex-start;
+//         gap: 0.5rem;
+//     }
+// }
 
-@media (max-width: 480px) {
-    .filterNav {
-        overflow-x: auto;
-        justify-content: flex-start;
-        padding-bottom: 0.5rem;
-    }
+// @media (max-width: 480px) {
+//     .filterNav {
+//         overflow-x: auto;
+//         justify-content: flex-start;
+//         padding-bottom: 0.5rem;
+//     }
 
-    .filterButton {
-        white-space: nowrap;
-    }
-}
+//     .filterButton {
+//         white-space: nowrap;
+//     }
+// }
 @media (max-width: 1920px) {
     .wrapper {
         margin-left: responsive-font(240px, 30px);

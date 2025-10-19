@@ -5,7 +5,7 @@ import { Footer } from '@/components/footer/Footer'
 import { StrelkaLeftSVG } from '@/svg/StrelkaLeftSVG'
 import { StrelkaRightSVG } from '@/svg/StrelkaRightSVG'
 import styles from './page.module.scss'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { projects } from '@/data/dataprojects'
 import {
     descriptionSmallShape,
@@ -30,33 +30,57 @@ const ProjectsPage = () => {
         setIsMenu(true)
     }
     // Функция для перехода на страницу проекта
-    const handleProjectClick = (projectId: number) => {
-        router.push(`/projects/${projectId}`) // Предполагается, что у вас есть маршрут /projects/[id]
-    }
+    const handleProjectClick = useCallback(
+        (projectId: number) => {
+            router.push(`/projects/${projectId}`)
+        },
+        [router]
+    )
 
     // Фильтры меню
     const filters = [
         { key: 'all', label: 'Все проекты' },
         { key: 'site-dev', label: 'Разработка сайтов' },
         { key: 'app-dev', label: 'Разработка приложений' },
-        { key: 'bot-dev', label: 'Разработка  тг ботов' },
-        { key: 'tech-projects', label: 'AI-ассистенты' },
+        { key: 'bot-dev', label: 'Разработка тг ботов' },
+        { key: 'ai-assistant', label: 'AI-ассистенты' },
     ]
 
-    // Фильтрация проектов
+    // Фильтрация проектов с отладкой
     const filteredProjects =
         activeFilter === 'all'
             ? projects
-            : projects.filter((project) => project.category === activeFilter)
+            : projects.filter((project) => {
+                  //   console.log(
+                  //       `Checking project ${project.id}: category=${project.category}, filter=${activeFilter}, match=${project.category === activeFilter}`
+                  //   )
+                  return project.category === activeFilter
+              })
 
     // Сброс пагинации при изменении фильтра
     useEffect(() => {
         setCurrentPage(1)
     }, [activeFilter])
 
-    const handleFilterClick = (filterKey: string) => {
-        setActiveFilter(filterKey)
-    }
+    const handleFilterClick = useCallback(
+        (filterKey: string) => {
+            console.log(
+                'Filter clicked:',
+                filterKey,
+                'Current active:',
+                activeFilter
+            )
+
+            // Если кликаем на уже активный фильтр, ничего не делаем
+            if (filterKey === activeFilter) {
+                console.log('Same filter clicked, ignoring')
+                return
+            }
+
+            setActiveFilter(filterKey)
+        },
+        [activeFilter]
+    ) // Добавлена зависимость от activeFilte
 
     // Логика пагинации
     const indexOfLastProject = currentPage * projectsPerPage
@@ -106,6 +130,23 @@ const ProjectsPage = () => {
 
         return pageNumbers
     }
+    // Отладочная информация при монтировании
+    useEffect(() => {
+        console.log('=== DEBUG PROJECTS DATA ===')
+        console.log('Total projects:', projects.length)
+        console.log('Projects by category:')
+        filters.forEach((filter) => {
+            if (filter.key === 'all') return
+            const count = projects.filter(
+                (p) => p.category === filter.key
+            ).length
+            console.log(`- ${filter.key}: ${count} projects`)
+        })
+        console.log('All categories in data:', [
+            ...new Set(projects.map((p) => p.category)),
+        ])
+        console.log('======================')
+    }, [])
 
     return (
         <>
@@ -117,31 +158,42 @@ const ProjectsPage = () => {
             <div className={styles.wrapper}>
                 <section className={styles.wrapper__project}>
                     <h1 className={styles.wrapper__pageTitle}>Проекты</h1>
-                    <h1 className={styles.wrapper__pageTitleteem}>
+                    <h2 className={styles.wrapper__pageTitleteem}>
                         Проекты, реализованные нашей командой
-                    </h1>
-                    <div className={styles.wrapper__filterNav}>
-                        <div className={styles.wrapper__filterRow}>
-                            {filters.map(
+                    </h2>
+
+                    {/* Отладочная информация */}
+                    <div
+                    // style={{
+                    //     padding: '10px',
+                    //     background: '#f5f5f5',
+                    //     margin: '10px 0',
+                    //     borderRadius: '4px',
+                    //     fontSize: '14px',
+                    // }}
+                    >
+                        {/* <strong>Отладка:</strong>
+                        <br />
+                        Активный фильтр:{' '}
+                        <strong style={{ color: 'blue' }}>
+                            {activeFilter}
+                        </strong>
+                        <br />
+                        Всего проектов: {projects.length} | Показано:{' '}
+                        {filteredProjects.length}
+                        <br />
+                        Категории:{' '} */}
+                        {/* {filters
+                            .filter((f) => f.key !== 'all')
+                            .map(
                                 (filter) =>
-                                    filter.key !== 'ai-assistant' && (
-                                        <nav
-                                            key={filter.key}
-                                            className={`${styles.wrapper__filterButton} ${
-                                                activeFilter === filter.key
-                                                    ? styles.active
-                                                    : ''
-                                            }`}
-                                            onClick={() =>
-                                                handleFilterClick(filter.key)
-                                            }
-                                        >
-                                            {filter.label}
-                                        </nav>
-                                    )
-                            )}
-                        </div>
-                        <Image
+                                    `${filter.key}(${projects.filter((p) => p.category === filter.key).length})`
+                            )
+                            .join(', ')} */}
+                    </div>
+
+                    <div className={styles.wrapper__filterNav}>
+                        {/* <Image
                             className={styles.wrapper__offerShape}
                             src={offerShape}
                             alt=""
@@ -152,36 +204,36 @@ const ProjectsPage = () => {
                             src={descriptionSmallShape}
                             alt=""
                             priority={true}
-                        />
+                        /> */}
                         <div className={styles.wrapper__filterRow}>
-                            {filters.map(
-                                (filter) =>
-                                    filter.key === 'ai-assistant' && (
-                                        <nav
-                                            key={filter.key}
-                                            className={`${styles.wrapper__filterButton} ${
-                                                activeFilter === filter.key
-                                                    ? styles.active
-                                                    : ''
-                                            }`}
-                                            onClick={() =>
-                                                handleFilterClick(filter.key)
-                                            }
-                                        >
-                                            {filter.label}
-                                        </nav>
-                                    )
-                            )}
+                            {filters.map((filter) => (
+                                <button
+                                    key={filter.key}
+                                    type="button"
+                                    className={styles.wrapper__filterButton}
+                                    // className={`${styles.wrapper__filterButton} ${
+                                    //     activeFilter === filter.key
+                                    //         ? styles.active
+                                    //         : ''
+                                    // }`}
+                                    onClick={() =>
+                                        handleFilterClick(filter.key)
+                                    }
+                                >
+                                    {filter.label}
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </section>
+
                 <div className={styles.wrapper__projectsGrid}>
                     {currentProjects.map((project) => (
                         <div
                             key={project.id}
                             className={styles.wrapper__projectCard}
-                            onClick={() => handleProjectClick(project.id)} // Добавлен обработчик клика
-                            style={{ cursor: 'pointer' }} // Добавлен стиль для указателя
+                            onClick={() => handleProjectClick(project.id)}
+                            style={{ cursor: 'pointer' }}
                         >
                             <div className={styles.wrapper__cardContent}>
                                 <div className={styles.wrapper__projectImage}>
@@ -252,9 +304,10 @@ const ProjectsPage = () => {
                 {/* Сообщение, если нет проектов */}
                 {filteredProjects.length === 0 && (
                     <div className={styles.wrapper__noProjects}>
-                        <p>Проекты не найдены</p>
+                        <p>Проекты не найдены для фильтра "{activeFilter}"</p>
                     </div>
                 )}
+
                 <Image
                     className={styles.wrapper__projectsShape}
                     src={projectsShape}
@@ -267,6 +320,7 @@ const ProjectsPage = () => {
                     alt=""
                     priority={true}
                 />
+
                 {/* Пагинация */}
                 {filteredProjects.length > projectsPerPage && (
                     <div className={styles.wrapper__pagination}>

@@ -8,11 +8,12 @@ import { Footer } from '@/components/footer/Footer'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import { notFound, useRouter } from 'next/navigation'
-
-// Тип для параметров
-// interface ProjectParams {
-//     id: number
-// }
+import {
+    descriptionSmallShape,
+    descriptionBigShape,
+    offerShape,
+    projectsShape,
+} from '@/public/img'
 
 export default function ProjectDetailPage() {
     const params = useParams()
@@ -77,6 +78,12 @@ export default function ProjectDetailPage() {
 
             <div className={styles.project}>
                 <div className={styles.project__container}>
+                    <Image
+                        className={styles.project__offerShape}
+                        src={offerShape}
+                        alt=""
+                        priority={true}
+                    />
                     {/* Заголовок */}
                     <h1 className={styles.project__title}>
                         {project.toptitle}
@@ -94,32 +101,20 @@ export default function ProjectDetailPage() {
                             />
                         </div>
                     )}
+
                     <p className={styles.project__toptext}>{project.toptext}</p>
 
-                    {/* Описание */}
-                    {/* <div className="project-detail__description">
-                        {project.description.includes('**') ? (
-                            <>
-                                <strong>
-                                    {project.description.split('**')[1]}
-                                </strong>
-                                {project.description.split('**')[2]}
-                            </>
-                        ) : (
-                            project.description
-                        )}
-                    </div> */}
-                    <div
-                        style={{
-                            display: 'grid',
-                            gap: '2rem',
-                            marginBottom: '2rem',
-                        }}
-                    >
+                    <div>
                         {/* Задачи */}
                         {project.tasks && project.tasks.length > 0 && (
                             <Section title="Задачи" items={project.tasks} />
                         )}
+                        <Image
+                            className={styles.project__descriptionSmallShape}
+                            src={descriptionSmallShape}
+                            alt=""
+                            priority={true}
+                        />
 
                         {/* Решения */}
                         {project.solutions && project.solutions.length > 0 && (
@@ -136,34 +131,20 @@ export default function ProjectDetailPage() {
                                 items={project.results}
                             />
                         )}
-                    </div>
-
-                    {/* Дополнительная информация */}
-                    <div className="project-detail__meta">
-                        {/* <div className="project-detail__category">
-                            <strong>Категория:</strong>{' '}
-                            {getCategoryLabel(project.category)}
-                        </div> */}
-                        {project.technologies && (
-                            <div className="project-detail__technologies">
-                                <strong>Технологии:</strong>{' '}
-                                {project.technologies.join(', ')}
-                            </div>
-                        )}
-                        {project.link && (
-                            <div className="project-detail__link">
-                                <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="project-detail__link-button"
-                                >
-                                    Посмотреть проект →
-                                </a>
-                            </div>
-                        )}
+                        <Image
+                            className={styles.project__projectsShape}
+                            src={projectsShape}
+                            alt=""
+                            priority={true}
+                        />
                     </div>
                 </div>
+                <Image
+                    className={styles.project__descriptionBigShape}
+                    src={descriptionBigShape}
+                    alt=""
+                    priority={true}
+                />
                 <Footer />
             </div>
         </>
@@ -174,50 +155,10 @@ export default function ProjectDetailPage() {
 function Section({ title, items }: { title: string; items: string[] }) {
     return (
         <div className={styles.project__section}>
-            <h2 className={styles.project__subtitle}>
-                <span
-                    // style={{
-                    //     display: 'inline-block',
-                    //     width: '4px',
-                    //     height: '1.5rem',
-                    //     background: '#0070f3',
-                    //     borderRadius: '2px',
-                    // }}
-                ></span>
-                {title}
-            </h2>
-            <ul className={styles.project__toptext}
-                style={{
-                    // listStyle: 'none',
-                    // padding: 0,
-                    // margin: 0,
-                }}
-            >
+            <h2 className={styles.project__subtitle}>{title}</h2>
+            <ul className={styles.project__toptext}>
                 {items.map((item, index) => (
-                    <li
-                        key={index}
-                        style={{
-                            padding: '0.75rem 0',
-                            borderBottom:
-                                index < items.length - 1
-                                    ? '1px solid #f0f0f0'
-                                    : 'none',
-                            display: 'flex',
-                            alignItems: 'flex-start',
-                            gap: '0.5rem',
-                            lineHeight: '1.5',
-                        }}
-                    >
-                        <span
-                            style={{
-                                color: '#0070f3',
-                                fontWeight: 'bold',
-                                flexShrink: 0,
-                                marginTop: '0.125rem',
-                            }}
-                        >
-                            •
-                        </span>
+                    <li key={index}>
                         <span>{item}</span>
                     </li>
                 ))}
