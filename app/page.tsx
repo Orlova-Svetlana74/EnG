@@ -34,10 +34,11 @@ import { OverlapSVG } from '@/svg/OverlapSVG'
 import { TgSVG } from '@/svg/TgSVG'
 import { CookieBanner } from '@/components/ui/CookieBanner/CookieBanner'
 
-export default function Home() {
+export default function Home() {    
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+
 
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
@@ -50,6 +51,11 @@ export default function Home() {
                 isMenuHeader={isMenuHeader}
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
+            />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
             />
             <Blockmodal
                 isOpen={isModalOpen}
@@ -73,6 +79,7 @@ export default function Home() {
                             Здесь ваши идеи превращаются
                             <br />в цифровую реальность и обретают код.
                         </p>
+                        <Button onClick={() => setIsModalOpen(true)}>
                         <Button onClick={() => setIsModalOpen(true)}>
                             Напишите нам
                         </Button>
@@ -114,6 +121,7 @@ export default function Home() {
                             src={descriptionSmallShape}
                             alt=""
                         />
+                        <Button onClick={() => setIsModalOpen(true)}>
                         <Button onClick={() => setIsModalOpen(true)}>
                             Хочу проект!
                         </Button>

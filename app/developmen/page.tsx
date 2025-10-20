@@ -16,18 +16,12 @@ import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
 import Minus from '@/svg/MinusSVG'
 import { faqData } from '@/data/data'
-// import { FAQItem } from '@/types/faq'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    // frame,
     descriptionSmallShape,
     descriptionBigShape,
-    // icon1,
-    // icon2,
-    // icon3,
-    // icon4,
     offerShape,
     projectsShape,
 } from '@/public/img'
@@ -278,8 +272,6 @@ export default function Developmen() {
                                 <div
                                     className={`${styles.page__faqAnswer} ${
                                         openQuestionId === item.id
-                                        // ? styles.page__faqAnswerOpen
-                                        // : styles.page__faqAnswerClosed
                                     }`}
                                 >
                                     <p className={styles.page__faqtext}>
