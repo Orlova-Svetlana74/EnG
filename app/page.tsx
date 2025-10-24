@@ -56,12 +56,7 @@ export default function Home() {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
-            />
-            <Blockmodal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                mode="modal"
-            />
+            />            
             <div className={styles.page}>
                 <div className={styles.container}>
                     <CookieBanner />
@@ -78,8 +73,7 @@ export default function Home() {
                         <p>
                             Здесь ваши идеи превращаются
                             <br />в цифровую реальность и обретают код.
-                        </p>
-                        <Button onClick={() => setIsModalOpen(true)}>
+                        </p>                        
                         <Button onClick={() => setIsModalOpen(true)}>
                             Напишите нам
                         </Button>
@@ -120,8 +114,7 @@ export default function Home() {
                             className={styles.container__reality__smallImg}
                             src={descriptionSmallShape}
                             alt=""
-                        />
-                        <Button onClick={() => setIsModalOpen(true)}>
+                        />                        
                         <Button onClick={() => setIsModalOpen(true)}>
                             Хочу проект!
                         </Button>

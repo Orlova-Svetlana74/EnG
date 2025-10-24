@@ -82,6 +82,7 @@ export const Footer = () => {
                             href="/services"
                         >
                             Услуги
+                        </Link>
                         <Link
                             className={styles.footer__navlink}
                             href="/services"
