@@ -15,11 +15,15 @@ import { Checkbox } from '@/components/ui/checkbox/Checkbox'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
 import Minus from '@/svg/MinusSVG'
-import { faqData } from '@/data/data'
+import { faqDataintegration } from '@/data/dataintegration'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
+    icon1,
+    icon2,
+    icon3,
+    icon4,
     descriptionSmallShape,
     descriptionBigShape,
     offerShape,
@@ -85,231 +89,215 @@ export default function Developmen() {
                     alt=""
                     priority={true}
                 />
-                <h4 className={styles.page__subtitle}>
-                    Этапы разработки сайта с нуля
-                </h4>
-                <p className={styles['page__subtitle--text']}>
-                    Разработка сайта от идеи до запуска включает <br /> в себя
-                    несколько этапов:
+                <h2 className={styles.page__subtitle}>
+                    Какие задачи решает интеграция?
+                </h2>
+                <div className={styles['page__advantages-block']}>
+                    <div className={styles.page__blocktitle}>
+                        <Image
+                            className={styles['page__shape--bigshape']}
+                            src={descriptionBigShape}
+                            alt=""
+                            width={330}
+                            height={330}
+                            priority={true}
+                        />
+                    </div>
+
+                    <div className={styles['page__advantages-list1']}>
+                        <div className={styles.page__advantage}>
+                            <div className={styles['page__advantage-header']}>
+                                <Image
+                                    className={styles.page__icon}
+                                    src={icon2}
+                                    alt=""
+                                    width={71}
+                                    height={62}
+                                    priority={true}
+                                />
+                                <h4 className={styles.page__subtitle}>
+                                    Опыт
+                                    <br /> и профессионализм
+                                </h4>
+                            </div>
+                            <div className={styles.page__subtitletext}>
+                                <p className={styles.page__text}>
+                                    Наша команда состоит из опытных
+                                    разработчиков, дизайнеров и тестировщиков.
+                                    Мы знаем, как создать сайт, который будет
+                                    соответствовать вашим потребностям и целям,
+                                    а также понравится аудитории.
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles.page__advantage}>
+                            <div className={styles['page__advantage-header']}>
+                                <Image
+                                    className={styles.page__icon}
+                                    src={icon1}
+                                    alt=""
+                                    width={71}
+                                    height={62}
+                                    priority={true}
+                                />
+                                <h4 className={styles.page__subtitle}>
+                                    Индивидуальный <br /> подход
+                                </h4>
+                            </div>
+                            <div className={styles.page__subtitletext}>
+                                <p className={styles.page__text}>
+                                    Мы не предлагаем готовые решения, мы
+                                    разрабатываем уникальные сайты и приложения,
+                                    которые учитывают особенности вашего бизнеса
+                                    и целевую аудиторию.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles['page__advantages-list2']}>
+                        <div className={styles.page__advantage}>
+                            <div className={styles['page__advantage-header']}>
+                                <Image
+                                    className={styles.page__icon}
+                                    src={icon3}
+                                    alt=""
+                                    width={71}
+                                    height={62}
+                                    priority={true}
+                                />
+                                <h4 className={styles.page__subtitle}>
+                                    Современные
+                                    <br /> технологии
+                                </h4>
+                            </div>
+                            <div className={styles.page__subtitletext}>
+                                <p className={styles.page__text}>
+                                    Мы используем современные технологии и
+                                    инструменты для создания сайтов и
+                                    приложений, которые соответствуют последним
+                                    тенденциям в веб-разработке.
+                                </p>
+                            </div>
+                        </div>
+                        <div className={styles.page__advantage}>
+                            <div className={styles['page__advantage-header']}>
+                                <Image
+                                    className={styles.page__icon}
+                                    src={icon4}
+                                    alt=""
+                                    width={71}
+                                    height={62}
+                                    priority={true}
+                                />
+                                <h4 className={styles.page__subtitle}>
+                                    Комплексный <br /> подход
+                                </h4>
+                            </div>
+                            <div className={styles.page__subtitletext}>
+                                <p className={styles.page__text}>
+                                    Помимо разработки, мы предлагаем услуги по
+                                    интеграции с популярными сервисами, пишем
+                                    боты для Telegram, VK, WhatsApp, Mini App.
+                                    Пишем системы автоматизации для бизнеса и
+                                    многое другое.
+                                </p>
+                            </div>
+
+                            {/* <Image
+                                className={styles['page__shape--projects']}
+                                src={projectsShape}
+                                alt=""
+                                width={330}
+                                height={330}
+                                priority={true}
+                            /> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Зачем бизнесу нужны интеграции? </h2>
+                <p>
+                    Интеграция веб-ресурса с такими системами, как 1C, amoCRM,
+                    Bitrix, платёжные шлюзы и другие, позволяет:
                 </p>
-                <div className={styles.page__blockcontent}>
-                    <section className={styles.page__developsection}>
-                        <div className={styles.page__developtitle}>
-                            <h5 className={styles.page__developsuptitle}>
-                                01. Аналитика
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                На этом этапе изучается целевая аудитория,
-                                конкуренты, цели
-                                <br /> и задачи проекта. <br /> Формулируются
-                                конкретные цели, которых нужно достичь
-                                <br /> с помощью сайта. Изучаются сайты
-                                конкурентов, чтобы выявить <br />
-                                их сильные и слабые стороны. Определяются
-                                потребности,
-                                <br /> предпочтения и ожидания целевой
-                                аудитории.
-                            </p>
-                        </div>
-                        <div className={styles.page__proektstile}>
-                            <Analitics />
-                        </div>
-                    </section>
-                    <section className={styles.page__developsectionback}>
-                        <div className={styles.page__proektstile}>
-                            <Proektir />
-                        </div>
+                <li>• автоматизировать рутинные процессы;</li>
+                <li>• повысить эффективность работы;</li>
+                <li>• улучшить взаимодействие с клиентами;</li>
+                <li>• оптимизировать продажи и управление данными.</li>
+            </div>
 
-                        <div className={styles.page__developtitle}>
-                            <h5 className={styles.page__developsuptitle}>
-                                02. Проектирование
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                На этапе проектирования создается структура
-                                сайта,
-                                <br /> разрабатывается прототип, создается
-                                черновой вариант <br />
-                                сайта, отображающий расположение элементов
-                                <br /> и функциональность. Формулируются
-                                требования <br /> к функциональности, дизайну и
-                                другим аспектам сайта.
-                            </p>
-                        </div>
-                    </section>
-                    <section className={styles.page__developsection}>
-                        <div className={styles.page__developtitle}>
-                            <h5 className={styles.page__developsuptitle}>
-                                03. Дизайн
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                Создаются визуальные макеты всех страниц сайта,
-                                <br />
-                                определяющие цветовую схему, типографику,
-                                расположение
-                                <br /> элементов. 
-                                <br /> Идет проработка пользовательского
-                                интерфейса (UI),
-                                <br /> определяется удобство использования
-                                сайта, его навигация и взаимодействие с
-                                пользователем. 
-                            </p>
-                        </div>
-                        <div className={styles.page__proektstile}>
-                            <Desine />
-                        </div>
-                    </section>
-                    <section className={styles.page__developsectionback}>
-                        <div className={styles.page__proektstile}>
-                            <Develop />
-                        </div>
-                        <div className={styles.page__developtitle}>
-                            <h5 className={styles.page__developsuptitle}>
-                                04. Разработка
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                На этапе разработки делается адаптивная <br />
-                                вёрстка. Адаптивный сайт будет автоматически
-                                корректно
-                                <br /> отображаться на всех типах устройств и с
-                                ним удобно будет взаимодействовать. <br />
-                                Готовый сайт должен работать быстро и без сбоев.
-                                <br /> Для этого на этапе разработки постоянно
-                                производятся <br />
-                                различные тестирования и ведутся работы по
-                                оптимизации.
-                            </p>
-                        </div>
-                    </section>
-                </div>
-                <div>
-                    <h4 className={styles.page__subtitle}>Результаты</h4>
-                    <Image
-                        className={styles.page__descriptionBigShape}
-                        src={descriptionBigShape}
-                        alt=""
-                        priority={true}
-                    />
-                    <p className={styles['page__subtitle--text']}>
-                        Заказывая разработку сайта в EnterGen вы получите:
-                    </p>
-                    <div className={styles.page__advantages}>
-                        <Checkmark className={styles.page__checkmark} />
-                        <div className={styles.page__result}>
-                            <h5 className={styles.page__developsuptitle}>
-                                Коммерческие результаты
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                При отсутствии предыдущего сайта - многократное
-                                увеличение объема <br />
-                                продаж. При наличии старого сайта - существенное
-                                повышение
-                                <br /> конверсии посетителей в покупателей.
-                            </p>
-                        </div>
-                    </div>
-                    <div className={styles.page__advantages}>
-                        <Checkmark className={styles.page__checkmark} />
-                        <div className={styles.page__result}>
-                            <h5 className={styles.page__developsuptitle}>
-                                Брендовые преимущества 
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                Повысится узнаваемость бренда. Профессиональный
-                                сайт создает
-                                <br /> впечатление надежности и серьезности
-                                бизнеса,
-                                <br /> что повышает лояльность клиентов.
-                            </p>
-                        </div>
-                    </div>
+            <div>
+                <h2>
+                    Почему за интеграцией лучше обращаться к специалистам?  
+                </h2>
+                <p>Доверив интеграцию вашего веб-ресурса нам, вы получите:</p>
+                <li>качественное и надёжное решение</li>
+                <li>
+                    гарантию соответствия интеграции потребностям вашего бизнеса
+                </li>
+                <li>профессиональную поддержку и обслуживание</li>
+            </div>
 
-                    <div className={styles.page__advantages}>
-                        <Checkmark className={styles.page__checkmark} />
-                        <div className={styles.page__result}>
-                            <h5 className={styles.page__developsuptitle}>
-                                Конкурентные преимущества
-                            </h5>
-                            <p className={styles.page__textcontent}>
-                                Новый сайт позволит укрепить позиций на рынке за
-                                счет <br />
-                                качественного онлайн-присутствия и более
-                                эффективного <br />
-                                взаимодействия с клиентами.
-                            </p>
-                        </div>
-                    </div>
-                    <Button className={styles.page__button}>
-                        Обсудить проект
-                    </Button>
-                </div>
-                <Image
-                    className={styles.page__projectsShape}
-                    src={projectsShape}
-                    alt=""
-                    priority={true}
-                />
-                <div className={styles.page__faqblock}>
-                    <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
+            <div className={styles.page__faqblock}>
+                <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
 
-                    <div className={styles.page__faqContainer}>
-                        {faqData.map((item) => (
+                <div className={styles.page__faqContainer}>
+                    {faqDataintegration.map((item) => (
+                        <div
+                            key={item.id}
+                            className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
+                        >
                             <div
-                                key={item.id}
-                                className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
+                                className={styles.page__faqQuestion}
+                                onClick={() => toggleQuestion(item.id)}
                             >
-                                <div
-                                    className={styles.page__faqQuestion}
-                                    onClick={() => toggleQuestion(item.id)}
-                                >
-                                    <p className={styles.page__faqtext}>
-                                        {item.question}
-                                    </p>
-                                    <div className={styles.page__faqIcon}>
-                                        <Plus className={styles.page__plus} />
-                                    </div>
+                                <p className={styles.page__faqtext}>
+                                    {item.question}
+                                </p>
+                                <div className={styles.page__faqIcon}>
+                                    <Plus className={styles.page__plus} />
                                 </div>
-                                <div
-                                    className={`${styles.page__faqAnswer} ${
-                                        openQuestionId === item.id
-                                    }`}
-                                >
-                                    <p className={styles.page__faqtext}>
-                                        {item.answer}
-                                    </p>
-                                </div>
-                                {/* {openQuestionId === item.id && ( */}
-                                {/* <div className={styles.page__faqAnswer}>
+                            </div>
+                            <div
+                                className={`${styles.page__faqAnswer} ${
+                                    openQuestionId === item.id
+                                }`}
+                            >
+                                <p className={styles.page__faqtext}>
+                                    {item.answer}
+                                </p>
+                            </div>
+                            {/* {openQuestionId === item.id && ( */}
+                            {/* <div className={styles.page__faqAnswer}>
                                         <p className={styles.page__faqtext}>
                                             {item.answer}
                                         </p>
                                     </div> */}
-                                {/* )} */}
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className={styles.page__blockmodal}>
-                    <p className={styles.page__blockmodaltext}>
-                        Обсудить проект
-                    </p>
-                    <div className={styles.page__blockmodalform}>
-                        <Blockmodal
-                            mode="inline"
-                            showImage={false}
-                            className={styles.customFormStyle}
-                        />
-                        <div className={styles.page__imageSection}>
-                            <Image
-                                className={styles.page__formImage}
-                                src={Frametwo}
-                                alt=""
-                            />
+                            {/* )} */}
                         </div>
+                    ))}
+                </div>
+            </div>
+
+            <div className={styles.page__blockmodal}>
+                <p className={styles.page__blockmodaltext}>Обсудить проект</p>
+                <div className={styles.page__blockmodalform}>
+                    <Blockmodal
+                        mode="inline"
+                        showImage={false}
+                        className={styles.customFormStyle}
+                    />
+                    <div className={styles.page__imageSection}>
+                        <Image
+                            className={styles.page__formImage}
+                            src={Frametwo}
+                            alt=""
+                        />
                     </div>
                 </div>
-                <Footer />
             </div>
+            <Footer />
         </>
     )
 }

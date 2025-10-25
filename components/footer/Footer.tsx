@@ -27,19 +27,7 @@ export const Footer = () => {
 
                     <div className={styles.footer__stylephone}>
                         <h6>Почта</h6>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="mailto:enter.gen@mail.ru"
-                        >
-                            enter.gen@mail.ru
-                        </Link>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="mailto:entergen.company@gmail.com"
-                        >
-                            entergen.company@gmail.com
-                        </Link>
-                        <h6>Почта</h6>
+
                         <Link
                             className={styles.footer__navlink}
                             href="mailto:enter.gen@mail.ru"
@@ -76,12 +64,6 @@ export const Footer = () => {
                         </Link>
                         <Link className={styles.footer__navlink} href="#">
                             Контакты
-                        </Link>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="/services"
-                        >
-                            Услуги
                         </Link>
                         <Link
                             className={styles.footer__navlink}
