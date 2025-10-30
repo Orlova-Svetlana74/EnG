@@ -65,43 +65,59 @@
         box-sizing: border-box;
         overflow: hidden;
     }
+    &__advantages-block {
+        padding-top: responsive-font(60px, 16px);
+        padding-bottom: responsive-font(120px, 50px);
+    }
 
     &__advantage-header {
         display: flex;
-        align-items: center;
+        // align-items: center;
         gap: 40px;
+        align-items: flex-end;
     }
     &__icon {
-        width: 71px;
-        height: 62px;
+        width: responsive-font(82px, 20px);
+        height: responsive-font(82px, 20px);
+    }
+    &__subtitleblock {
+        font-size: responsive-font(36px, 14px);
+        padding-bottom: responsive-font(100px, 50px);
+    }
+    &__subtitletext {
+        font-size: responsive-font(36px, 14px);
+        // padding-bottom: responsive-font(100px, 50px);
     }
     &__subtitle {
-        font-size: 27px;
+        font-weight: bold;
+        // padding-bottom: 25px;
+        font-size: responsive-font(54px, 15px);
     }
+
     &__text {
-        font-size: responsive-font(27px, 19px);
+        font-size: responsive-font(27px, 12px);
     }
 
     &__offerShape {
         position: absolute;
-        left: 60%;
-        top: 1%;
-        width: responsive-font(142px, 55px);
+        left: 70%;
+        top: 2%;
+        width: responsive-font(300px, 55px);
         height: auto;
     }
 
     &__descriptionSmallShape {
         position: absolute;
-        left: 50%;
-        top: 13%;
-        width: responsive-font(184px, 55px);
+        left: 37%;
+        top: 30%;
+        width: responsive-font(300px, 55px);
         height: auto;
     }
 
     &__descriptionBigShape {
         position: absolute;
         left: 67%;
-        top: 48%;
+        bottom: 60%;
         width: responsive-font(311px, 70px);
         height: auto;
     }
@@ -109,14 +125,15 @@
     &__projectsShape {
         position: absolute;
         left: 60%;
-        top: 50%;
-        width: responsive-font(403px, 70px);
+        top: 42%;
+        width: responsive-font(300px, 70px);
         height: auto;
     }
 
     &__button {
         margin-top: responsive-font(45px, 12px);
         margin-bottom: responsive-font(75px, 30px);
+        font-size: responsive-font(36px, 30px);
     }
 
     &__formImage {
@@ -154,7 +171,7 @@
     &__developtitle {
         display: flex;
         flex-wrap: wrap;
-        max-width: 50%;
+        max-width: 60%;
         order: 1;
     }
     &__developsection,
@@ -194,7 +211,8 @@
         padding-bottom: responsive-font(40px, 10px);
     }
     &__titletext {
-        font-size: responsive-font(36px, 12px);
+        font-size: responsive-font(36px, 14px);
+        padding-top: responsive-font(25px, 12px);
     }
     &__textcontent {
         font-size: responsive-font(27px, 12px);
@@ -202,17 +220,7 @@
     &__faqtext {
         font-size: responsive-font(28px, 10px);
     }
-    &__subtitle {
-        font-weight: bold;
-        // padding-bottom: 25px;
-        font-size: responsive-font(54px, 15px);
 
-        &--text {
-            // font-weight: normal;
-            font-size: responsive-font(36px, 14px);
-            // padding-bottom: 43px;
-        }
-    }
     &__developsuptitle {
         font-size: responsive-font(28px, 14px);
         font-weight: bold;
@@ -226,7 +234,7 @@
     &__faqContainer {
         width: 100%;
         margin-top: responsive-font(40px, 15px);
-        margin-bottom: responsive-font(75px, 30px);
+        margin-bottom: responsive-font(75px, 50px);
     }
     &__faqblock {
         position: relative;
@@ -237,7 +245,7 @@
         // margin-bottom: 1rem;
         // border-bottom: 1px solid #eaeaea;
         overflow: hidden;
-        // .page__faqAnswer {
+        // &__faqAnswer {
         //     overflow: hidden;
         //     max-height: 0;
         //     transition: max-height 0.3s ease;
@@ -271,10 +279,7 @@
     &__plus {
         width: responsive-font(28px, 12px);
         height: auto;
-    }
-    // &__minus {
-    //     width: responsive-font(28px, 12px);
-    // }
+    }    
 
     &__faqQuestion {
         display: flex;
@@ -310,6 +315,7 @@
             opacity 0.3s ease 0.1s,
             transform 0.3s ease,
             padding 0.3s ease;
+        // interpolate-size: allow-keywords;
         opacity: 0;
         overflow: hidden;
         transform: translateY(-10px);
@@ -354,6 +360,15 @@
         padding-top: responsive-font(45px, 18px);
         padding-bottom: responsive-font(45px, 18px);
         position: relative;
+    }
+    &__list {
+        font-size: responsive-font(27px, 12px);
+        padding-top: responsive-font(16px, 10px);
+    }
+    &__iconblock {
+        display: flex;
+        gap: responsive-font(44px, 12px);
+        padding-top: 10px;
     }
 
     // &__offerShape {
@@ -450,21 +465,25 @@
         &__formImage {
             display: none;
         }
+        &__advantages-list1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(10px, 3.125vw, 50px);
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        &__advantages-list2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(10px, 3.125vw, 50px);
+            padding-top: responsive-font(50px, 0px);
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
     }
 }
-
-// @media (max-width: 1440px) {
-//     .page {
-//         &__developsection {
-//             & > div:last-child {
-//                 height: 162px;
-//                 width: 241px;
-
-//                 & > svg {
-//                     width: 100%;
-//                     height: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }

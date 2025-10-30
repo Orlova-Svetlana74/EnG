@@ -8,27 +8,56 @@ import styles from './page.module.scss'
 import { useState, useEffect, useCallback } from 'react'
 import { projects } from '@/data/dataprojects'
 import {
-    descriptionSmallShape,
+    // descriptionSmallShape,
     descriptionBigShape,
-    offerShape,
+    // offerShape,
     projectsShape,
 } from '@/public/img'
-import { useRouter } from 'next/navigation' // Добавлен импорт useRouter
+import { useRouter, useSearchParams } from 'next/navigation' // Добавлен импорт useRouter
 
 const ProjectsPage = () => {
+    const router = useRouter()
+    const searchParams = useSearchParams()
+
+    // Получаем параметры из URL или используем значения по умолчанию
+    const urlFilter = searchParams.get('filter') || 'all'
+    const urlPage = searchParams.get('page') || '1'
+
     const [activeFilter, setActiveFilter] = useState('all')
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
-    const router = useRouter() // Добавлен хук useRouter
 
     // Состояния для пагинации
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(parseInt(urlPage))
     const [projectsPerPage] = useState(6) // Количество проектов на странице
 
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
+
+    // Функция для обновления query параметров
+    const updateQueryParams = useCallback(
+        (filter: string, page: number) => {
+            const params = new URLSearchParams()
+            if (filter !== 'all') {
+                params.set('filter', filter)
+            }
+            if (page !== 1) {
+                params.set('page', page.toString())
+            }
+
+            const queryString = params.toString()
+            const newUrl = queryString
+                ? `/projects?${queryString}`
+                : '/projects'
+
+            // Используем replace вместо push чтобы избежать накопления истории
+            router.replace(newUrl, { scroll: false })
+        },
+        [router]
+    )
+
     // Функция для перехода на страницу проекта
     const handleProjectClick = useCallback(
         (projectId: number) => {
@@ -50,37 +79,33 @@ const ProjectsPage = () => {
     const filteredProjects =
         activeFilter === 'all'
             ? projects
-            : projects.filter((project) => {
-                  //   console.log(
-                  //       `Checking project ${project.id}: category=${project.category}, filter=${activeFilter}, match=${project.category === activeFilter}`
-                  //   )
-                  return project.category === activeFilter
-              })
+            : projects.filter((project) => project.category === activeFilter)
+
+    // Синхронизация состояния с URL параметрами при изменении searchParams
+    useEffect(() => {
+        const filter = searchParams.get('filter') || 'all'
+        const page = parseInt(searchParams.get('page') || '1')
+
+        setActiveFilter(filter)
+        setCurrentPage(page)
+    }, [searchParams])
 
     // Сброс пагинации при изменении фильтра
-    useEffect(() => {
-        setCurrentPage(1)
-    }, [activeFilter])
+    // useEffect(() => {
+    //     setCurrentPage(1)
+    // }, [activeFilter])
 
+    // Обработчик фильтра с обновлением URL
     const handleFilterClick = useCallback(
         (filterKey: string) => {
-            console.log(
-                'Filter clicked:',
-                filterKey,
-                'Current active:',
-                activeFilter
-            )
-
-            // Если кликаем на уже активный фильтр, ничего не делаем
-            if (filterKey === activeFilter) {
-                console.log('Same filter clicked, ignoring')
-                return
-            }
+            if (filterKey === activeFilter) return
 
             setActiveFilter(filterKey)
+            setCurrentPage(1) // Сбрасываем на первую страницу при смене фильтра
+            updateQueryParams(filterKey, 1)
         },
-        [activeFilter]
-    ) // Добавлена зависимость от activeFilte
+        [activeFilter, updateQueryParams]
+    )
 
     // Логика пагинации
     const indexOfLastProject = currentPage * projectsPerPage
@@ -91,27 +116,38 @@ const ProjectsPage = () => {
     )
     const totalPages = Math.ceil(filteredProjects.length / projectsPerPage)
 
-    // Функции для изменения страницы
+    // Функции для изменения страницы с обновлением URL
     const nextPage = () => {
         if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1)
+            const newPage = currentPage + 1
+            setCurrentPage(newPage)
+            updateQueryParams(activeFilter, newPage)
+            // Прокрутка к верху страницы
+            window.scrollTo({ top: 0, behavior: 'smooth' })
         }
     }
 
     const prevPage = () => {
         if (currentPage > 1) {
-            setCurrentPage(currentPage - 1)
+            const newPage = currentPage - 1
+            setCurrentPage(newPage)
+            updateQueryParams(activeFilter, newPage)
+            // Прокрутка к верху страницы
+            window.scrollTo({ top: 0, behavior: 'smooth' })
         }
     }
 
     const goToPage = (pageNumber: number) => {
         setCurrentPage(pageNumber)
+        updateQueryParams(activeFilter, pageNumber)
+        // Прокрутка к верху страницы
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     // Генерация номеров страниц для отображения
     const getPageNumbers = () => {
         const pageNumbers = []
-        const maxVisiblePages = 5 // Максимальное количество видимых номеров страниц
+        const maxVisiblePages = 5
 
         let startPage = Math.max(
             1,
@@ -119,7 +155,6 @@ const ProjectsPage = () => {
         )
         let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
 
-        // Корректируем startPage, если мы near the end
         if (endPage - startPage + 1 < maxVisiblePages) {
             startPage = Math.max(1, endPage - maxVisiblePages + 1)
         }
@@ -130,23 +165,20 @@ const ProjectsPage = () => {
 
         return pageNumbers
     }
-    // Отладочная информация при монтировании
+
+    // Обработка прямых URL с параметрами при загрузке
     useEffect(() => {
-        console.log('=== DEBUG PROJECTS DATA ===')
-        console.log('Total projects:', projects.length)
-        console.log('Projects by category:')
-        filters.forEach((filter) => {
-            if (filter.key === 'all') return
-            const count = projects.filter(
-                (p) => p.category === filter.key
-            ).length
-            console.log(`- ${filter.key}: ${count} projects`)
-        })
-        console.log('All categories in data:', [
-            ...new Set(projects.map((p) => p.category)),
-        ])
-        console.log('======================')
-    }, [])
+        // Если в URL есть параметры, синхронизируем состояние
+        const filterFromUrl = searchParams.get('filter')
+        const pageFromUrl = searchParams.get('page')
+
+        if (filterFromUrl && filterFromUrl !== activeFilter) {
+            setActiveFilter(filterFromUrl)
+        }
+        if (pageFromUrl && parseInt(pageFromUrl) !== currentPage) {
+            setCurrentPage(parseInt(pageFromUrl))
+        }
+    }, []) // Только при монтировании
 
     return (
         <>
@@ -160,62 +192,19 @@ const ProjectsPage = () => {
                     <h1 className={styles.wrapper__pageTitle}>Проекты</h1>
                     <h2 className={styles.wrapper__pageTitleteem}>
                         Проекты, реализованные нашей командой
-                    </h2>
-
-                    {/* Отладочная информация */}
-                    <div
-                    // style={{
-                    //     padding: '10px',
-                    //     background: '#f5f5f5',
-                    //     margin: '10px 0',
-                    //     borderRadius: '4px',
-                    //     fontSize: '14px',
-                    // }}
-                    >
-                        {/* <strong>Отладка:</strong>
-                        <br />
-                        Активный фильтр:{' '}
-                        <strong style={{ color: 'blue' }}>
-                            {activeFilter}
-                        </strong>
-                        <br />
-                        Всего проектов: {projects.length} | Показано:{' '}
-                        {filteredProjects.length}
-                        <br />
-                        Категории:{' '} */}
-                        {/* {filters
-                            .filter((f) => f.key !== 'all')
-                            .map(
-                                (filter) =>
-                                    `${filter.key}(${projects.filter((p) => p.category === filter.key).length})`
-                            )
-                            .join(', ')} */}
-                    </div>
+                    </h2>                  
 
                     <div className={styles.wrapper__filterNav}>
-                        {/* <Image
-                            className={styles.wrapper__offerShape}
-                            src={offerShape}
-                            alt=""
-                            priority={true}
-                        />
-                        <Image
-                            className={styles.wrapper__descriptionSmallShape}
-                            src={descriptionSmallShape}
-                            alt=""
-                            priority={true}
-                        /> */}
                         <div className={styles.wrapper__filterRow}>
                             {filters.map((filter) => (
                                 <button
                                     key={filter.key}
                                     type="button"
-                                    className={styles.wrapper__filterButton}
-                                    // className={`${styles.wrapper__filterButton} ${
-                                    //     activeFilter === filter.key
-                                    //         ? styles.active
-                                    //         : ''
-                                    // }`}
+                                    className={`${styles.wrapper__filterButton} ${
+                                        activeFilter === filter.key
+                                            ? styles.wrapper__filterButtonActive
+                                            : ''
+                                    }`}
                                     onClick={() =>
                                         handleFilterClick(filter.key)
                                     }
