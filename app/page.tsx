@@ -13,12 +13,12 @@ import {
     projectMandarinaImg,
     projectRukalineImg,
     projectsShape,
-} from '@/img'
+} from '@/public/img'
 import { MenuSVG } from '@/svg/MenuSVG'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { Footer } from '@/components/footer/Footer'
-import { Frametwo } from '@/img'
+import { Frametwo } from '@/public/img'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Header } from '@/components/header/Header'
 import { StarSVG } from '@/svg/StarSVG'
@@ -34,10 +34,11 @@ import { OverlapSVG } from '@/svg/OverlapSVG'
 import { TgSVG } from '@/svg/TgSVG'
 import { CookieBanner } from '@/components/ui/CookieBanner/CookieBanner'
 
-export default function Home() {
+export default function Home() {    
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+
 
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
@@ -55,7 +56,7 @@ export default function Home() {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
-            />
+            />            
             <div className={styles.page}>
                 <div className={styles.container}>
                     <CookieBanner />
@@ -72,7 +73,7 @@ export default function Home() {
                         <p>
                             Здесь ваши идеи превращаются
                             <br />в цифровую реальность и обретают код.
-                        </p>
+                        </p>                        
                         <Button onClick={() => setIsModalOpen(true)}>
                             Напишите нам
                         </Button>
@@ -113,7 +114,7 @@ export default function Home() {
                             className={styles.container__reality__smallImg}
                             src={descriptionSmallShape}
                             alt=""
-                        />
+                        />                        
                         <Button onClick={() => setIsModalOpen(true)}>
                             Хочу проект!
                         </Button>

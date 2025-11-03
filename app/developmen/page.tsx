@@ -3,7 +3,6 @@ import styles from './page.module.scss'
 import Image from 'next/image'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
-
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
 import Developtitle from '@/svg/DeveloptitleSVG'
@@ -17,21 +16,15 @@ import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
 import Minus from '@/svg/MinusSVG'
 import { faqData } from '@/data/data'
-import { FAQItem } from '@/types/faq'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
-import { Frametwo } from '@/img'
+import { Frametwo } from '@/public/img'
 
 import {
-    // frame,
     descriptionSmallShape,
     descriptionBigShape,
-    // icon1,
-    // icon2,
-    // icon3,
-    // icon4,
     offerShape,
     projectsShape,
-} from '@/img'
+} from '@/public/img'
 
 export default function Developmen() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -179,8 +172,8 @@ export default function Developmen() {
                                 вёрстка. Адаптивный сайт будет автоматически
                                 корректно
                                 <br /> отображаться на всех типах устройств и с
-                                ним удобно будет взаимодействовать. <br />{' '}
-                                Готовый сайт должен работать быстро и без сбоев.{' '}
+                                ним удобно будет взаимодействовать. <br />
+                                Готовый сайт должен работать быстро и без сбоев.
                                 <br /> Для этого на этапе разработки постоянно
                                 производятся <br />
                                 различные тестирования и ведутся работы по
@@ -273,20 +266,12 @@ export default function Developmen() {
                                         {item.question}
                                     </p>
                                     <div className={styles.page__faqIcon}>
-                                        {/* {openQuestionId === item.id ? (
-                                            <Minus
-                                                className={styles.page__minus}
-                                            />
-                                        ) : ( */}
                                         <Plus className={styles.page__plus} />
-                                        {/* )} */}
                                     </div>
                                 </div>
                                 <div
                                     className={`${styles.page__faqAnswer} ${
                                         openQuestionId === item.id
-                                        // ? styles.page__faqAnswerOpen
-                                        // : styles.page__faqAnswerClosed
                                     }`}
                                 >
                                     <p className={styles.page__faqtext}>
@@ -312,8 +297,6 @@ export default function Developmen() {
                     <div className={styles.page__blockmodalform}>
                         <Blockmodal
                             mode="inline"
-                            // title="Оставьте контакты, чтобы обсудить проект и условия сотрудничества"
-                            // subtitle="Мы перезвоним в течение 15 минут"
                             showImage={false}
                             className={styles.customFormStyle}
                         />

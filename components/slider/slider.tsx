@@ -12,7 +12,7 @@ import {
     juniorFront,
     middleDisign,
     projectManager,
-} from '@/img'
+} from '@/public/img'
 import { useState, useEffect, useRef } from 'react'
 
 export default function Slider() {

@@ -25,6 +25,15 @@ import icon4 from './icon4.svg'
 import frame from './framefr.svg'
 import Frametwo from './Frametwo.svg'
 import icongear from './icongear.svg'
+import settingsalert from './settings_alert.svg'
+import webhook from './webhook.svg'
+import workspacepremium from './workspace_premium.svg'
+import sync from './sync.svg'
+import group from './group.svg'
+import handyman from './handyman.svg'
+import paymentarrowdown from './payment_arrow_down.svg'
+
+
 
 
 export {
@@ -55,4 +64,11 @@ export {
     frame,
     Frametwo,
     icongear,
+    settingsalert,
+    webhook,
+    workspacepremium,
+    sync,
+    group,
+    handyman,
+    paymentarrowdown
 }

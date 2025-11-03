@@ -14,11 +14,12 @@ import {
     descriptionBigShape,
     icongear,
     Frametwo,
-} from '@/img'
+} from '@/public/img'
 
 interface ServiceItem {
     id: number
     text: string
+    href: string
 }
 
 export default function Services() {
@@ -29,28 +30,36 @@ export default function Services() {
         setIsMenu(true)
     }
     const services: ServiceItem[] = [
-        { id: 1, text: 'Веб-разработка: создание сайта под ключ' },
+        {
+            id: 1,
+            text: 'Веб-разработка: создание сайта под ключ',
+            href: '/developmen',
+        },
         {
             id: 2,
             text: 'Разработка ботов и Mini Apps приложений на базе Telegram и VK',
+            href: '#',
         },
         {
             id: 3,
             text: 'Интеграция сайта с системами 1C, amoCRM, Bitrix, эквайрингами и др.',
+            href: '/integration',
         },
         {
             id: 4,
             text: 'Деплой и поддержка: развертывание highload кластеров, поддержка observability',
+            href: '#',
         },
         {
             id: 5,
             text: 'Разработка систем разной сложности CRM, CMS, ERP, LMS',
+            href: '#',
         },
-        { id: 6, text: 'Backend разработка' },
-        { id: 7, text: 'Frontend разработка' },
-        { id: 8, text: 'Проектирование и создание архитектур' },
-        { id: 9, text: 'Тестирование приложений' },
-        { id: 10, text: 'Создание и интеграции ИИ' },
+        { id: 6, text: 'Backend разработка', href: '/developmen' },
+        { id: 7, text: 'Frontend разработка', href: '/developmen' },
+        { id: 8, text: 'Проектирование и создание архитектур', href: '#' },
+        { id: 9, text: 'Тестирование приложений', href: '#' },
+        { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
     return (
         <div className={styles.services}>
@@ -122,7 +131,7 @@ export default function Services() {
                                                 }
                                             />
                                             <Link
-                                                href="/developmen"
+                                                href={service.href}
                                                 className={
                                                     styles[
                                                         'services__text--large'

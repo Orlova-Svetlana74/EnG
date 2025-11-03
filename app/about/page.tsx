@@ -13,7 +13,7 @@ import {
     icon4,
     offerShape,
     projectsShape,
-} from '@/img'
+} from '@/public/img'
 
 import { useState } from 'react'
 import { Footer } from '@/components/footer/Footer'
