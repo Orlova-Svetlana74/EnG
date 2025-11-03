@@ -1,17 +1,18 @@
 import { SVGProps } from "react"
-export const StrelkaRightSVG = ({ className = "", ...props }: SVGProps<SVGSVGElement>) => (
+export const StrelkaRightSVG = ({ className = "",  ...props }: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={18}
-    height={30}
+    viewBox="0 0 20 35"
+    width={20}
+    height={35}
     fill="none"
-    className={className}
     {...props}
   >
     <path
       fill="#004577"
-      d="M16.588 16.564c.761-.763.76-2-.004-2.76L4.144 1.396A1.952 1.952 0 0 0 1.387 4.16L12.445 15.19 1.417 26.247a1.952 1.952 0 0 0 2.765 2.757l12.406-12.44Zm-2.7-1.377.002 1.953 1.319-.002-.003-1.952-.003-1.953-1.318.002.003 1.953Z"
+      d="M18.968 19.065a2.25 2.25 0 0 0-.005-3.182L4.625 1.583A2.25 2.25 0 0 0 1.447 4.77l12.745 12.71-12.71 12.746a2.25 2.25 0 1 0 3.186 3.178l14.3-14.339Zm-3.113-1.587.003 2.25 1.52-.002-.004-2.25-.003-2.25-1.52.002.004 2.25Z"
     />
   </svg>
 )
+
 

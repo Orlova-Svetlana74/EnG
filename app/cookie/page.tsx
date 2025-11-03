@@ -10,7 +10,7 @@ import {
     descriptionSmallShape,
     descriptionBigShape,
     projectsShape,
-} from '@/img'
+} from '@/public/img'
 
 export default function Cookie() {
     const [isMenu, setIsMenu] = useState(false)
@@ -48,7 +48,8 @@ export default function Cookie() {
                     </div>
                     <div className={styles.cookie__content}>
                         <h1 className={styles.cookie__title}>
-                            Согласие на обработку <br /> электронных пользовательских <br />
+                            Согласие на обработку <br /> электронных
+                            пользовательских <br />
                             данных (файлы cookie)
                         </h1>
                         <p className={styles.cookie__text}>

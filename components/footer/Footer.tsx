@@ -1,12 +1,10 @@
 'use client'
-
 import Link from 'next/link'
 import LogoSVG from '@/svg/LogoSVG'
 import styles from './Footer.module.scss'
 import { VkSVG } from '@/svg/VkSVG'
 import { WhatsupSVG } from '@/svg/WhatsupSVG'
 import { InSVG } from '@/svg/InSVG'
-// import { MailSVG } from '@/svg/MailSVG'
 import { TgSVG } from '@/svg/TgSVG'
 import { Footercart } from '../footercart/Footercart'
 import { usePathname } from 'next/navigation'
@@ -20,18 +18,16 @@ export const Footer = () => {
             <div className={styles.footer}>
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__logotg}>
-                        {/* <div className={styles.footer__left}> */}
                         <Link className={styles.footer__logoLink} href="/">
                             <LogoSVG className={styles.footer__leftsvg} />
                         </Link>
-                        {/* </div> */}
-                        {/* <div> */}
+
                         <TGreverse className={styles.footer__tgrev} />
-                        {/* </div> */}
                     </div>
 
                     <div className={styles.footer__stylephone}>
                         <h6>Почта</h6>
+
                         <Link
                             className={styles.footer__navlink}
                             href="mailto:enter.gen@mail.ru"
@@ -57,7 +53,10 @@ export const Footer = () => {
 
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__footerstile}>
-                        <Link className={styles.footer__navlink} href="#">
+                        <Link
+                            className={styles.footer__navlink}
+                            href="/projects"
+                        >
                             Проекты
                         </Link>
                         <Link className={styles.footer__navlink} href="/about">
