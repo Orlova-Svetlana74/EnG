@@ -99,6 +99,10 @@ export default function RootLayout({
                         />
                     </div>
                 </noscript>
+                <meta
+                    name="google-site-verification"
+                    content="aHekHfVPzm8fiUYxQwkZPSoCI8LTndrLf-Wp6oWX3X0"
+                />
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 {children}
