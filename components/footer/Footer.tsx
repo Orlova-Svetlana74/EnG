@@ -34,12 +34,7 @@ export const Footer = () => {
                         >
                             enter.gen@mail.ru
                         </Link>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="mailto:entergen.company@gmail.com"
-                        >
-                            entergen.company@gmail.com
-                        </Link>
+
                         <h6 className={styles.footer__phone}>Телефон</h6>
                         <Link
                             className={styles.footer__navlink}

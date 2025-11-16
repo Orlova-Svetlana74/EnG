@@ -6,35 +6,37 @@
     position: relative;
     z-index: 1;
 
+    &__shape {
+        position: relative;
+
+        &--descriptionSmallShape {
+            position: absolute;
+            left: 85%;
+            top: 10%;
+            width: responsive-font(184px, 55px);
+            height: auto;
+        }
+        &--descriptionBigShape {
+            position: absolute;
+            left: 90%;
+            // top: 10%;
+            width: responsive-font(311px, 70px);
+            height: auto;
+        }
+        &--projectsShape {
+            position: absolute;
+            left: 90%;
+            top: 10%;
+            width: responsive-font(311px, 70px);
+            height: auto;
+        }
+    }
+
     &__offerShape {
         position: absolute;
         left: 60%;
         top: 1%;
         width: responsive-font(142px, 55px);
-        height: auto;
-    }
-
-    &__descriptionSmallShape {
-        position: absolute;
-        left: 50%;
-        top: 13%;
-        width: responsive-font(184px, 55px);
-        height: auto;
-    }
-
-    &__descriptionBigShape {
-        position: absolute;
-        left: 67%;
-        top: 48%;
-        width: responsive-font(311px, 70px);
-        height: auto;
-    }
-
-    &__projectsShape {
-        position: absolute;
-        left: 60%;
-        top: 50%;
-        width: responsive-font(403px, 70px);
         height: auto;
     }
 
@@ -279,36 +281,6 @@
         padding-bottom: responsive-font(45px, 18px);
         position: relative;
     }
-
-    // &__offerShape {
-    //     left: 60%;
-    //     bottom: 70%;
-    //     width: responsive-font(142px, 55px);
-    //     height: auto;
-    //     position: absolute;
-    // }
-
-    // &__descriptionSmallShape {
-    //     left: 60%;
-    //     top: 13%;
-    //     width: responsive-font(184px, 55px);
-    //     height: auto;
-    //     position: absolute;
-    // }
-    // &__descriptionBigShape {
-    //     left: 70%;
-    //     top: 50%;
-    //     width: responsive-font(311px, 70px);
-    //     height: auto;
-    //     position: absolute;
-    // }
-    // &__projectsShape {
-    //     left: 60%;
-    //     top: 63%;
-    //     width: responsive-font(403px, 70px);
-    //     height: auto;
-    //     position: absolute;
-    // }
 }
 @keyframes fadeIn {
     from {

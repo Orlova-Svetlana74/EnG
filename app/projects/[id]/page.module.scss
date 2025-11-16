@@ -25,33 +25,44 @@
     }
     &__offerShape {
         position: absolute;
-        left: 60%;
-        top: 0%;
-        width: responsive-font(355px, 55px);
+        left: 75%;
+        top: 10%;
+        width: responsive-font(355px, 50px);
         height: auto;
+    }
+    &__shape {
+        position: relative;
     }
     &__descriptionSmallShape {
         position: absolute;
-        left: 40%;
-        top: 45%;
-        width: responsive-font(355px, 55px);
+        left: 88%;
+        bottom: 50%;
+        width: responsive-font(355px, 50px);
         height: auto;
     }
     &__projectsShape {
         position: absolute;
         left: 50%;
         top: 65%;
-        width: responsive-font(355px, 55px);
+        width: responsive-font(355px, 50px);
         height: auto;
     }
     &__descriptionBigShape {
         position: absolute;
-        left: 53%;
-        bottom: 3%;
+        left: 88%;
+        bottom: 50%;
         width: responsive-font(355px, 55px);
         height: auto;
     }
-    
+    &__offerShapefooter {
+        position: absolute;
+        left: 30%;
+        bottom: 20%;
+        width: responsive-font(355px, 55px);
+        height: auto;
+        display: none;
+    }
+
     &__subtitle {
         font-size: responsive-font(54px, 15px);
     }
@@ -61,5 +72,26 @@
     .project {
         margin-left: responsive-font(240px, 30px);
         margin-right: responsive-font(240px, 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        &__offerShapefooter {
+            position: absolute;
+            left: 30%;
+            bottom: 50%;
+            width: responsive-font(355px, 55px);
+            height: auto;
+            display: inline;
+        }
+    }
+}
+
+@media (max-width: 744px) {
+    .project {
+        &__offerShape {
+            display: none;
+        }
     }
 }

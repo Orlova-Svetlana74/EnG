@@ -3,13 +3,16 @@ import styles from './page.module.scss'
 import Image from 'next/image'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
-import { StrelkaLeftSVG } from '@/svg/StrelkaLeftSVG'
-import { StrelkaRightSVG } from '@/svg/StrelkaRightSVG'
-import { useState, useEffect, useCallback} from 'react'
+import StrelkaLeftSVG from '@/svg/StrelkaLeftSVG'
+import StrelkaRightSVG from '@/svg/StrelkaRightSVG'
+import { useState, useEffect, useCallback } from 'react'
 import { projects } from '@/data/dataprojects'
-import {    
-    descriptionBigShape,    
+import {
+    mainShape,
+    descriptionSmallShape,
+    descriptionBigShape,
     projectsShape,
+    offerShape,
 } from '@/public/img'
 import { useRouter, useSearchParams } from 'next/navigation' // Добавлен импорт useRouter
 
@@ -190,7 +193,7 @@ export function ProjectsContent() {
                     <h1 className={styles.wrapper__pageTitle}>Проекты</h1>
                     <h2 className={styles.wrapper__pageTitleteem}>
                         Проекты, реализованные нашей командой
-                    </h2>                  
+                    </h2>
 
                     <div className={styles.wrapper__filterNav}>
                         <div className={styles.wrapper__filterRow}>
@@ -213,7 +216,25 @@ export function ProjectsContent() {
                         </div>
                     </div>
                 </section>
-
+                <div className={styles.wrapper__shape}>
+                    <Image
+                        className={`${styles.wrapper__shape} ${styles['wrapper__shape--mainShape']}`}
+                        src={mainShape}
+                        alt=""
+                    />
+                    <Image
+                        className={`${styles.wrapper__shape} ${styles['wrapper__shape--offerShape']}`}
+                        src={offerShape}
+                        alt=""
+                        priority={true}
+                    />
+                    <Image
+                        className={`${styles.wrapper__shape} ${styles['wrapper__shape--descriptionSmallShape']}`}
+                        src={descriptionSmallShape}
+                        alt=""
+                        priority={true}
+                    />
+                </div>
                 <div className={styles.wrapper__projectsGrid}>
                     {currentProjects.map((project) => (
                         <div
@@ -307,6 +328,12 @@ export function ProjectsContent() {
                     alt=""
                     priority={true}
                 />
+                <Image
+                    className={styles.wrapper__offerShapefooter}
+                    src={offerShape}
+                    alt=""
+                    priority={true}
+                />
 
                 {/* Пагинация */}
                 {filteredProjects.length > projectsPerPage && (
@@ -351,7 +378,7 @@ export function ProjectsContent() {
                             disabled={currentPage === totalPages}
                         >
                             <StrelkaRightSVG
-                                className={styles.wrapper__strelkaLeft}
+                                className={styles.wrapper__strelkaRight}
                             />
                         </button>
                     </div>

@@ -75,15 +75,15 @@ export default function ProjectDetailPage() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Image
+                className={styles.project__offerShape}
+                src={offerShape}
+                alt=""
+                priority={true}
+            />
 
             <div className={styles.project}>
                 <div className={styles.project__container}>
-                    <Image
-                        className={styles.project__offerShape}
-                        src={offerShape}
-                        alt=""
-                        priority={true}
-                    />
                     {/* Заголовок */}
                     <h1 className={styles.project__title}>
                         {project.toptitle}
@@ -105,16 +105,20 @@ export default function ProjectDetailPage() {
                     <p className={styles.project__toptext}>{project.toptext}</p>
 
                     <div>
-                        {/* Задачи */}
-                        {project.tasks && project.tasks.length > 0 && (
-                            <Section title="Задачи" items={project.tasks} />
-                        )}
-                        <Image
-                            className={styles.project__descriptionSmallShape}
-                            src={descriptionSmallShape}
-                            alt=""
-                            priority={true}
-                        />
+                        <div className={styles.project__shape}>
+                            <Image
+                                className={
+                                    styles.project__descriptionSmallShape
+                                }
+                                src={descriptionSmallShape}
+                                alt=""
+                                priority={true}
+                            />
+                            {/* Задачи */}
+                            {project.tasks && project.tasks.length > 0 && (
+                                <Section title="Задачи" items={project.tasks} />
+                            )}
+                        </div>
 
                         {/* Решения */}
                         {project.solutions && project.solutions.length > 0 && (
@@ -123,29 +127,39 @@ export default function ProjectDetailPage() {
                                 items={project.solutions}
                             />
                         )}
-
-                        {/* Результаты */}
-                        {project.results && project.results.length > 0 && (
-                            <Section
-                                title="Результаты"
-                                items={project.results}
+                        <div className={styles.project__shape}>
+                            <Image
+                                className={styles.project__descriptionBigShape}
+                                src={descriptionBigShape}
+                                alt=""
+                                priority={true}
                             />
-                        )}
-                        <Image
-                            className={styles.project__projectsShape}
-                            src={projectsShape}
-                            alt=""
-                            priority={true}
-                        />
+                            {/* Результаты */}
+                            {project.results && project.results.length > 0 && (
+                                <Section
+                                    title="Результаты"
+                                    items={project.results}
+                                />
+                            )}
+
+                            {/* <Image
+                                className={styles.project__projectsShape}
+                                src={projectsShape}
+                                alt=""
+                                priority={true}
+                            /> */}
+                        </div>
                     </div>
                 </div>
-                <Image
-                    className={styles.project__descriptionBigShape}
-                    src={descriptionBigShape}
-                    alt=""
-                    priority={true}
-                />
-                <Footer />
+                <div className={styles.project__shape}>
+                    <Image
+                        className={styles.project__offerShapefooter}
+                        src={offerShape}
+                        alt=""
+                        priority={true}
+                    />
+                    <Footer />
+                </div>
             </div>
         </>
     )

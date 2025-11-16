@@ -3,7 +3,7 @@ import styles from './Header.module.scss'
 import Image from 'next/image'
 import LogoSVG from '@/svg/LogoSVG'
 import { PhoneSVG } from '@/svg/PhoneSVG'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PhoneMiniSVG } from '@/svg/PhoneMiniSVG'
 import { Button } from '../ui/Button/Button'
 import { usePathname } from 'next/navigation'
@@ -21,9 +21,17 @@ export function Header({
     const [isMenu, setIsMenu] = useState(false)
 
     const handleMenuClick = () => {
-        setIsMenu(!isMenu)
-        document.documentElement.style.overflow = !isMenu ? 'hidden' : 'auto'
+        const newMenuState = !isMenu
+        setIsMenu(newMenuState)
+        document.documentElement.style.overflow = newMenuState
+            ? 'hidden'
+            : 'auto'
     }
+    useEffect(() => {
+        return () => {
+            document.documentElement.style.overflow = 'auto'
+        }
+    }, [])
 
     const clickScroll = () => {
         const el = document.getElementById('contacts')
@@ -102,10 +110,7 @@ const Navigation = ({ clickScroll }: INavigation) => {
                     className={styles.container__navlink}
                 >
                     Контакты
-                </span>
-                <Link className={styles.container__navlink} href="#">
-                    Блог
-                </Link>
+                </span>                
                 <Link className={styles.container__navlink} href="/services">
                     Услуги
                 </Link>

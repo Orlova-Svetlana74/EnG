@@ -80,12 +80,15 @@ export default function Developmen() {
                 <Button className={styles.page__button}>
                     Заказать разработку
                 </Button>
-                <Image
-                    className={styles.page__descriptionSmallShape}
-                    src={descriptionSmallShape}
-                    alt=""
-                    priority={true}
-                />
+                <div className={styles.page__shape}>
+                    <Image
+                        className={`${styles.page__shape} ${styles['page__shape--descriptionSmallShape']}`}
+                        src={descriptionSmallShape}
+                        alt=""
+                        priority={true}
+                    />
+                </div>
+
                 <h4 className={styles.page__subtitle}>
                     Этапы разработки сайта с нуля
                 </h4>
@@ -183,13 +186,16 @@ export default function Developmen() {
                     </section>
                 </div>
                 <div>
+                    <div className={styles.page__shape}>
+                        <Image
+                            className={`${styles.page__shape} ${styles['page__shape--descriptionBigShape']}`}
+                            src={descriptionBigShape}
+                            alt=""
+                            priority={true}
+                        />
+                    </div>
                     <h4 className={styles.page__subtitle}>Результаты</h4>
-                    <Image
-                        className={styles.page__descriptionBigShape}
-                        src={descriptionBigShape}
-                        alt=""
-                        priority={true}
-                    />
+
                     <p className={styles['page__subtitle--text']}>
                         Заказывая разработку сайта в EnterGen вы получите:
                     </p>
@@ -243,12 +249,14 @@ export default function Developmen() {
                         Обсудить проект
                     </Button>
                 </div>
-                <Image
-                    className={styles.page__projectsShape}
-                    src={projectsShape}
-                    alt=""
-                    priority={true}
-                />
+                <div className={styles.page__shape}>
+                    <Image
+                        className={`${styles.page__shape} ${styles['page__shape--projectsShape']}`}
+                        src={projectsShape}
+                        alt=""
+                        priority={true}
+                    />
+                </div>                
                 <div className={styles.page__faqblock}>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
 

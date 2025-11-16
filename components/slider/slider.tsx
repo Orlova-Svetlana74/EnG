@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './slider.module.scss'
-import { StrelkaLeftSVG } from '@/svg/StrelkaLeftSVG'
-import { StrelkaRightSVG } from '@/svg/StrelkaRightSVG'
+import  StrelkaLeftSVG  from '@/svg/StrelkaLeftSVG'
+import  StrelkaRightSVG  from '@/svg/StrelkaRightSVG'
 import {
     seniorBack,
     seniorFrontend,
