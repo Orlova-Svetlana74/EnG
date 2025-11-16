@@ -103,6 +103,7 @@ export default function RootLayout({
                     name="google-site-verification"
                     content="aHekHfVPzm8fiUYxQwkZPSoCI8LTndrLf-Wp6oWX3X0"
                 />
+                <meta name="yandex-verification" content="5df2fe142012f252" />
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 {children}
