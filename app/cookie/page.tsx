@@ -48,7 +48,10 @@ export default function Cookie() {
                             Согласие разработано в соответствии с Политикой
                             защиты и обработки персональных данных Entergen
                             <br />
-                            <a className={styles.cookie__text__link} href="#">
+                            <a
+                                className={styles.cookie__text__link}
+                                href="agreement"
+                            >
                                 ссылка на полное соглашение.
                             </a>
                         </p>
@@ -84,7 +87,7 @@ export default function Cookie() {
                             настройках браузера.
                         </p>
                     </div>
-                    <div className={styles.cookie__shapes}>                        
+                    <div className={styles.cookie__shapes}>
                         <Image
                             className={styles.cookie__descriptionBigShape}
                             src={descriptionBigShape}
