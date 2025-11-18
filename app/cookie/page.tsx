@@ -7,9 +7,9 @@ import { useState } from 'react'
 
 import {
     offerShape,
-    descriptionSmallShape,
+    // descriptionSmallShape,
     descriptionBigShape,
-    projectsShape,
+    // projectsShape,
 } from '@/public/img'
 
 export default function Cookie() {
@@ -27,25 +27,17 @@ export default function Cookie() {
                 handlerButtonClick={handlerButtonClick}
             />
             <div className={styles.cookie}>
+                <div className={styles.cookie__shapes}>
+                    <Image
+                        className={styles.cookie__offerShape}
+                        src={offerShape}
+                        alt=""
+                        // width={600}
+                        // height={400}
+                        priority={true}
+                    />
+                </div>
                 <div className={styles.cookie__container}>
-                    <div className={styles['cookie__shapes--left']}>
-                        <Image
-                            className={styles['cookie__shape--hi']}
-                            src={offerShape}
-                            alt=""
-                            width={600}
-                            height={400}
-                            priority={true}
-                        />
-                        <Image
-                            className={styles['cookie__shape--down']}
-                            src={descriptionSmallShape}
-                            alt=""
-                            width={700}
-                            height={500}
-                            priority={true}
-                        />
-                    </div>
                     <div className={styles.cookie__content}>
                         <h1 className={styles.cookie__title}>
                             Согласие на обработку <br /> электронных
@@ -92,17 +84,9 @@ export default function Cookie() {
                             настройках браузера.
                         </p>
                     </div>
-                    <div className={styles['cookie__shapes--right']}>
-                        {/* <Image
-                        className={styles['cookie__shape--hi']}
-                        src={projectsShape}
-                        alt=""
-                        width={700}
-                        height={500}
-                        priority={true}
-                    /> */}
+                    <div className={styles.cookie__shapes}>                        
                         <Image
-                            className={styles['cookie__shape--down-dop']}
+                            className={styles.cookie__descriptionBigShape}
                             src={descriptionBigShape}
                             alt=""
                             width={600}
