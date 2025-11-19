@@ -27,14 +27,16 @@ export default function Agreement() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
-            <Image
-                className={styles['content__shape--offerShape']}
-                src={offerShape}
-                alt=""
-                width={200}
-                height={200}
-                priority={true}
-            />
+            <div className={styles.content__shapes}>
+                <Image
+                    className={styles.content__offerShape}
+                    src={offerShape}
+                    alt=""
+                    width={200}
+                    height={200}
+                    priority={true}
+                />
+            </div>
             <div className={styles.content}>
                 <div className={styles.content__block}>
                     <div className={styles.content__paragraph}>
@@ -93,17 +95,19 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__bigShape}
+                                src={descriptionBigShape}
+                                alt=""
+                                // width={200}
+                                // height={200}
+                                priority={true}
+                            />
+                        </div>
                         <h2 className={styles.content__subtitle}>
                             2. Правовые основания обработки ПД
                         </h2>
-                        <Image
-                            className={styles['content__shape--bigShape']}
-                            src={descriptionBigShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
 
                         <ol className={styles.content__policylist}>
                             <p>
@@ -211,14 +215,7 @@ export default function Agreement() {
                         <h2 className={styles.content__subtitle}>
                             3. Принципы обработки ПД
                         </h2>
-                        <Image
-                            className={styles['content__shape--projectsShape']}
-                            src={projectsShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
+
                         <ol className={styles.content__policylist}>
                             <li
                                 className={styles['content__policylist--numb3']}
@@ -277,6 +274,16 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        {/* <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__projectsShape}
+                                src={projectsShape}
+                                alt=""
+                                width={200}
+                                height={200}
+                                priority={true}
+                            />
+                        </div> */}
                         <h2 className={styles.content__subtitle}>
                             4. Цели обработки ПД
                         </h2>
@@ -348,17 +355,28 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__SmallShape}
+                                src={descriptionSmallShape}
+                                alt=""
+                                width={200}
+                                height={200}
+                                priority={true}
+                            />
+                        </div>
                         <h2 className={styles.content__subtitle}>
                             5. Состав и субъекты ПД
                         </h2>
-                        <Image
+                        {/* <Image
                             className={styles['content__shape--Shape']}
                             src={offerShape}
                             alt=""
                             width={200}
                             height={200}
                             priority={true}
-                        />
+                        /> */}
+
                         <ol className={styles.content__policylist}>
                             <li
                                 className={styles['content__policylist--numb5']}
@@ -543,14 +561,7 @@ export default function Agreement() {
                         <h2 className={styles.content__subtitle}>
                             6. Порядок и условия обработки <br /> и хранения ПД
                         </h2>
-                        <Image
-                            className={styles['content__shape--SmallShape']}
-                            src={descriptionSmallShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
+
                         <ol className={styles.content__policylist}>
                             <li
                                 className={styles['content__policylist--numb6']}
@@ -749,20 +760,23 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__offer}
+                                src={projectsShape}
+                                alt=""
+                                width={200}
+                                height={200}
+                                priority={true}
+                            />
+                        </div>
                         <h2 className={styles.content__subtitle}>
                             9. Процедуры, направленные на
                             <br /> выявление и предотвращение нарушений <br />
                             законодательства Российской Федерации <br /> в сфере
                             персональных данных.
                         </h2>
-                        <Image
-                            className={styles['content__shape--offer']}
-                            src={projectsShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
+
                         <ol className={styles.content__policylist}>
                             <li
                                 className={styles['content__policylist--numb9']}
@@ -1111,18 +1125,21 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__grafShape}
+                                src={offerShape}
+                                alt=""
+                                width={200}
+                                height={200}
+                                priority={true}
+                            />
+                        </div>
                         <h2 className={styles.content__subtitle}>
                             11. Изменение и уничтожение ПД, запросы
                             <br /> субъектов ПД
                         </h2>
-                        <Image
-                            className={styles['content__shape--grafShape']}
-                            src={offerShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
+
                         <ol className={styles.content__policylist}>
                             <li
                                 className={
@@ -1226,18 +1243,21 @@ export default function Agreement() {
                         </ol>
                     </div>
                     <div className={styles.content__paragraph}>
+                        <div className={styles.content__shapes}>
+                            <Image
+                                className={styles.content__skillsShape}
+                                src={skillsShape}
+                                alt=""
+                                width={200}
+                                height={200}
+                                priority={true}
+                            />
+                        </div>
                         <h2 className={styles.content__subtitle}>
                             Согласие на обработку персональных данных
                             пользователей, обратившихся через сайт
                         </h2>
-                        <Image
-                            className={styles['content__shape--skillsShape']}
-                            src={skillsShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
+
                         <ol className={styles.content__policylist}>
                             Пользователь сайта, отправляя информацию через форму
                             обратной связи, обязуется принять настоящее Согласие
@@ -1287,15 +1307,17 @@ export default function Agreement() {
                             и Политикой защиты и обработки персональных данных
                             Entergen.
                         </ol>
-                        <Image
-                            className={styles['content__shape--BigShape']}
-                            src={descriptionBigShape}
-                            alt=""
-                            width={200}
-                            height={200}
-                            priority={true}
-                        />
                     </div>
+                </div>
+                <div className={styles.content__shapes}>
+                    <Image
+                        className={styles.content__BigShape}
+                        src={descriptionBigShape}
+                        alt=""
+                        width={200}
+                        height={200}
+                        priority={true}
+                    />
                 </div>
 
                 <Footer />

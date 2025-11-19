@@ -182,75 +182,77 @@
             }
         }
     }
+
    
-    &__shape {
-        &--offerShape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 70%;
-            top: 1%;
-        }
-        &--skillsShape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 70%;
-            top: 7%;
-        }
+    &__offerShape {
+        width: responsive-font(315px, 47px);
+        height: auto;
+        position: absolute;
+        left: 79%;
+        top: 3%;
+    }
+    &__skillsShape {
+        width: responsive-font(315px, 47px);
+        height: auto;
+        position: absolute;
+        left: 85%;
+        top: 6%;
+    }
 
-        &--grafShape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 85%;
-            bottom: 8%;
-        }
-        &--SmallShape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 67%;
-            top: 20%;
-        }
-        &--BigShape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 79%;
-            bottom: 20%;
-        }
+    &__grafShape {
+        width: responsive-font(315px, 47px);
+        height: auto;
+        position: absolute;
+        left: 85%;
+        // bottom: 8%;
+    }
+    &__shapes {
+        position: relative;
+    }
+    &__SmallShape {
+        width: responsive-font(315px, 47px);
+        height: auto;
+        position: absolute;
+        left: 96%;
+        bottom: 2%;
+    }
+    &__BigShape {
+        width: responsive-font(315px, 47px);
+        height: auto;
+        position: absolute;
+        left: 2%;
+        // top: 3%;
+    }
 
-        &--offer {
-            width: responsive-font(354px, 47px);
-            height: auto;
-            position: absolute;
-            left: 75%;
-            top: 56%;
-        }
+    &__offer {
+        width: responsive-font(354px, 47px);
+        height: auto;
+        position: absolute;
+        left: 88%;
+        // top: 40%;
+    }
 
-        &--Shape {
-            width: responsive-font(315px, 47px);
-            height: auto;
-            position: absolute;
-            left: 55%;
-            top: 11%;
-        }
-        &--bigShape {
-            width: responsive-font(315px, 48px);
-            height: auto;
-            position: absolute;
-            left: 62%;
-            bottom: 1%;
-        }
+    // &--Shape {
+    //     width: responsive-font(300px, 47px);
+    //     height: auto;
+    //     position: absolute;
+    //     left: 73%;
+    //     top: 9%;
+    // }
+    &__bigShape {
+        width: responsive-font(315px, 48px);
+        height: auto;
+        position: absolute;
+        left: 70%;
+        // top: 9%;
+    }
 
-        &--projectsShape {
-            width: responsive-font(315px, 48px);
-            height: auto;
-            position: absolute;
-            left: 64%;
-            top: 37%;
-        }
+    &__projectsShape {
+        width: responsive-font(315px, 48px);
+        height: auto;
+        position: absolute;
+        left: 85%;
+        top: 10%;
     }
 }
 @media (max-width: 1920px) {
@@ -267,7 +269,6 @@
         box-sizing: border-box;
     }
 }
-
 
 @media (max-width: 768px) {
     .policy-list li {
