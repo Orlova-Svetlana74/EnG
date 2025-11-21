@@ -25,8 +25,8 @@
         }
         &--projectsShape {
             position: absolute;
-            left: 90%;
-            top: 10%;
+            left: 75%;
+            bottom: 93%;
             width: responsive-font(311px, 70px);
             height: auto;
         }
@@ -72,7 +72,7 @@
         padding-left: responsive-font(45px, 18px);
         padding-right: responsive-font(45px, 18px);
         padding-top: responsive-font(45px, 18px);
-        font-size: responsive-font(36px, 16px);
+        font-size: responsive-font(36px, 12px);
         font-weight: bold;
         // padding-bottom: responsive-font(40px, 15px);
     }
@@ -207,6 +207,7 @@
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
+        padding-bottom: responsive-font(15px, 13px);
         padding-top: responsive-font(28px, 20px);
         border-bottom: 1.5px solid;
         // transition: border-color 0.3s ease;

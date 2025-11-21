@@ -245,56 +245,60 @@ export default function Developmen() {
                             </p>
                         </div>
                     </div>
+
                     <Button className={styles.page__button}>
                         Обсудить проект
                     </Button>
                 </div>
-                <div className={styles.page__shape}>
-                    <Image
-                        className={`${styles.page__shape} ${styles['page__shape--projectsShape']}`}
-                        src={projectsShape}
-                        alt=""
-                        priority={true}
-                    />
-                </div>                
+
                 <div className={styles.page__faqblock}>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
+                    <div className={styles.page__shape}>
+                        <Image
+                            className={`${styles.page__shape} ${styles['page__shape--projectsShape']}`}
+                            src={projectsShape}
+                            alt=""
+                            priority={true}
+                        />
 
-                    <div className={styles.page__faqContainer}>
-                        {faqData.map((item) => (
-                            <div
-                                key={item.id}
-                                className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
-                            >
+                        <div className={styles.page__faqContainer}>
+                            {faqData.map((item) => (
                                 <div
-                                    className={styles.page__faqQuestion}
-                                    onClick={() => toggleQuestion(item.id)}
+                                    key={item.id}
+                                    className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
                                 >
-                                    <p className={styles.page__faqtext}>
-                                        {item.question}
-                                    </p>
-                                    <div className={styles.page__faqIcon}>
-                                        <Plus className={styles.page__plus} />
+                                    <div
+                                        className={styles.page__faqQuestion}
+                                        onClick={() => toggleQuestion(item.id)}
+                                    >
+                                        <p className={styles.page__faqtext}>
+                                            {item.question}
+                                        </p>
+                                        <div className={styles.page__faqIcon}>
+                                            <Plus
+                                                className={styles.page__plus}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    className={`${styles.page__faqAnswer} ${
-                                        openQuestionId === item.id
-                                    }`}
-                                >
-                                    <p className={styles.page__faqtext}>
-                                        {item.answer}
-                                    </p>
-                                </div>
-                                {/* {openQuestionId === item.id && ( */}
-                                {/* <div className={styles.page__faqAnswer}>
+                                    <div
+                                        className={`${styles.page__faqAnswer} ${
+                                            openQuestionId === item.id
+                                        }`}
+                                    >
+                                        <p className={styles.page__faqtext}>
+                                            {item.answer}
+                                        </p>
+                                    </div>
+                                    {/* {openQuestionId === item.id && ( */}
+                                    {/* <div className={styles.page__faqAnswer}>
                                         <p className={styles.page__faqtext}>
                                             {item.answer}
                                         </p>
                                     </div> */}
-                                {/* )} */}
-                            </div>
-                        ))}
+                                    {/* )} */}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

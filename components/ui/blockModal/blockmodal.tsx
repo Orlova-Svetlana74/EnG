@@ -25,6 +25,7 @@ interface IFormData {
     phone: string
     description: string
     isAgree: boolean
+    email: string
 }
 
 const Blockmodal: React.FC<ModalProps> = ({
@@ -41,6 +42,7 @@ const Blockmodal: React.FC<ModalProps> = ({
         description: '',
         name: '',
         phone: '',
+        email: '',
         isAgree: false,
         ...initialValues,
     })
@@ -88,6 +90,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                 description: '',
                 name: '',
                 phone: '',
+                email: '',
                 isAgree: false,
             })
         } catch (error) {
@@ -101,6 +104,7 @@ const Blockmodal: React.FC<ModalProps> = ({
         form.isAgree &&
         form.name &&
         form.phone &&
+        form.email &&
         !load
     )
     if (mode === 'modal' && !isOpen) {
@@ -134,7 +138,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                                 onChange={(e) =>
                                     handleField('name', e.currentTarget.value)
                                 }
-                                placeholder="Имя или организация"
+                                placeholder="Имя *"
                             />
                             <Input
                                 className={styles.modal__inputform}
@@ -143,7 +147,16 @@ const Blockmodal: React.FC<ModalProps> = ({
                                 onChange={(e) =>
                                     handleField('phone', e.currentTarget.value)
                                 }
-                                placeholder="Телефон или Email"
+                                placeholder="Телефон *"
+                            />
+                            <Input
+                                className={styles.modal__inputform}
+                                value={form.email}
+                                disabled={load}
+                                onChange={(e) =>
+                                    handleField('email', e.currentTarget.value)
+                                }
+                                placeholder="E-mail"
                             />
                             <Input
                                 className={styles.modal__inputform}
@@ -177,6 +190,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                             >
                                 Отправить
                             </Button>
+                            <p className={styles.modal__requiredfield}>* Поля, обязательные для заполнения</p>
                         </form>
                     </div>
                 </div>

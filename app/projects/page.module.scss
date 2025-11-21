@@ -128,11 +128,11 @@
         justify-content: center;
         border: 1.13px solid #004577;
         background-color: #d8eaff;
-        border-radius: 11.25px;
+        border-radius: responsive-font(11.25px, 4.38px);
         cursor: pointer;
         width: responsive-font(60px, 25px);
         height: responsive-font(60px, 25px);
-        font-size: 18px;
+        font-size: responsive-font(18px, 15.56px);        
         transition: all 0.3s ease;
 
         &:hover:not(.wrapper__disabled) {
@@ -140,7 +140,7 @@
             border-color: #007bff;
         }
     }
-    &__strelkaRight {        
+    &__strelkaRight {
         width: auto;
         height: responsive-font(28px, 25px);
     }
@@ -169,7 +169,7 @@
         width: responsive-font(60px, 25px);
         height: responsive-font(60px, 25px);
         border: 1.13px solid #004577;
-        border-radius: 11.25px;
+        border-radius: responsive-font(11.25px, 4.38px);
         background-color: #d8eaff;
         cursor: pointer;
         font-size: responsive-font(36px, 16px);

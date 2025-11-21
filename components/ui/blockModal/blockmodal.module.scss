@@ -4,10 +4,16 @@
     border-radius: responsive-font(21px, 18px);
     padding-left: responsive-font(45px, 18px);
     padding-right: responsive-font(45px, 18px);
-    padding-top: responsive-font(45px, 18px);
+    padding-top: responsive-font(12px, 10px);
     padding-bottom: responsive-font(45px, 18px);
     position: relative;
     width: 100%;
+
+    &__requiredfield {
+        font-size: responsive-font(20.25px, 8px);
+        padding-top: responsive-font(23px, 8px);    
+       
+    }
 
     &__container {
         width: 100%;
@@ -24,7 +30,7 @@
     }
 
     &__title {
-        font-size: responsive-font(36px, 12px);
+        font-size: responsive-font(27px, 8px);
         // font-weight: bold;
         margin-bottom: responsive-font(12px, 10px);
     }
@@ -34,19 +40,25 @@
     }
     &__inputform {
         margin-bottom: responsive-font(45px, 8px);
-        font-size: responsive-font(27px, 8px);
         width: 100%;
         background-color: #d8eaff;
-        border: 1px solid #004577;
+        // border: 1px solid #004577;
+        // padding: 8px 35px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        border-radius: responsive-font(7.16px, 1.66px);
+        font-size: responsive-font(27px, 8px);
         color: #004577;
-        padding: 8px 35px;
-        border-radius: 7px;
-        &:focus {
-            outline: none;
-        }
+        // &:focus {
+        //     outline: none;
+        // }
         &::placeholder {
-        color: #004577;
-    }
+            color: #004577;
+            // color: #004577;
+            // font-size: responsive-font(27px, 8px);           
+        }
     }
     &__blockmodal {
         width: 100%;
@@ -59,6 +71,7 @@
         width: 100%;
         font-size: responsive-font(27px, 14px);
     }
+
     &__frametwo {
         padding-left: 48px;
         display: flex;
@@ -82,6 +95,7 @@
         margin-top: responsive-font(45px, 23px);
         width: 100%;
         font-size: responsive-font(27px, 14px);
+        
     }
     &__thankYouOverlay {
         position: absolute;
