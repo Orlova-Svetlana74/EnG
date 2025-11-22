@@ -24,8 +24,7 @@ interface IFormData {
     name: string
     phone: string
     description: string
-    isAgree: boolean
-    email: string
+    isAgree: boolean    
 }
 
 const Blockmodal: React.FC<ModalProps> = ({
@@ -41,8 +40,7 @@ const Blockmodal: React.FC<ModalProps> = ({
     const [form, setForm] = useState<IFormData>({
         description: '',
         name: '',
-        phone: '',
-        email: '',
+        phone: '',        
         isAgree: false,
         ...initialValues,
     })
@@ -78,19 +76,24 @@ const Blockmodal: React.FC<ModalProps> = ({
     ) => {
         setForm((prev) => ({ ...prev, [key]: value }))
     }
+    
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault() // Добавлено предотвращение перезагрузки страницы
-
+        
         setLoad(true)
         try {
-            const res = await $host.post('profile', { name: form.phone })
+            const res = await $host.post('profile', {
+                phone: form.phone,
+                name: form.name,
+                description: form.description,
+                isAgree: form.isAgree,
+            })
             setShowThankYou(true)
             setForm({
                 description: '',
                 name: '',
                 phone: '',
-                email: '',
                 isAgree: false,
             })
         } catch (error) {
@@ -103,8 +106,7 @@ const Blockmodal: React.FC<ModalProps> = ({
         form.description &&
         form.isAgree &&
         form.name &&
-        form.phone &&
-        form.email &&
+        form.phone &&        
         !load
     )
     if (mode === 'modal' && !isOpen) {
@@ -149,7 +151,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                                 }
                                 placeholder="Телефон *"
                             />
-                            <Input
+                            {/* <Input
                                 className={styles.modal__inputform}
                                 value={form.email}
                                 disabled={load}
@@ -157,7 +159,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                                     handleField('email', e.currentTarget.value)
                                 }
                                 placeholder="E-mail"
-                            />
+                            /> */}
                             <Input
                                 className={styles.modal__inputform}
                                 value={form.description}
@@ -190,7 +192,9 @@ const Blockmodal: React.FC<ModalProps> = ({
                             >
                                 Отправить
                             </Button>
-                            <p className={styles.modal__requiredfield}>* Поля, обязательные для заполнения</p>
+                            <p className={styles.modal__requiredfield}>
+                                * Поля, обязательные для заполнения
+                            </p>
                         </form>
                     </div>
                 </div>

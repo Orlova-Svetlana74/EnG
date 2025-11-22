@@ -19,6 +19,7 @@ interface IFrom {
     phone: string
     description: string
     isAgree: boolean
+    
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
@@ -28,6 +29,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         description: '',
         name: '',
         phone: '',
+        
         isAgree: false,
     })
 
