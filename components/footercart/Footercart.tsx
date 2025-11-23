@@ -5,16 +5,12 @@ import styles from './Footercart.module.scss'
 export const Footercart = () => {
     return (
         <footer className={styles.footer}>
-            <Link className={styles.footer__navlink} href="#">
-                © 2025 Entergen.
-                <br /> Все права
-                <br /> защищены.
-            </Link>
-            <Link className={styles.footer__navlink} href="#">
-                Карта сайта
-            </Link>
+            <p className={styles.footer__text}>
+                © 2025 Entergen. Все права защищены.
+            </p>
+            <p className={styles.footer__text}>Карта сайта</p>
             <Link className={styles.footer__navlink} href="/cookie">
-                Политика защиты и<br /> обработки
+                Политика защиты и <br /> обработки
                 <br /> персональных данных
             </Link>
         </footer>

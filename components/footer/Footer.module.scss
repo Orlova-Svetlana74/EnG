@@ -48,9 +48,10 @@
         // row-gap: responsive-font(22px, 10px);
         order: 1;
     }
-    // &__navlink {
-    // font-size: responsive-font(27px, 10px);
-    // }
+    &__navlink {
+    font-size: responsive-font(27px, 10px);
+    }
+    
     &__navlink_active {
         color: #0040e1;
     }

@@ -14,7 +14,8 @@ import { Input } from '@/components/ui/input/Input'
 import { Checkbox } from '@/components/ui/checkbox/Checkbox'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
-import Minus from '@/svg/MinusSVG'
+// import Minus from '@/svg/MinusSVG'
+import { TgSVG } from '@/svg/TgSVG'
 import { faqDataintegration } from '@/data/dataintegration'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
@@ -59,6 +60,11 @@ export default function Developmen() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
+            />
             <Image
                 className={styles.page__offerShape}
                 src={offerShape}
@@ -88,7 +94,7 @@ export default function Developmen() {
                         <Integrationtitle />
                     </div>
                 </section>
-                <Button className={styles.page__button}>
+                <Button className={styles.page__button} onClick={() => setIsModalOpen(true)}>
                     Заказать интеграцию
                 </Button>
                 <Image
@@ -349,6 +355,9 @@ export default function Developmen() {
                             />
                         </div>
                     </div>
+                </div>
+                <div className={styles.page__tgFixed}>
+                    <TgSVG />
                 </div>
                 <Footer />
             </div>

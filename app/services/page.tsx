@@ -3,9 +3,11 @@ import Image from 'next/image'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
+import { TgSVG } from '@/svg/TgSVG'
 import { Button } from '@/components/ui/Button/Button'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Blockmodal from '@/components/ui/blockModal/blockmodal'
 
 import {
     offerShape,
@@ -23,6 +25,7 @@ interface ServiceItem {
 }
 
 export default function Services() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
     const [isListExpanded, setIsListExpanded] = useState(false)
@@ -94,6 +97,11 @@ export default function Services() {
                 isMenuHeader={isMenuHeader}
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
+            />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
             />
             <div className={styles.services}>
                 {/* <Image
@@ -212,7 +220,7 @@ export default function Services() {
                                 <br />
                                 ваш проект и начать работу над его реализацией!
                             </p>
-                            <Button className={styles.services__button}>
+                            <Button className={styles.services__button} onClick={() => setIsModalOpen(true)}>
                                 Обсудить проект
                             </Button>
                         </div>
@@ -234,6 +242,9 @@ export default function Services() {
                 height={185}
                 priority={true}
             /> */}
+                <div className={styles.services__tgFixed}>
+                    <TgSVG />
+                </div>
                 <Footer />
             </div>
         </>

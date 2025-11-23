@@ -23,7 +23,7 @@ export const Footer = () => {
                             <LogoSVG className={styles.footer__leftsvg} />
                         </Link>
 
-                        <TGreverse className={styles.footer__tgrev} />
+                        {/* <TGreverse className={styles.footer__tgrev} /> */}
                     </div>
 
                     <div className={styles.footer__stylephone}>

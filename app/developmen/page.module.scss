@@ -4,7 +4,27 @@
     max-width: 1440px;
     margin: responsive-font(111px, 20px) auto;
     position: relative;
-    z-index: 1;
+    // z-index: 1;
+
+    &__tgFixed {
+        position: fixed;
+        left: auto;
+        bottom: responsive-font(250px, 165px);
+        z-index: 1001;
+        width: responsive-font(70px, 35px);
+        height: responsive-font(62px, 35px);
+        padding: responsive-font(10px, 5px) auto;
+        border-radius: responsive-font(12px, 6px);
+        background-color: #004577;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        & > svg {
+            color: white;
+            width: responsive-font(50px, 25px);
+        }
+    }
 
     &__shape {
         position: relative;

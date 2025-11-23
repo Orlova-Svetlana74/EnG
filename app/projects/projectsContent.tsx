@@ -7,6 +7,7 @@ import StrelkaLeftSVG from '@/svg/StrelkaLeftSVG'
 import StrelkaRightSVG from '@/svg/StrelkaRightSVG'
 import { useState, useEffect, useCallback } from 'react'
 import { projects } from '@/data/dataprojects'
+import { TgSVG } from '@/svg/TgSVG'
 import {
     mainShape,
     descriptionSmallShape,
@@ -383,6 +384,9 @@ export function ProjectsContent() {
                         </button>
                     </div>
                 )}
+                <div className={styles.wrapper__tgFixed}>
+                    <TgSVG />
+                </div>
                 <Footer />
             </div>
         </>

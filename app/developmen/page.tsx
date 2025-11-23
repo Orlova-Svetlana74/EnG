@@ -2,7 +2,6 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import { Header } from '@/components/header/Header'
-import { Footer } from '@/components/footer/Footer'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
 import Developtitle from '@/svg/DeveloptitleSVG'
@@ -12,9 +11,10 @@ import Desine from '@/svg/DesineSVG'
 import Develop from '@/svg/DevelopSVG'
 import { Input } from '@/components/ui/input/Input'
 import { Checkbox } from '@/components/ui/checkbox/Checkbox'
+import { Footer } from '@/components/footer/Footer'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
-import Minus from '@/svg/MinusSVG'
+import { TgSVG } from '@/svg/TgSVG'
 import { faqData } from '@/data/data'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
@@ -48,6 +48,11 @@ export default function Developmen() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
+            />
 
             <div className={styles.page}>
                 <section className={styles.page__developsection}>
@@ -77,7 +82,10 @@ export default function Developmen() {
                         <Developtitle />
                     </div>
                 </section>
-                <Button className={styles.page__button}>
+                <Button
+                    className={styles.page__button}
+                    onClick={() => setIsModalOpen(true)}
+                >
                     Заказать разработку
                 </Button>
                 <div className={styles.page__shape}>
@@ -246,7 +254,10 @@ export default function Developmen() {
                         </div>
                     </div>
 
-                    <Button className={styles.page__button}>
+                    <Button
+                        className={styles.page__button}
+                        onClick={() => setIsModalOpen(true)}
+                    >
                         Обсудить проект
                     </Button>
                 </div>
@@ -320,6 +331,9 @@ export default function Developmen() {
                             />
                         </div>
                     </div>
+                </div>
+                <div className={styles.page__tgFixed}>
+                    <TgSVG />
                 </div>
                 <Footer />
             </div>

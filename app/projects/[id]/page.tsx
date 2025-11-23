@@ -6,6 +6,7 @@ import { projects } from '@/data/dataprojects'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import Image from 'next/image'
+import { TgSVG } from '@/svg/TgSVG'
 import styles from './page.module.scss'
 import { notFound, useRouter } from 'next/navigation'
 import {
@@ -158,6 +159,9 @@ export default function ProjectDetailPage() {
                         alt=""
                         priority={true}
                     />
+                    <div className={styles.project__tgFixed}>
+                        <TgSVG />
+                    </div>
                     <Footer />
                 </div>
             </div>
