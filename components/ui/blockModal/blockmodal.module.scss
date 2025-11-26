@@ -11,8 +11,7 @@
 
     &__requiredfield {
         font-size: responsive-font(20.25px, 8px);
-        padding-top: responsive-font(23px, 8px);    
-       
+        padding-top: responsive-font(23px, 8px);
     }
 
     &__container {
@@ -42,10 +41,8 @@
         margin-bottom: responsive-font(45px, 8px);
         width: 100%;
         background-color: #d8eaff;
-        // border: 1px solid #004577;
-        // padding: 8px 35px;
-        padding-left: 12px;
-        padding-right: 12px;
+        border: 1px solid #004577;
+        padding-left: responsive-font(35px, 10px);
         padding-bottom: 8px;
         padding-top: 8px;
         border-radius: responsive-font(7.16px, 1.66px);
@@ -57,7 +54,29 @@
         &::placeholder {
             color: #004577;
             // color: #004577;
-            // font-size: responsive-font(27px, 8px);           
+            // font-size: responsive-font(27px, 8px);
+        }
+    }
+
+    &__inputformtext {
+        width: 100%;
+        height: 163px;
+        margin-bottom: responsive-font(45px, 8px);
+        background-color: #d8eaff;
+        border: 1px solid #004577;
+        padding-left: responsive-font(35px, 10px);
+        padding-top: 15px;
+        padding-bottom: 147px;
+        border-radius: responsive-font(7.16px, 1.66px);
+        font-size: responsive-font(27px, 8px);
+        color: #004577;
+
+        // &:focus {
+        //     outline: none;
+        // }
+
+        &::placeholder {
+            color: #004577;
         }
     }
     &__blockmodal {
@@ -95,7 +114,7 @@
         margin-top: responsive-font(45px, 23px);
         width: 100%;
         font-size: responsive-font(27px, 14px);
-        
+        background-color: #d8eaff;
     }
     &__thankYouOverlay {
         position: absolute;
@@ -119,7 +138,7 @@
         position: relative;
         // max-width: 80%;
         border: 1.07px solid #004577;
-        left: 50%;
+        // left: 50%;
     }
 
     &__thankYouText {
@@ -211,17 +230,18 @@
             // width: responsive-font(553px, 414px);
             height: auto;
         }
+        &__thankYouContent {
+            // left: 40%;
+        }
     }
 }
-
-@media (max-width: 744px) {
+@media (max-width: 1440px) {
     .modal {
-        &__frametwo {
-            display: none;
-        }
         &__inputform {
             // margin-bottom: responsive-font(45px, 8px);
-            font-size: 8px;
+        }
+        &__thankYouContent {
+            // left: 45%;
         }
     }
 }
@@ -229,7 +249,33 @@
     .modal {
         &__inputform {
             // margin-bottom: responsive-font(45px, 8px);
-            font-size: 10px;
+        }
+        &__thankYouContent {
+            // left: 55%;
+        }
+    }
+}
+@media (max-width: 754px) {
+    .modal {
+       
+        &__inputform {
+            // margin-bottom: responsive-font(45px, 8px);
+        }
+        &__thankYouContent {
+            // left: 70%;
+        }
+    }
+}
+@media (max-width: 744px) {
+    .modal {
+        &__frametwo {
+            display: none;
+        }
+        &__inputform {
+            // margin-bottom: responsive-font(45px, 8px);
+        }
+        &__thankYouContent {
+            // left: 6.5%;
         }
     }
 }

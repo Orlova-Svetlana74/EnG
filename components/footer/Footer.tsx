@@ -88,6 +88,9 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className={styles.footer__tgFixed}>
+                <TgSVG />
+            </div>
             <Footercart />
         </footer>
     )

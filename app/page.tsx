@@ -59,10 +59,7 @@ export default function Home() {
             />            
             <div className={styles.page}>
                 <div className={styles.container}>
-                    <CookieBanner />
-                    <div className={styles.container__tgFixed}>
-                        <TgSVG />
-                    </div>
+                    <CookieBanner />                    
                     <Image
                         className={styles.page__mainShape}
                         src={mainShape}

@@ -98,12 +98,13 @@ export default function Services() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
-            <Blockmodal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                mode="modal"
-            />
+
             <div className={styles.services}>
+                <Blockmodal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    mode="modal"
+                />
                 {/* <Image
                 className={styles['services__shape--skillsShape']}
                 src={skillsShape}
@@ -220,7 +221,10 @@ export default function Services() {
                                 <br />
                                 ваш проект и начать работу над его реализацией!
                             </p>
-                            <Button className={styles.services__button} onClick={() => setIsModalOpen(true)}>
+                            <Button
+                                className={styles.services__button}
+                                onClick={() => setIsModalOpen(true)}
+                            >
                                 Обсудить проект
                             </Button>
                         </div>
@@ -242,9 +246,7 @@ export default function Services() {
                 height={185}
                 priority={true}
             /> */}
-                <div className={styles.services__tgFixed}>
-                    <TgSVG />
-                </div>
+
                 <Footer />
             </div>
         </>

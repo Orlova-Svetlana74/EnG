@@ -14,7 +14,7 @@ import { Checkbox } from '@/components/ui/checkbox/Checkbox'
 import { Footer } from '@/components/footer/Footer'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
-import { TgSVG } from '@/svg/TgSVG'
+
 import { faqData } from '@/data/data'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
@@ -332,9 +332,7 @@ export default function Developmen() {
                         </div>
                     </div>
                 </div>
-                <div className={styles.page__tgFixed}>
-                    <TgSVG />
-                </div>
+                
                 <Footer />
             </div>
         </>

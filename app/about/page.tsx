@@ -302,10 +302,7 @@ export default function Home() {
                                 priority={true}
                             />
                         </div>
-                    </div>
-                    <div className={styles.container__tgFixed}>
-                        <TgSVG />
-                    </div>
+                    </div>                    
                     <Footer />
                 </div>
             </div>

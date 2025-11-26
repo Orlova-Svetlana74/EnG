@@ -383,10 +383,7 @@ export function ProjectsContent() {
                             />
                         </button>
                     </div>
-                )}
-                <div className={styles.wrapper__tgFixed}>
-                    <TgSVG />
-                </div>
+                )}                
                 <Footer />
             </div>
         </>

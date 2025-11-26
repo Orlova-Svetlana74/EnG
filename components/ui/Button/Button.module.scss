@@ -3,7 +3,7 @@
 .button {
     background-color: rgba(216, 234, 255, 1);
     border-radius: 8px;
-    color: #D8EAFFFC;
+    color: #004577;
     border: 1px solid rgba(0, 69, 119, 1);
     cursor: pointer;
     z-index: 100;
@@ -16,8 +16,8 @@
     font-weight: bold;
     padding: responsive-font(9px, 6px) responsive-font(27px, 14px);
     font-size: responsive-font(42px, 18px);
-    background-color: #004577;
     
+
     text-wrap-mode: nowrap;
     &:hover {
         background-color: #006ab7;
@@ -29,7 +29,8 @@
     }
     &:disabled {
         cursor: not-allowed;
-        background-color: #004577;
+        // background-color: #004577;
+        color: #004577;
     }
     &:disabled:hover {
         background-color: rgb(255, 255, 255, 0.5);

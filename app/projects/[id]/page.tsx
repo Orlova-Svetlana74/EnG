@@ -159,9 +159,7 @@ export default function ProjectDetailPage() {
                         alt=""
                         priority={true}
                     />
-                    <div className={styles.project__tgFixed}>
-                        <TgSVG />
-                    </div>
+                    
                     <Footer />
                 </div>
             </div>

@@ -355,10 +355,7 @@ export default function Developmen() {
                             />
                         </div>
                     </div>
-                </div>
-                <div className={styles.page__tgFixed}>
-                    <TgSVG />
-                </div>
+                </div>                
                 <Footer />
             </div>
         </>
