@@ -300,13 +300,6 @@ export default function Developmen() {
                                             {item.answer}
                                         </p>
                                     </div>
-                                    {/* {openQuestionId === item.id && ( */}
-                                    {/* <div className={styles.page__faqAnswer}>
-                                        <p className={styles.page__faqtext}>
-                                            {item.answer}
-                                        </p>
-                                    </div> */}
-                                    {/* )} */}
                                 </div>
                             ))}
                         </div>
@@ -332,7 +325,7 @@ export default function Developmen() {
                         </div>
                     </div>
                 </div>
-                
+
                 <Footer />
             </div>
         </>

@@ -30,7 +30,6 @@
 
     &__title {
         font-size: responsive-font(27px, 8px);
-        // font-weight: bold;
         margin-bottom: responsive-font(12px, 10px);
     }
     &__subtitle {
@@ -48,13 +47,9 @@
         border-radius: responsive-font(7.16px, 1.66px);
         font-size: responsive-font(27px, 8px);
         color: #004577;
-        // &:focus {
-        //     outline: none;
-        // }
+
         &::placeholder {
             color: #004577;
-            // color: #004577;
-            // font-size: responsive-font(27px, 8px);
         }
     }
 
@@ -71,10 +66,6 @@
         font-size: responsive-font(27px, 8px);
         color: #004577;
 
-        // &:focus {
-        //     outline: none;
-        // }
-
         &::placeholder {
             color: #004577;
         }
@@ -82,8 +73,6 @@
     &__blockmodal {
         width: 100%;
         display: flex;
-        // background: #badafe;
-        // border-radius: clamp(18px, 0.1875vw + 17.4px, 21px);
     }
     &__buttonsend {
         margin-top: responsive-font(45px, 23px);
@@ -125,7 +114,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // background-color: rgba(186, 218, 254, 0.9);
         z-index: 2;
         border-radius: 21px;
     }
@@ -136,9 +124,7 @@
         border-radius: 21.48px;
         text-align: left;
         position: relative;
-        // max-width: 80%;
         border: 1.07px solid #004577;
-        // left: 50%;
     }
 
     &__thankYouText {
@@ -227,55 +213,15 @@
     .modal {
         &__imagefr {
             display: flex;
-            // width: responsive-font(553px, 414px);
             height: auto;
         }
-        &__thankYouContent {
-            // left: 40%;
-        }
     }
 }
-@media (max-width: 1440px) {
-    .modal {
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-        }
-        &__thankYouContent {
-            // left: 45%;
-        }
-    }
-}
-@media (max-width: 1020px) {
-    .modal {
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-        }
-        &__thankYouContent {
-            // left: 55%;
-        }
-    }
-}
-@media (max-width: 754px) {
-    .modal {
-       
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-        }
-        &__thankYouContent {
-            // left: 70%;
-        }
-    }
-}
+
 @media (max-width: 744px) {
     .modal {
         &__frametwo {
             display: none;
-        }
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-        }
-        &__thankYouContent {
-            // left: 6.5%;
         }
     }
 }

@@ -20,10 +20,8 @@ export const Footer = () => {
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__logotg}>
                         <Link className={styles.footer__logoLink} href="/">
-                            <LogoSVG className={styles.footer__leftsvg} />
+                            <WebsiteLogo className={styles.footer__logo} />
                         </Link>
-
-                        {/* <TGreverse className={styles.footer__tgrev} /> */}
                     </div>
 
                     <div className={styles.footer__stylephone}>

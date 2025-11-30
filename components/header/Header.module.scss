@@ -117,8 +117,7 @@
                             top: 50%;
                         }
                         &::after {
-                            transform: rotate(-45deg) translateX(-12%);
-                            //translateX(responsive-font(-1px, -1.5px, 768px));
+                            transform: rotate(-45deg) translateX(-12%);                            
                             bottom: 50%;
                         }
                     }

@@ -1,8 +1,7 @@
 @use '@/styles/functions' as *;
 .project {
     max-width: 1440px;
-    margin: auto;
-    // display: flex;
+    margin: auto;    
     align-items: center;
     justify-content: space-between;
     padding: responsive-font(20px, 10px) 0;

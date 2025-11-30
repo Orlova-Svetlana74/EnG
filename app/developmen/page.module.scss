@@ -6,8 +6,6 @@
     position: relative;
     // z-index: 1;
 
-    
-
     &__shape {
         position: relative;
 
@@ -76,7 +74,6 @@
         padding-top: responsive-font(45px, 18px);
         font-size: responsive-font(36px, 12px);
         font-weight: bold;
-        // padding-bottom: responsive-font(40px, 15px);
     }
 
     &__developtitle {
@@ -132,13 +129,10 @@
     }
     &__subtitle {
         font-weight: bold;
-        // padding-bottom: 25px;
         font-size: responsive-font(54px, 15px);
 
         &--text {
-            // font-weight: normal;
             font-size: responsive-font(36px, 14px);
-            // padding-bottom: 43px;
         }
     }
     &__developsuptitle {
@@ -146,11 +140,7 @@
         font-weight: bold;
         padding-bottom: responsive-font(20px, 6px);
     }
-    // &__questions {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     padding-bottom: 40px;
-    // }
+
     &__faqContainer {
         width: 100%;
         margin-top: responsive-font(40px, 15px);
@@ -158,39 +148,16 @@
     }
     &__faqblock {
         position: relative;
-        // padding-top: responsive-font(75px, 30px);
     }
 
     &__faqItem {
-        // margin-bottom: 1rem;
-        // border-bottom: 1px solid #eaeaea;
         overflow: hidden;
-        // .page__faqAnswer {
-        //     overflow: hidden;
-        //     max-height: 0;
-        //     transition: max-height 0.3s ease;
-        // }
-        // .page__faqIcon {
-
-        // }
-        // padding-bottom: 1rem;
     }
     &__faqItemOpen &__faqAnswer {
         max-height: 1000px; // Большое значение для плавной анимации
         opacity: 1;
         padding: 1rem 0 2rem 0;
         transform: translateY(0);
-        // transition:
-        //     max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-        //     opacity 0.4s ease 0.1s,
-        //     transform 0.3s ease,
-        //     padding 0.3s ease;
-
-        // max-height: 500px;
-
-        // .page__faqIcon {
-        //     transform: rotate(45deg);
-        // }
     }
     &__faqItemOpen &__faqIcon {
         transform: rotate(45deg);
@@ -200,9 +167,6 @@
         width: responsive-font(28px, 12px);
         height: auto;
     }
-    // &__minus {
-    //     width: responsive-font(28px, 12px);
-    // }
 
     &__faqQuestion {
         display: flex;
@@ -212,7 +176,6 @@
         padding-bottom: responsive-font(15px, 13px);
         padding-top: responsive-font(28px, 20px);
         border-bottom: 1.5px solid;
-        // transition: border-color 0.3s ease;
         transition: all 0.3s ease;
 
         &:hover {
@@ -228,7 +191,6 @@
         margin-left: 1rem;
         transition: transform 0.3s ease cubic-bezier(0.4, 0, 0.2, 1);
         transform-origin: center;
-        // transform: rotate(45dec);
     }
 
     &__faqAnswer {
@@ -244,22 +206,8 @@
         transform: translateY(-10px);
         padding-top: 0;
         padding-bottom: 0;
-        // animation: fadeIn 0.3s ease-in-out;
     }
-    // &__faqAnswerOpen {
-    //     max-height: 300px; // Достаточное значение для контента
-    //     opacity: 1;
-    //     padding-top: 0.5rem;
-    //     padding-bottom: 1rem;
-    // }
 
-    // &__faqAnswerClosed {
-    //     max-height: 0;
-    //     opacity: 0;
-    //     padding-top: 0;
-    //     padding-bottom: 0;
-    // }
-    // Анимация для иконок
     &__plus,
     &__minus {
         transition: transform 0.3s ease-in-out;
@@ -343,7 +291,6 @@
 
             & > svg {
                 width: 100%;
-                // height: 100%;
             }
         }
         &__formImage {
@@ -351,19 +298,3 @@
         }
     }
 }
-
-// @media (max-width: 1440px) {
-//     .page {
-//         &__developsection {
-//             & > div:last-child {
-//                 height: 162px;
-//                 width: 241px;
-
-//                 & > svg {
-//                     width: 100%;
-//                     height: 100%;
-//                 }
-//             }
-//         }
-//     }
-// }

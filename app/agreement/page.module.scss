@@ -183,7 +183,6 @@
         }
     }
 
-   
     &__offerShape {
         width: responsive-font(315px, 47px);
         height: auto;
@@ -204,7 +203,6 @@
         height: auto;
         position: absolute;
         left: 85%;
-        // bottom: 8%;
     }
     &__shapes {
         position: relative;
@@ -221,7 +219,6 @@
         height: auto;
         position: absolute;
         left: 2%;
-        // top: 3%;
     }
 
     &__offer {
@@ -229,22 +226,13 @@
         height: auto;
         position: absolute;
         left: 88%;
-        // top: 40%;
     }
 
-    // &--Shape {
-    //     width: responsive-font(300px, 47px);
-    //     height: auto;
-    //     position: absolute;
-    //     left: 73%;
-    //     top: 9%;
-    // }
     &__bigShape {
         width: responsive-font(315px, 48px);
         height: auto;
         position: absolute;
         left: 70%;
-        // top: 9%;
     }
 
     &__projectsShape {

@@ -3,8 +3,7 @@ import styles from './page.module.scss'
 import {ProjectsContent} from './projectsContent'
 import Image from 'next/image'
 import { 
-    descriptionSmallShape,   
-    // descriptionBigShape,    
+    descriptionSmallShape,
     projectsShape,
 } from '@/public/img'
 

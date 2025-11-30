@@ -3,8 +3,8 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    max-width: 1730px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
+    max-width: 1730px;
+    margin: 0 auto;
     position: relative;
     margin-bottom: responsive-font(85px, 20px);
 
@@ -36,7 +36,7 @@
         min-height: 120px;
     }
     &__logoLink {
-        display: inline-block; /* Чтобы ссылка правильно оборачивала SVG */
+        display: inline-block;
     }
 
     &__leftsvg {
@@ -49,23 +49,16 @@
     &__tgrev {
         width: responsive-font(74px, 29px);
         height: auto;
-        // width: 100%;
-        min-width: 29px; /* Минимальный размер */
+        min-width: 29px;
     }
-    // }
 
     &__footerstile {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        // gap: 10px;
         gap: responsive-font(16px, 10px);
         font-size: responsive-font(27px, 10px);
         font-weight: bold;
-        // display: grid;
-        // grid-template-columns: 1fr 1fr;
-        // column-gap: responsive-font(40px, 10px);
-        // row-gap: responsive-font(22px, 10px);
         order: 1;
     }
     &__navlink {
@@ -79,15 +72,12 @@
         font-weight: bold;
         order: 2;
         display: flex;
-        // flex-wrap: nowrap;
         flex-direction: column;
         order: 3;
         gap: responsive-font(10px, 6px);
-        // justify-content: space-between;
         & > h6 {
             font-size: responsive-font(21px, 10px);
             font-weight: bold;
-            // margin-bottom: responsive-font(8px, 10px);
         }
         & > a {
             font-size: responsive-font(27px, 10px);
@@ -100,7 +90,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        // justify-content: space-between;
         order: 3;
         & > h6 {
             text-align: right;
@@ -116,7 +105,6 @@
         & > ul {
             display: flex;
             gap: 10px;
-            // padding-top: 67px;
             & li:first-child svg {
                 width: responsive-font(44px, 10px);
             }
@@ -156,17 +144,7 @@
             display: flex;
             justify-content: space-between;
         }
-        &__leftsvg {
-            // width: responsive-font(30px, 29px, 768px);
-        }
-        // &__left {
-        //     & > svg {
-        //         width: responsive-font(70px, 80px, 768px);
-        //     }
-        // }
-        // &__logotg {
-        //     // display: flex;
-        // }
+
         &__stylephone {
             & > h6 {
                 font-size: responsive-font(20px, 10px, 768px);
@@ -174,11 +152,6 @@
             & > a {
                 display: block;
                 font-size: responsive-font(20px, 10px, 768px);
-            }
-            & > * {
-                &:nth-child(3) {
-                    // margin-top: responsive-font(32px, 10px, 768px);
-                }
             }
         }
         &__footerstile {

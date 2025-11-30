@@ -21,7 +21,6 @@ export function ProjectsContent() {
     const router = useRouter()
     const searchParams = useSearchParams()
 
-    // Получаем параметры из URL или используем значения по умолчанию
     const urlFilter = searchParams.get('filter') || 'all'
     const urlPage = searchParams.get('page') || '1'
 
@@ -29,16 +28,14 @@ export function ProjectsContent() {
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
 
-    // Состояния для пагинации
     const [currentPage, setCurrentPage] = useState(parseInt(urlPage))
-    const [projectsPerPage] = useState(6) // Количество проектов на странице
+    const [projectsPerPage] = useState(6)
 
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
 
-    // Функция для обновления query параметров
     const updateQueryParams = useCallback(
         (filter: string, page: number) => {
             const params = new URLSearchParams()
@@ -54,13 +51,11 @@ export function ProjectsContent() {
                 ? `/projects?${queryString}`
                 : '/projects'
 
-            // Используем replace вместо push чтобы избежать накопления истории
             router.replace(newUrl, { scroll: false })
         },
         [router]
     )
 
-    // Функция для перехода на страницу проекта
     const handleProjectClick = useCallback(
         (projectId: number) => {
             router.push(`/projects/${projectId}`)
@@ -68,7 +63,6 @@ export function ProjectsContent() {
         [router]
     )
 
-    // Фильтры меню
     const filters = [
         { key: 'all', label: 'Все проекты' },
         { key: 'site-dev', label: 'Разработка сайтов' },
@@ -77,13 +71,11 @@ export function ProjectsContent() {
         { key: 'ai-assistant', label: 'AI-ассистенты' },
     ]
 
-    // Фильтрация проектов с отладкой
     const filteredProjects =
         activeFilter === 'all'
             ? projects
             : projects.filter((project) => project.category === activeFilter)
 
-    // Синхронизация состояния с URL параметрами при изменении searchParams
     useEffect(() => {
         const filter = searchParams.get('filter') || 'all'
         const page = parseInt(searchParams.get('page') || '1')
@@ -92,18 +84,12 @@ export function ProjectsContent() {
         setCurrentPage(page)
     }, [searchParams])
 
-    // Сброс пагинации при изменении фильтра
-    // useEffect(() => {
-    //     setCurrentPage(1)
-    // }, [activeFilter])
-
-    // Обработчик фильтра с обновлением URL
     const handleFilterClick = useCallback(
         (filterKey: string) => {
             if (filterKey === activeFilter) return
 
             setActiveFilter(filterKey)
-            setCurrentPage(1) // Сбрасываем на первую страницу при смене фильтра
+            setCurrentPage(1)
             updateQueryParams(filterKey, 1)
         },
         [activeFilter, updateQueryParams]
@@ -142,11 +128,9 @@ export function ProjectsContent() {
     const goToPage = (pageNumber: number) => {
         setCurrentPage(pageNumber)
         updateQueryParams(activeFilter, pageNumber)
-        // Прокрутка к верху страницы
         window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
-    // Генерация номеров страниц для отображения
     const getPageNumbers = () => {
         const pageNumbers = []
         const maxVisiblePages = 5
@@ -168,9 +152,7 @@ export function ProjectsContent() {
         return pageNumbers
     }
 
-    // Обработка прямых URL с параметрами при загрузке
     useEffect(() => {
-        // Если в URL есть параметры, синхронизируем состояние
         const filterFromUrl = searchParams.get('filter')
         const pageFromUrl = searchParams.get('page')
 
@@ -383,7 +365,7 @@ export function ProjectsContent() {
                             />
                         </button>
                     </div>
-                )}                
+                )}
                 <Footer />
             </div>
         </>

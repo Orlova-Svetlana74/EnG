@@ -26,16 +26,16 @@ export default function ProjectDetailPage() {
     const [isMenuHeader, setIsMenuHeader] = useState(false)
 
     useEffect(() => {
-        // Преобразуем string ID в number для поиска
+        
         const numericId = parseInt(projectId, 10)
 
-        // Если преобразование не удалось, показываем 404
+       
         if (isNaN(numericId)) {
             setIsLoading(false)
             return
         }
 
-        // Имитация загрузки данных
+       
         const foundProject = projects.find((p) => p.id === numericId)
 
         if (foundProject) {
@@ -85,12 +85,10 @@ export default function ProjectDetailPage() {
 
             <div className={styles.project}>
                 <div className={styles.project__container}>
-                    {/* Заголовок */}
                     <h1 className={styles.project__title}>
                         {project.toptitle}
                     </h1>
 
-                    {/* Изображение */}
                     {project.image && (
                         <div className={styles.project__image}>
                             <Image
@@ -115,13 +113,12 @@ export default function ProjectDetailPage() {
                                 alt=""
                                 priority={true}
                             />
-                            {/* Задачи */}
+
                             {project.tasks && project.tasks.length > 0 && (
                                 <Section title="Задачи" items={project.tasks} />
                             )}
                         </div>
 
-                        {/* Решения */}
                         {project.solutions && project.solutions.length > 0 && (
                             <Section
                                 title="Решения"
@@ -135,20 +132,13 @@ export default function ProjectDetailPage() {
                                 alt=""
                                 priority={true}
                             />
-                            {/* Результаты */}
+
                             {project.results && project.results.length > 0 && (
                                 <Section
                                     title="Результаты"
                                     items={project.results}
                                 />
                             )}
-
-                            {/* <Image
-                                className={styles.project__projectsShape}
-                                src={projectsShape}
-                                alt=""
-                                priority={true}
-                            /> */}
                         </div>
                     </div>
                 </div>
@@ -159,7 +149,7 @@ export default function ProjectDetailPage() {
                         alt=""
                         priority={true}
                     />
-                    
+
                     <Footer />
                 </div>
             </div>
