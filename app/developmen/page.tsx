@@ -2,7 +2,6 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import { Header } from '@/components/header/Header'
-import { Footer } from '@/components/footer/Footer'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
 import Developtitle from '@/svg/DeveloptitleSVG'
@@ -12,9 +11,10 @@ import Desine from '@/svg/DesineSVG'
 import Develop from '@/svg/DevelopSVG'
 import { Input } from '@/components/ui/input/Input'
 import { Checkbox } from '@/components/ui/checkbox/Checkbox'
+import { Footer } from '@/components/footer/Footer'
 import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
-import Minus from '@/svg/MinusSVG'
+
 import { faqData } from '@/data/data'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
@@ -48,6 +48,11 @@ export default function Developmen() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
+            />
 
             <div className={styles.page}>
                 <section className={styles.page__developsection}>
@@ -77,15 +82,21 @@ export default function Developmen() {
                         <Developtitle />
                     </div>
                 </section>
-                <Button className={styles.page__button}>
+                <Button
+                    className={styles.page__button}
+                    onClick={() => setIsModalOpen(true)}
+                >
                     Заказать разработку
                 </Button>
-                <Image
-                    className={styles.page__descriptionSmallShape}
-                    src={descriptionSmallShape}
-                    alt=""
-                    priority={true}
-                />
+                <div className={styles.page__shape}>
+                    <Image
+                        className={`${styles.page__shape} ${styles['page__shape--descriptionSmallShape']}`}
+                        src={descriptionSmallShape}
+                        alt=""
+                        priority={true}
+                    />
+                </div>
+
                 <h4 className={styles.page__subtitle}>
                     Этапы разработки сайта с нуля
                 </h4>
@@ -183,13 +194,16 @@ export default function Developmen() {
                     </section>
                 </div>
                 <div>
+                    <div className={styles.page__shape}>
+                        <Image
+                            className={`${styles.page__shape} ${styles['page__shape--descriptionBigShape']}`}
+                            src={descriptionBigShape}
+                            alt=""
+                            priority={true}
+                        />
+                    </div>
                     <h4 className={styles.page__subtitle}>Результаты</h4>
-                    <Image
-                        className={styles.page__descriptionBigShape}
-                        src={descriptionBigShape}
-                        alt=""
-                        priority={true}
-                    />
+
                     <p className={styles['page__subtitle--text']}>
                         Заказывая разработку сайта в EnterGen вы получите:
                     </p>
@@ -239,54 +253,56 @@ export default function Developmen() {
                             </p>
                         </div>
                     </div>
-                    <Button className={styles.page__button}>
+
+                    <Button
+                        className={styles.page__button}
+                        onClick={() => setIsModalOpen(true)}
+                    >
                         Обсудить проект
                     </Button>
                 </div>
-                <Image
-                    className={styles.page__projectsShape}
-                    src={projectsShape}
-                    alt=""
-                    priority={true}
-                />
+
                 <div className={styles.page__faqblock}>
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
+                    <div className={styles.page__shape}>
+                        <Image
+                            className={`${styles.page__shape} ${styles['page__shape--projectsShape']}`}
+                            src={projectsShape}
+                            alt=""
+                            priority={true}
+                        />
 
-                    <div className={styles.page__faqContainer}>
-                        {faqData.map((item) => (
-                            <div
-                                key={item.id}
-                                className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
-                            >
+                        <div className={styles.page__faqContainer}>
+                            {faqData.map((item) => (
                                 <div
-                                    className={styles.page__faqQuestion}
-                                    onClick={() => toggleQuestion(item.id)}
+                                    key={item.id}
+                                    className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
                                 >
-                                    <p className={styles.page__faqtext}>
-                                        {item.question}
-                                    </p>
-                                    <div className={styles.page__faqIcon}>
-                                        <Plus className={styles.page__plus} />
+                                    <div
+                                        className={styles.page__faqQuestion}
+                                        onClick={() => toggleQuestion(item.id)}
+                                    >
+                                        <p className={styles.page__faqtext}>
+                                            {item.question}
+                                        </p>
+                                        <div className={styles.page__faqIcon}>
+                                            <Plus
+                                                className={styles.page__plus}
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    className={`${styles.page__faqAnswer} ${
-                                        openQuestionId === item.id
-                                    }`}
-                                >
-                                    <p className={styles.page__faqtext}>
-                                        {item.answer}
-                                    </p>
-                                </div>
-                                {/* {openQuestionId === item.id && ( */}
-                                {/* <div className={styles.page__faqAnswer}>
+                                    <div
+                                        className={`${styles.page__faqAnswer} ${
+                                            openQuestionId === item.id
+                                        }`}
+                                    >
                                         <p className={styles.page__faqtext}>
                                             {item.answer}
                                         </p>
-                                    </div> */}
-                                {/* )} */}
-                            </div>
-                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
 
@@ -309,6 +325,7 @@ export default function Developmen() {
                         </div>
                     </div>
                 </div>
+
                 <Footer />
             </div>
         </>

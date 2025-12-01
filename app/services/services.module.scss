@@ -2,8 +2,12 @@
 
 .services {
     max-width: 1440px;
-    margin: responsive-font(75px, 20px) auto;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: responsive-font(20px, 10px) 0;
     position: relative;
+    z-index: 1;
 
     &__header {
         display: flex;
@@ -157,9 +161,6 @@
 
 @media (max-width: 768px) {
     .services {
-        padding-left: responsive-font(60px, 26px, 768px);
-        padding-right: responsive-font(60px, 26px, 768px);
-
         &__shape {
             &--projectsShape {
                 position: absolute;
@@ -171,7 +172,7 @@
                 right: 200px;
                 bottom: 200px;
             }
-    
+
             &--skillsShape {
                 position: absolute;
                 right: responsive-font(800px, 80px);
@@ -182,7 +183,7 @@
                 right: 162px;
                 top: 178px;
             }
-    
+
             &--offerShape {
                 position: absolute;
                 right: responsive-font(240px, 40px);
@@ -193,13 +194,11 @@
                 top: 434px;
                 right: 41px;
             }
-    
-           
+
             &--bigshape {
                 display: none;
             }
         }
-
 
         &__list {
             &-item {
