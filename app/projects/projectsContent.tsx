@@ -162,7 +162,7 @@ export function ProjectsContent() {
         if (pageFromUrl && parseInt(pageFromUrl) !== currentPage) {
             setCurrentPage(parseInt(pageFromUrl))
         }
-    }, []) // Только при монтировании
+    }, [])
 
     return (
         <>

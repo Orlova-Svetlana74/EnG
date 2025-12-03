@@ -1,24 +1,20 @@
 'use client'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import LogoSVG from '@/svg/LogoSVG'
 import { Button } from '@/components/ui/Button/Button'
+import { projects } from '@/data/dataprojects'
 import {
     descriptionBigShape,
     descriptionSmallShape,
     mainShape,
     offerShape,
-    projectFoodImg,
-    projectKitchenImg,
-    projectMandarinaImg,
-    projectRukalineImg,
     projectsShape,
 } from '@/public/img'
-import { MenuSVG } from '@/svg/MenuSVG'
+
 import { useState } from 'react'
-import clsx from 'clsx'
+
 import { Footer } from '@/components/footer/Footer'
-import { Frametwo } from '@/public/img'
+
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Header } from '@/components/header/Header'
 import { StarSVG } from '@/svg/StarSVG'
@@ -31,19 +27,28 @@ import { SuitcaseSVG } from '@/svg/SuitcaseSVG'
 import { PipelineSVG } from '@/svg/PipelineSVG'
 import { GearSVG } from '@/svg/GearSVG'
 import { OverlapSVG } from '@/svg/OverlapSVG'
-import { TgSVG } from '@/svg/TgSVG'
+
 import { CookieBanner } from '@/components/ui/CookieBanner/CookieBanner'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+    const router = useRouter()
 
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
 
+    
+
+    const handleProjectClick = (projectId:number) => {
+        router.push(`/projects/${projectId}`)
+    }
+    // Берем только первые 4 проекта для отображения на главной странице
+    const displayedProjects = projects.slice(0, 4)
     return (
         <>
             <Header
@@ -258,47 +263,34 @@ export default function Home() {
                     </div>
 
                     <div className={styles.container__projects}>
-                        <div className={styles.container__projects__item}>
+                        {displayedProjects.map((project) => (
                             <div
-                                className={styles.container__projects__shareImg}
+                                key={project.id}
+                                className={styles.container__projects__item}
+                                onClick={() => handleProjectClick(project.id)}
+                                style={{ cursor: 'pointer' }}
                             >
-                                <Image src={projectKitchenImg} alt="f" />
+                                <div
+                                    className={styles.container__projects__shareImg}
+                                >
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        width={300}
+                                        height={200}
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                </div>
+                                <div className={styles.wrapper__projectHeader}>
+                                    <h3 className={styles.wrapper__projectTitle}>
+                                        {project.title}
+                                    </h3>
+                                    <p className={styles.wrapper__projectDescription}>
+                                        {project.description}
+                                    </p>
+                                </div>
                             </div>
-                            <p>
-                                текст текст текст текст текст текст текст текст
-                            </p>
-                        </div>
-                        <div className={styles.container__projects__item}>
-                            <div
-                                className={styles.container__projects__shareImg}
-                            >
-                                <Image src={projectRukalineImg} alt="f" />
-                            </div>
-                            <p>
-                                текст текст текст текст текст текст текст текст
-                            </p>
-                        </div>
-                        <div className={styles.container__projects__item}>
-                            <div
-                                className={styles.container__projects__shareImg}
-                            >
-                                {' '}
-                                <Image src={projectFoodImg} alt="f" />
-                            </div>
-                            <p>
-                                текст текст текст текст текст текст текст текст
-                            </p>
-                        </div>
-                        <div className={styles.container__projects__item}>
-                            <div
-                                className={styles.container__projects__shareImg}
-                            >
-                                <Image src={projectMandarinaImg} alt="f" />
-                            </div>
-                            <p>
-                                текст текст текст текст текст текст текст текст
-                            </p>
-                        </div>
+                        ))}
 
                         <Image
                             className={styles.container__projects__img}
