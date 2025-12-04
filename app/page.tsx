@@ -214,7 +214,7 @@ export default function Home() {
                             С полным списком наших скиллов вы можете
                             <br /> ознакомиться на странице услуги
                         </p>
-                        <Button>
+                        <Button onClick={() => router.push('/services')}>
                             <p>Показать все услуги</p>
                             <ArrowSVG />
                         </Button>
@@ -249,7 +249,7 @@ export default function Home() {
                                 alt=""
                             />
                         </ul>
-                        <Button>
+                        <Button onClick={() => router.push('/services')} >
                             <p>Показать все услуги</p>
                             <ArrowSVG />
                         </Button>
