@@ -105,8 +105,8 @@
 
     &__descriptionSmallShape {
         position: absolute;
-        left: 37%;
-        top: 30%;
+        left: 80%;
+        top: 15%;
         width: responsive-font(300px, 55px);
         height: auto;
     }
@@ -121,8 +121,8 @@
 
     &__projectsShape {
         position: absolute;
-        left: 60%;
-        top: 42%;
+        top: 44%;
+        left: 87%;
         width: responsive-font(300px, 70px);
         height: auto;
     }
@@ -255,9 +255,10 @@
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-        padding-top: responsive-font(28px, 20px);
         border-bottom: 1.5px solid;
         transition: all 0.3s ease;
+        padding-bottom: responsive-font(15px, 13px);
+        padding-top: responsive-font(28px, 20px);
 
         &:hover {
             opacity: 0.8;
@@ -405,6 +406,10 @@
             max-width: 1440px;
             margin: 0 auto;
             box-sizing: border-box;
+        }
+        &__imageSection {
+            padding: 0;
+            position: relative;
         }
     }
 }
