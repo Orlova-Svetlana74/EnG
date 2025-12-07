@@ -31,7 +31,11 @@
     &__title {
         font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(12px, 10px);
+
+        
     }
+
+    
     &__subtitle {
         font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(49px, 10px);
@@ -51,6 +55,7 @@
         &::placeholder {
             color: #004577;
         }
+        
     }
 
     &__inputformtext {

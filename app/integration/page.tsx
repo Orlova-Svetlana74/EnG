@@ -13,10 +13,6 @@ import { Frametwo } from '@/public/img'
 
 import {
     settingsalert,
-    icon1,
-    icon2,
-    icon3,
-    icon4,
     descriptionSmallShape,
     descriptionBigShape,
     offerShape,
@@ -85,18 +81,19 @@ export default function Developmen() {
                         <Integrationtitle />
                     </div>
                 </section>
-                <Button
-                    className={styles.page__button}
-                    onClick={() => setIsModalOpen(true)}
-                >
-                    Заказать интеграцию
-                </Button>
                 <Image
                     className={styles.page__descriptionSmallShape}
                     src={descriptionSmallShape}
                     alt=""
                     priority={true}
                 />
+                <Button
+                    className={styles.page__button}
+                    onClick={() => setIsModalOpen(true)}
+                >
+                    Заказать интеграцию
+                </Button>
+
                 <h2 className={styles.page__subtitle}>
                     Какие задачи решает интеграция?
                 </h2>

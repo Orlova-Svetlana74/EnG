@@ -138,14 +138,15 @@
 .expandButton {
     background: none;
     border: none;
-    color: #1e3a8a;
-    font-size: responsive-font(16px, 14px);
+    color: #004577;
+    font-size: responsive-font(26px, 14px);
     cursor: pointer;
     padding: responsive-font(10px, 8px) 0;
     margin-top: responsive-font(10px, 8px);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    font-family: Noah, sans-serif;
 
     &:hover {
         color: #1e40af;

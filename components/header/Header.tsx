@@ -85,7 +85,34 @@ interface INavigation {
     clickScroll?: () => void
 }
 const Navigation = ({ clickScroll }: INavigation) => {
-    const path = usePathname()
+    const pathname = usePathname()
+    
+    const isActive = (path: string) => {
+       
+        if (path === '/' && pathname === '/') {
+            return true
+        }
+       
+        if (path !== '/' && pathname.startsWith(path)) {
+            return true
+        }
+        return false
+    }
+    
+    const isServicesActive = () => {
+        return (
+            pathname === '/services' ||
+            pathname.startsWith('/developmen') ||
+            pathname.startsWith('/integration') ||
+           
+            pathname.includes('services')
+        ) 
+    }
+    //
+    const isContactsActive =
+        pathname === '/' &&
+        typeof window !== 'undefined' &&
+        window.location.hash === '#contacts'
 
     return (
         <div className={styles.container__menu}>
@@ -93,16 +120,29 @@ const Navigation = ({ clickScroll }: INavigation) => {
                 <Link
                     className={[
                         styles.container__navlink,
-                        path === '/' && styles.container__navlink_active,
+                        isActive('/') && styles.container__navlink_active,
                     ].join(' ')}
                     href="/"
                 >
                     Entergen
                 </Link>
-                <Link className={styles.container__navlink} href="/projects">
+                <Link
+                    className={[
+                        styles.container__navlink,
+                        isActive('/projects') &&
+                            styles.container__navlink_active,
+                    ].join(' ')}
+                    href="/projects"
+                >
                     Проекты
                 </Link>
-                <Link className={styles.container__navlink} href="/about">
+                <Link
+                    className={[
+                        styles.container__navlink,
+                        isActive('/about') && styles.container__navlink_active,
+                    ].join(' ')}
+                    href="/about"
+                >
                     О нас
                 </Link>
                 <span
@@ -110,8 +150,14 @@ const Navigation = ({ clickScroll }: INavigation) => {
                     className={styles.container__navlink}
                 >
                     Контакты
-                </span>                
-                <Link className={styles.container__navlink} href="/services">
+                </span>
+                <Link 
+                    className={[
+                        styles.container__navlink,
+                        isServicesActive() && styles.container__navlink_active,
+                    ].join(' ')}
+                    href="/services"
+                >
                     Услуги
                 </Link>
             </nav>

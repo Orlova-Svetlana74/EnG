@@ -83,7 +83,7 @@
 
         &:hover {
             cursor: pointer;
-        }        
+        }
         margin-bottom: 10px;
     }
 
@@ -95,9 +95,19 @@
         border: 0;
         color: #004577;
         font-family: Noah, sans-serif;
+        transition: all 0.3s ease; 
+        position: relative;
 
         &:hover {
             cursor: pointer;
+        }
+        &Active {
+           
+            color: #0040E1 !important;
+
+            &:hover {
+             color: #0040E1 !important;  
+            }
         }
     }
     &__pagination {
@@ -163,7 +173,7 @@
         font-weight: 500;
         transition: all 0.3s ease;
 
-        &:hover {            
+        &:hover {
             border-color: #0040e1;
         }
     }
@@ -224,7 +234,6 @@
         overflow: hidden;
     }
 
-
     &__imagePlaceholder {
         width: 100%;
         height: 200px;
@@ -240,14 +249,11 @@
     &__projectTitle {
         font-size: responsive-font(27px, 16px);
         font-weight: bold;
-        
     }
 
     &__projectDescription {
         font-size: responsive-font(27px, 16px);
     }
-
-    
 }
 
 @media (max-width: 1920px) {
@@ -286,13 +292,13 @@
             &--descriptionSmallShape {
                 display: none;
             }
-           
+
             &--offerShape {
                 display: none;
             }
         }
         &__pageTitleteem {
-            display: inline;            
+            display: inline;
             font-size: responsive-font(40px, 16px, 744px);
             font-weight: bold;
         }
@@ -300,7 +306,7 @@
         &__projectsGrid {
             display: grid;
             grid-template-columns: 1fr;
-            row-gap: 12px;           
+            row-gap: 12px;
             margin-top: 37px;
             margin-bottom: 53px;
         }
@@ -309,7 +315,7 @@
             flex-direction: column;
             &:hover {
                 cursor: pointer;
-            }            
+            }
             margin-bottom: 10px;
         }
 
@@ -327,7 +333,7 @@
                 cursor: pointer;
             }
         }
-        &__pagination {            
+        &__pagination {
             margin-top: 53px;
             padding-bottom: 30px;
         }
