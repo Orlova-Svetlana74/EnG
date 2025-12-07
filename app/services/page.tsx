@@ -31,7 +31,6 @@ export default function Services() {
     const [isListExpanded, setIsListExpanded] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
 
-    
     useEffect(() => {
         const checkScreenSize = () => {
             setIsMobile(window.innerWidth <= 744)
@@ -85,7 +84,6 @@ export default function Services() {
         { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
 
-    
     const visibleServices =
         isMobile && !isListExpanded ? services.slice(0, 4) : services
     const hasHiddenServices = isMobile && services.length > 4 && !isListExpanded

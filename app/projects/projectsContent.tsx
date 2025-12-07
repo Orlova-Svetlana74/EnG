@@ -7,7 +7,6 @@ import StrelkaLeftSVG from '@/svg/StrelkaLeftSVG'
 import StrelkaRightSVG from '@/svg/StrelkaRightSVG'
 import { useState, useEffect, useCallback } from 'react'
 import { projects } from '@/data/dataprojects'
-import { TgSVG } from '@/svg/TgSVG'
 import {
     mainShape,
     descriptionSmallShape,
@@ -162,7 +161,7 @@ export function ProjectsContent() {
         if (pageFromUrl && parseInt(pageFromUrl) !== currentPage) {
             setCurrentPage(parseInt(pageFromUrl))
         }
-    }, []) // Только при монтировании
+    }, [])
 
     return (
         <>
