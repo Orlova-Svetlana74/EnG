@@ -40,14 +40,12 @@ export default function Home() {
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
-    }
-
-    
+    }    
 
     const handleProjectClick = (projectId:number) => {
         router.push(`/projects/${projectId}`)
     }
-    // Берем только первые 4 проекта для отображения на главной странице
+   
     const displayedProjects = projects.slice(0, 4)
     return (
         <>
@@ -268,7 +266,7 @@ export default function Home() {
                                 key={project.id}
                                 className={styles.container__projects__item}
                                 onClick={() => handleProjectClick(project.id)}
-                                style={{ cursor: 'pointer' }}
+                                
                             >
                                 <div
                                     className={styles.container__projects__shareImg}
@@ -277,8 +275,7 @@ export default function Home() {
                                         src={project.image}
                                         alt={project.title}
                                         width={300}
-                                        height={200}
-                                        style={{ objectFit: 'cover' }}
+                                        height={200}                                        
                                     />
                                 </div>
                                 <div className={styles.wrapper__projectHeader}>

@@ -86,30 +86,29 @@ interface INavigation {
 }
 const Navigation = ({ clickScroll }: INavigation) => {
     const pathname = usePathname()
-
-    // Определяем активные пути для каждого пункта меню
+    
     const isActive = (path: string) => {
-        // Для главной страницы
+       
         if (path === '/' && pathname === '/') {
             return true
         }
-        // Для других страниц - проверяем начало пути
+       
         if (path !== '/' && pathname.startsWith(path)) {
             return true
         }
         return false
     }
-    // Проверяем, находится ли пользователь на странице услуг или её подстраницах
+    
     const isServicesActive = () => {
         return (
             pathname === '/services' ||
             pathname.startsWith('/developmen') ||
             pathname.startsWith('/integration') ||
-            // Добавьте сюда другие пути, которые относятся к услугам
+           
             pathname.includes('services')
-        ) // на случай если будут страницы вида /services/что-то
+        ) 
     }
-    // Проверяем, находится ли пользователь в разделе "Контакты" (якорная ссылка)
+    //
     const isContactsActive =
         pathname === '/' &&
         typeof window !== 'undefined' &&
