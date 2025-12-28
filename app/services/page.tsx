@@ -60,7 +60,7 @@ export default function Services() {
         {
             id: 2,
             text: 'Разработка ботов и Mini Apps приложений на базе Telegram и VK',
-            href: '#',
+            href: '/botApp',
         },
         {
             id: 3,
