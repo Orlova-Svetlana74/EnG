@@ -86,27 +86,25 @@ interface INavigation {
 }
 const Navigation = ({ clickScroll }: INavigation) => {
     const pathname = usePathname()
-    
+
     const isActive = (path: string) => {
-       
         if (path === '/' && pathname === '/') {
             return true
         }
-       
+
         if (path !== '/' && pathname.startsWith(path)) {
             return true
         }
         return false
     }
-    
+
     const isServicesActive = () => {
         return (
             pathname === '/services' ||
             pathname.startsWith('/developmen') ||
             pathname.startsWith('/integration') ||
-           
             pathname.includes('services')
-        ) 
+        )
     }
     //
     const isContactsActive =
@@ -151,7 +149,7 @@ const Navigation = ({ clickScroll }: INavigation) => {
                 >
                     Контакты
                 </span>
-                <Link 
+                <Link
                     className={[
                         styles.container__navlink,
                         isServicesActive() && styles.container__navlink_active,

@@ -32,6 +32,16 @@ import sync from './sync.svg'
 import group from './group.svg'
 import handyman from './handyman.svg'
 import paymentarrowdown from './payment_arrow_down.svg'
+import shoppingcart from './shoppingcart.svg'
+import creditcard from './creditcard.svg'
+import game from './game.svg'
+import sms from './sms.svg'
+import joystick from './joystick.svg'
+import health_and_safety from './health_and_safety.svg'
+import school from './school.svg'
+import currency_exchange from './currency_exchange.svg'
+
+
 
 
 
@@ -70,5 +80,14 @@ export {
     sync,
     group,
     handyman,
-    paymentarrowdown
+    paymentarrowdown,
+    shoppingcart,
+    creditcard,
+    game,
+    sms,
+    joystick,
+    health_and_safety,
+    school,
+    currency_exchange
+
 }
