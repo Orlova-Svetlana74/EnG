@@ -41,6 +41,7 @@ import health_and_safety from './health_and_safety.svg'
 import school from './school.svg'
 import currency_exchange from './currency_exchange.svg'
 import checkcircle from './check_circle.svg'
+import iconapplication from './iconapplication.svg'
 
 
 
@@ -90,6 +91,7 @@ export {
     health_and_safety,
     school,
     currency_exchange,
-    checkcircle
+    checkcircle,
+    iconapplication
 
 }
