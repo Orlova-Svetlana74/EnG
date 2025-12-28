@@ -42,11 +42,6 @@ import school from './school.svg'
 import currency_exchange from './currency_exchange.svg'
 import checkcircle from './check_circle.svg'
 
-
-
-
-
-
 export {
     projectKitchenImg,
     projectRukalineImg,
@@ -90,6 +85,5 @@ export {
     health_and_safety,
     school,
     currency_exchange,
-    checkcircle
-
+    checkcircle,
 }
