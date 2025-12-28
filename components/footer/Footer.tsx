@@ -20,10 +20,8 @@ export const Footer = () => {
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__logotg}>
                         <Link className={styles.footer__logoLink} href="/">
-                            <LogoSVG className={styles.footer__leftsvg} />
+                            <WebsiteLogo className={styles.footer__logo} />
                         </Link>
-
-                        <TGreverse className={styles.footer__tgrev} />
                     </div>
 
                     <div className={styles.footer__stylephone}>
@@ -35,12 +33,7 @@ export const Footer = () => {
                         >
                             enter.gen@mail.ru
                         </Link>
-                        <Link
-                            className={styles.footer__navlink}
-                            href="mailto:entergen.company@gmail.com"
-                        >
-                            entergen.company@gmail.com
-                        </Link>
+
                         <h6 className={styles.footer__phone}>Телефон</h6>
                         <Link
                             className={styles.footer__navlink}
@@ -92,6 +85,9 @@ export const Footer = () => {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className={styles.footer__tgFixed}>
+                <TgSVG />
             </div>
             <Footercart />
         </footer>

@@ -17,26 +17,6 @@
     margin: responsive-font(75px, 20px) auto;
     position: relative;
 
-    &__tgFixed {
-        position: fixed;
-        left: auto;
-        bottom: responsive-font(200px, 75px);
-        z-index: 1001;
-        width: responsive-font(70px, 35px);
-        height: responsive-font(62px, 35px);
-        padding: responsive-font(10px, 5px) auto;
-        border-radius: responsive-font(12px, 6px);
-        background-color: #004577;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        & > svg {
-            color: white;
-            width: responsive-font(50px, 25px);
-        }
-    }
-
     &__actionUs {
         display: flex;
         justify-content: space-between;
@@ -46,9 +26,6 @@
             font-size: responsive-font(36px, 14px);
             font-weight: bold;
         }
-        // & > button {
-        //   text-wrap-mode: nowrap;
-        // }
     }
 
     &__header {
@@ -72,8 +49,7 @@
         justify-content: space-between;
         align-items: center;
         position: relative;
-        // & > button {
-        // }
+
         &__bigImg {
             position: absolute;
             right: 0;
@@ -99,7 +75,7 @@
         &__block2 {
             display: flex;
             gap: responsive-font(60px, 10px);
-             width: 100%;
+            width: 100%;
         }
         &__block2 {
             margin-top: clamp(20px, 3.19vw, 60px);
@@ -209,19 +185,23 @@
         row-gap: 10px;
         column-gap: 15px;
         position: relative;
+        cursor: pointer;
 
         &__item {
             display: flex;
             flex-direction: column;
-            // overflow: hidden;
+            
         }
         &__shareImg {
             overflow: hidden;
+
             & > img {
                 width: 100%;
                 height: 100%;
                 transition: transform 0.5s ease;
                 cursor: pointer;
+                object-fit: cover;
+
                 &:hover {
                     transform: scale(1.05);
                 }
@@ -235,6 +215,7 @@
             width: clamp(100px, 21vw, 406px);
             height: auto;
             transform: translateY(60%);
+            object-fit: cover;
         }
     }
 
@@ -350,4 +331,3 @@
         }
     }
 }
-

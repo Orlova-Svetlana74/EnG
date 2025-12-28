@@ -2,29 +2,17 @@
 import styles from './page.module.scss'
 import Image from 'next/image'
 import { Header } from '@/components/header/Header'
-import { Footer } from '@/components/footer/Footer'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
+import { Footer } from '@/components/footer/Footer'
 import Integrationtitle from '@/svg/IntegrationSVG'
-import Analitics from '@/svg/AnaliticsSVG'
-import Proektir from '@/svg/ProektirSVG'
-import Desine from '@/svg/DesineSVG'
-import Develop from '@/svg/DevelopSVG'
-import { Input } from '@/components/ui/input/Input'
-import { Checkbox } from '@/components/ui/checkbox/Checkbox'
-import Checkmark from '@/svg/CheckmarkSVG'
 import Plus from '@/svg/PlusSVG'
-import Minus from '@/svg/MinusSVG'
 import { faqDataintegration } from '@/data/dataintegration'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
     settingsalert,
-    icon1,
-    icon2,
-    icon3,
-    icon4,
     descriptionSmallShape,
     descriptionBigShape,
     offerShape,
@@ -59,6 +47,11 @@ export default function Developmen() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                mode="modal"
+            />
             <Image
                 className={styles.page__offerShape}
                 src={offerShape}
@@ -88,21 +81,23 @@ export default function Developmen() {
                         <Integrationtitle />
                     </div>
                 </section>
-                <Button className={styles.page__button}>
-                    Заказать интеграцию
-                </Button>
                 <Image
                     className={styles.page__descriptionSmallShape}
                     src={descriptionSmallShape}
                     alt=""
                     priority={true}
                 />
+                <Button
+                    className={styles.page__button}
+                    onClick={() => setIsModalOpen(true)}
+                >
+                    Заказать интеграцию
+                </Button>
+
                 <h2 className={styles.page__subtitle}>
                     Какие задачи решает интеграция?
                 </h2>
                 <div className={styles['page__advantages-block']}>
-                    {/* <div className={styles.page__blocktitle}></div> */}
-
                     <div className={styles['page__advantages-list1']}>
                         <div className={styles.page__advantage}>
                             <div className={styles['page__advantage-header']}>
@@ -319,13 +314,6 @@ export default function Developmen() {
                                         {item.answer}
                                     </p>
                                 </div>
-                                {/* {openQuestionId === item.id && ( */}
-                                {/* <div className={styles.page__faqAnswer}>
-                                        <p className={styles.page__faqtext}>
-                                            {item.answer}
-                                        </p>
-                                    </div> */}
-                                {/* )} */}
                             </div>
                         ))}
                     </div>

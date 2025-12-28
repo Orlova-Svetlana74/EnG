@@ -22,9 +22,8 @@ interface ModalProps {
 
 interface IFormData {
     name: string
-    phone: string
+    contact: string
     description: string
-    isAgree: boolean
 }
 
 const Blockmodal: React.FC<ModalProps> = ({
@@ -38,15 +37,15 @@ const Blockmodal: React.FC<ModalProps> = ({
     className = '',
 }) => {
     const [form, setForm] = useState<IFormData>({
-        description: '',
         name: '',
-        phone: '',
-        isAgree: false,
+        contact: '',
+        description: '',
         ...initialValues,
     })
 
     const [load, setLoad] = useState(false)
     const [showThankYou, setShowThankYou] = useState(false)
+    const [isAgree, setIsAgree] = useState(false) // Добавляем отдельное состояние для чекбокса
 
     // Обработка закрытия по ESC только для модального режима
     useEffect(() => {
@@ -60,7 +59,6 @@ const Blockmodal: React.FC<ModalProps> = ({
 
         if (isOpen) {
             document.addEventListener('keydown', handleEscape)
-            // Блокируем скролл только для модального окна
             document.body.style.overflow = 'hidden'
         }
 
@@ -78,17 +76,20 @@ const Blockmodal: React.FC<ModalProps> = ({
     }
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault() // Добавлено предотвращение перезагрузки страницы
+        e.preventDefault()
 
         setLoad(true)
         try {
-            const res = await $host.post('profile', { name: form.phone })
+            const res = await $host.post('profile', {
+                name: form.name,
+                contact: form.contact,
+                description: form.description,
+            })
             setShowThankYou(true)
             setForm({
-                description: '',
                 name: '',
-                phone: '',
-                isAgree: false,
+                contact: '',
+                description: '',
             })
         } catch (error) {
             message.error('Что-то пошло не так')
@@ -97,17 +98,16 @@ const Blockmodal: React.FC<ModalProps> = ({
     }
 
     const loadDisabled = !(
-        form.description &&
-        form.isAgree &&
         form.name &&
-        form.phone &&
+        form.contact &&
+        form.description &&
+        isAgree &&
         !load
     )
     if (mode === 'modal' && !isOpen) {
         return null
     }
 
-    // Основной контент формы
     const formContent = (
         <div className={`${styles.modal} ${className}`}>
             <div className={styles.modal__container}>
@@ -117,10 +117,6 @@ const Blockmodal: React.FC<ModalProps> = ({
                             Оставьте контакты, чтобы обсудить проект и условия
                             сотрудничества.
                         </p>
-                        {/* <p
-                            className={styles.formSubtitle}
-                            // dangerouslySetInnerHTML={{ __html: subtitle.replace('<br />', '<br/>') }}
-                        /> */}
                     </div>
                     <div>
                         <form
@@ -138,15 +134,18 @@ const Blockmodal: React.FC<ModalProps> = ({
                             />
                             <Input
                                 className={styles.modal__inputform}
-                                value={form.phone}
+                                value={form.contact}
                                 disabled={load}
                                 onChange={(e) =>
-                                    handleField('phone', e.currentTarget.value)
+                                    handleField(
+                                        'contact',
+                                        e.currentTarget.value
+                                    )
                                 }
-                                placeholder="Телефон или Email"
+                                placeholder="Телефон или Email"
                             />
                             <Input
-                                className={styles.modal__inputform}
+                                className={styles.modal__inputformtext}
                                 value={form.description}
                                 disabled={load}
                                 onChange={(e) =>
@@ -160,12 +159,9 @@ const Blockmodal: React.FC<ModalProps> = ({
                             <div className={styles.modal__checkboxContainer}>
                                 <Checkbox
                                     disabled={load}
-                                    checked={form.isAgree}
+                                    checked={isAgree}
                                     onChange={(e) =>
-                                        handleField(
-                                            'isAgree',
-                                            e.currentTarget.checked
-                                        )
+                                        setIsAgree(e.currentTarget.checked)
                                     }
                                 />
                             </div>
@@ -186,8 +182,8 @@ const Blockmodal: React.FC<ModalProps> = ({
                 <div className={styles.modal__thankYouOverlay}>
                     <div className={styles.modal__thankYouContent}>
                         <p className={styles.modal__thankYouText}>
-                            Спасибо за обращение к нам! С вами свяжутся в
-                            течении часа для обсуждения вашего проекта.
+                            Спасибо за обращение к нам! <br /> С вами свяжутся в
+                            течении часа <br /> для обсуждения вашего проекта.
                         </p>
                         <button
                             className={styles.modal__thankYouClose}
@@ -201,7 +197,6 @@ const Blockmodal: React.FC<ModalProps> = ({
         </div>
     )
 
-    // Рендерим в зависимости от режима
     if (mode === 'modal') {
         return (
             <div className={styles.modalOverlay} onClick={onClose}>
@@ -221,8 +216,6 @@ const Blockmodal: React.FC<ModalProps> = ({
         )
     }
 
-    // Inline режим
     return formContent
 }
-
 export default Blockmodal

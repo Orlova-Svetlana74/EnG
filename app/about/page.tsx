@@ -18,6 +18,7 @@ import {
 import { useState } from 'react'
 import { Footer } from '@/components/footer/Footer'
 import { Header } from '@/components/header/Header'
+import { TgSVG } from '@/svg/TgSVG'
 
 export default function Home() {
     const [isMenu, setIsMenu] = useState(false)
@@ -301,11 +302,10 @@ export default function Home() {
                                 priority={true}
                             />
                         </div>
-                    </div>
+                    </div>                    
                     <Footer />
                 </div>
             </div>
         </>
     )
 }
-
