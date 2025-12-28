@@ -16,7 +16,7 @@ interface ModalProps {
 
 interface IFrom {
     name: string
-    phone: string
+    contact: string
     description: string
     isAgree: boolean
 }
@@ -27,7 +27,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     const [form, setForm] = useState<IFrom>({
         description: '',
         name: '',
-        phone: '',
+        contact: '',
+
         isAgree: false,
     })
 
@@ -41,7 +42,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     const sendForm = async () => {
         setLoad(true)
         try {
-            const res = await $host.post('profile', { name: form.phone })
+            const res = await $host.post('profile', {
+                name: form.contact,
+                contact: form.contact,
+                description: form.description,
+            })
             message.success('Форма успешно отправлена')
             onClose()
         } catch (error) {
@@ -54,7 +59,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         form.description &&
         form.isAgree &&
         form.name &&
-        form.phone &&
+        form.contact &&
         !load
     )
 
@@ -78,12 +83,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
                     placeholder="Имя или организация"
                 />
                 <Input
-                    value={form.phone}
+                    value={form.contact}
                     disabled={load}
                     onChange={(e) =>
-                        handleField('phone', e.currentTarget.value)
+                        handleField('contact', e.currentTarget.value)
                     }
-                    placeholder="Телефон или Email"
+                    placeholder="Телефон или почта"
                 />
                 <Input
                     value={form.description}

@@ -6,6 +6,7 @@ import { projects } from '@/data/dataprojects'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import Image from 'next/image'
+import { TgSVG } from '@/svg/TgSVG'
 import styles from './page.module.scss'
 import { notFound, useRouter } from 'next/navigation'
 import {
@@ -25,16 +26,16 @@ export default function ProjectDetailPage() {
     const [isMenuHeader, setIsMenuHeader] = useState(false)
 
     useEffect(() => {
-        // Преобразуем string ID в number для поиска
+        
         const numericId = parseInt(projectId, 10)
 
-        // Если преобразование не удалось, показываем 404
+       
         if (isNaN(numericId)) {
             setIsLoading(false)
             return
         }
 
-        // Имитация загрузки данных
+       
         const foundProject = projects.find((p) => p.id === numericId)
 
         if (foundProject) {
@@ -75,21 +76,19 @@ export default function ProjectDetailPage() {
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
+            <Image
+                className={styles.project__offerShape}
+                src={offerShape}
+                alt=""
+                priority={true}
+            />
 
             <div className={styles.project}>
                 <div className={styles.project__container}>
-                    <Image
-                        className={styles.project__offerShape}
-                        src={offerShape}
-                        alt=""
-                        priority={true}
-                    />
-                    {/* Заголовок */}
                     <h1 className={styles.project__title}>
                         {project.toptitle}
                     </h1>
 
-                    {/* Изображение */}
                     {project.image && (
                         <div className={styles.project__image}>
                             <Image
@@ -105,47 +104,54 @@ export default function ProjectDetailPage() {
                     <p className={styles.project__toptext}>{project.toptext}</p>
 
                     <div>
-                        {/* Задачи */}
-                        {project.tasks && project.tasks.length > 0 && (
-                            <Section title="Задачи" items={project.tasks} />
-                        )}
-                        <Image
-                            className={styles.project__descriptionSmallShape}
-                            src={descriptionSmallShape}
-                            alt=""
-                            priority={true}
-                        />
+                        <div className={styles.project__shape}>
+                            <Image
+                                className={
+                                    styles.project__descriptionSmallShape
+                                }
+                                src={descriptionSmallShape}
+                                alt=""
+                                priority={true}
+                            />
 
-                        {/* Решения */}
+                            {project.tasks && project.tasks.length > 0 && (
+                                <Section title="Задачи" items={project.tasks} />
+                            )}
+                        </div>
+
                         {project.solutions && project.solutions.length > 0 && (
                             <Section
                                 title="Решения"
                                 items={project.solutions}
                             />
                         )}
-
-                        {/* Результаты */}
-                        {project.results && project.results.length > 0 && (
-                            <Section
-                                title="Результаты"
-                                items={project.results}
+                        <div className={styles.project__shape}>
+                            <Image
+                                className={styles.project__descriptionBigShape}
+                                src={descriptionBigShape}
+                                alt=""
+                                priority={true}
                             />
-                        )}
-                        <Image
-                            className={styles.project__projectsShape}
-                            src={projectsShape}
-                            alt=""
-                            priority={true}
-                        />
+
+                            {project.results && project.results.length > 0 && (
+                                <Section
+                                    title="Результаты"
+                                    items={project.results}
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
-                <Image
-                    className={styles.project__descriptionBigShape}
-                    src={descriptionBigShape}
-                    alt=""
-                    priority={true}
-                />
-                <Footer />
+                <div className={styles.project__shape}>
+                    <Image
+                        className={styles.project__offerShapefooter}
+                        src={offerShape}
+                        alt=""
+                        priority={true}
+                    />
+
+                    <Footer />
+                </div>
             </div>
         </>
     )

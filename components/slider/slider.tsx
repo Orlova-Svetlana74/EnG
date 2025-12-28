@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from './slider.module.scss'
-import { StrelkaLeftSVG } from '@/svg/StrelkaLeftSVG'
-import { StrelkaRightSVG } from '@/svg/StrelkaRightSVG'
+import StrelkaLeftSVG from '@/svg/StrelkaLeftSVG'
+import StrelkaRightSVG from '@/svg/StrelkaRightSVG'
 import {
     seniorBack,
     seniorFrontend,
@@ -55,9 +55,9 @@ export default function Slider() {
         },
         {
             id: 6,
-            name: 'Виктор',
-            position: 'Middle frontend developer',
-            experience: 'Опыт 3 года',
+            name: 'Роман',
+            position: 'Digital-marketer',
+            experience: 'Опыт 2 года',
             image: middleFront,
         },
         {

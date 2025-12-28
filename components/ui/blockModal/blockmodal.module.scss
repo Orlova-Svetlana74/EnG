@@ -4,10 +4,15 @@
     border-radius: responsive-font(21px, 18px);
     padding-left: responsive-font(45px, 18px);
     padding-right: responsive-font(45px, 18px);
-    padding-top: responsive-font(45px, 18px);
+    padding-top: responsive-font(12px, 10px);
     padding-bottom: responsive-font(45px, 18px);
     position: relative;
     width: 100%;
+
+    &__requiredfield {
+        font-size: responsive-font(20.25px, 8px);
+        padding-top: responsive-font(23px, 8px);
+    }
 
     &__container {
         width: 100%;
@@ -24,41 +29,62 @@
     }
 
     &__title {
-        font-size: responsive-font(36px, 12px);
-        // font-weight: bold;
+        font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(12px, 10px);
+
+        
     }
+
+    
     &__subtitle {
         font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(49px, 10px);
     }
     &__inputform {
         margin-bottom: responsive-font(45px, 8px);
-        font-size: responsive-font(27px, 8px);
         width: 100%;
         background-color: #d8eaff;
         border: 1px solid #004577;
+        padding-left: responsive-font(35px, 10px);
+        padding-bottom: 8px;
+        padding-top: 8px;
+        border-radius: responsive-font(7.16px, 1.66px);
+        font-size: responsive-font(27px, 8px);
         color: #004577;
-        padding: 8px 35px;
-        border-radius: 7px;
-        &:focus {
-            outline: none;
-        }
+
         &::placeholder {
-        color: #004577;
+            color: #004577;
+        }
+        
     }
+
+    &__inputformtext {
+        width: 100%;
+        height: 163px;
+        margin-bottom: responsive-font(45px, 8px);
+        background-color: #d8eaff;
+        border: 1px solid #004577;
+        padding-left: responsive-font(35px, 10px);
+        padding-top: 15px;
+        padding-bottom: 147px;
+        border-radius: responsive-font(7.16px, 1.66px);
+        font-size: responsive-font(27px, 8px);
+        color: #004577;
+
+        &::placeholder {
+            color: #004577;
+        }
     }
     &__blockmodal {
         width: 100%;
         display: flex;
-        // background: #badafe;
-        // border-radius: clamp(18px, 0.1875vw + 17.4px, 21px);
     }
     &__buttonsend {
         margin-top: responsive-font(45px, 23px);
         width: 100%;
         font-size: responsive-font(27px, 14px);
     }
+
     &__frametwo {
         padding-left: 48px;
         display: flex;
@@ -82,6 +108,7 @@
         margin-top: responsive-font(45px, 23px);
         width: 100%;
         font-size: responsive-font(27px, 14px);
+        background-color: #d8eaff;
     }
     &__thankYouOverlay {
         position: absolute;
@@ -92,7 +119,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // background-color: rgba(186, 218, 254, 0.9);
         z-index: 2;
         border-radius: 21px;
     }
@@ -103,7 +129,6 @@
         border-radius: 21.48px;
         text-align: left;
         position: relative;
-        // max-width: 80%;
         border: 1.07px solid #004577;
     }
 
@@ -193,7 +218,6 @@
     .modal {
         &__imagefr {
             display: flex;
-            // width: responsive-font(553px, 414px);
             height: auto;
         }
     }
@@ -203,18 +227,6 @@
     .modal {
         &__frametwo {
             display: none;
-        }
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-            font-size: 8px;
-        }
-    }
-}
-@media (max-width: 1020px) {
-    .modal {
-        &__inputform {
-            // margin-bottom: responsive-font(45px, 8px);
-            font-size: 10px;
         }
     }
 }

@@ -6,6 +6,72 @@
     position: relative;
     z-index: 1;
 
+    &__title {
+        font-size: responsive-font(60px, 16px);
+        font-weight: bold;
+        padding-bottom: responsive-font(40px, 10px);
+    }
+    &__button {
+        margin-top: responsive-font(40px, 12px);
+        // margin-bottom: responsive-font(75px, 30px);
+        font-size: responsive-font(36px, 30px);
+    }
+    &__developsection,
+    &__developsectionback {
+        align-items: end;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-bottom: responsive-font(120px, 30px);
+        position: relative;
+    }
+    &__developsectionback {
+        flex-direction: row-reverse;
+    }
+    &__subtitle {
+        font-weight: bold;
+        font-size: responsive-font(54px, 15px);
+    }
+    &__subtext {
+        font-size: responsive-font(27px, 12px);
+        padding-bottom: responsive-font(60px, 35px);
+        padding-top: responsive-font(25px, 10px);
+    }
+    &__subtextlist {
+        font-size: responsive-font(27px, 12px);
+        // padding-bottom: responsive-font(60px, 35px);
+        // padding-top: responsive-font(25px, 10px);
+    }
+    &__toptext {
+        font-size: responsive-font(28px, 21px);
+        padding-bottom: responsive-font(37px, 10px);
+    }
+
+    &__shoppingcart {
+        display: flex;
+        align-items: center;
+        gap: clamp(8px, 0.5vw + 6.4px, 16px);
+        height: auto;
+        display: flex;
+    }
+
+    &__titleblock {
+        display: flex;
+    }
+    &__block {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        display: grid;
+        margin-top: responsive-font(40px, 18px);
+        margin-bottom: responsive-font(120px, 18px);
+    }
+    &__blockminiapps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        padding-bottom: responsive-font(120px, 50px);
+    }
+
     &__adteamvantages-block {
         display: flex;
         flex-wrap: wrap;
@@ -76,19 +142,41 @@
         align-items: flex-end;
     }
     &__icon {
-        width: responsive-font(82px, 20px);
-        height: responsive-font(82px, 20px);
+        width: responsive-font(50px, 20px);
+        height: responsive-font(50px, 20px);
+        
+
     }
     &__subtitleblock {
         font-size: responsive-font(36px, 14px);
-        padding-bottom: responsive-font(100px, 50px);
+        // padding-bottom: responsive-font(100px, 50px);
+
+        // flex-wrap: nowrap;
+        // justify-content: space-between;
+        // align-items: end;
+        // display: flex;
+        // position: relative;
     }
+    &__subtitlerobot {
+        display: flex;
+        padding-bottom: responsive-font(120px, 50px);
+    }
+
+    &__blockadvantages {
+        padding-top: responsive-font(40px, 50px);
+        padding-bottom: responsive-font(120px, 50px);
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     &__subtitletext {
         font-size: responsive-font(36px, 14px);
     }
-    &__subtitle {
-        font-weight: bold;
-        font-size: responsive-font(54px, 15px);
+
+    &__listblock {
+        padding-top: responsive-font(40px, 40px);
+        padding-bottom: responsive-font(120px, 40px);
     }
 
     &__text {
@@ -125,12 +213,6 @@
         left: 87%;
         width: responsive-font(300px, 70px);
         height: auto;
-    }
-
-    &__button {
-        margin-top: responsive-font(45px, 12px);
-        margin-bottom: responsive-font(75px, 30px);
-        font-size: responsive-font(36px, 30px);
     }
 
     &__formImage {
@@ -170,18 +252,6 @@
         max-width: 60%;
         order: 1;
     }
-    &__developsection,
-    &__developsectionback {
-        align-items: end;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        padding-bottom: responsive-font(60px, 30px);
-        position: relative;
-    }
-    &__developsectionback {
-        flex-direction: row-reverse;
-    }
 
     &__proektstile {
         width: responsive-font(357px, 325px);
@@ -201,14 +271,15 @@
         }
     }
 
-    &__title {
-        font-size: responsive-font(60px, 16px);
-        font-weight: bold;
-        padding-bottom: responsive-font(40px, 10px);
-    }
     &__titletext {
         font-size: responsive-font(36px, 14px);
-        padding-top: responsive-font(25px, 12px);
+        // padding-top: responsive-font(25px, 12px);
+        // padding-left: 10px;
+    }
+    &__imgblock {
+        display: flex;
+        padding-bottom: responsive-font(20px, 12px);
+        gap: 24px;
     }
     &__textcontent {
         font-size: responsive-font(27px, 12px);
@@ -216,7 +287,11 @@
     &__faqtext {
         font-size: responsive-font(28px, 10px);
     }
-
+    &__blockmodalpunkt {
+        font-size: responsive-font(36px, 10px);
+        padding-bottom: responsive-font(30px, 10px);
+        font-weight: bold;
+    }
     &__developsuptitle {
         font-size: responsive-font(28px, 14px);
         font-weight: bold;
@@ -316,8 +391,13 @@
         position: relative;
     }
     &__list {
-        font-size: responsive-font(27px, 12px);
+        font-size: responsive-font(28px, 12px);
+        font-weight: bold;
         padding-top: responsive-font(16px, 10px);
+    }
+
+    &__listtext {
+        font-size: responsive-font(27px, 12px);
     }
     &__iconblock {
         display: flex;
@@ -347,6 +427,13 @@
     .page {
         &__developsection,
         &__developsectionback {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: responsive-font(60px, 30px);
+            align-self: center;
+        }
+        &__subtitlerobot {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
