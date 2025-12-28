@@ -40,6 +40,7 @@ import joystick from './joystick.svg'
 import health_and_safety from './health_and_safety.svg'
 import school from './school.svg'
 import currency_exchange from './currency_exchange.svg'
+import checkcircle from './check_circle.svg'
 
 
 
@@ -88,6 +89,7 @@ export {
     joystick,
     health_and_safety,
     school,
-    currency_exchange
+    currency_exchange,
+    checkcircle
 
 }

@@ -70,7 +70,7 @@ export default function Services() {
         {
             id: 4,
             text: 'Деплой и поддержка: развертывание highload кластеров, поддержка observability',
-            href: '#',
+            href: '/deployment',
         },
         {
             id: 5,
