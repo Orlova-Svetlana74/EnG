@@ -77,7 +77,7 @@ export default function Services() {
             text: 'Разработка систем разной сложности CRM, CMS, ERP, LMS',
             href: '/systemsdev',
         },
-        { id: 6, text: 'Backend разработка', href: '/developmen' },
+        { id: 6, text: 'Backend разработка', href: '/backendev' },
         { id: 7, text: 'Frontend разработка', href: '/developmen' },
         { id: 8, text: 'Проектирование и создание архитектур', href: '#' },
         { id: 9, text: 'Тестирование приложений', href: '#' },

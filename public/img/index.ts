@@ -42,13 +42,10 @@ import school from './school.svg'
 import currency_exchange from './currency_exchange.svg'
 import checkcircle from './check_circle.svg'
 import iconapplication from './iconapplication.svg'
-
-
-
-
-
-
-
+import icondatabase from './icondatabase.svg'
+import icondevices from './icondevices.svg'
+import icon_display from './icon_display.svg'
+import icontactic from './icontactic.svg' 
 
 export {
     projectKitchenImg,
@@ -95,7 +92,9 @@ export {
     currency_exchange,
     checkcircle,
     iconapplication,
-    
-
+    icondatabase,
+    icondevices,
+    icon_display,
+    icontactic    
 
 }
