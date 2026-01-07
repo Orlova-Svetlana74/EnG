@@ -95,6 +95,5 @@ export {
     icondatabase,
     icondevices,
     icon_display,
-    icontactic    
-
+    icontactic
 }
