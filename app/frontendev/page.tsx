@@ -14,12 +14,7 @@ import { Frametwo } from '@/public/img'
 import {
     descriptionSmallShape,
     offerShape,
-    projectsShape,
-    iconapplication,
-    icondatabase,
-    icondevices,
-    icon_display,
-    icontactic,
+    projectsShape    
 } from '@/public/img'
 
 export default function Backdev() {
