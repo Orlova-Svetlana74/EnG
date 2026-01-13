@@ -7,6 +7,7 @@ import { PhoneMiniSVG } from '@/svg/PhoneMiniSVG'
 import { Button } from '../ui/Button/Button'
 import { usePathname } from 'next/navigation'
 import { WebsiteLogo } from '@/svg/Website_logo'
+import Blockmodal from '@/components/ui/blockModal/blockmodal'
 
 interface IHeader {
     isMenuHeader: boolean
@@ -18,7 +19,23 @@ export function Header({
     setIsMenuHeader,
     handlerButtonClick,
 }: IHeader) {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    // Определяем мобильное устройство
+    useEffect(() => {
+        const checkScreenWidth = () => {
+            setIsMobile(window.innerWidth <= 768) // или ваш порог для мобильных
+        }
+
+        checkScreenWidth()
+        window.addEventListener('resize', checkScreenWidth)
+
+        return () => {
+            window.removeEventListener('resize', checkScreenWidth)
+        }
+    }, [])
 
     const handleMenuClick = () => {
         const newMenuState = !isMenu
@@ -40,6 +57,28 @@ export function Header({
         }
     }
 
+    // Обработчик клика по кнопке "Напишите нам"
+    const handleWriteUsClick = () => {
+        if (isMobile) {
+            // На мобильных открываем Blockmodal
+            setIsModalOpen(true)
+            document.documentElement.style.overflow = 'hidden'
+        } else {
+            // На десктопах используем переданный обработчик или стандартную логику
+            if (handlerButtonClick) {
+                handlerButtonClick()
+            } else {
+                // Стандартная логика для десктопа (например, открытие формы)
+                setIsModalOpen(true)
+            }
+        }
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false)
+        document.documentElement.style.overflow = 'auto'
+    }
+
     return (
         <div
             className={[
@@ -47,6 +86,11 @@ export function Header({
                 isMenu ? styles.container_active : '',
             ].join(' ')}
         >
+            <Blockmodal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                mode="modal"
+            />
             <div className={styles.container__wrapper}>
                 <Link href="/">
                     <WebsiteLogo className={styles.container__logo} />
@@ -71,7 +115,7 @@ export function Header({
                     <Navigation />
                     <Button
                         className={styles.container__phone__button}
-                        onClick={handlerButtonClick}
+                        onClick={handleWriteUsClick}
                     >
                         Напишите нам
                     </Button>
