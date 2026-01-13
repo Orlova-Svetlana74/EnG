@@ -1,6 +1,6 @@
-import { FAQItem } from '@/types/faq'
+import { IFAQItem } from '@/types/faq'
 
-export const faqDatabotApp: FAQItem[] = [
+export const faqDatabotApp: IFAQItem[] = [
     {
         id: 1,
         question: 'Для чего нужна разработка ботов и Mini Apps?',

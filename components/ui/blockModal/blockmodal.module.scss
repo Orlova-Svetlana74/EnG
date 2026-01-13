@@ -8,6 +8,7 @@
     padding-bottom: responsive-font(45px, 18px);
     position: relative;
     width: 100%;
+    z-index: 1000;
 
     &__requiredfield {
         font-size: responsive-font(20.25px, 8px);
@@ -31,11 +32,8 @@
     &__title {
         font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(12px, 10px);
-
-        
     }
 
-    
     &__subtitle {
         font-size: responsive-font(27px, 8px);
         margin-bottom: responsive-font(49px, 10px);
@@ -55,7 +53,6 @@
         &::placeholder {
             color: #004577;
         }
-        
     }
 
     &__inputformtext {

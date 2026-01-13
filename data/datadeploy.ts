@@ -1,6 +1,6 @@
-import { FAQItem } from '@/types/faq'
+import { IFAQItem } from '@/types/faq'
 
-export const faqDatadeploy: FAQItem[] = [
+export const faqDatadeploy: IFAQItem[] = [
     {
         id: 1,
         question:
