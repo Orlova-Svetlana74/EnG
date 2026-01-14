@@ -42,6 +42,13 @@ export const Footer = () => {
                         >
                             + 7 (926) 666-10-28
                         </Link>
+                        <h6>Почта</h6>
+                        <Link
+                            className={styles.footer__navlink}
+                            href="mailto:generals22@mail.ru"
+                        >
+                            generals22@mail.ru
+                        </Link>
                     </div>
                 </div>
 
