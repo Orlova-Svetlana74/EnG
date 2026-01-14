@@ -1,15 +1,15 @@
 'use client'
-
 import Link from 'next/link'
-import { LogoSVG } from '@/svg/LogoSVG'
+import LogoSVG from '@/svg/LogoSVG'
 import styles from './Footer.module.scss'
 import { VkSVG } from '@/svg/VkSVG'
 import { WhatsupSVG } from '@/svg/WhatsupSVG'
 import { InSVG } from '@/svg/InSVG'
-import { MailSVG } from '@/svg/MailSVG'
 import { TgSVG } from '@/svg/TgSVG'
 import { Footercart } from '../footercart/Footercart'
 import { usePathname } from 'next/navigation'
+import { WebsiteLogo } from '@/svg/Website_logo'
+import TGreverse from '@/svg/TGreverseSVG'
 
 export const Footer = () => {
     const path = usePathname()
@@ -18,11 +18,22 @@ export const Footer = () => {
         <footer id="contacts">
             <div className={styles.footer}>
                 <div className={styles.footer__contents}>
-                    <div className={styles.footer__left}>
-                        <LogoSVG className={styles.footer__left__svg} />
+                    <div className={styles.footer__logotg}>
+                        <Link className={styles.footer__logoLink} href="/">
+                            <WebsiteLogo className={styles.footer__logo} />
+                        </Link>
                     </div>
 
                     <div className={styles.footer__stylephone}>
+                        <h6>Почта</h6>
+
+                        <Link
+                            className={styles.footer__navlink}
+                            href="mailto:enter.gen@mail.ru"
+                        >
+                            enter.gen@mail.ru
+                        </Link>
+
                         <h6 className={styles.footer__phone}>Телефон</h6>
                         <Link
                             className={styles.footer__navlink}
@@ -31,7 +42,6 @@ export const Footer = () => {
                         >
                             + 7 (926) 666-10-28
                         </Link>
-
                         <h6>Почта</h6>
                         <Link
                             className={styles.footer__navlink}
@@ -45,28 +55,22 @@ export const Footer = () => {
                 <div className={styles.footer__contents}>
                     <div className={styles.footer__footerstile}>
                         <Link
-                            className={[
-                                styles.footer__navlink,
-                                path === '/' && styles.footer__navlink_active,
-                            ].join(' ')}
-                            href="/"
+                            className={styles.footer__navlink}
+                            href="/projects"
                         >
-                            Entergen
-                        </Link>
-                        <Link className={styles.footer__navlink} href="#">
                             Проекты
                         </Link>
                         <Link className={styles.footer__navlink} href="/about">
                             О нас
                         </Link>
-                        <Link className={styles.footer__navlink} href="/services">
-                            Услуги
-                        </Link>
                         <Link className={styles.footer__navlink} href="#">
                             Контакты
                         </Link>
-                        <Link className={styles.footer__navlink} href="#">
-                            Блог
+                        <Link
+                            className={styles.footer__navlink}
+                            href="/services"
+                        >
+                            Услуги
                         </Link>
                     </div>
 
@@ -85,12 +89,12 @@ export const Footer = () => {
                             <li>
                                 <InSVG />
                             </li>
-                            <li>
-                                <MailSVG />
-                            </li>
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className={styles.footer__tgFixed}>
+                <TgSVG />
             </div>
             <Footercart />
         </footer>

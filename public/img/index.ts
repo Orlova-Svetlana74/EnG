@@ -22,10 +22,30 @@ import icon1 from './icon1.svg'
 import icon2 from './icon2.svg'
 import icon3 from './icon3.svg'
 import icon4 from './icon4.svg'
-import frame from './frame.svg'
+import frame from './framefr.svg'
 import Frametwo from './Frametwo.svg'
 import icongear from './icongear.svg'
-
+import settingsalert from './settings_alert.svg'
+import webhook from './webhook.svg'
+import workspacepremium from './workspace_premium.svg'
+import sync from './sync.svg'
+import group from './group.svg'
+import handyman from './handyman.svg'
+import paymentarrowdown from './payment_arrow_down.svg'
+import shoppingcart from './shoppingcart.svg'
+import creditcard from './creditcard.svg'
+import game from './game.svg'
+import sms from './sms.svg'
+import joystick from './joystick.svg'
+import health_and_safety from './health_and_safety.svg'
+import school from './school.svg'
+import currency_exchange from './currency_exchange.svg'
+import checkcircle from './check_circle.svg'
+import iconapplication from './iconapplication.svg'
+import icondatabase from './icondatabase.svg'
+import icondevices from './icondevices.svg'
+import icon_display from './icon_display.svg'
+import icontactic from './icontactic.svg' 
 
 export {
     projectKitchenImg,
@@ -55,4 +75,25 @@ export {
     frame,
     Frametwo,
     icongear,
+    settingsalert,
+    webhook,
+    workspacepremium,
+    sync,
+    group,
+    handyman,
+    paymentarrowdown,
+    shoppingcart,
+    creditcard,
+    game,
+    sms,
+    joystick,
+    health_and_safety,
+    school,
+    currency_exchange,
+    checkcircle,
+    iconapplication,
+    icondatabase,
+    icondevices,
+    icon_display,
+    icontactic
 }

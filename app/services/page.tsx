@@ -3,70 +3,106 @@ import Image from 'next/image'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
+import { TgSVG } from '@/svg/TgSVG'
 import { Button } from '@/components/ui/Button/Button'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import Blockmodal from '@/components/ui/blockModal/blockmodal'
 
 import {
     offerShape,
     projectsShape,
     skillsShape,
-    descriptionBigShape,    
+    descriptionBigShape,
     icongear,
     Frametwo,
-} from '@/img'
+} from '@/public/img'
 
 interface ServiceItem {
     id: number
     text: string
+    href: string
 }
 
 export default function Services() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
+    const [isListExpanded, setIsListExpanded] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth <= 744)
+        }
+
+        checkScreenSize()
+        window.addEventListener('resize', checkScreenSize)
+
+        return () => window.removeEventListener('resize', checkScreenSize)
+    }, [])
+
     const handlerButtonClick = () => {
         setIsMenuHeader(true)
         setIsMenu(true)
     }
+
+    const toggleListExpansion = () => {
+        setIsListExpanded(!isListExpanded)
+    }
+
     const services: ServiceItem[] = [
-        { id: 1, text: 'Веб-разработка: создание сайта под ключ' },
+        {
+            id: 1,
+            text: 'Веб-разработка: создание сайта под ключ',
+            href: '/developmen',
+        },
         {
             id: 2,
             text: 'Разработка ботов и Mini Apps приложений на базе Telegram и VK',
+            href: '/botApp',
         },
         {
             id: 3,
             text: 'Интеграция сайта с системами 1C, amoCRM, Bitrix, эквайрингами и др.',
+            href: '/integration',
         },
         {
             id: 4,
             text: 'Деплой и поддержка: развертывание highload кластеров, поддержка observability',
+            href: '/deployment',
         },
         {
             id: 5,
             text: 'Разработка систем разной сложности CRM, CMS, ERP, LMS',
+            href: '/systemsdev',
         },
-        { id: 6, text: 'Backend разработка' },
-        { id: 7, text: 'Frontend разработка' },
-        { id: 8, text: 'Проектирование и создание архитектур' },
-        { id: 9, text: 'Тестирование приложений' },
-        { id: 10, text: 'Создание и интеграции ИИ' },
+        { id: 6, text: 'Backend разработка', href: '/backend_dev' },
+        { id: 7, text: 'Frontend разработка', href: '/developmen' },
+        { id: 8, text: 'Проектирование и создание архитектур', href: '#' },
+        { id: 9, text: 'Тестирование приложений', href: '#' },
+        { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
+
+    const visibleServices =
+        isMobile && !isListExpanded ? services.slice(0, 4) : services
+    const hasHiddenServices = isMobile && services.length > 4 && !isListExpanded
+
     return (
-        <div className={styles.services}>
+        <>
             <Header
                 isMenuHeader={isMenuHeader}
                 setIsMenuHeader={setIsMenuHeader}
                 handlerButtonClick={handlerButtonClick}
             />
-            <Image
-                className={styles['services__shape--skillsShape']}
-                src={skillsShape}
-                alt=""
-                width={150}
-                height={150}
-                priority={true}
-            />
-            <div>
+
+            <div className={styles.services}>
+                <Blockmodal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    mode="modal"
+                />
+
                 <div className={styles.services__header}>
                     <div className={styles.services__content}>
                         <h3 className={styles.services__title}>Наши услуги</h3>
@@ -89,19 +125,11 @@ export default function Services() {
                             <h4 className={styles.services__subtitle}>
                                 Что мы предлагаем
                             </h4>
-                            <Image
-                                className={styles['services__shape--offerShape']}
-                                src={offerShape}
-                                alt=""
-                                width={500}
-                                height={500}
-                                priority={true}
-                            />
                         </div>
 
                         <section className={styles.servicesContainer}>
                             <ul className={styles.list}>
-                                {services.map((service) => (
+                                {visibleServices.map((service) => (
                                     <li
                                         key={service.id}
                                         className={
@@ -118,7 +146,8 @@ export default function Services() {
                                                     styles.services__icon
                                                 }
                                             />
-                                            <span
+                                            <Link
+                                                href={service.href}
                                                 className={
                                                     styles[
                                                         'services__text--large'
@@ -126,50 +155,49 @@ export default function Services() {
                                                 }
                                             >
                                                 {service.text}
-                                            </span>
+                                            </Link>
                                         </div>
                                     </li>
                                 ))}
                             </ul>
+                            {hasHiddenServices && (
+                                <button
+                                    className={styles.expandButton}
+                                    onClick={toggleListExpansion}
+                                >
+                                    Развернуть список
+                                </button>
+                            )}
+                            {isMobile && isListExpanded && (
+                                <button
+                                    className={styles.expandButton}
+                                    onClick={toggleListExpansion}
+                                >
+                                    Свернуть список
+                                </button>
+                            )}
                         </section>
-                        <Image
-                            className={styles['services__shape--bigshape']}
-                            src={descriptionBigShape}
-                            alt=""
-                            width={300}
-                            height={150}
-                            priority={true}
-                        />
                     </div>
                 </div>
                 <div className={styles.services__discussion}>
                     <div className={styles.disc}>
                         <p className={styles.services__text}>
-                            Готовы сделать первый шаг к успешному <br />цифровому
-                            будущему? <br />Свяжитесь с нами сегодня, чтобы обсудить<br />
+                            Готовы сделать первый шаг к успешному <br />
+                            цифровому будущему? <br />
+                            Свяжитесь с нами сегодня, чтобы обсудить
+                            <br />
                             ваш проект и начать работу над его реализацией!
                         </p>
-                        <Button>Обсудить проект</Button>
+                        <Button
+                            className={styles.services__button}
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Обсудить проект
+                        </Button>
                     </div>
-                    <Image
-                        className={styles['services__image--discussion']}
-                        src={Frametwo}
-                        alt=""
-                        width={388}
-                        height={294}
-                        priority={true}
-                    />
                 </div>
+                <Footer />
             </div>
-            <Image
-                className={styles['services__shape--projectsShape']}
-                src={projectsShape}
-                alt=""
-                width={185}
-                height={185}
-                priority={true}
-            />
-            <Footer />
-        </div>
+        </>
     )
 }

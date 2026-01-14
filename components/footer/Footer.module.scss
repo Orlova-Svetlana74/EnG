@@ -3,46 +3,90 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    max-width: 1730px; /* Максимальная ширина контейнера */
-    margin: 0 auto; /* Центрирование контейнера */
+    max-width: 1730px;
+    margin: 0 auto;
     position: relative;
     margin-bottom: responsive-font(85px, 20px);
-    &__left {
-        display: flex;
-        flex-direction: column;
-        order: 0;
 
-        &__svg {
-            width: responsive-font(150px, 20px);
-            height: auto;
+    &__tgFixed {
+        position: fixed;
+        left: auto;
+        bottom: responsive-font(200px, 165px);
+        z-index: 1001;
+        width: responsive-font(70px, 35px);
+        height: responsive-font(62px, 35px);
+        padding: responsive-font(10px, 5px) auto;
+        border-radius: responsive-font(12px, 6px);
+        background-color: #004577;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        & > svg {
+            color: white;
+            width: responsive-font(50px, 25px);
         }
     }
 
+    &__logotg {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        min-height: 120px;
+    }
+    &__logoLink {
+        display: inline-block;
+    }
+
+    &__leftsvg {
+        width: responsive-font(80px, 28px);
+        height: auto;
+        flex: none;
+        position: relative;
+        z-index: 1001;
+    }
+    &__tgrev {
+        width: responsive-font(74px, 29px);
+        height: auto;
+        min-width: 29px;
+    }
+
     &__footerstile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: responsive-font(16px, 10px);
         font-size: responsive-font(27px, 10px);
         font-weight: bold;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: responsive-font(40px, 10px);
-        row-gap: responsive-font(22px, 10px);
         order: 1;
     }
+    &__navlink {
+        font-size: responsive-font(27px, 10px);
+    }
+
     &__navlink_active {
         color: #0040e1;
     }
     &__stylephone {
         font-weight: bold;
         order: 2;
+        display: flex;
+        flex-direction: column;
+        order: 3;
+        gap: responsive-font(10px, 6px);
         & > h6 {
             font-size: responsive-font(21px, 10px);
-            margin-bottom: responsive-font(8px, 10px);
+            font-weight: bold;
         }
         & > a {
             font-size: responsive-font(27px, 10px);
+            font-weight: bold;
         }
     }
     &__right {
         font-size: responsive-font(27px, 10px);
+        font-weight: bold;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -100,11 +144,7 @@
             display: flex;
             justify-content: space-between;
         }
-        &__left {
-            & > svg {
-                width: responsive-font(150px, 80px, 768px);
-            }
-        }
+
         &__stylephone {
             & > h6 {
                 font-size: responsive-font(20px, 10px, 768px);
@@ -112,11 +152,6 @@
             & > a {
                 display: block;
                 font-size: responsive-font(20px, 10px, 768px);
-            }
-            & > * {
-                &:nth-child(3) {
-                    margin-top: responsive-font(32px, 10px, 768px);
-                }
             }
         }
         &__footerstile {
@@ -147,6 +182,13 @@
                     width: responsive-font(27px, 12px, 768px);
                 }
             }
+        }
+    }
+}
+@media (max-width: 768px) {
+    .footer {
+        &__stylephone {
+            align-items: self-end;
         }
     }
 }

@@ -1,0 +1,341 @@
+@use '@/styles/functions' as *;
+.wrapper {
+    max-width: 1440px;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: responsive-font(20px, 10px) 0;
+    position: relative;
+
+    &__shape {
+        position: relative;
+
+        &--mainShape {
+            display: none;
+        }
+        &--offerShape {
+            position: absolute;
+            left: 60%;
+            width: responsive-font(355px, 55px);
+            height: auto;
+        }
+        &--descriptionSmallShape {
+            position: absolute;
+            width: responsive-font(500px, 100px);
+            height: auto;
+        }
+    }
+
+    &__offerShapefooter {
+        display: none;
+        position: absolute;
+        left: 25%;
+        bottom: 5%;
+        width: responsive-font(500px, 100px);
+        height: auto;
+    }
+    &__projectsShape {
+        position: absolute;
+        left: 1%;
+        bottom: 13%;
+        width: responsive-font(380px, 55px);
+        height: auto;
+    }
+    &__descriptionBigShape {
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        width: responsive-font(380px, 55px);
+        height: auto;
+    }
+
+    &__project {
+        max-width: 1440px;
+        margin: auto;
+        align-items: center;
+        justify-content: space-between;
+        padding: responsive-font(20px, 10px) 0;
+        margin-bottom: 10px;
+    }
+
+    &__pageTitle {
+        font-size: 54px;
+    }
+
+    &__pageTitleteem {
+        display: none;
+    }
+
+    &__filterNav {
+        display: flex;
+        padding-top: 30px;
+        flex-direction: column;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__filterRow {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        &:hover {
+            cursor: pointer;
+        }
+        margin-bottom: 10px;
+    }
+
+    &__filterButton {
+        padding-right: 32px;
+        font-size: responsive-font(36px, 22px, 1440px);
+        flex-shrink: 0;
+        background: #d8eaff;
+        border: 0;
+        color: #004577;
+        font-family: Noah, sans-serif;
+        transition: all 0.3s ease; 
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+        }
+        &Active {
+           
+            color: #0040E1 !important;
+
+            &:hover {
+             color: #0040E1 !important;  
+            }
+        }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: responsive-font(37px, 14px);
+        margin-top: 172px;
+        padding-bottom: 120px;
+    }
+    &__paginationArrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.13px solid #004577;
+        background-color: #d8eaff;
+        border-radius: responsive-font(11.25px, 4.38px);
+        cursor: pointer;
+        width: responsive-font(60px, 25px);
+        height: responsive-font(60px, 25px);
+        font-size: responsive-font(18px, 15.56px);
+        transition: all 0.3s ease;
+
+        &:hover:not(.wrapper__disabled) {
+            background: #f5f5f5;
+            border-color: #007bff;
+        }
+    }
+    &__strelkaRight {
+        width: auto;
+        height: responsive-font(28px, 25px);
+    }
+
+    &__strelkaLeft {
+        width: auto;
+        height: responsive-font(28px, 25px);
+    }
+    &__disabled {
+        opacity: 0.5;
+        cursor: not-allowed !important;
+
+        &:hover {
+            background: white !important;
+            border-color: #e0e0e0 !important;
+        }
+    }
+    &__paginationNumbers {
+        display: flex;
+        gap: responsive-font(37px, 14px);
+    }
+    &__paginationNumber {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: responsive-font(60px, 25px);
+        height: responsive-font(60px, 25px);
+        border: 1.13px solid #004577;
+        border-radius: responsive-font(11.25px, 4.38px);
+        background-color: #d8eaff;
+        cursor: pointer;
+        font-size: responsive-font(36px, 16px);
+        color: #004577;
+        font-weight: 500;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: #0040e1;
+        }
+    }
+    &__active {
+        background: #0040e1 !important;
+        color: white !important;
+        border-color: #0040e1 !important;
+    }
+
+    &__filterButton:hover {
+        border-color: #4299e1;
+        color: #4299e1;
+    }
+
+    &__filterButton.active {
+        background-color: #4299e1;
+        border-color: #4299e1;
+        color: white;
+    }
+
+    &__projectsGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        row-gap: 90px;
+        column-gap: 67px;
+        margin-top: 186px;
+        margin-bottom: 172px;
+    }
+
+    &__projectCard {
+        overflow: hidden;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
+    &__image {
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+        object-fit: cover;
+    }
+
+    &__imagePlaceholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
+        font-size: 2rem;
+    }
+    &__projectImage {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    &__imagePlaceholder {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+    }
+
+    &__projectTitle {
+        font-size: responsive-font(27px, 16px);
+        font-weight: bold;
+    }
+
+    &__projectDescription {
+        font-size: responsive-font(27px, 16px);
+    }
+}
+
+@media (max-width: 1920px) {
+    .wrapper {
+        margin-left: responsive-font(240px, 30px);
+        margin-right: responsive-font(240px, 30px);
+    }
+}
+
+@media (max-width: 744px) {
+    .wrapper {
+        &__offerShapefooter {
+            display: inline;
+        }
+        &__projectsShape {
+            display: none;
+        }
+
+        &__pageTitle {
+            display: none;
+        }
+        &__descriptionBigShape {
+            display: none;
+        }
+        &__shape {
+            position: relative;
+
+            &--mainShape {
+                position: absolute;
+                right: 10%;
+                bottom: 50%;
+                width: responsive-font(700px, 55px);
+                height: auto;
+                display: inline;
+            }
+            &--descriptionSmallShape {
+                display: none;
+            }
+
+            &--offerShape {
+                display: none;
+            }
+        }
+        &__pageTitleteem {
+            display: inline;
+            font-size: responsive-font(40px, 16px, 744px);
+            font-weight: bold;
+        }
+
+        &__projectsGrid {
+            display: grid;
+            grid-template-columns: 1fr;
+            row-gap: 12px;
+            margin-top: 37px;
+            margin-bottom: 53px;
+        }
+        &__filterRow {
+            display: flex;
+            flex-direction: column;
+            &:hover {
+                cursor: pointer;
+            }
+            margin-bottom: 10px;
+        }
+
+        &__filterButton {
+            padding-bottom: 10px;
+            padding-right: 32px;
+            font-size: responsive-font(26px, 14px);
+            flex-shrink: 0;
+            background: #d8eaff;
+            border: 0;
+            color: #004577;
+            font-family: Noah, sans-serif;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        &__pagination {
+            margin-top: 53px;
+            padding-bottom: 30px;
+        }
+    }
+}

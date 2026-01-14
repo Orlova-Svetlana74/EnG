@@ -5,7 +5,7 @@
     position: sticky;
     top: 0;
     background-color: #d8eaff;
-    z-index: 999;
+    z-index: 1001;
     &__wrapper {
         max-width: 1440px;
         margin: auto;
@@ -15,7 +15,7 @@
         padding: responsive-font(20px, 10px) 0;
     }
     &__logo {
-        width: responsive-font(220px, 50px);
+        width: responsive-font(80px, 28px);
         flex: none;
         position: relative;
         z-index: 1001;
@@ -52,12 +52,15 @@
         position: relative;
         z-index: 1001;
     }
+    .noScroll {
+        overflow: hidden;
+        height: 100vh;
+    }
 }
 
 @media (max-width: 768px) {
     .container {
         &__logo {
-            width: responsive-font(220px, 50px, 768px);
             flex: none;
         }
         &__nav {
@@ -115,7 +118,6 @@
                         }
                         &::after {
                             transform: rotate(-45deg) translateX(-12%);
-                            //translateX(responsive-font(-1px, -1.5px, 768px));
                             bottom: 50%;
                         }
                     }

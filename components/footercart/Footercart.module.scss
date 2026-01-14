@@ -25,4 +25,9 @@
             color: $text-blue;
         }
     }
+    &__text {
+        font-size: responsive-font(21px, 10px);
+        color: $primary-color;
+        font-weight: bold;
+    }
 }
