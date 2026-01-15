@@ -1,6 +1,6 @@
-import { FAQItem } from '@/types/faq'
+import { IFAQItem } from '@/types/faq'
 
-export const faqDataback: FAQItem[] = [
+export const faqDataback: IFAQItem[] = [
     {
         id: 1,
         question: 'Кому может понадобиться backend?',

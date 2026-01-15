@@ -7,8 +7,7 @@ import { useState } from 'react'
 import { Footer } from '@/components/footer/Footer'
 import SoftArchitectSVG from '@/svg/SoftArchitectSVG'
 import Plus from '@/svg/PlusSVG'
-import { faqDatadeploy } from '@/data/datadeploy'
-// import { faqDatabotApp } from '@/data/faqDatabotApp'
+import { faqDatasystems } from '@/data/datasystemsdev'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
@@ -208,7 +207,9 @@ export default function Deployment() {
                     Преимущества профессионального <br /> проектирования
                     IT-архитектуры
                 </h2>
-                <p className={styles.page__titletext}>Обращаясь за проектированием в студию Entergen, вы:</p>
+                <p className={styles.page__titletext}>
+                    Обращаясь за проектированием в студию Entergen, вы:
+                </p>
                 <div className={styles['page__advantages-line']}>
                     <div className={styles['page__advantage-line']}>
                         <div className={styles['page__advantage-header']}>
@@ -306,7 +307,7 @@ export default function Deployment() {
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
 
                     <div className={styles.page__faqContainer}>
-                        {faqDatadeploy.map((item) => (
+                        {faqDatasystems.map((item) => (
                             <div
                                 key={item.id}
                                 className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
@@ -334,13 +335,6 @@ export default function Deployment() {
                             </div>
                         ))}
                     </div>
-                </div>
-                <div className="">
-                    <p className={styles.page__textblocknon}>
-                        Мы имеем большой опыт работы с высоконагруженными
-                        проектами и используем современные инструменты и
-                        технологии для обеспечения их стабильной работы.
-                    </p>
                 </div>
 
                 <div className="">

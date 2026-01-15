@@ -139,13 +139,11 @@
         padding-bottom: responsive-font(25px, 15px);
         padding-left: responsive-font(27px, 15px);
         padding-right: responsive-font(65px, 15px);
-       
     }
 
     &__advantage-header {
         display: flex;
         padding-right: responsive-font(20px, 15px);
-        
     }
     &__icon {
         width: responsive-font(50px, 20px);
@@ -517,6 +515,10 @@
         //     margin: 0 auto;
         //     box-sizing: border-box;
         // }
+        &__advantages-line {
+            grid-template-columns: 1fr;
+            display: grid;
+        }
         &__imageSection {
             padding: 0;
             position: relative;
