@@ -60,7 +60,7 @@ export default function Deployment() {
 
             <div className={styles.page}>
                 <h1 className={styles.page__title}>
-                    Проектирование <br /> IT-архитектуры программного <br />{' '}
+                    Проектирование <br /> IT-архитектуры программного <br />
                     обеспечения
                 </h1>
 
@@ -102,7 +102,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Сбор требований и анализ бизнес-процессов.
                             </p>
@@ -119,7 +119,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Определение основных компонентов системы.
                             </p>
@@ -137,7 +137,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Выбор архитектурных паттернов и шаблонов.
                             </p>
@@ -154,7 +154,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Разработка схем взаимодействия компонентов.
                             </p>
@@ -171,7 +171,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Оценка производительности, безопасности и
                                 надёжности системы.
@@ -189,7 +189,7 @@ export default function Deployment() {
                                 priority={true}
                             />
                         </div>
-                        <div className={styles.page__subtitletext}>
+                        <div className={styles.page__textcontent}>
                             <p className={styles.page__text}>
                                 Создание технической документации.
                             </p>
@@ -207,7 +207,7 @@ export default function Deployment() {
                     Преимущества профессионального <br /> проектирования
                     IT-архитектуры
                 </h2>
-                <p className={styles.page__titletext}>
+                <p className={styles.page__titletextblock}>
                     Обращаясь за проектированием в студию Entergen, вы:
                 </p>
                 <div className={styles['page__advantages-line']}>
@@ -286,14 +286,14 @@ export default function Deployment() {
                     </div>
                 </div>
                 <div className={styles.page__subtitleblock}>
-                    <Image
+                    {/* <Image
                         className={styles.page__projectsShape}
                         src={projectsShape}
                         alt=""
                         width={330}
                         height={330}
                         priority={true}
-                    />
+                    /> */}
                 </div>
                 <div className={styles.page__faqblock}>
                     {/* <Image

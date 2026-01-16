@@ -118,7 +118,7 @@
         overflow: hidden;
     }
     &__advantages-block {
-        padding-top: responsive-font(60px, 16px);
+        padding-top: responsive-font(40px, 16px);
         padding-bottom: responsive-font(120px, 50px);
         display: grid;
         grid-template-columns: 1fr;
@@ -175,6 +175,10 @@
     &__subtitletext {
         font-size: responsive-font(36px, 14px);
     }
+    &__textcontent {
+        font-size: responsive-font(36px, 14px);
+        align-self: flex-end;
+    }
 
     &__listblock {
         padding-top: responsive-font(40px, 40px);
@@ -196,7 +200,7 @@
     &__descriptionSmallShape {
         position: absolute;
         left: 80%;
-        top: 15%;
+        top: 25%;
         width: responsive-font(300px, 55px);
         height: auto;
     }
@@ -289,6 +293,12 @@
         // padding-top: responsive-font(25px, 12px);
         // padding-left: 10px;
     }
+
+    &__titletextblock {
+        font-size: responsive-font(36px, 14px);
+        padding-top: responsive-font(40px, 12px);
+    }
+
     &__imgblock {
         display: flex;
         padding-bottom: responsive-font(20px, 12px);
