@@ -194,7 +194,7 @@ export default function Backdev() {
                     </div>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Опытных backend-разработчики
+                            • Опытные backend-разработчики
                         </h5>
                         <p className={styles.page__text}>
                             Наша команда состоит из опытных
