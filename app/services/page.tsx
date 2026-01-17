@@ -78,7 +78,7 @@ export default function Services() {
             href: '/systemsdev',
         },
         { id: 6, text: 'Backend разработка', href: '/backend_dev' },
-        { id: 7, text: 'Frontend разработка', href: '/developmen' },
+        { id: 7, text: 'Frontend разработка', href: '/frontend_dev' },
         { id: 8, text: 'Проектирование и создание архитектур', href: '#' },
         { id: 9, text: 'Тестирование приложений', href: '#' },
         { id: 10, text: 'Создание и интеграции ИИ', href: '#' },

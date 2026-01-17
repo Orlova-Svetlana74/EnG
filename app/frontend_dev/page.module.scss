@@ -1,0 +1,304 @@
+@use '@/styles/functions' as *;
+
+.page {
+    max-width: 1440px;
+    margin: responsive-font(111px, 20px) auto;
+    position: relative;
+    // z-index: 1;
+
+    &__descriptionSmallShape {
+        position: absolute;
+        left: 55%;
+        top: 3%;
+        width: responsive-font(184px, 55px);
+        height: auto;
+    }
+
+    &__offerShape {
+        position: absolute;
+        left: 65%;
+        top: 30%;
+        width: responsive-font(230px, 55px);
+        height: auto;
+    }
+    &__projectsShape {
+        position: absolute;
+        left: 80%;
+        bottom: 56%;
+        width: responsive-font(250px, 70px);
+        height: auto;
+    }
+    &__button {
+        margin-top: responsive-font(40px, 12px);
+    }
+    &__formImage {
+        width: responsive-font(553px, 200px);
+        height: auto;
+    }
+    &__advantages {
+        padding-top: responsive-font(20px, 15px);
+        padding-bottom: responsive-font(30px, 15px);
+        display: flex;
+    }
+    &__advantages-block {
+        padding-top: responsive-font(40px, 10px);
+        padding-bottom: responsive-font(120px, 50px);
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: responsive-font(40px, 10px);
+    }
+    &__advantage {
+        display: flex;
+    }
+    &__result {
+        padding-left: responsive-font(59px, 19px);
+    }
+
+    &__blockcontent {
+        padding-top: responsive-font(45px, 15px);
+        padding-bottom: responsive-font(75px, 15px);
+    }
+    &__checkmark {
+        width: responsive-font(51px, 16px);
+        height: auto;
+        flex-shrink: 0;
+        margin-top: responsive-font(5px, 2px);
+    }
+    &__blockmodaltext {
+        padding-left: responsive-font(45px, 18px);
+        padding-right: responsive-font(45px, 18px);
+        padding-top: responsive-font(45px, 18px);
+        font-size: responsive-font(36px, 12px);
+        font-weight: bold;
+    }
+
+    &__developtitle {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 50%;
+        order: 1;
+    }
+    &__developsection,
+    &__developsectionback {
+        align-items: end;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding-bottom: responsive-font(120px, 50px);
+        position: relative;
+    }
+    &__developsectionback {
+        flex-direction: row-reverse;
+    }
+
+    &__subtitletext {
+        align-self: end;
+        padding-left: 49px;
+        padding-bottom: 5px;
+    }
+    &__subtitlecontent {
+        padding-top: responsive-font(40px, 15px);
+        padding-bottom: responsive-font(120px, 50px);
+        display: grid;
+        gap: 25px;
+    }
+    &__subtitleblock {
+        font-size: responsive-font(28px, 14px);
+        font-weight: bold;
+    }
+    &__title {
+        font-size: responsive-font(60px, 16px);
+        font-weight: bold;
+        padding-bottom: responsive-font(30px, 12px);
+    }
+    &__titletext {
+        font-size: responsive-font(36px, 12px);
+    }
+    &__titletextcontent {
+        font-size: responsive-font(36px, 12px);
+        padding-top: responsive-font(30px, 12px);
+        padding-bottom: responsive-font(120px, 50px);
+    }
+    &__textblock {
+        font-size: responsive-font(36px, 14px);
+        font-weight: bold;
+        padding-bottom: responsive-font(40px, 15px);
+    }
+    &__textcontent {
+        font-size: responsive-font(27px, 12px);
+    }
+    &__textlist {
+        margin-left: responsive-font(20px, 10px);
+    }
+    &__faqtext {
+        font-size: responsive-font(28px, 10px);
+    }
+    &__text {
+        font-size: responsive-font(28px, 12px);
+    }
+    &__subtitle {
+        font-weight: bold;
+        font-size: responsive-font(54px, 15px);
+
+        &--text {
+            font-size: responsive-font(36px, 14px);
+        }
+    }
+    &__developsuptitle {
+        font-size: responsive-font(28px, 14px);
+        font-weight: bold;
+        padding-bottom: responsive-font(20px, 6px);
+    }
+    &__faqContainer {
+        width: 100%;
+        margin-top: responsive-font(40px, 15px);
+        margin-bottom: responsive-font(120px, 50px);
+    }
+    &__faqblock {
+        position: relative;
+    }
+    &__faqItem {
+        overflow: hidden;
+    }
+    &__faqItemOpen &__faqAnswer {
+        max-height: 1000px;
+        opacity: 1;
+        padding: 1rem 0 2rem 0;
+        transform: translateY(0);
+    }
+    &__faqItemOpen &__faqIcon {
+        transform: rotate(45deg);
+    }
+    &__plus {
+        width: responsive-font(28px, 12px);
+        height: auto;
+    }
+    &__faqQuestion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding-bottom: responsive-font(15px, 13px);
+        padding-top: responsive-font(28px, 20px);
+        border-bottom: 1.5px solid;
+        transition: all 0.3s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__faqIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: responsive-font(24px, 20px);
+        margin-left: 1rem;
+        transition: transform 0.3s ease cubic-bezier(0.4, 0, 0.2, 1);
+        transform-origin: center;
+    }
+    &__faqAnswer {
+        overflow: hidden;
+        max-height: 0;
+        transition:
+            max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s ease 0.1s,
+            transform 0.3s ease,
+            padding 0.3s ease;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(-10px);
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    &__plus {
+        transition: transform 0.3s ease-in-out;
+    }
+    &__blockmodal {
+        margin-bottom: 75px;
+        background: #badafe;
+        border-radius: responsive-font(21px, 18px);
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__blockmodalform {
+        display: flex;
+        align-items: end;
+    }
+    &__imageSection {
+        border-radius: responsive-font(21px, 18px);
+        padding-left: responsive-font(45px, 18px);
+        padding-right: responsive-font(45px, 18px);
+        padding-top: responsive-font(45px, 18px);
+        padding-bottom: responsive-font(45px, 18px);
+        position: relative;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1920px) {
+    .page {
+        margin-left: responsive-font(240px, 30px);
+        margin-right: responsive-font(240px, 30px);
+    }
+}
+
+@media (max-width: 744px) {
+    .page {
+        &__developsection,
+        &__developsectionback {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-bottom: responsive-font(60px, 30px);
+            align-self: center;
+        }
+        &__developtitle {
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            padding-bottom: responsive-font(60px, 30px);
+            align-self: flex-start;
+            max-width: 100%;
+        }
+        &__button {
+            width: 100%;
+            order: 4;
+        }
+        &__title {
+            order: 1;
+        }
+        &__titletext {
+            order: 2;
+        }
+        &__proektstile {
+            order: 3;
+        }
+        &__proektstile {
+            width: 269px;
+            height: auto;
+            display: flex;
+            align-items: center;
+            align-self: center;
+
+            & > svg {
+                width: 100%;
+            }
+        }
+        &__formImage {
+            display: none;
+        }
+        &__imageSection {
+            padding: 0;
+        }
+    }
+}
