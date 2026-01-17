@@ -78,23 +78,57 @@ export const Footer = () => {
                         <h6>Напишите нам:</h6>
                         <ul>
                             <li>
-                                <TgSVG />
+                                <a
+                                    href="https://t.me/entergen"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в Телеграмме"
+                                >
+                                    <TgSVG />
+                                </a>
                             </li>
                             <li>
-                                <VkSVG />
+                                <a
+                                    href="https://vk.com/entergen"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в ВКонтакте"
+                                >
+                                    <VkSVG />
+                                </a>
                             </li>
                             <li>
-                                <WhatsupSVG />
+                                <a
+                                    href="https://wa.me/79266661028"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <WhatsupSVG />
+                                </a>
                             </li>
                             <li>
-                                <InSVG />
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в ВКонтакте"
+                                >
+                                    <InSVG />
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={styles.footer__tgFixed}>
-                <TgSVG />
+                <a
+                    href="https://t.me/entergen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Мы в Телеграмме"
+                >
+                    <TgSVG />
+                </a>
             </div>
             <Footercart />
         </footer>
