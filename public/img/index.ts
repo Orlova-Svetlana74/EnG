@@ -53,7 +53,6 @@ import graph_5 from './graph_5.svg'
 import lock from './lock.svg'
 import widgets from './widgets.svg'
 
-
 export {
     projectKitchenImg,
     projectRukalineImg,
@@ -108,5 +107,5 @@ export {
     grain,
     graph_5,
     lock,
-    widgets
+    widgets,
 }

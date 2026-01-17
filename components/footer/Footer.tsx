@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import LogoSVG from '@/svg/LogoSVG'
 import styles from './Footer.module.scss'
 import { VkSVG } from '@/svg/VkSVG'
 import { WhatsupSVG } from '@/svg/WhatsupSVG'
@@ -9,7 +8,6 @@ import { TgSVG } from '@/svg/TgSVG'
 import { Footercart } from '../footercart/Footercart'
 import { usePathname } from 'next/navigation'
 import { WebsiteLogo } from '@/svg/Website_logo'
-import TGreverse from '@/svg/TGreverseSVG'
 
 export const Footer = () => {
     const path = usePathname()
@@ -42,6 +40,14 @@ export const Footer = () => {
                         >
                             + 7 (926) 666-10-28
                         </Link>
+
+                        <h6>Почта</h6>
+                        <Link
+                            className={styles.footer__navlink}
+                            href="mailto:generals22@mail.ru"
+                        >
+                            generals22@mail.ru
+                        </Link>
                     </div>
                 </div>
 
@@ -71,23 +77,57 @@ export const Footer = () => {
                         <h6>Напишите нам:</h6>
                         <ul>
                             <li>
-                                <TgSVG />
+                                <a
+                                    href="https://t.me/entergen"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в Телеграмме"
+                                >
+                                    <TgSVG />
+                                </a>
                             </li>
                             <li>
-                                <VkSVG />
+                                <a
+                                    href="https://vk.com/entergen"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в ВКонтакте"
+                                >
+                                    <VkSVG />
+                                </a>
                             </li>
                             <li>
-                                <WhatsupSVG />
+                                <a
+                                    href="https://wa.me/79266661028"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <WhatsupSVG />
+                                </a>
                             </li>
                             <li>
-                                <InSVG />
+                                <a
+                                    href="#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Мы в ВКонтакте"
+                                >
+                                    <InSVG />
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={styles.footer__tgFixed}>
-                <TgSVG />
+                <a
+                    href="https://t.me/entergen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Мы в Телеграмме"
+                >
+                    <TgSVG />
+                </a>
             </div>
             <Footercart />
         </footer>
