@@ -5,7 +5,15 @@
     position: sticky;
     top: 0;
     background-color: #d8eaff;
+    z-index: 999;
+    svg {
+        object-fit: contain;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
     z-index: 1001;
+
     &__wrapper {
         max-width: 1440px;
         margin: auto;
@@ -15,7 +23,7 @@
         padding: responsive-font(20px, 10px) 0;
     }
     &__logo {
-        width: responsive-font(80px, 28px);
+        width: responsive-font(70px, 28px);
         flex: none;
         position: relative;
         z-index: 1001;

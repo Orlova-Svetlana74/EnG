@@ -92,8 +92,8 @@ export function Header({
                 mode="modal"
             />
             <div className={styles.container__wrapper}>
-                <Link href="/">
-                    <WebsiteLogo className={styles.container__logo} />
+                <Link href="/" className={styles.container__logo}>
+                    <WebsiteLogo />
                 </Link>
 
                 <Navigation clickScroll={clickScroll} />

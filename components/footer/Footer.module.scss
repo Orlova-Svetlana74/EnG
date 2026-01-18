@@ -7,7 +7,13 @@
     margin: 0 auto;
     position: relative;
     margin-bottom: responsive-font(85px, 20px);
-
+    
+    svg {
+        object-fit: contain;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
     &__tgFixed {
         position: fixed;
         left: auto;
@@ -48,6 +54,8 @@
     }
     &__logoLink {
         display: inline-block;
+        width: responsive-font(70px, 28px);
+        height: auto;
     }
 
     &__leftsvg {
