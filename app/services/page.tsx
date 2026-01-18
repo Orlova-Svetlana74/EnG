@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Header } from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 import styles from './services.module.scss'
-import { TgSVG } from '@/svg/TgSVG'
 import { Button } from '@/components/ui/Button/Button'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -77,9 +76,15 @@ export default function Services() {
             text: 'Разработка систем разной сложности CRM, CMS, ERP, LMS',
             href: '/systemsdev',
         },
+
         { id: 6, text: 'Backend разработка', href: '/backend_dev' },
         { id: 7, text: 'Frontend разработка', href: '/frontend_dev' },
-        { id: 8, text: 'Проектирование и создание архитектур', href: '#' },
+        {
+            id: 8,
+            text: 'Проектирование и создание архитектур',
+            href: '/soft_architecture',
+        },
+
         { id: 9, text: 'Тестирование приложений', href: '#' },
         { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
