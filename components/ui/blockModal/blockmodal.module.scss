@@ -30,7 +30,7 @@
     }
 
     &__title {
-        font-size: responsive-font(27px, 8px);
+        font-size: responsive-font(27px, 10px);
         margin-bottom: responsive-font(12px, 10px);
     }
 
@@ -47,7 +47,7 @@
         padding-bottom: 8px;
         padding-top: 8px;
         border-radius: responsive-font(7.16px, 1.66px);
-        font-size: responsive-font(27px, 8px);
+        font-size: responsive-font(27px, 10px);
         color: #004577;
 
         &::placeholder {
@@ -65,7 +65,7 @@
         padding-top: 15px;
         padding-bottom: 147px;
         border-radius: responsive-font(7.16px, 1.66px);
-        font-size: responsive-font(27px, 8px);
+        font-size: responsive-font(27px, 10px);
         color: #004577;
 
         &::placeholder {

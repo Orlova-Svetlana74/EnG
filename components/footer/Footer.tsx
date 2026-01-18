@@ -1,6 +1,5 @@
 'use client'
 import Link from 'next/link'
-import LogoSVG from '@/svg/LogoSVG'
 import styles from './Footer.module.scss'
 import { VkSVG } from '@/svg/VkSVG'
 import { WhatsupSVG } from '@/svg/WhatsupSVG'
@@ -9,7 +8,6 @@ import { TgSVG } from '@/svg/TgSVG'
 import { Footercart } from '../footercart/Footercart'
 import { usePathname } from 'next/navigation'
 import { WebsiteLogo } from '@/svg/Website_logo'
-import TGreverse from '@/svg/TGreverseSVG'
 
 export const Footer = () => {
     const path = usePathname()
@@ -42,6 +40,7 @@ export const Footer = () => {
                         >
                             + 7 (926) 666-10-28
                         </Link>
+
                         <h6>Почта</h6>
                         <Link
                             className={styles.footer__navlink}
@@ -106,12 +105,13 @@ export const Footer = () => {
                                     <WhatsupSVG />
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="Мы в ВКонтакте"
+                                    // aria-label="Мы в ВКонтакте"
                                 >
                                     <InSVG />
                                 </a>
