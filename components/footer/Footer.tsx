@@ -105,12 +105,13 @@ export const Footer = () => {
                                     <WhatsupSVG />
                                 </a>
                             </li>
+                            
                             <li>
                                 <a
                                     href="#"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label="Мы в ВКонтакте"
+                                    // aria-label="Мы в ВКонтакте"
                                 >
                                     <InSVG />
                                 </a>
