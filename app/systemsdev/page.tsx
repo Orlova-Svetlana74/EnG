@@ -12,7 +12,7 @@ import ERPComponentSVG from '@/svg/ERPComponentSVG'
 import { Footer } from '@/components/footer/Footer'
 import Plus from '@/svg/PlusSVG'
 
-import { faqData } from '@/data/datasystemsdev'
+import { faqDatasystems } from '@/data/datasystemsdev'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
@@ -323,7 +323,7 @@ export default function Systemsdev() {
                         />
 
                         <div className={styles.page__faqContainer}>
-                            {faqData.map((item) => (
+                            {faqDatasystems.map((item) => (
                                 <div
                                     key={item.id}
                                     className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}

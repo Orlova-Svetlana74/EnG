@@ -45,7 +45,13 @@ import iconapplication from './iconapplication.svg'
 import icondatabase from './icondatabase.svg'
 import icondevices from './icondevices.svg'
 import icon_display from './icon_display.svg'
-import icontactic from './icontactic.svg' 
+import icontactic from './icontactic.svg'
+import cognition from './cognition.svg'
+import folder_open from './folder_open.svg'
+import grain from './grain.svg'
+import graph_5 from './graph_5.svg'
+import lock from './lock.svg'
+import widgets from './widgets.svg'
 
 export {
     projectKitchenImg,
@@ -95,5 +101,11 @@ export {
     icondatabase,
     icondevices,
     icon_display,
-    icontactic
+    icontactic,
+    cognition,
+    folder_open,
+    grain,
+    graph_5,
+    lock,
+    widgets,
 }
