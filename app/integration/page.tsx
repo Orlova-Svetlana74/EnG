@@ -25,7 +25,7 @@ import {
     paymentarrowdown,
 } from '@/public/img'
 
-export default function Developmen() {
+export default function Integration() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)

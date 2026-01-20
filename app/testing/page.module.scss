@@ -29,7 +29,7 @@
         height: auto;
     }
     &__button {
-        margin-top: responsive-font(45px, 12px);
+        margin-top: responsive-font(40px, 12px);
     }
     &__formImage {
         width: responsive-font(553px, 200px);
@@ -84,7 +84,7 @@
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding-bottom: responsive-font(60px, 50px);
+        padding-bottom: responsive-font(120px, 50px);
         position: relative;
     }
     &__developsectionback {
@@ -109,10 +109,15 @@
     &__title {
         font-size: responsive-font(60px, 16px);
         font-weight: bold;
-        padding-bottom: responsive-font(40px, 10px);
+        padding-bottom: responsive-font(30px, 12px);
     }
     &__titletext {
         font-size: responsive-font(36px, 12px);
+    }
+    &__titletextcontent {
+        font-size: responsive-font(36px, 12px);
+        padding-top: responsive-font(30px, 12px);
+        padding-bottom: responsive-font(120px, 50px);
     }
     &__textblock {
         font-size: responsive-font(36px, 14px);
@@ -147,7 +152,7 @@
     &__faqContainer {
         width: 100%;
         margin-top: responsive-font(40px, 15px);
-        margin-bottom: responsive-font(75px, 30px);
+        margin-bottom: responsive-font(120px, 50px);
     }
     &__faqblock {
         position: relative;

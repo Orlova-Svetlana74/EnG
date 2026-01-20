@@ -85,7 +85,7 @@ export default function Services() {
             href: '/soft_architecture',
         },
 
-        { id: 9, text: 'Тестирование приложений', href: '#' },
+        { id: 9, text: 'Тестирование приложений', href: '/testing' },
         { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
     ]
 

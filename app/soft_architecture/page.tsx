@@ -13,8 +13,7 @@ import { Frametwo } from '@/public/img'
 
 import {
     descriptionSmallShape,
-    offerShape,
-    projectsShape,
+    offerShape,   
     checkcircle,
     cognition,
     folder_open,

@@ -5,19 +5,15 @@ import { Header } from '@/components/header/Header'
 import { Button } from '@/components/ui/Button/Button'
 import { useState } from 'react'
 import { Footer } from '@/components/footer/Footer'
-import FrontendDevTopSVG from '@/svg/FrontendDevTopSVG'
+import TestingSVG from '@/svg/TestingSVG'
 import Plus from '@/svg/PlusSVG'
-import { faqDatafront } from '@/data/datafrontend'
+import { faqDatatest } from '@/data/datatest'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
-import {
-    descriptionSmallShape,
-    offerShape,
-    projectsShape    
-} from '@/public/img'
+import { descriptionSmallShape, offerShape, projectsShape } from '@/public/img'
 
-export default function Backdev() {
+export default function Testing() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
@@ -43,13 +39,7 @@ export default function Backdev() {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
-            />
-            <Image
-                className={styles.page__offerShape}
-                src={offerShape}
-                alt=""
-                priority={true}
-            />
+            />            
             <Image
                 className={styles.page__descriptionSmallShape}
                 src={descriptionSmallShape}
@@ -59,15 +49,17 @@ export default function Backdev() {
 
             <div className={styles.page}>
                 <h1 className={styles.page__title}>
-                    Frontend-разработка: <br /> создание удобного <br /> и
-                    функционального интерфейса
+                    Тестирование и обеспечение <br /> качества (Quality
+                    Assurance) 
                 </h1>
                 <section className={styles.page__developsection}>
                     <div className="">
                         <div className={styles.page__developtitle}>
                             <p className={styles.page__titletext}>
-                                Мы создадим удобный пользовательский интерфейс
-                                для достижения новых целей вашего бизнеса.
+                                Проверим соответствие IT-продукта установленным
+                                требованиям и стандартам качества. Предотвратим
+                                ошибки и дефекты в продукте на всех этапах его
+                                разработки и внедрения.
                             </p>
                         </div>
                         <Button
@@ -79,69 +71,100 @@ export default function Backdev() {
                     </div>
 
                     <div className={styles.page__proektstile}>
-                        <FrontendDevTopSVG />
+                        <TestingSVG />
                     </div>
                 </section>
 
                 <h2 className={styles.page__subtitle}>
-                    Что включает в себя Frontend-разработка?
+                    Какие методы QA мы используем:
                 </h2>
                 <div className={styles.page__subtitlecontent}>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Вёрстка
+                            1 Планирование тестирования
                         </h5>
                         <p className={styles.page__text}>
-                            создание структуры веб-страницы с помощью HTML.
+                            Определяем стратегии, подходы и методы тестирования,
+                            выбираем тестовые <br /> сценарии и планируем
+                            ресурсы.
                         </p>
                     </div>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Оформление
+                            2 Разработка тест-кейсов
                         </h5>
                         <p className={styles.page__text}>
-                            применение стилей с помощью CSS для придания
-                            визуального оформления.
+                            Создаем подробные инструкции для проверки
+                            функциональности продукта, <br /> включая
+                            положительные и отрицательные тесты.
                         </p>
                     </div>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Программирование
+                            3 Автоматизация тестирования
                         </h5>
                         <p className={styles.page__text}>
-                            написание кода на JavaScript для реализации
-                            интерактивности и функциональности.
+                            Используем специализированные инструменты для
+                            автоматического выполнения <br /> тестовых
+                            сценариев, что позволяет ускорить процесс
+                            тестирования и повысить <br />
+                            его эффективность.
                         </p>
                     </div>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Адаптивная вёрстка
+                            4 Выполнение тестов
                         </h5>
                         <p className={styles.page__text}>
-                            обеспечение корректного отображения веб-сайта на
-                            различных устройствах и экранах.
+                            Тестируем IT-продукты в соответствии с
+                            разработанными тест-кейсами.
                         </p>
                     </div>
                     <div>
                         <h5 className={styles.page__subtitleblock}>
-                            • Интеграция с backend-системой
+                            5 Отчётность и анализ результатов
                         </h5>
                         <p className={styles.page__text}>
-                            взаимодействие с сервером и базами данных для
-                            получения данных и выполнения операций.
+                            Собираем и анализируем данные о найденных ошибках и
+                            дефектах, готовим <br /> отчёты для разработчиков и
+                            руководства.
                         </p>
                     </div>
-                </div>
-                <div>
-                    <h2 className={styles.page__subtitle}>
-                        Что включает в себя Frontend-разработка?
-                    </h2>
+                    <div>
+                        <h2 className={styles.page__subtitleblock}>
+                            6 Мониторинг качества
+                        </h2>
+                        <p className={styles.page__text}>
+                            Контролируем качество продукта на всех этапах
+                            разработки, выявляем <br /> и устраняем причины
+                            возникновения дефектов.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className={styles.page__subtitleblock}>
+                            7 Регрессионное тестирование
+                        </h2>
+                        <p className={styles.page__text}>
+                            Проверяем IT-продукты после внесения изменений на
+                            предмет сохранения <br /> его функциональности и
+                            соответствия требованиям.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 className={styles.page__subtitleblock}>
+                            8 Верификация и валидация
+                        </h2>
+                        <p className={styles.page__text}>
+                            Проверяем соответствие продукта требованиям
+                            (верификация) <br /> и ожиданиям пользователей
+                            (валидация).
+                        </p>
+                    </div>
                     <p className={styles.page__titletext}>
-                        Мы предлагаем услуги профессиональных
-                        frontend-разработчиков. Поможем сделать удобный и
-                        интуитивно понятный интерфейс, который обеспечит
-                        эффективное взаимодействие пользователей с веб-сайтом
-                        или приложением.
+                        Тестирование и обеспечение качества являются важными
+                        составляющими процесса разработки программного
+                        обеспечения и помогают создавать надёжные и качественные
+                        продукты.
                     </p>
                 </div>
                 <Image
@@ -157,7 +180,7 @@ export default function Backdev() {
                     <h4 className={styles.page__subtitle}>Вопросы и ответы</h4>
 
                     <div className={styles.page__faqContainer}>
-                        {faqDatafront.map((item) => (
+                        {faqDatatest.map((item) => (
                             <div
                                 key={item.id}
                                 className={`${styles.page__faqItem} ${openQuestionId === item.id ? styles.page__faqItemOpen : ''}`}
