@@ -15,7 +15,7 @@ import { faqDatasystems } from '@/data/datasystemsdev'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
-import {    
+import {
     descriptionBigShape,
     offerShape,
     projectsShape,
@@ -61,7 +61,7 @@ export default function Systemsdev() {
                     <br /> системы CRM, CMS, ERP, LMS
                 </h1>
 
-                <section className={styles.page__developsection}>                    
+                <section className={styles.page__developsection}>
                     <div>
                         <p className={styles.page__titletext}>
                             Мы создаём и внедряем программное обеспечение,

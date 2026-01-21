@@ -16,8 +16,6 @@
     font-weight: bold;
     padding: responsive-font(9px, 6px) responsive-font(27px, 14px);
     font-size: responsive-font(36px, 14px);
-    
-
     text-wrap-mode: nowrap;
     &:hover {
         background-color: #006ab7;
@@ -29,7 +27,7 @@
     }
     &:disabled {
         cursor: not-allowed;
-        
+
         color: #004577;
     }
     &:disabled:hover {
