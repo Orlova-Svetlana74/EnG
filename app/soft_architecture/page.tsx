@@ -12,7 +12,7 @@ import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    descriptionSmallShape,
+    descriptionSmallShape,    
     offerShape,
     projectsShape,
     checkcircle,
@@ -24,7 +24,7 @@ import {
     widgets,
 } from '@/public/img'
 
-export default function Deployment() {
+export default function SoftArchitecture() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
