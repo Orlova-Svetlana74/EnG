@@ -11,13 +11,11 @@ import LMSComponentSVG from '@/svg/LMSComponentSVG'
 import ERPComponentSVG from '@/svg/ERPComponentSVG'
 import { Footer } from '@/components/footer/Footer'
 import Plus from '@/svg/PlusSVG'
-
 import { faqDatasystems } from '@/data/datasystemsdev'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    descriptionSmallShape,
     descriptionBigShape,
     offerShape,
     projectsShape,
@@ -64,7 +62,6 @@ export default function Systemsdev() {
                 </h1>
 
                 <section className={styles.page__developsection}>
-                    {/* <div className={styles.page__developtitle}></div> */}
                     <div>
                         <p className={styles.page__titletext}>
                             Мы создаём и внедряем программное обеспечение,

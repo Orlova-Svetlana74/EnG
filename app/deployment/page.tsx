@@ -8,30 +8,13 @@ import { Footer } from '@/components/footer/Footer'
 import DeploymentSVG from '@/svg/DeploymentSVG'
 import Plus from '@/svg/PlusSVG'
 import { faqDatadeploy } from '@/data/datadeploy'
-// import { faqDatabotApp } from '@/data/faqDatabotApp'
 import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    settingsalert,
     descriptionSmallShape,
-    descriptionBigShape,
     offerShape,
     projectsShape,
-    webhook,
-    workspacepremium,
-    shoppingcart,
-    sync,
-    group,
-    handyman,
-    paymentarrowdown,
-    sms,
-    game,
-    creditcard,
-    joystick,
-    health_and_safety,
-    school,
-    currency_exchange,
     checkcircle,
 } from '@/public/img'
 

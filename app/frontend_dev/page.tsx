@@ -13,7 +13,7 @@ import { Frametwo } from '@/public/img'
 
 import { descriptionSmallShape, offerShape, projectsShape } from '@/public/img'
 
-export default function Backdev() {
+export default function Frontdev() {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isMenu, setIsMenu] = useState(false)
     const [isMenuHeader, setIsMenuHeader] = useState(false)
@@ -130,8 +130,8 @@ export default function Backdev() {
                 </div>
                 <div>
                     <h2 className={styles.page__subtitle}>
-                        Почему вам стоит обратиться за Frontend- <br />разработкой в
-                        студию Entergen?
+                        Почему вам стоит обратиться за Frontend- <br />
+                        разработкой в студию Entergen?
                     </h2>
                     <p className={styles.page__titletextcontent}>
                         Мы предлагаем услуги профессиональных
