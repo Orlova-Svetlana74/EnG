@@ -13,10 +13,11 @@
         width: responsive-font(184px, 55px);
         height: auto;
     }
+
     &__proektstile {
         justify-content: center;
         align-items: center;
-        width: responsive-font(415px, 177px);       
+        width: responsive-font(415px, 177px);
         max-width: 100%;
         height: auto;
         max-height: 300px;
@@ -80,13 +81,14 @@
         font-size: responsive-font(36px, 12px);
         font-weight: bold;
     }
-
     &__developtitle {
         display: flex;
         flex-wrap: wrap;
         // max-width: 50%;
+        max-width: 50%;
         order: 1;
     }
+
     &__developsection,
     &__developsectionback {
         align-items: end;
@@ -96,9 +98,11 @@
         padding-bottom: responsive-font(120px, 50px);
         position: relative;
     }
+
     &__developsectioncontent {
         width: 100%;
     }
+
     &__developsectionback {
         flex-direction: row-reverse;
     }

@@ -12,7 +12,7 @@ import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    descriptionSmallShape,
+    descriptionSmallShape,    
     offerShape,
     projectsShape,
     checkcircle,

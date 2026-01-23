@@ -40,6 +40,7 @@ export default function Testing() {
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
             />
+
             <Image
                 className={styles.page__descriptionSmallShape}
                 src={descriptionSmallShape}
@@ -61,14 +62,14 @@ export default function Testing() {
                                 требованиям и стандартам качества. <br />
                                 Предотвратим ошибки и дефекты в продукте <br />
                                 на всех этапах его разработки и внедрения.
-                            </p>
+                            </p>                            
+                            <Button
+                                className={styles.page__button}
+                                onClick={() => setIsModalOpen(true)}
+                            >
+                                Заказать проект
+                            </Button>
                         </div>
-                        <Button
-                            className={styles.page__button}
-                            onClick={() => setIsModalOpen(true)}
-                        >
-                            Заказать проект
-                        </Button>
                     </div>
 
                     <div className={styles.page__proektstile}>
@@ -132,9 +133,9 @@ export default function Testing() {
                         </p>
                     </div>
                     <div>
-                        <h2 className={styles.page__subtitleblock}>
+                        <h5 className={styles.page__subtitleblock}>
                             6 Мониторинг качества
-                        </h2>
+                        </h5>
                         <p className={styles.page__text}>
                             Контролируем качество продукта на всех этапах
                             разработки, выявляем <br /> и устраняем причины
@@ -142,9 +143,9 @@ export default function Testing() {
                         </p>
                     </div>
                     <div>
-                        <h2 className={styles.page__subtitleblock}>
+                        <h5 className={styles.page__subtitleblock}>
                             7 Регрессионное тестирование
-                        </h2>
+                        </h5>
                         <p className={styles.page__text}>
                             Проверяем IT-продукты после внесения изменений на
                             предмет сохранения <br /> его функциональности и
@@ -152,9 +153,9 @@ export default function Testing() {
                         </p>
                     </div>
                     <div>
-                        <h2 className={styles.page__subtitleblock}>
+                        <h5 className={styles.page__subtitleblock}>
                             8 Верификация и валидация
-                        </h2>
+                        </h5>
                         <p className={styles.page__text}>
                             Проверяем соответствие продукта требованиям
                             (верификация) <br /> и ожиданиям пользователей
