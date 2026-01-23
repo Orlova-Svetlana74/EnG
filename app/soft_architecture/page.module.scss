@@ -25,6 +25,9 @@
         position: relative;
         padding-top: responsive-font(40px, 10px);
     }
+    &__developsectioncontent {
+        width: 100%;
+    }
     &__developsectionback {
         flex-direction: row-reverse;
     }
@@ -266,16 +269,17 @@
     &__developtitle {
         display: flex;
         flex-wrap: wrap;
-        max-width: 60%;
+        // max-width: 60%;
+        padding-top: responsive-font(30px, 12px);
         order: 1;
     }
 
     &__proektstile {
-        width: responsive-font(357px, 325px);
+        width: responsive-font(357px, 153px);
         height: auto;
         order: 2;
         max-width: 100%;
-        max-height: 300px;
+        // max-height: 300px;
         display: flex;
         justify-content: center;
         align-items: center;

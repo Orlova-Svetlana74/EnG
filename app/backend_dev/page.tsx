@@ -63,14 +63,16 @@ export default function Backdev() {
             />
 
             <div className={styles.page}>
-                <h1 className={styles.page__title}>Backend-разработка</h1>
                 <section className={styles.page__developsection}>
-                    <div className="">
+                    <div className={styles.page__developsectioncontent}>
+                        <h1 className={styles.page__title}>
+                            Backend-разработка
+                        </h1>
                         <div className={styles.page__developtitle}>
                             <p className={styles.page__titletext}>
-                                Мы предлагаем профессиональные услуги по
-                                backend-разработке и поможем реализовать любые
-                                идеи.
+                                Мы предлагаем профессиональные услуги <br /> по
+                                backend-разработке и поможем реализовать <br />
+                                любые идеи.
                             </p>
                         </div>
                         <Button

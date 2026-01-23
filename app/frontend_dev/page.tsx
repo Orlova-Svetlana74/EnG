@@ -54,15 +54,16 @@ export default function Frontdev() {
             />
 
             <div className={styles.page}>
-                <h1 className={styles.page__title}>
-                    Frontend-разработка: <br /> создание удобного <br /> и
-                    функционального интерфейса
-                </h1>
                 <section className={styles.page__developsection}>
-                    <div className="">
+                    <div className={styles.page__developsectioncontent}>
+                        <h1 className={styles.page__title}>
+                            Frontend-разработка: <br /> создание удобного <br />
+                            и функционального интерфейса
+                        </h1>
                         <div className={styles.page__developtitle}>
                             <p className={styles.page__titletext}>
                                 Мы создадим удобный пользовательский интерфейс
+                                <br />
                                 для достижения новых целей вашего бизнеса.
                             </p>
                         </div>

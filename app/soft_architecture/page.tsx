@@ -12,7 +12,7 @@ import Blockmodal from '@/components/ui/blockModal/blockmodal'
 import { Frametwo } from '@/public/img'
 
 import {
-    descriptionSmallShape,    
+    descriptionSmallShape,
     offerShape,
     projectsShape,
     checkcircle,
@@ -59,19 +59,19 @@ export default function SoftArchitecture() {
             />
 
             <div className={styles.page}>
-                <h1 className={styles.page__title}>
-                    Проектирование <br /> IT-архитектуры программного <br />
-                    обеспечения
-                </h1>
-
                 <section className={styles.page__developsection}>
-                    <div className="">
+                    <div className={styles.page__developsectioncontent}>
+                        <h1 className={styles.page__title}>
+                            Проектирование <br /> IT-архитектуры программного{' '}
+                            <br />
+                            обеспечения
+                        </h1>
                         <div className={styles.page__developtitle}>
                             <p className={styles.page__titletext}>
-                                Создадим прочную основу для разработки
-                                качественного программного продукта, который
-                                будет соответствовать ожиданиям пользователей и
-                                требованиям бизнеса.  
+                                Создадим прочную основу для разработки <br />
+                                качественного программного продукта,
+                                <br /> который будет соответствовать ожиданиям
+                                <br /> пользователей и требованиям бизнеса.  
                             </p>
                         </div>
                         <Button

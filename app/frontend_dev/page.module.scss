@@ -6,6 +6,16 @@
     position: relative;
     z-index: 1;
 
+    &__proektstile {
+        justify-content: center;
+        align-items: center;
+        width: responsive-font(342px, 115px);
+        max-width: 100%;
+        height: auto;
+        // max-height: 300px;
+        display: flex;
+    }
+
     &__descriptionSmallShape {
         position: absolute;
         left: 55%;
@@ -75,7 +85,7 @@
     &__developtitle {
         display: flex;
         flex-wrap: wrap;
-        max-width: 50%;
+        // max-width: 50%;
         order: 1;
     }
     &__developsection,
@@ -261,6 +271,9 @@
             justify-content: space-between;
             padding-bottom: responsive-font(60px, 30px);
             align-self: center;
+        }
+        &__developsectioncontent {
+            width: 100%;
         }
         &__developtitle {
             display: flex;

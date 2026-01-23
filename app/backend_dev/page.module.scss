@@ -6,6 +6,16 @@
     position: relative;
     z-index: 1;
 
+    &__proektstile {
+        justify-content: center;
+        align-items: center;
+        width: responsive-font(414px, 115px);
+        max-width: 100%;
+        height: auto;
+        // max-height: 300px;
+        display: flex;
+    }
+
     &__descriptionSmallShape {
         position: absolute;
         left: 55%;
@@ -75,7 +85,7 @@
     &__developtitle {
         display: flex;
         flex-wrap: wrap;
-        max-width: 50%;
+        // max-width: 50%;
         order: 1;
     }
     &__developsection,
@@ -87,14 +97,17 @@
         padding-bottom: responsive-font(60px, 50px);
         position: relative;
     }
+    &__developsectioncontent {
+        width: 100%;
+    }
     &__developsectionback {
         flex-direction: row-reverse;
     }
 
     &__subtitletext {
         align-self: end;
-        padding-left: 49px;
-        padding-bottom: 5px;
+        padding-left: responsive-font(49px, 15px);
+        padding-bottom: responsive-font(5px, 3px);
     }
     &__subtitlecontent {
         padding-top: responsive-font(40px, 15px);

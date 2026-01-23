@@ -39,7 +39,7 @@ export default function Testing() {
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
-            />            
+            />
             <Image
                 className={styles.page__descriptionSmallShape}
                 src={descriptionSmallShape}
@@ -53,13 +53,14 @@ export default function Testing() {
                     Assurance) 
                 </h1>
                 <section className={styles.page__developsection}>
-                    <div className="">
+                    <div className={styles.page__developsectioncontent}>
                         <div className={styles.page__developtitle}>
                             <p className={styles.page__titletext}>
                                 Проверим соответствие IT-продукта установленным
-                                требованиям и стандартам качества. Предотвратим
-                                ошибки и дефекты в продукте на всех этапах его
-                                разработки и внедрения.
+                                <br />
+                                требованиям и стандартам качества. <br />
+                                Предотвратим ошибки и дефекты в продукте <br />
+                                на всех этапах его разработки и внедрения.
                             </p>
                         </div>
                         <Button
