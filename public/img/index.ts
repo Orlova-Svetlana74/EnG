@@ -52,6 +52,15 @@ import grain from './grain.svg'
 import graph_5 from './graph_5.svg'
 import lock from './lock.svg'
 import widgets from './widgets.svg'
+import AI1 from './AI1.svg'
+import AI2 from './AI2.svg'
+import AI3 from './AI3.svg'
+import AI4 from './AI4.svg'
+import AI5 from './AI5.svg'
+import AI6 from './AI6.svg'
+import AI7 from './AI7.svg'
+import AI8 from './AI8.svg'
+import check_box from './check_box.svg'
 
 export {
     projectKitchenImg,
@@ -108,4 +117,13 @@ export {
     graph_5,
     lock,
     widgets,
+    AI1,
+    AI2,
+    AI3,
+    AI4,
+    AI5,
+    AI6,
+    AI7,
+    AI8,
+    check_box
 }

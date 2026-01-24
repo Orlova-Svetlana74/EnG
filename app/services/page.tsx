@@ -86,7 +86,7 @@ export default function Services() {
         },
         { id: 9, text: 'Тестирование приложений', href: '/testing' },
 
-        { id: 10, text: 'Создание и интеграции ИИ', href: '#' },
+        { id: 10, text: 'Создание и интеграции ИИ', href: '/aI_creation' },
     ]
 
     const visibleServices =
