@@ -305,7 +305,7 @@ export default function Deployment() {
 
                 <div className={styles.page__blockmodal}>
                     <p className={styles.page__blockmodaltext}>
-                        Обсудить проект
+                        Напишите нам
                     </p>
                     <div className={styles.page__blockmodalform}>
                         <Blockmodal

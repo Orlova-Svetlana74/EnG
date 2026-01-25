@@ -53,19 +53,21 @@ export default function AIcreation() {
                 onClose={() => setIsModalOpen(false)}
                 mode="modal"
             />
-            <Image
+            {/* <Image
                 className={styles.page__offerShape}
                 src={offerShape}
                 alt=""
                 priority={true}
-            />
+            /> */}
 
             <div className={styles.page}>
-                <h1 className={styles.page__title}>Создание и интеграции ИИ</h1>
                 <section className={styles.page__developsection}>
                     <div className="">
+                        <h1 className={styles.page__title}>
+                            Создание и интеграции ИИ
+                        </h1>
                         <div className={styles.page__developtitle}>
-                            <p className={styles.page__titletext}>
+                            <p className={styles.page__maintitletext}>
                                 Интегрируем ИИ-технологии в ваш бизнес <br />
                                 для максимальной эффективности. Автоматизируем
                                 рутинные задачи, увеличиваем прибыль и
@@ -94,7 +96,7 @@ export default function AIcreation() {
                 <h2 className={styles.page__subtitle}>
                     Преимущества внедрения ИИ:
                 </h2>
-                <p>
+                <p className={styles.page__text}>
                     Внедрение ИИ позволяет бизнесу не только оптимизировать
                     текущие процессы, но и открывать новые возможности для роста
                     и развития.
@@ -110,9 +112,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Автоматизация рутинных задач
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Автоматизация рутинных задач</p>
                             <p className={styles.page__text}>
                                 ИИ освобождает сотрудников от монотонной работы,
                                 такой как обработка счетов, составление отчетов
@@ -132,9 +136,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Повышение эффективности
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Повышение эффективности</p>
                             <p className={styles.page__text}>
                                 Системы ИИ способны выполнять задачи быстрее и
                                 точнее, чем человек, что приводит к общему
@@ -154,9 +160,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Снижение затрат
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Снижение затрат</p>
                             <p className={styles.page__text}>
                                 Автоматизация и оптимизация процессов с помощью
                                 ИИ позволяют сократить расходы на персонал,
@@ -175,9 +183,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Улучшение клиентского опыта
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Улучшение клиентского опыта</p>
                             <p className={styles.page__text}>
                                 ИИ обеспечивает персонализированный подход к
                                 каждому клиенту, предоставляет быстрые ответы и
@@ -196,9 +206,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Гибкость и масштабируемость
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Гибкость и масштабируемость</p>
                             <p className={styles.page__text}>
                                 Решения на основе ИИ легко адаптируются к
                                 изменениям на рынке и позволяют масштабировать
@@ -218,9 +230,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Точные прогнозы и более быстрые решения
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Точные прогнозы и более быстрые решения</p>
                             <p className={styles.page__text}>
                                 Аналитические возможности ИИ позволяют делать
                                 точные прогнозы спроса, оптимизировать запасы и
@@ -239,9 +253,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Оптимизация логистики и управления запасами
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Оптимизация логистики и управления запасами</p>
                             <p className={styles.page__text}>
                                 ИИ помогает оптимизировать транспортные
                                 маршруты, прогнозировать спрос и эффективно
@@ -260,9 +276,11 @@ export default function AIcreation() {
                                 height={82}
                                 priority={true}
                             />
+                            <p className={styles.page__titletext}>
+                                Минимизация ошибок
+                            </p>
                         </div>
                         <div className={styles.page__subtitletext}>
-                            <p>Минимизация ошибок</p>
                             <p className={styles.page__text}>
                                 ИИ снижает вероятность человеческих ошибок, что
                                 особенно важно при обработке больших объемов
@@ -294,12 +312,14 @@ export default function AIcreation() {
                     /> */}
 
                     <h4 className={styles.page__subtitle}>Результаты</h4>
-                    <div>
-                        <p>Заказывая интеграцию ИИ в бизнес вы получите:</p>
-                        <div>
+                    <p className={styles.page__blocktextcontent}>
+                        Заказывая интеграцию ИИ в бизнес вы получите:
+                    </p>
+                    <div className={styles.page__blockcontent}>
+                        <div className={styles.page__blocktexticon}>
                             <div>
                                 <Image
-                                    className={styles.page__icon}
+                                    className={styles.page__iconcheck}
                                     src={check_box}
                                     alt=""
                                     width={82}
@@ -308,16 +328,16 @@ export default function AIcreation() {
                                 />
                             </div>
                             <div>
-                                <p>
+                                <p className={styles.page__blocktextcontent}>
                                     Рост эффективности бизнес-процессов на
                                     30-40%
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.page__blocktexticon}>
                             <div>
                                 <Image
-                                    className={styles.page__icon}
+                                    className={styles.page__iconcheck}
                                     src={check_box}
                                     alt=""
                                     width={82}
@@ -326,13 +346,15 @@ export default function AIcreation() {
                                 />
                             </div>
                             <div>
-                                <p>Сокращение затрат на рутинные операции</p>
+                                <p className={styles.page__blocktextcontent}>
+                                    Сокращение затрат на рутинные операции
+                                </p>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.page__blocktexticon}>
                             <div>
                                 <Image
-                                    className={styles.page__icon}
+                                    className={styles.page__iconcheck}
                                     src={check_box}
                                     alt=""
                                     width={82}
@@ -341,15 +363,15 @@ export default function AIcreation() {
                                 />
                             </div>
                             <div>
-                                <p>
+                                <p className={styles.page__blocktextcontent}>
                                     Увеличение продаж благодаря персонализации
                                 </p>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.page__blocktexticon}>
                             <div>
                                 <Image
-                                    className={styles.page__icon}
+                                    className={styles.page__iconcheck}
                                     src={check_box}
                                     alt=""
                                     width={82}
@@ -358,13 +380,15 @@ export default function AIcreation() {
                                 />
                             </div>
                             <div>
-                                <p>Улучшение клиентского опыта</p>
+                                <p className={styles.page__blocktextcontent}>
+                                    Улучшение клиентского опыта
+                                </p>
                             </div>
                         </div>
-                        <div>
+                        <div className={styles.page__blocktexticon}>
                             <div>
                                 <Image
-                                    className={styles.page__icon}
+                                    className={styles.page__iconcheck}
                                     src={check_box}
                                     alt=""
                                     width={82}
@@ -373,7 +397,9 @@ export default function AIcreation() {
                                 />
                             </div>
                             <div>
-                                <p>Повышение конкурентоспособности компании</p>
+                                <p className={styles.page__blocktextcontent}>
+                                    Повышение конкурентоспособности компании
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -427,7 +453,7 @@ export default function AIcreation() {
 
                 <div className={styles.page__blockmodal}>
                     <p className={styles.page__blockmodaltext}>
-                        Обсудить проект
+                        Напишите нам
                     </p>
                     <div className={styles.page__blockmodalform}>
                         <Blockmodal

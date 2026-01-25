@@ -321,7 +321,7 @@ export default function Integration() {
 
                 <div className={styles.page__blockmodal}>
                     <p className={styles.page__blockmodaltext}>
-                        Обсудить проект
+                        Напишите нам
                     </p>
                     <div className={styles.page__blockmodalform}>
                         <Blockmodal

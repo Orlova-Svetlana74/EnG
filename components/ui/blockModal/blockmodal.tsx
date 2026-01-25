@@ -114,7 +114,7 @@ const Blockmodal: React.FC<ModalProps> = ({
                 <div className={styles.modal__blockcontent}>
                     <div className={styles.modal__imagefr}>
                         <p className={styles.modal__title}>
-                            Оставьте контакты, чтобы обсудить проект и условия
+                            Оставьте контакты, чтобы обсудить проект <br /> и условия
                             сотрудничества.
                         </p>
                     </div>
@@ -156,6 +156,10 @@ const Blockmodal: React.FC<ModalProps> = ({
                                 }
                                 placeholder="Расскажите про проект"
                             />
+                            <p className={styles.modal__title}>
+                                Мы свяжемся с вами в течение часа <br /> и вместе все
+                                обсудим.
+                            </p>
                             <div className={styles.modal__checkboxContainer}>
                                 <Checkbox
                                     disabled={load}

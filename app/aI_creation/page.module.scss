@@ -8,7 +8,16 @@
 
     &__title {
         font-size: responsive-font(60px, 16px);
+        padding-bottom: responsive-font(30px, 20px);
+    }
+    &__maintitletext {
+        font-size: responsive-font(36px, 16px);
+    }
+
+    &__titletext {
+        font-size: responsive-font(60px, 16px);
         font-weight: bold;
+        // margin-bottom: responsive-font(20px, 12px);
     }
     &__button {
         margin-top: responsive-font(40px, 12px);
@@ -21,9 +30,9 @@
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-        padding-bottom: responsive-font(120px, 30px);
+        padding-bottom: responsive-font(110px, 30px);
         position: relative;
-        padding-top: responsive-font(40px, 10px);
+        // padding-top: responsive-font(40px, 10px);
     }
     &__developsectionback {
         flex-direction: row-reverse;
@@ -31,6 +40,7 @@
     &__subtitle {
         font-weight: bold;
         font-size: responsive-font(54px, 15px);
+        padding-bottom: responsive-font(30px, 35px);
     }
     &__subtext {
         font-size: responsive-font(27px, 12px);
@@ -113,7 +123,7 @@
         // padding-top: responsive-font(40px, 20px);
         // padding-bottom: responsive-font(40px, 20px);
         min-width: 0;
-        display: flex;
+        // display: flex;
         // flex-direction: column;
 
         // &:nth-child(1) {
@@ -132,8 +142,8 @@
         overflow: hidden;
     }
     &__advantages-block {
-        padding-top: responsive-font(60px, 16px);
-        padding-bottom: responsive-font(120px, 50px);
+        padding-top: responsive-font(40px, 16px);
+        padding-bottom: responsive-font(100px, 50px);
         display: grid;
         grid-template-columns: 2fr 2fr;
         gap: 40px;
@@ -141,11 +151,17 @@
 
     &__advantage-header {
         display: flex;
-        gap: 40px;
+        gap: responsive-font(30px, 20px);
+        padding-bottom: responsive-font(20px, 15px);
     }
     &__icon {
-        width: responsive-font(50px, 20px);
-        height: responsive-font(50px, 20px);
+        width: responsive-font(32px, 20px);
+        height: auto;
+    }
+
+    &__iconcheck {
+        width: responsive-font(24px, 20px);
+        height: auto;
     }
     &__subtitleblock {
         font-size: responsive-font(36px, 14px);
@@ -156,6 +172,19 @@
         // align-items: end;
         // display: flex;
         // position: relative;
+    }
+    &__blockcontent {
+        padding-bottom: responsive-font(110px, 50px);
+        grid-template-columns: 1fr;
+        display: grid;
+        gap: 20px;
+    }
+    &__blocktextcontent {
+        font-size: responsive-font(27px, 14px);
+    }
+    &__blocktexticon {
+        display: flex;
+        gap: 10px;
     }
     &__subtitlerobot {
         display: flex;
@@ -194,8 +223,8 @@
     &__descriptionSmallShape {
         position: absolute;
         left: 80%;
-        top: 15%;
-        width: responsive-font(300px, 55px);
+        top: 11%;
+        width: responsive-font(150px, 55px);
         height: auto;
     }
 
@@ -209,9 +238,9 @@
 
     &__projectsShape {
         position: absolute;
-        top: 44%;
+        top: 50%;
         left: 87%;
-        width: responsive-font(300px, 70px);
+        width: responsive-font(257px, 70px);
         height: auto;
     }
 
@@ -230,7 +259,7 @@
 
     &__blockcontent {
         padding-top: responsive-font(45px, 15px);
-        padding-bottom: responsive-font(75px, 15px);
+        padding-bottom: responsive-font(110px, 15px);
     }
     &__checkmark {
         width: responsive-font(51px, 16px);
@@ -239,7 +268,7 @@
         margin-top: responsive-font(5px, 2px);
     }
     &__blockmodaltext {
-        padding-left: responsive-font(45px, 18px);
+        padding-left: responsive-font(80px, 18px);
         padding-right: responsive-font(45px, 18px);
         padding-top: responsive-font(45px, 18px);
         font-size: responsive-font(36px, 16px);
@@ -265,7 +294,7 @@
     }
 
     &__proektstile {
-        width: responsive-font(357px, 325px);
+        width: responsive-font(357px, 100px);
         height: auto;
         order: 2;
         max-width: 100%;
@@ -311,7 +340,7 @@
 
     &__faqContainer {
         width: 100%;
-        margin-top: responsive-font(40px, 15px);
+        // margin-top: responsive-font(40px, 15px);
         margin-bottom: responsive-font(75px, 50px);
     }
     &__faqblock {
@@ -444,6 +473,18 @@
             padding-bottom: responsive-font(60px, 30px);
             align-self: center;
         }
+        &__proektstile {
+            width: responsive-font(357px, 100px);
+            height: auto;
+            order: 2;
+            max-width: 100%;
+            max-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 90px;
+        }
+
         &__advantages-block {
             display: grid;
             grid-template-columns: 1fr;

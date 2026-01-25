@@ -2,11 +2,13 @@
 .modal {
     background: #badafe;
     border-radius: responsive-font(21px, 18px);
-    padding-left: responsive-font(45px, 18px);
-    padding-right: responsive-font(45px, 18px);
-    padding-top: responsive-font(12px, 10px);
+    padding-left: responsive-font(80px, 18px);
+    padding-right: responsive-font(118px, 18px);
+    padding-top: responsive-font(80px, 18px);
     padding-bottom: responsive-font(45px, 18px);
     position: relative;
+    // width: 861px; /* Фиксированная ширина */
+    // height: 1075px; /* Фиксированная высота */
     width: 100%;
     z-index: 1000;
 
@@ -31,7 +33,7 @@
 
     &__title {
         font-size: responsive-font(27px, 10px);
-        margin-bottom: responsive-font(12px, 10px);
+        margin-bottom: responsive-font(45px, 10px);
     }
 
     &__subtitle {
@@ -40,7 +42,7 @@
     }
     &__inputform {
         margin-bottom: responsive-font(45px, 8px);
-        width: 100%;
+        // width: 100%;
         background-color: #d8eaff;
         border: 1px solid #004577;
         padding-left: responsive-font(35px, 10px);
@@ -104,7 +106,7 @@
     &__submitButton {
         margin-top: responsive-font(45px, 23px);
         width: 100%;
-        font-size: responsive-font(27px, 14px);
+        // font-size: responsive-font(27px, 14px);
         background-color: #d8eaff;
     }
     &__thankYouOverlay {
