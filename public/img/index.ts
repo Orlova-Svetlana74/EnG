@@ -60,7 +60,11 @@ import AI5 from './AI5.svg'
 import AI6 from './AI6.svg'
 import AI7 from './AI7.svg'
 import AI8 from './AI8.svg'
+import ErrorVector from './ErrorVector.svg'
+import ErrorVector2 from './ErrorVector2.svg'
+import ErrorVector3 from './ErrorVector3.svg'
 import check_box from './check_box.svg'
+import Shape_ from './Shape_.svg'
 
 export {
     projectKitchenImg,
@@ -125,5 +129,9 @@ export {
     AI6,
     AI7,
     AI8,
-    check_box
+    check_box,
+    ErrorVector,
+    ErrorVector2,
+    ErrorVector3,
+    Shape_  
 }

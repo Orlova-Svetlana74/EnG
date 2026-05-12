@@ -58,6 +58,10 @@
         &--large {
             font-size: responsive-font(28px, 12px);
             padding-left: responsive-font(30px, 10px);
+
+            &--large :hover {
+                text-decoration: underline;
+            }
         }
     }
 
@@ -117,41 +121,43 @@
             z-index: -1;
         }
     }
+    &__icon {
+        width: responsive-font(38px, 18px);
+        height: auto;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
-.iconContainer {
-    display: flex;
-    align-items: center;
-    gap: responsive-font(16px, 8px);
-}
-
-.services__icon {
-    width: responsive-font(38px, 18px);
-    height: auto;
-}
+// .iconContainer {
+//     display: flex;
+//     align-items: center;
+//     gap: responsive-font(16px, 8px);
+// }
 
 .services__image--discussion {
     width: responsive-font(388px, 200px);
     height: auto;
 }
 
-.expandButton {
-    background: none;
-    border: none;
-    color: #004577;
-    font-size: responsive-font(26px, 14px);
-    cursor: pointer;
-    padding: responsive-font(10px, 8px) 0;
-    margin-top: responsive-font(10px, 8px);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    font-family: Noah, sans-serif;
+// .expandButton {
+//     background: none;
+//     border: none;
+//     color: #004577;
+//     font-size: responsive-font(26px, 14px);
+//     cursor: pointer;
+//     padding: responsive-font(10px, 8px) 0;
+//     margin-top: responsive-font(10px, 8px);
+//     text-decoration: none;
+//     font-weight: 500;
+//     transition: color 0.3s ease;
+//     font-family: Noah, sans-serif;
 
-    &:hover {
-        color: #1e40af;
-    }
-}
+//     &:hover {
+//         color: #1e40af;
+//     }
+// }
 
 @media (max-width: 1920px) {
     .services {
