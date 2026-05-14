@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @function responsive-font(
     $max-size,
     // например 80px
@@ -7,7 +9,7 @@
     $min-vw: 320px
 ) {
     // 1) slope = (px – px) / (px – px) → unitless
-    $slope: ($max-size - $min-size) / ($max-vw - $min-vw);
+    $slope: math.div(($max-size - $min-size), ($max-vw - $min-vw));
 
     // 2) fluid‑значение без ограничений
     $fluid: calc(#{$min-size} + #{$slope} * (100vw - #{$min-vw}));
